@@ -1,0 +1,10 @@
+go 1.23.0
+
+use (
+	.
+	// You can comment the following lines if you don't need them
+	../../utilities/amqp-helper
+	../../utilities/db-helper
+	../../utilities/node-semver
+	../../utilities/types
+)

@@ -1,0 +1,16 @@
+{
+    "name": "template-plugin",
+    "version": "v0.0.0",
+    "image_name": "ceherzog/plugin-template-plugin",
+    "image_version": "0.0.0",
+    "depends_on": [],
+    "description": "A CodeClarity plugin",
+    "config": {
+        "aConfigAttribute" : {
+            "name": "Name",
+            "type": "Array<string>",
+            "description": "Description of the attribute",
+            "required": true
+        }
+    }
+}
