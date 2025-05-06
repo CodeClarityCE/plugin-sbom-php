@@ -3,7 +3,7 @@
 .PHONY        = help build build-prod up down logs test
 
 KIND = plugin
-NAME = template
+NAME = php-sbom
 REPOSITORY = codeclarityce/$(KIND)-$(NAME)
 
 ## —— 🦉 CodeClarity's plugin Makefile 🦉 ——————————————————————————————————

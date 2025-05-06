@@ -24,7 +24,7 @@ RUN apk add git
 RUN go install github.com/go-delve/delve/cmd/dlv@latest
 ADD .cloud/docker/config/* /root
 WORKDIR /codeclarity/${KIND}/${PLUGINNAME}
-CMD ["/go/bin/dlv debug", ".", "--headless", "--listen=:40000", "--accept-multiclient"]
+CMD ["/go/bin/dlv", "debug", ".", "--headless", "--listen=:40000", "--accept-multiclient"]
 # CMD tail -f /dev/null
 
 
@@ -45,12 +45,10 @@ FROM alpine:3.21.3 AS plugin
 ARG KIND
 ARG USERNAME
 ARG PLUGINNAME
-RUN adduser -D ${USERNAME}
+RUN addgroup -S ${USERNAME} --gid 1001 && adduser -S ${USERNAME} -G ${USERNAME} --uid 1001 -D
 USER ${USERNAME}
 WORKDIR /home/${USERNAME}/${PLUGINNAME}
 COPY --from=plugin-build --chown=codeclarity:codeclarity /codeclarity/${KIND}/${PLUGINNAME}/plugin .
 COPY --from=plugin-build --chown=codeclarity:codeclarity /codeclarity/${KIND}/${PLUGINNAME}/config.json .
-
-RUN mkdir /home/${USERNAME}/private
 
 ENTRYPOINT [ "./plugin" ]

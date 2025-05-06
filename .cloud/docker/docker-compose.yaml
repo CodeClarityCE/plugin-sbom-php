@@ -1,12 +1,12 @@
 services:
-  plugin-template:
+  plugin-php-sbom:
     build:
       context: ../../backend
-      dockerfile: plugins/template/.cloud/docker/Dockerfile
+      dockerfile: plugins/php-sbom/.cloud/docker/Dockerfile
       target: plugin-dev
       args:
-        - PLUGINNAME=template
-    image: codeclarityce/template-dev:latest
+        - PLUGINNAME=php-sbom
+    image: codeclarityce/php-sbom-dev:latest
     restart: always
     volumes:
       - ../../backend:/codeclarity

@@ -1,8 +1,8 @@
 services:
-  plugin-template:
+  plugin-php-sbom:
     # For dev we keep the golang container and install devtools
     build:
-      target: plugin-template
-    image: codeclarityce/template-debug:latest
+      target: plugin-debug
+    image: codeclarityce/php-sbom-debug:latest
     ports:
       - 40000:40000
