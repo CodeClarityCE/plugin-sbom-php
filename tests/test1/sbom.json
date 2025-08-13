@@ -3881,36 +3881,6 @@
       "start": {
         "dependencies": [
           {
-            "name": "mobiledetect/mobiledetectlib",
-            "version": "4.8.07",
-            "constraint": "^4.8.03"
-          },
-          {
-            "name": "imagine/imagine",
-            "version": "1.5.0",
-            "constraint": "^1.3.2"
-          },
-          {
-            "name": "firebase/php-jwt",
-            "version": "v6.11.0",
-            "constraint": "^6.2.0"
-          },
-          {
-            "name": "duosecurity/duo_universal_php",
-            "version": "1.1.0",
-            "constraint": "^1.0.2"
-          },
-          {
-            "name": "composer/composer",
-            "version": "2.8.6",
-            "constraint": "^2.8.1"
-          },
-          {
-            "name": "lorenzo/cakephp-email-queue",
-            "version": "dev-master",
-            "constraint": "dev-master#30c24a0dbebd5a91ce7db9ce3a67db1a0d4711e3"
-          },
-          {
             "name": "spomky-labs/otphp",
             "version": "11.3.0",
             "constraint": "^11.3.0"
@@ -3926,16 +3896,6 @@
             "constraint": "^5.2.6"
           },
           {
-            "name": "ramsey/uuid",
-            "version": "4.7.6",
-            "constraint": "^4.2.3"
-          },
-          {
-            "name": "league/flysystem",
-            "version": "3.29.1",
-            "constraint": "^3.29.1"
-          },
-          {
             "name": "bcrowe/cakephp-api-pagination",
             "version": "dev-cakephp5",
             "constraint": "dev-cakephp5#b103542e1b02c2a000862d91a804ecde6d4669b0"
@@ -3944,6 +3904,11 @@
             "name": "enygma/yubikey",
             "version": "3.9",
             "constraint": "^3.8"
+          },
+          {
+            "name": "cakephp/migrations",
+            "version": "4.6.1",
+            "constraint": "^4.0.0"
           },
           {
             "name": "singpolyma/openpgp-php",
@@ -3956,22 +3921,62 @@
             "constraint": "^1.10.0"
           },
           {
-            "name": "cakephp/authentication",
-            "version": "3.2.1",
-            "constraint": "^3.0"
-          },
-          {
-            "name": "cakephp/migrations",
-            "version": "4.6.1",
-            "constraint": "^4.0.0"
+            "name": "duosecurity/duo_universal_php",
+            "version": "1.1.0",
+            "constraint": "^1.0.2"
           },
           {
             "name": "cakephp/plugin-installer",
             "version": "2.0.1",
             "constraint": "^2.0"
+          },
+          {
+            "name": "ramsey/uuid",
+            "version": "4.7.6",
+            "constraint": "^4.2.3"
+          },
+          {
+            "name": "lorenzo/cakephp-email-queue",
+            "version": "dev-master",
+            "constraint": "dev-master#30c24a0dbebd5a91ce7db9ce3a67db1a0d4711e3"
+          },
+          {
+            "name": "imagine/imagine",
+            "version": "1.5.0",
+            "constraint": "^1.3.2"
+          },
+          {
+            "name": "league/flysystem",
+            "version": "3.29.1",
+            "constraint": "^3.29.1"
+          },
+          {
+            "name": "cakephp/authentication",
+            "version": "3.2.1",
+            "constraint": "^3.0"
+          },
+          {
+            "name": "mobiledetect/mobiledetectlib",
+            "version": "4.8.07",
+            "constraint": "^4.8.03"
+          },
+          {
+            "name": "composer/composer",
+            "version": "2.8.6",
+            "constraint": "^2.8.1"
+          },
+          {
+            "name": "firebase/php-jwt",
+            "version": "v6.11.0",
+            "constraint": "^6.2.0"
           }
         ],
         "dev_dependencies": [
+          {
+            "name": "ergebnis/phpunit-slow-test-detector",
+            "version": "2.19.0",
+            "constraint": "^2.19"
+          },
           {
             "name": "phpstan/phpstan",
             "version": "1.12.21",
@@ -3988,19 +3993,14 @@
             "constraint": "^3.0.0"
           },
           {
-            "name": "passbolt/passbolt-selenium-api",
-            "version": "dev-cakephp5",
-            "constraint": "dev-cakephp5#861bc4fe19b5ed58e50dd9a9c52909c997f2934a"
+            "name": "phpunit/phpunit",
+            "version": "10.5.45",
+            "constraint": "^10.1.0"
           },
           {
-            "name": "cakedc/cakephp-phpstan",
-            "version": "3.2.0",
-            "constraint": "^3.2"
-          },
-          {
-            "name": "ergebnis/phpunit-slow-test-detector",
-            "version": "2.19.0",
-            "constraint": "^2.19"
+            "name": "cakephp/cakephp-codesniffer",
+            "version": "5.1.4",
+            "constraint": "^5.0"
           },
           {
             "name": "psalm/phar",
@@ -4013,14 +4013,9 @@
             "constraint": "^5.0.0"
           },
           {
-            "name": "phpunit/phpunit",
-            "version": "10.5.45",
-            "constraint": "^10.1.0"
-          },
-          {
-            "name": "cakephp/cakephp-codesniffer",
-            "version": "5.1.4",
-            "constraint": "^5.0"
+            "name": "passbolt/passbolt-selenium-api",
+            "version": "dev-cakephp5",
+            "constraint": "dev-cakephp5#861bc4fe19b5ed58e50dd9a9c52909c997f2934a"
           },
           {
             "name": "vierge-noire/cakephp-fixture-factories",
@@ -4031,6 +4026,11 @@
             "name": "cakephp/localized",
             "version": "5.0.2",
             "constraint": "^5.0"
+          },
+          {
+            "name": "cakedc/cakephp-phpstan",
+            "version": "3.2.0",
+            "constraint": "^3.2"
           }
         ]
       }
@@ -4042,9 +4042,9 @@
     "working_directory": "test1",
     "package_manager": "composer",
     "time": {
-      "analysis_start_time": "2025-08-13T13:18:42+02:00",
-      "analysis_end_time": "2025-08-13T13:18:42+02:00",
-      "analysis_delta_time": 0.002900709
+      "analysis_start_time": "2025-08-13T21:36:59+02:00",
+      "analysis_end_time": "2025-08-13T21:36:59+02:00",
+      "analysis_delta_time": 0.002612458
     },
     "errors": null,
     "paths": {
