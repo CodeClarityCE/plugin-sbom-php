@@ -14,12 +14,12 @@ type ComposerJSON struct {
 	Description string                 `json:"description"`
 	Type        string                 `json:"type"`
 	Version     string                 `json:"version"`
-	License     interface{}            `json:"license"` // Can be string or array
+	License     any            `json:"license"` // Can be string or array
 	Require     map[string]string      `json:"require"`
 	RequireDev  map[string]string      `json:"require-dev"`
-	Autoload    map[string]interface{} `json:"autoload"`
+	Autoload    map[string]any `json:"autoload"`
 	Authors     []Author               `json:"authors"`
-	Extra       map[string]interface{} `json:"extra"`
+	Extra       map[string]any `json:"extra"`
 }
 
 // Author represents a package author
@@ -35,13 +35,13 @@ type ComposerLock struct {
 	ContentHash     string           `json:"content-hash"`
 	Packages        []PackageInfo    `json:"packages"`
 	PackagesDev     []PackageInfo    `json:"packages-dev"`
-	Aliases         []interface{}    `json:"aliases"`
+	Aliases         []any    `json:"aliases"`
 	MinimumStability string          `json:"minimum-stability"`
 	StabilityFlags  map[string]int   `json:"stability-flags"`
 	PreferStable    bool             `json:"prefer-stable"`
 	PreferLowest    bool             `json:"prefer-lowest"`
 	Platform        map[string]string `json:"platform"`
-	PlatformDev     []interface{}    `json:"platform-dev"` // Can be array or map
+	PlatformDev     []any    `json:"platform-dev"` // Can be array or map
 	PluginAPIVersion string          `json:"plugin-api-version"`
 }
 
@@ -54,14 +54,14 @@ type PackageInfo struct {
 	Require         map[string]string      `json:"require"`
 	RequireDev      map[string]string      `json:"require-dev"`
 	Type            string                 `json:"type"`
-	License         interface{}            `json:"license"`
+	License         any            `json:"license"`
 	Authors         []Author               `json:"authors"`
 	Description     string                 `json:"description"`
 	Keywords        []string               `json:"keywords"`
 	Time            string                 `json:"time"`
-	Autoload        map[string]interface{} `json:"autoload"`
+	Autoload        map[string]any `json:"autoload"`
 	NotificationURL string                 `json:"notification-url"`
-	Extra           map[string]interface{} `json:"extra"`
+	Extra           map[string]any `json:"extra"`
 }
 
 // Source represents the source control info
@@ -153,11 +153,11 @@ func GetPackageName(fullName string) (vendor string, pkg string) {
 }
 
 // NormalizeLicense converts license field to string array
-func NormalizeLicense(license interface{}) []string {
+func NormalizeLicense(license any) []string {
 	switch v := license.(type) {
 	case string:
 		return []string{v}
-	case []interface{}:
+	case []any:
 		var licenses []string
 		for _, l := range v {
 			if str, ok := l.(string); ok {

@@ -5,7 +5,7 @@ import (
 	"os"
 )
 
-func writeJSON(data interface{}, filepath string) error {
+func writeJSON(data any, filepath string) error {
 	jsonData, err := json.MarshalIndent(data, "", "  ")
 	if err != nil {
 		return err

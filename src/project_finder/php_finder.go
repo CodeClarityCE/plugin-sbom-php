@@ -85,7 +85,7 @@ func FindPHPProjects(rootDir string) (*ProjectInfo, error) {
 	// Check for monorepo/workspaces
 	if len(composerJSONFiles) > 1 {
 		projectInfo.IsMonorepo = true
-		projectInfo.Workspaces = findWorkspaces(rootDir, rootComposerJSON, composerJSONFiles, composerLockFiles)
+		projectInfo.Workspaces = findWorkspaces(rootComposerJSON, composerJSONFiles, composerLockFiles)
 	}
 
 	return projectInfo, nil
@@ -199,7 +199,7 @@ func detectFramework(composerData *parser.ComposerJSON) string {
 }
 
 // findWorkspaces finds all workspace projects in a monorepo
-func findWorkspaces(rootDir, rootComposerPath string, composerFiles, lockFiles []string) []WorkspaceInfo {
+func findWorkspaces(rootComposerPath string, composerFiles, lockFiles []string) []WorkspaceInfo {
 	var workspaces []WorkspaceInfo
 	rootComposerDir := filepath.Dir(rootComposerPath)
 

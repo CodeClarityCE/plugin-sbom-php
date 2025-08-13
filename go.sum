@@ -1,5 +1,3 @@
-github.com/CodeClarityCE/plugin-template v0.0.0-20250424113416-22adbd7b0187 h1:zvBR7fUgb1ZWXoahGk/fIl0eI70qONwhHhKbOGYwnrc=
-github.com/CodeClarityCE/plugin-template v0.0.0-20250424113416-22adbd7b0187/go.mod h1:5rwurVsWaf4wXE8EmvdWQ9xm1rFuWabMA8h/Bjw6pL8=
 github.com/CodeClarityCE/utility-amqp-helper v0.0.6-alpha h1:GoUTO+ADeFtQM9nFJRCJLgwoIPsSM5fkovNTaldROL0=
 github.com/CodeClarityCE/utility-amqp-helper v0.0.6-alpha/go.mod h1:fUDcdrVyeoVqzxCkbHWsdbhBHp1d6gvq3QFtQ5E3ptI=
 github.com/CodeClarityCE/utility-dbhelper v0.0.8-alpha h1:pvHAWe6J3yBr+JKTvx719B3C03f8C0/Ut7h3Dmn5iuU=
@@ -32,8 +30,7 @@ github.com/puzpuzpuz/xsync/v3 v3.5.1/go.mod h1:VjzYrABPabuM4KyBh1Ftq6u8nhwY5tBPK
 github.com/rabbitmq/amqp091-go v1.10.0 h1:STpn5XsHlHGcecLmMFCtg7mqq0RnD+zFr4uzukfVhBw=
 github.com/rabbitmq/amqp091-go v1.10.0/go.mod h1:Hy4jKW5kQART1u+JkDTF9YYOQUHXqMuhrgxOEeS7G4o=
 github.com/rogpeppe/go-internal v1.9.0/go.mod h1:WtVeX8xhTBvf0smdhujwtBcq4Qrzq/fJaraNFVN+nFs=
-github.com/rogpeppe/go-internal v1.13.1 h1:KvO1DLK/DRN07sQ1LQKScxyZJuNnedQ5/wKSR38lUII=
-github.com/rogpeppe/go-internal v1.13.1/go.mod h1:uMEvuHeurkdAXX61udpOXGD/AzZDWNMNyH2VO9fmH0o=
+github.com/rogpeppe/go-internal v1.14.1 h1:UQB4HGPB6osV0SQTLymcB4TgvyWu6ZyliaW0tI/otEQ=
 github.com/stretchr/testify v1.10.0 h1:Xv5erBjTwe/5IxqUQTdXv5kgmIvbHo3QQyRwhJsOfJA=
 github.com/stretchr/testify v1.10.0/go.mod h1:r2ic/lqez/lEtzL7wO/rwa5dbSLXVDPFyf8C91i36aY=
 github.com/tmthrgd/go-hex v0.0.0-20190904060850-447a3041c3bc h1:9lRDQMhESg+zvGYmW5DyG0UqvY96Bu5QYsTLvCHdrgo=
