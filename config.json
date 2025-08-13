@@ -1,9 +1,9 @@
 {
     "name": "php-sbom",
-    "version": "v0.0.9-alpha",
+    "version": "v0.0.1-alpha",
     "image_name": "codeclarityce/plugin-php-sbom",
     "depends_on": [],
-    "description": "A plugin to generate a software bill of materials for a JavaScript project",
+    "description": "A plugin to generate a software bill of materials for a PHP project",
     "config": {
         "branch": {
             "name": "branch",
