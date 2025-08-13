@@ -3,6 +3,7 @@ package parser
 import (
 	"encoding/json"
 	"fmt"
+	"log"
 	"os"
 	"path/filepath"
 	"strings"
@@ -114,6 +115,8 @@ func FindComposerFiles(rootDir string) ([]string, []string, error) {
 	var composerJSONFiles []string
 	var composerLockFiles []string
 
+	log.Printf("FindComposerFiles Debug - searching in: %s", rootDir)
+	
 	err := filepath.Walk(rootDir, func(path string, info os.FileInfo, err error) error {
 		if err != nil {
 			return err

@@ -10,6 +10,7 @@ services:
     restart: always
     volumes:
       - ../../backend:/codeclarity
+      - ../../private:/private
     depends_on:
       rabbitmq:
         condition: service_healthy

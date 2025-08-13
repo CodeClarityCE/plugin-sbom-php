@@ -14,6 +14,7 @@ import (
 	dbhelper "github.com/CodeClarityCE/utility-dbhelper/helper"
 	types_amqp "github.com/CodeClarityCE/utility-types/amqp"
 	codeclarity "github.com/CodeClarityCE/utility-types/codeclarity_db"
+	"github.com/CodeClarityCE/utility-types/exceptions"
 	plugin_db "github.com/CodeClarityCE/utility-types/plugin_db"
 	"github.com/uptrace/bun"
 	"github.com/uptrace/bun/dialect/pgdialect"
@@ -94,7 +95,41 @@ func startAnalysis(args Arguments, dispatcherMessage types_amqp.DispatcherPlugin
 	}
 
 	// Destination folder - prepare the arguments for the plugin
-	project := path + "/" + messageData["project"].(string)
+	projectInterface, ok := messageData["project"]
+	if !ok || projectInterface == nil {
+		// Return failure if project path is not provided
+		sbomOutput := types.Output{
+			AnalysisInfo: types.AnalysisInfo{
+				Status: codeclarity.FAILURE,
+				Errors: []exceptions.Error{
+					{
+						Public:  exceptions.ErrorContent{Type: exceptions.GENERIC_ERROR, Description: "Project path not provided in analysis configuration"},
+						Private: exceptions.ErrorContent{Type: "ProjectPathMissingException", Description: "The 'project' field is missing from the analysis configuration"},
+					},
+				},
+			},
+		}
+		
+		result := codeclarity.Result{
+			Result:     types.ConvertOutputToMap(sbomOutput),
+			AnalysisId: dispatcherMessage.AnalysisId,
+			Plugin:     config.Name,
+			CreatedOn:  time.Now(),
+		}
+		_, err := args.codeclarity.NewInsert().Model(&result).Exec(context.Background())
+		if err != nil {
+			panic(err)
+		}
+		
+		return map[string]any{"sbomKey": result.Id}, codeclarity.FAILURE, nil
+	}
+	
+	project := path + "/" + projectInterface.(string)
+	
+	// Debug logging
+	log.Printf("PHP SBOM Debug - DOWNLOAD_PATH: %s", path)
+	log.Printf("PHP SBOM Debug - project config: %s", projectInterface.(string))
+	log.Printf("PHP SBOM Debug - full project path: %s", project)
 
 	// Start the plugin
 	sbomOutput := codeclarity_src.Start(project, analysis_document.Id, args.knowledge)

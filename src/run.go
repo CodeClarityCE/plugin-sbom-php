@@ -3,6 +3,7 @@ package src
 import (
 	"fmt"
 	"log"
+	"os"
 	"path/filepath"
 	"time"
 
@@ -21,6 +22,19 @@ func Start(sourceCodeDir string, analysisId uuid.UUID, knowledge_db *bun.DB) typ
 	start := time.Now()
 	
 	log.Println("Starting PHP SBOM analysis...")
+	log.Printf("PHP SBOM Debug - sourceCodeDir: %s", sourceCodeDir)
+	
+	// Check if directory exists
+	if _, err := os.Stat(sourceCodeDir); os.IsNotExist(err) {
+		log.Printf("PHP SBOM Error - Directory does not exist: %s", sourceCodeDir)
+		exceptionManager.AddError(
+			"Source directory not found",
+			exceptionManager.GENERIC_ERROR,
+			fmt.Sprintf("The source directory does not exist: %s", sourceCodeDir),
+			"SourceCodeDirDoesNotExist",
+		)
+		return generateFailureOutput(start, "")
+	}
 	
 	// Find PHP projects in the source directory
 	projectInfo, err := project_finder.FindPHPProjects(sourceCodeDir)
