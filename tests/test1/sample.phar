@@ -1,0 +1,6 @@
+#!/usr/bin/env php
+<?php
+// This is a mock PHAR file for testing
+// In a real PHAR, this would be a compiled archive
+echo "Mock PHAR file for testing PHP SBOM PHAR detection\n";
+?>

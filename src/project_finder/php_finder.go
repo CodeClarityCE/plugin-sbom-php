@@ -24,6 +24,8 @@ type ProjectInfo struct {
 	Framework            string // Laravel, Symfony, WordPress, etc.
 	IsMonorepo           bool
 	Workspaces           []WorkspaceInfo
+	PHARFiles            []parser.PHARInfo // PHAR archives found in project
+	HasVendorDirectory   bool              // Whether project includes vendor dependencies
 }
 
 // WorkspaceInfo represents a workspace in a monorepo
@@ -43,6 +45,12 @@ func FindPHPProjects(rootDir string) (*ProjectInfo, error) {
 	composerJSONFiles, composerLockFiles, err := parser.FindComposerFiles(rootDir)
 	if err != nil {
 		return nil, fmt.Errorf("failed to find composer files: %w", err)
+	}
+
+	// Also search for PHAR files
+	pharFilePaths, err := parser.FindPHARFiles(rootDir)
+	if err != nil {
+		return nil, fmt.Errorf("failed to find PHAR files: %w", err)
 	}
 
 	if len(composerJSONFiles) == 0 {
@@ -72,6 +80,8 @@ func FindPHPProjects(rootDir string) (*ProjectInfo, error) {
 		Framework:            detectFramework(composerData),
 		IsMonorepo:           false,
 		Workspaces:           []WorkspaceInfo{},
+		PHARFiles:            []parser.PHARInfo{},
+		HasVendorDirectory:   checkVendorDirectory(rootDir),
 	}
 
 	// Parse composer.lock if it exists
@@ -86,6 +96,17 @@ func FindPHPProjects(rootDir string) (*ProjectInfo, error) {
 	if len(composerJSONFiles) > 1 {
 		projectInfo.IsMonorepo = true
 		projectInfo.Workspaces = findWorkspaces(rootComposerJSON, composerJSONFiles, composerLockFiles)
+	}
+
+	// Process PHAR files
+	for _, pharPath := range pharFilePaths {
+		pharInfo, err := parser.AnalyzePHARFile(pharPath)
+		if err != nil {
+			// Log error but continue processing
+			fmt.Printf("Warning: Failed to analyze PHAR file %s: %v\n", pharPath, err)
+			continue
+		}
+		projectInfo.PHARFiles = append(projectInfo.PHARFiles, *pharInfo)
 	}
 
 	return projectInfo, nil
@@ -258,4 +279,13 @@ func DetectPHPVersion(composerData *parser.ComposerJSON) string {
 		return phpVersion
 	}
 	return ""
+}
+
+// checkVendorDirectory checks if a vendor directory exists in the project
+func checkVendorDirectory(rootDir string) bool {
+	vendorPath := filepath.Join(rootDir, "vendor")
+	if info, err := os.Stat(vendorPath); err == nil && info.IsDir() {
+		return true
+	}
+	return false
 }

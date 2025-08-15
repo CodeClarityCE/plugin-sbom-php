@@ -146,6 +146,81 @@ func FindComposerFiles(rootDir string) ([]string, []string, error) {
 	return composerJSONFiles, composerLockFiles, err
 }
 
+// FindPHARFiles searches for PHAR archives in a directory
+func FindPHARFiles(rootDir string) ([]string, error) {
+	var pharFiles []string
+
+	log.Printf("FindPHARFiles Debug - searching for PHAR archives in: %s", rootDir)
+	
+	err := filepath.Walk(rootDir, func(path string, info os.FileInfo, err error) error {
+		if err != nil {
+			return err
+		}
+
+		// Skip vendor and node_modules directories
+		if info.IsDir() && (info.Name() == "vendor" || info.Name() == "node_modules") {
+			return filepath.SkipDir
+		}
+
+		if !info.IsDir() {
+			// Check for .phar files
+			if strings.HasSuffix(strings.ToLower(info.Name()), ".phar") {
+				pharFiles = append(pharFiles, path)
+				log.Printf("Found PHAR file: %s", path)
+			}
+		}
+
+		return nil
+	})
+
+	return pharFiles, err
+}
+
+// PHARInfo represents information about a PHAR archive
+type PHARInfo struct {
+	Path        string                 `json:"path"`
+	Name        string                 `json:"name"`
+	Size        int64                  `json:"size"`
+	Modified    string                 `json:"modified"`
+	Signature   string                 `json:"signature"`
+	Metadata    map[string]interface{} `json:"metadata"`
+	MainScript  string                 `json:"main_script"`
+	IsExecutable bool                  `json:"is_executable"`
+}
+
+// AnalyzePHARFile analyzes a PHAR archive and extracts metadata
+func AnalyzePHARFile(pharPath string) (*PHARInfo, error) {
+	info, err := os.Stat(pharPath)
+	if err != nil {
+		return nil, fmt.Errorf("failed to stat PHAR file: %w", err)
+	}
+
+	pharInfo := &PHARInfo{
+		Path:        pharPath,
+		Name:        filepath.Base(pharPath),
+		Size:        info.Size(),
+		Modified:    info.ModTime().Format("2006-01-02T15:04:05Z"),
+		Metadata:    make(map[string]interface{}),
+		IsExecutable: isExecutable(pharPath),
+	}
+
+	// Try to extract basic information about the PHAR
+	// Note: This is a simplified implementation. In production, you might want
+	// to use actual PHAR reading libraries or external tools
+	log.Printf("Analyzing PHAR file: %s (size: %d bytes)", pharPath, info.Size())
+
+	return pharInfo, nil
+}
+
+// isExecutable checks if a file has executable permissions
+func isExecutable(filePath string) bool {
+	info, err := os.Stat(filePath)
+	if err != nil {
+		return false
+	}
+	return info.Mode()&0111 != 0
+}
+
 // GetPackageName extracts the package name from Packagist format (vendor/package)
 func GetPackageName(fullName string) (vendor string, pkg string) {
 	parts := strings.Split(fullName, "/")

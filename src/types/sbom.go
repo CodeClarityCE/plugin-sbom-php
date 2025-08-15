@@ -99,6 +99,21 @@ type Extra struct {
 	ContentHash          string            `json:"content_hash,omitempty"`
 	Platform             map[string]string `json:"platform,omitempty"`
 	Statistics           Statistics        `json:"statistics,omitempty"`
+	// PHAR and vendor support
+	PHARFiles            []PHARInfo        `json:"phar_files,omitempty"`
+	HasVendorDirectory   bool              `json:"has_vendor_directory,omitempty"`
+}
+
+// PHARInfo represents information about a PHAR archive
+type PHARInfo struct {
+	Path         string                 `json:"path"`
+	Name         string                 `json:"name"`
+	Size         int64                  `json:"size"`
+	Modified     string                 `json:"modified"`
+	Signature    string                 `json:"signature"`
+	Metadata     map[string]interface{} `json:"metadata"`
+	MainScript   string                 `json:"main_script"`
+	IsExecutable bool                   `json:"is_executable"`
 }
 
 // Workspaces contains workspace information

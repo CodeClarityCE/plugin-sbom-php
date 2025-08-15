@@ -209,8 +209,11 @@ func generateCompatibleAnalysisInfo(projectInfo *project_finder.ProjectInfo, sta
 		ImportPathSeperator: types.IMPORT_PATH_SEPARATOR,
 		LockFileVersion:     1, // Composer lock version
 		// PHP-specific fields
-		PHPVersion:   project_finder.DetectPHPVersion(projectInfo.ComposerJSON),
-		Framework:    projectInfo.Framework,
+		PHPVersion:         project_finder.DetectPHPVersion(projectInfo.ComposerJSON),
+		Framework:          projectInfo.Framework,
+		// PHAR and vendor support
+		PHARFiles:          convertPHARInfos(projectInfo.PHARFiles),
+		HasVendorDirectory: projectInfo.HasVendorDirectory,
 	}
 	
 	if projectInfo.ComposerLock != nil {
@@ -330,4 +333,22 @@ func getTotalDependencyCount(workspaces map[string]types.WorkSpace) int {
 		total += len(ws.Dependencies)
 	}
 	return total
+}
+
+// convertPHARInfos converts parser.PHARInfo to types.PHARInfo
+func convertPHARInfos(pharInfos []parser.PHARInfo) []types.PHARInfo {
+	result := make([]types.PHARInfo, len(pharInfos))
+	for i, pharInfo := range pharInfos {
+		result[i] = types.PHARInfo{
+			Path:         pharInfo.Path,
+			Name:         pharInfo.Name,
+			Size:         pharInfo.Size,
+			Modified:     pharInfo.Modified,
+			Signature:    pharInfo.Signature,
+			Metadata:     pharInfo.Metadata,
+			MainScript:   pharInfo.MainScript,
+			IsExecutable: pharInfo.IsExecutable,
+		}
+	}
+	return result
 }
