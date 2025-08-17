@@ -11,32 +11,14 @@ import (
 	"time"
 
 	"github.com/CodeClarityCE/plugin-php-sbom/src/auth"
+	"github.com/CodeClarityCE/plugin-php-sbom/src/types"
 )
 
-// PackageInfo represents metadata about a package from a repository
-type PackageInfo struct {
-	Name        string                 `json:"name"`
-	Version     string                 `json:"version"`
-	Description string                 `json:"description,omitempty"`
-	Type        string                 `json:"type,omitempty"`
-	Keywords    []string               `json:"keywords,omitempty"`
-	Homepage    string                 `json:"homepage,omitempty"`
-	License     []string               `json:"license,omitempty"`
-	Authors     []PackageAuthor        `json:"authors,omitempty"`
-	Require     map[string]string      `json:"require,omitempty"`
-	RequireDev  map[string]string      `json:"require-dev,omitempty"`
-	Extra       map[string]interface{} `json:"extra,omitempty"`
-	Repository  string                 `json:"repository,omitempty"` // Source repository
-	IsPrivate   bool                   `json:"is_private,omitempty"`
-}
+// PackageInfo is an alias for the shared types.PackageInfo
+type PackageInfo = types.PackageInfo
 
-// PackageAuthor represents package author information
-type PackageAuthor struct {
-	Name     string `json:"name"`
-	Email    string `json:"email,omitempty"`
-	Homepage string `json:"homepage,omitempty"`
-	Role     string `json:"role,omitempty"`
-}
+// PackageAuthor is an alias for the shared types.PackageAuthor  
+type PackageAuthor = types.PackageAuthor
 
 // PackageCache represents a simple in-memory cache for package metadata
 type PackageCache struct {
@@ -105,11 +87,17 @@ func (c *PackageCache) evictOldest() {
 	}
 }
 
+// GitResolver interface to avoid circular dependency
+type GitResolver interface {
+	ResolveGitRepository(repo auth.ComposerRepository, packageName, constraint string) (*PackageInfo, error)
+}
+
 // PrivatePackageResolver resolves package metadata from private repositories
 type PrivatePackageResolver struct {
 	authManager *auth.AuthManager
 	httpClient  *http.Client
 	cache       *PackageCache
+	gitResolver GitResolver
 }
 
 // NewPrivatePackageResolver creates a new private package resolver
@@ -124,8 +112,14 @@ func NewPrivatePackageResolver(authManager *auth.AuthManager) *PrivatePackageRes
 				DisableCompression: false,
 			},
 		},
-		cache: NewPackageCache(1*time.Hour, 1000), // 1 hour TTL, max 1000 entries
+		cache:       NewPackageCache(1*time.Hour, 1000), // 1 hour TTL, max 1000 entries
+		gitResolver: nil, // Will be set externally to avoid circular dependency
 	}
+}
+
+// SetGitResolver sets the Git resolver to avoid circular dependency
+func (r *PrivatePackageResolver) SetGitResolver(gitResolver GitResolver) {
+	r.gitResolver = gitResolver
 }
 
 // ResolvePackage resolves package metadata from public and private repositories
@@ -296,9 +290,14 @@ func (r *PrivatePackageResolver) resolveFromComposerRepository(repo auth.Compose
 
 // resolveFromVCSRepository resolves from a VCS repository (Git, SVN, etc.)
 func (r *PrivatePackageResolver) resolveFromVCSRepository(repo auth.ComposerRepository, name, constraint string) (*PackageInfo, error) {
-	// VCS resolution is more complex and would require Git operations
-	// For now, return a placeholder implementation
-	log.Printf("VCS repository resolution not yet implemented for: %s", repo.URL)
+	log.Printf("Resolving VCS repository: %s for package: %s", repo.URL, name)
+	
+	// Use GitResolver for Git-based VCS repositories if available
+	if r.gitResolver != nil {
+		return r.gitResolver.ResolveGitRepository(repo, name, constraint)
+	}
+	
+	log.Printf("VCS repository resolution not available - GitResolver not set")
 	return nil, nil
 }
 

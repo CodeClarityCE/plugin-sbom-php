@@ -10,6 +10,7 @@ import (
 
 	"github.com/CodeClarityCE/plugin-php-sbom/src/auth"
 	"github.com/CodeClarityCE/plugin-php-sbom/src/resolver"
+	"github.com/CodeClarityCE/plugin-php-sbom/src/vcs"
 )
 
 // EnhancedComposerJSON extends ComposerJSON with repository information
@@ -64,6 +65,10 @@ type EnhancedComposerParser struct {
 func NewEnhancedComposerParser(projectDir string) (*EnhancedComposerParser, error) {
 	authManager := auth.NewAuthManager()
 	packageResolver := resolver.NewPrivatePackageResolver(authManager)
+	
+	// Create and set up Git resolver
+	gitResolver := vcs.NewGitResolver(authManager)
+	packageResolver.SetGitResolver(gitResolver)
 
 	parser := &EnhancedComposerParser{
 		authManager:     authManager,
