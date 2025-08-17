@@ -145,7 +145,6 @@ func findMatchingLockFile(composerJSONPath string, lockFiles []string) string {
 			return lockFile
 		}
 	}
-
 	return ""
 }
 

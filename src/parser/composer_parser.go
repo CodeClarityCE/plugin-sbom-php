@@ -38,7 +38,7 @@ type ComposerLock struct {
 	PackagesDev     []PackageInfo    `json:"packages-dev"`
 	Aliases         []any    `json:"aliases"`
 	MinimumStability string          `json:"minimum-stability"`
-	StabilityFlags  map[string]int   `json:"stability-flags"`
+	StabilityFlags  any              `json:"stability-flags"` // Can be array or map
 	PreferStable    bool             `json:"prefer-stable"`
 	PreferLowest    bool             `json:"prefer-lowest"`
 	Platform        map[string]string `json:"platform"`
@@ -115,8 +115,6 @@ func FindComposerFiles(rootDir string) ([]string, []string, error) {
 	var composerJSONFiles []string
 	var composerLockFiles []string
 
-	log.Printf("FindComposerFiles Debug - searching in: %s", rootDir)
-	
 	err := filepath.Walk(rootDir, func(path string, info os.FileInfo, err error) error {
 		if err != nil {
 			return err

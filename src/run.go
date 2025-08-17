@@ -7,6 +7,7 @@ import (
 	"path/filepath"
 	"time"
 
+	"github.com/CodeClarityCE/plugin-php-sbom/src/extensions"
 	"github.com/CodeClarityCE/plugin-php-sbom/src/knowledge"
 	"github.com/CodeClarityCE/plugin-php-sbom/src/parser"
 	"github.com/CodeClarityCE/plugin-php-sbom/src/project_finder"
@@ -69,8 +70,21 @@ func Start(sourceCodeDir string, analysisId uuid.UUID, knowledge_db *bun.DB) typ
 	}
 	knowledge.UpdateKnowledge(allDependencies, analysisId)
 	
+	// Detect PHP extensions
+	log.Println("Detecting PHP extensions...")
+	extensionInfo, err := extensions.DetectPHPExtensions(sourceCodeDir)
+	if err != nil {
+		log.Printf("Warning: Could not detect PHP extensions: %v", err)
+		extensionInfo = &extensions.PHPExtensionInfo{
+			Extensions:           make(map[string]extensions.PHPExtension),
+			LoadedExtensions:     []string{},
+			ConfiguredExtensions: []string{},
+			CoreModules:          []string{},
+		}
+	}
+	
 	// Generate analysis info in js-sbom compatible format
-	analysisInfo := generateCompatibleAnalysisInfo(projectInfo, start)
+	analysisInfo := generateCompatibleAnalysisInfo(projectInfo, extensionInfo, start)
 	
 	// Success output
 	output := types.Output{
@@ -196,7 +210,7 @@ func buildCompatibleWorkspace(composerJSON *parser.ComposerJSON, composerLock *p
 }
 
 // generateCompatibleAnalysisInfo generates analysis info in js-sbom compatible format
-func generateCompatibleAnalysisInfo(projectInfo *project_finder.ProjectInfo, start time.Time) types.AnalysisInfo {
+func generateCompatibleAnalysisInfo(projectInfo *project_finder.ProjectInfo, extensionInfo *extensions.PHPExtensionInfo, start time.Time) types.AnalysisInfo {
 	end := time.Now()
 	
 	// Build paths (composer.json/composer.lock instead of package.json/package-lock.json)
@@ -225,6 +239,8 @@ func generateCompatibleAnalysisInfo(projectInfo *project_finder.ProjectInfo, sta
 		// PHAR and vendor support
 		PHARFiles:          convertPHARInfos(projectInfo.PHARFiles),
 		HasVendorDirectory: projectInfo.HasVendorDirectory,
+		// PHP Extensions
+		PHPExtensions:      convertExtensionInfo(extensionInfo),
 	}
 	
 	if projectInfo.ComposerLock != nil {
@@ -362,4 +378,39 @@ func convertPHARInfos(pharInfos []parser.PHARInfo) []types.PHARInfo {
 		}
 	}
 	return result
+}
+
+// convertExtensionInfo converts extensions.PHPExtensionInfo to types.PHPExtensionInfo
+func convertExtensionInfo(extInfo *extensions.PHPExtensionInfo) types.PHPExtensionInfo {
+	if extInfo == nil {
+		return types.PHPExtensionInfo{
+			Extensions: make(map[string]types.PHPExtension),
+		}
+	}
+	
+	extensions := make(map[string]types.PHPExtension)
+	for name, ext := range extInfo.Extensions {
+		extensions[name] = types.PHPExtension{
+			Name:        ext.Name,
+			Version:     ext.Version,
+			Type:        ext.Type,
+			Status:      ext.Status,
+			ZendVersion: ext.ZendVersion,
+			Authors:     ext.Authors,
+			Description: ext.Description,
+			Metadata:    ext.Metadata,
+		}
+	}
+	
+	return types.PHPExtensionInfo{
+		PHPVersion:           extInfo.PHPVersion,
+		ZendVersion:          extInfo.ZendVersion,
+		Extensions:           extensions,
+		CoreModules:          extInfo.CoreModules,
+		LoadedExtensions:     extInfo.LoadedExtensions,
+		ConfiguredExtensions: extInfo.ConfiguredExtensions,
+		BuildDate:            extInfo.BuildDate,
+		Configure:            extInfo.Configure,
+		ServerAPI:            extInfo.ServerAPI,
+	}
 }

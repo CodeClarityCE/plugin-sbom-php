@@ -102,6 +102,33 @@ type Extra struct {
 	// PHAR and vendor support
 	PHARFiles            []PHARInfo        `json:"phar_files,omitempty"`
 	HasVendorDirectory   bool              `json:"has_vendor_directory,omitempty"`
+	// PHP Extensions
+	PHPExtensions        PHPExtensionInfo  `json:"php_extensions,omitempty"`
+}
+
+// PHPExtension represents a PHP extension with its version and metadata
+type PHPExtension struct {
+	Name        string            `json:"name"`
+	Version     string            `json:"version"`
+	Type        string            `json:"type"`        // "core", "bundled", "external"
+	Status      string            `json:"status"`      // "enabled", "disabled"
+	ZendVersion string            `json:"zend_version,omitempty"`
+	Authors     []string          `json:"authors,omitempty"`
+	Description string            `json:"description,omitempty"`
+	Metadata    map[string]string `json:"metadata,omitempty"`
+}
+
+// PHPExtensionInfo contains comprehensive information about PHP and its extensions
+type PHPExtensionInfo struct {
+	PHPVersion           string                   `json:"php_version"`
+	ZendVersion          string                   `json:"zend_version"`
+	Extensions           map[string]PHPExtension  `json:"extensions"`
+	CoreModules          []string                 `json:"core_modules"`
+	LoadedExtensions     []string                 `json:"loaded_extensions"`
+	ConfiguredExtensions []string                 `json:"configured_extensions"`
+	BuildDate            string                   `json:"build_date,omitempty"`
+	Configure            string                   `json:"configure,omitempty"`
+	ServerAPI            string                   `json:"server_api,omitempty"`
 }
 
 // PHARInfo represents information about a PHAR archive
