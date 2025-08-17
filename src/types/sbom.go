@@ -104,6 +104,8 @@ type Extra struct {
 	HasVendorDirectory bool       `json:"has_vendor_directory,omitempty"`
 	// PHP Extensions
 	PHPExtensions PHPExtensionInfo `json:"php_extensions,omitempty"`
+	// Private repository support
+	PrivateRepositoryInfo map[string]interface{} `json:"private_repository_info,omitempty"`
 }
 
 // PHPExtension represents a PHP extension with its version and metadata

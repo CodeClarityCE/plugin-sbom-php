@@ -26,6 +26,13 @@ func Start(sourceCodeDir string, analysisId uuid.UUID, knowledge_db *bun.DB) typ
 	log.Println("Starting PHP SBOM analysis...")
 	log.Printf("PHP SBOM Debug - sourceCodeDir: %s", sourceCodeDir)
 
+	// Check if private repository support is enabled
+	enablePrivateRepos := os.Getenv("ENABLE_PRIVATE_REPOS") == "true"
+	if enablePrivateRepos {
+		log.Println("Private repository support enabled")
+		return StartWithPrivateRepos(sourceCodeDir, analysisId, knowledge_db)
+	}
+
 	// Check if directory exists
 	if _, err := os.Stat(sourceCodeDir); os.IsNotExist(err) {
 		log.Printf("PHP SBOM Error - Directory does not exist: %s", sourceCodeDir)
@@ -354,6 +361,33 @@ func convertAuthors(authors []parser.Author) []types.Author {
 	return result
 }
 
+// convertLicenses converts license data (can be string or array) to string slice
+func convertLicenses(license any) []string {
+	if license == nil {
+		return []string{}
+	}
+
+	switch v := license.(type) {
+	case string:
+		if v == "" {
+			return []string{}
+		}
+		return []string{v}
+	case []string:
+		return v
+	case []interface{}:
+		result := make([]string, 0, len(v))
+		for _, item := range v {
+			if str, ok := item.(string); ok && str != "" {
+				result = append(result, str)
+			}
+		}
+		return result
+	default:
+		return []string{}
+	}
+}
+
 func getTotalDependencyCount(workspaces map[string]types.WorkSpace) int {
 	total := 0
 	for _, ws := range workspaces {
@@ -412,5 +446,156 @@ func convertExtensionInfo(extInfo *extensions.PHPExtensionInfo) types.PHPExtensi
 		BuildDate:            extInfo.BuildDate,
 		Configure:            extInfo.Configure,
 		ServerAPI:            extInfo.ServerAPI,
+	}
+}
+
+// StartWithPrivateRepos performs PHP SBOM analysis with private repository support
+func StartWithPrivateRepos(sourceCodeDir string, analysisId uuid.UUID, knowledge_db *bun.DB) types.Output {
+	start := time.Now()
+
+	log.Println("Starting enhanced PHP SBOM analysis with private repository support...")
+
+	// Check if directory exists
+	if _, err := os.Stat(sourceCodeDir); os.IsNotExist(err) {
+		log.Printf("PHP SBOM Error - Directory does not exist: %s", sourceCodeDir)
+		exceptionManager.AddError(
+			"Source directory not found",
+			exceptionManager.GENERIC_ERROR,
+			fmt.Sprintf("The source directory does not exist: %s", sourceCodeDir),
+			"SourceCodeDirDoesNotExist",
+		)
+		return generateFailureOutput(start, "")
+	}
+
+	// Create enhanced parser with private repository support
+	enhancedParser, err := parser.NewEnhancedComposerParser(sourceCodeDir)
+	if err != nil {
+		log.Printf("Warning: Could not initialize enhanced parser, falling back to standard parsing: %v", err)
+		return Start(sourceCodeDir, analysisId, knowledge_db) // Fallback to standard parsing
+	}
+
+	// Parse with private repository support
+	enhancedSBOM, err := enhancedParser.ParseWithPrivateRepos()
+	if err != nil {
+		log.Printf("Enhanced parsing failed, falling back to standard parsing: %v", err)
+		return Start(sourceCodeDir, analysisId, knowledge_db) // Fallback to standard parsing
+	}
+
+	// Log private repository statistics
+	privateCount := enhancedSBOM.GetPrivatePackageCount()
+	authSummary := enhancedSBOM.GetAuthenticationSummary()
+	errorSummary := enhancedSBOM.GetResolutionErrorSummary()
+
+	log.Printf("Enhanced SBOM analysis completed: %d private packages detected", privateCount)
+	log.Printf("Authentication summary: %+v", authSummary)
+	log.Printf("Resolution errors: %+v", errorSummary)
+
+	// Convert enhanced SBOM to standard format for compatibility
+	return convertEnhancedSBOMToStandard(enhancedSBOM, sourceCodeDir, start)
+}
+
+// convertEnhancedSBOMToStandard converts enhanced SBOM to standard format
+func convertEnhancedSBOMToStandard(enhancedSBOM *parser.EnhancedSBOM, sourceCodeDir string, start time.Time) types.Output {
+	// Create standard workspaces
+	workspaces := make(map[string]types.WorkSpace)
+
+	// Default workspace with regular packages
+	defaultWorkspace := types.WorkSpace{
+		Dependencies: make(map[string]map[string]types.Versions),
+		Start: types.Start{
+			Dependencies:    []types.WorkSpaceDependency{},
+			DevDependencies: []types.WorkSpaceDependency{},
+		},
+	}
+
+	// Convert enhanced packages to standard format
+	for _, enhancedPkg := range enhancedSBOM.Packages {
+		pkg := enhancedPkg.PackageInfo
+		versions := map[string]types.Versions{
+			pkg.Version: {
+				Key:        pkg.Version,
+				Licenses:   convertLicenses(pkg.License),
+				Direct:     true, // Assume direct dependencies
+				Prod:       true,
+				Requires:   pkg.Require,
+				Transitive: false,
+				Optional:   false,
+				Bundled:    false,
+				Dev:        false,
+			},
+		}
+		defaultWorkspace.Dependencies[pkg.Name] = versions
+
+		// Add to start dependencies
+		defaultWorkspace.Start.Dependencies = append(defaultWorkspace.Start.Dependencies, types.WorkSpaceDependency{
+			Name:       pkg.Name,
+			Version:    pkg.Version,
+			Constraint: "*", // Simplified constraint
+		})
+	}
+
+	// Add dev packages
+	for _, enhancedPkg := range enhancedSBOM.DevPackages {
+		pkg := enhancedPkg.PackageInfo
+		versions := map[string]types.Versions{
+			pkg.Version: {
+				Key:        pkg.Version,
+				Licenses:   convertLicenses(pkg.License),
+				Direct:     true,
+				Prod:       false,
+				Dev:        true,
+				Requires:   pkg.RequireDev,
+				Transitive: false,
+				Optional:   false,
+				Bundled:    false,
+			},
+		}
+		defaultWorkspace.Dependencies[pkg.Name] = versions
+
+		// Add to dev dependencies
+		defaultWorkspace.Start.DevDependencies = append(defaultWorkspace.Start.DevDependencies, types.WorkSpaceDependency{
+			Name:       pkg.Name,
+			Version:    pkg.Version,
+			Constraint: "*", // Simplified constraint
+		})
+	}
+
+	workspaces["default"] = defaultWorkspace
+
+	// Generate analysis info with private repository information
+	analysisInfo := types.AnalysisInfo{
+		Status:           codeclarity.SUCCESS,
+		ProjectName:      "Enhanced PHP Project",
+		WorkingDirectory: sourceCodeDir,
+		PackageManager:   "composer",
+		Time: types.Time{
+			AnalysisStartTime: start.Format(time.RFC3339),
+			AnalysisEndTime:   time.Now().Format(time.RFC3339),
+			AnalysisDeltaTime: time.Since(start).Seconds(),
+		},
+		Errors: exceptionManager.GetErrors(),
+		Paths: types.Paths{
+			Lockfile:            filepath.Join(sourceCodeDir, "composer.lock"),
+			PackageFile:         filepath.Join(sourceCodeDir, "composer.json"),
+			RelativeLockFile:    "composer.lock",
+			RelativePackageFile: "composer.json",
+		},
+		Extra: types.Extra{
+			VersionSeperator:    ".",
+			ImportPathSeperator: "/",
+			LockFileVersion:     2,
+			PrivateRepositoryInfo: map[string]interface{}{
+				"private_packages_count":    enhancedSBOM.GetPrivatePackageCount(),
+				"private_repositories":      len(enhancedSBOM.PrivateRepositories),
+				"authentication_summary":    enhancedSBOM.GetAuthenticationSummary(),
+				"resolution_error_summary":  enhancedSBOM.GetResolutionErrorSummary(),
+				"private_repositories_list": enhancedSBOM.PrivateRepositories,
+			},
+		},
+	}
+
+	return types.Output{
+		WorkSpaces:   workspaces,
+		AnalysisInfo: analysisInfo,
 	}
 }
