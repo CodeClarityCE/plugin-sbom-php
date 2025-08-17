@@ -109,7 +109,7 @@ func startAnalysis(args Arguments, dispatcherMessage types_amqp.DispatcherPlugin
 				},
 			},
 		}
-		
+
 		result := codeclarity.Result{
 			Result:     types.ConvertOutputToMap(sbomOutput),
 			AnalysisId: dispatcherMessage.AnalysisId,
@@ -120,12 +120,12 @@ func startAnalysis(args Arguments, dispatcherMessage types_amqp.DispatcherPlugin
 		if err != nil {
 			panic(err)
 		}
-		
+
 		return map[string]any{"sbomKey": result.Id}, codeclarity.FAILURE, nil
 	}
-	
+
 	project := path + "/" + projectInterface.(string)
-	
+
 	// Debug logging
 	log.Printf("PHP SBOM Debug - DOWNLOAD_PATH: %s", path)
 	log.Printf("PHP SBOM Debug - project config: %s", projectInterface.(string))

@@ -67,7 +67,7 @@ func TestFindPHPProjects(t *testing.T) {
 	assert.NotNil(t, projectInfo.ComposerJSON)
 	assert.NotNil(t, projectInfo.ComposerLock)
 	assert.False(t, projectInfo.IsMonorepo)
-	
+
 	// Verify composer.json was parsed correctly
 	assert.Equal(t, "test/project", projectInfo.ComposerJSON.Name)
 	assert.Equal(t, "project", projectInfo.ComposerJSON.Type)
@@ -162,7 +162,7 @@ func TestFindPHPProjectsMonorepo(t *testing.T) {
 	// Verify main project info
 	assert.Equal(t, "company/monorepo", projectInfo.Name)
 	assert.True(t, projectInfo.IsMonorepo)
-	
+
 	// Verify root composer.json was parsed correctly
 	assert.Equal(t, "company/monorepo", projectInfo.ComposerJSON.Name)
 	assert.Equal(t, "project", projectInfo.ComposerJSON.Type)

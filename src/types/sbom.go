@@ -91,27 +91,27 @@ type Extra struct {
 	ImportPathSeperator string `json:"import_path_seperator"`
 	LockFileVersion     int    `json:"lock_file_version"`
 	// PHP-specific fields
-	PHPVersion           string            `json:"php_version,omitempty"`
-	Framework            string            `json:"framework,omitempty"`
-	MinimumStability     string            `json:"minimum_stability,omitempty"`
-	PreferStable         bool              `json:"prefer_stable,omitempty"`
-	PluginAPIVersion     string            `json:"plugin_api_version,omitempty"`
-	ContentHash          string            `json:"content_hash,omitempty"`
-	Platform             map[string]string `json:"platform,omitempty"`
-	Statistics           Statistics        `json:"statistics,omitempty"`
+	PHPVersion       string            `json:"php_version,omitempty"`
+	Framework        string            `json:"framework,omitempty"`
+	MinimumStability string            `json:"minimum_stability,omitempty"`
+	PreferStable     bool              `json:"prefer_stable,omitempty"`
+	PluginAPIVersion string            `json:"plugin_api_version,omitempty"`
+	ContentHash      string            `json:"content_hash,omitempty"`
+	Platform         map[string]string `json:"platform,omitempty"`
+	Statistics       Statistics        `json:"statistics,omitempty"`
 	// PHAR and vendor support
-	PHARFiles            []PHARInfo        `json:"phar_files,omitempty"`
-	HasVendorDirectory   bool              `json:"has_vendor_directory,omitempty"`
+	PHARFiles          []PHARInfo `json:"phar_files,omitempty"`
+	HasVendorDirectory bool       `json:"has_vendor_directory,omitempty"`
 	// PHP Extensions
-	PHPExtensions        PHPExtensionInfo  `json:"php_extensions,omitempty"`
+	PHPExtensions PHPExtensionInfo `json:"php_extensions,omitempty"`
 }
 
 // PHPExtension represents a PHP extension with its version and metadata
 type PHPExtension struct {
 	Name        string            `json:"name"`
 	Version     string            `json:"version"`
-	Type        string            `json:"type"`        // "core", "bundled", "external"
-	Status      string            `json:"status"`      // "enabled", "disabled"
+	Type        string            `json:"type"`   // "core", "bundled", "external"
+	Status      string            `json:"status"` // "enabled", "disabled"
 	ZendVersion string            `json:"zend_version,omitempty"`
 	Authors     []string          `json:"authors,omitempty"`
 	Description string            `json:"description,omitempty"`
@@ -120,15 +120,15 @@ type PHPExtension struct {
 
 // PHPExtensionInfo contains comprehensive information about PHP and its extensions
 type PHPExtensionInfo struct {
-	PHPVersion           string                   `json:"php_version"`
-	ZendVersion          string                   `json:"zend_version"`
-	Extensions           map[string]PHPExtension  `json:"extensions"`
-	CoreModules          []string                 `json:"core_modules"`
-	LoadedExtensions     []string                 `json:"loaded_extensions"`
-	ConfiguredExtensions []string                 `json:"configured_extensions"`
-	BuildDate            string                   `json:"build_date,omitempty"`
-	Configure            string                   `json:"configure,omitempty"`
-	ServerAPI            string                   `json:"server_api,omitempty"`
+	PHPVersion           string                  `json:"php_version"`
+	ZendVersion          string                  `json:"zend_version"`
+	Extensions           map[string]PHPExtension `json:"extensions"`
+	CoreModules          []string                `json:"core_modules"`
+	LoadedExtensions     []string                `json:"loaded_extensions"`
+	ConfiguredExtensions []string                `json:"configured_extensions"`
+	BuildDate            string                  `json:"build_date,omitempty"`
+	Configure            string                  `json:"configure,omitempty"`
+	ServerAPI            string                  `json:"server_api,omitempty"`
 }
 
 // PHARInfo represents information about a PHAR archive
@@ -161,16 +161,16 @@ type Time struct {
 
 // Statistics contains analysis statistics (PHP-specific, goes in Extra)
 type Statistics struct {
-	TotalPackages          int            `json:"total_packages"`
-	DirectPackages         int            `json:"direct_packages"`
-	TransitivePackages     int            `json:"transitive_packages"`
-	DevPackages            int            `json:"dev_packages"`
-	UniqueAuthors          int            `json:"unique_authors"`
-	UniqueLicenses         int            `json:"unique_licenses"`
-	LicenseBreakdown       map[string]int `json:"license_breakdown"`
-	TypeBreakdown          map[string]int `json:"type_breakdown"`
-	VulnerablePackages     int            `json:"vulnerable_packages"`
-	OutdatedPackages       int            `json:"outdated_packages"`
+	TotalPackages      int            `json:"total_packages"`
+	DirectPackages     int            `json:"direct_packages"`
+	TransitivePackages int            `json:"transitive_packages"`
+	DevPackages        int            `json:"dev_packages"`
+	UniqueAuthors      int            `json:"unique_authors"`
+	UniqueLicenses     int            `json:"unique_licenses"`
+	LicenseBreakdown   map[string]int `json:"license_breakdown"`
+	TypeBreakdown      map[string]int `json:"type_breakdown"`
+	VulnerablePackages int            `json:"vulnerable_packages"`
+	OutdatedPackages   int            `json:"outdated_packages"`
 }
 
 // Constants for PHP SBOM (compatible with js-sbom patterns)

@@ -11,16 +11,16 @@ import (
 
 // ComposerJSON represents the structure of composer.json
 type ComposerJSON struct {
-	Name        string                 `json:"name"`
-	Description string                 `json:"description"`
-	Type        string                 `json:"type"`
-	Version     string                 `json:"version"`
-	License     any            `json:"license"` // Can be string or array
-	Require     map[string]string      `json:"require"`
-	RequireDev  map[string]string      `json:"require-dev"`
-	Autoload    map[string]any `json:"autoload"`
-	Authors     []Author               `json:"authors"`
-	Extra       map[string]any `json:"extra"`
+	Name        string            `json:"name"`
+	Description string            `json:"description"`
+	Type        string            `json:"type"`
+	Version     string            `json:"version"`
+	License     any               `json:"license"` // Can be string or array
+	Require     map[string]string `json:"require"`
+	RequireDev  map[string]string `json:"require-dev"`
+	Autoload    map[string]any    `json:"autoload"`
+	Authors     []Author          `json:"authors"`
+	Extra       map[string]any    `json:"extra"`
 }
 
 // Author represents a package author
@@ -32,37 +32,37 @@ type Author struct {
 
 // ComposerLock represents the structure of composer.lock
 type ComposerLock struct {
-	Readme          []string         `json:"_readme"`
-	ContentHash     string           `json:"content-hash"`
-	Packages        []PackageInfo    `json:"packages"`
-	PackagesDev     []PackageInfo    `json:"packages-dev"`
-	Aliases         []any    `json:"aliases"`
-	MinimumStability string          `json:"minimum-stability"`
-	StabilityFlags  any              `json:"stability-flags"` // Can be array or map
-	PreferStable    bool             `json:"prefer-stable"`
-	PreferLowest    bool             `json:"prefer-lowest"`
-	Platform        map[string]string `json:"platform"`
-	PlatformDev     []any    `json:"platform-dev"` // Can be array or map
-	PluginAPIVersion string          `json:"plugin-api-version"`
+	Readme           []string          `json:"_readme"`
+	ContentHash      string            `json:"content-hash"`
+	Packages         []PackageInfo     `json:"packages"`
+	PackagesDev      []PackageInfo     `json:"packages-dev"`
+	Aliases          []any             `json:"aliases"`
+	MinimumStability string            `json:"minimum-stability"`
+	StabilityFlags   any               `json:"stability-flags"` // Can be array or map
+	PreferStable     bool              `json:"prefer-stable"`
+	PreferLowest     bool              `json:"prefer-lowest"`
+	Platform         map[string]string `json:"platform"`
+	PlatformDev      []any             `json:"platform-dev"` // Can be array or map
+	PluginAPIVersion string            `json:"plugin-api-version"`
 }
 
 // PackageInfo represents a package in composer.lock
 type PackageInfo struct {
-	Name            string                 `json:"name"`
-	Version         string                 `json:"version"`
-	Source          Source                 `json:"source"`
-	Dist            Dist                   `json:"dist"`
-	Require         map[string]string      `json:"require"`
-	RequireDev      map[string]string      `json:"require-dev"`
-	Type            string                 `json:"type"`
-	License         any            `json:"license"`
-	Authors         []Author               `json:"authors"`
-	Description     string                 `json:"description"`
-	Keywords        []string               `json:"keywords"`
-	Time            string                 `json:"time"`
-	Autoload        map[string]any `json:"autoload"`
-	NotificationURL string                 `json:"notification-url"`
-	Extra           map[string]any `json:"extra"`
+	Name            string            `json:"name"`
+	Version         string            `json:"version"`
+	Source          Source            `json:"source"`
+	Dist            Dist              `json:"dist"`
+	Require         map[string]string `json:"require"`
+	RequireDev      map[string]string `json:"require-dev"`
+	Type            string            `json:"type"`
+	License         any               `json:"license"`
+	Authors         []Author          `json:"authors"`
+	Description     string            `json:"description"`
+	Keywords        []string          `json:"keywords"`
+	Time            string            `json:"time"`
+	Autoload        map[string]any    `json:"autoload"`
+	NotificationURL string            `json:"notification-url"`
+	Extra           map[string]any    `json:"extra"`
 }
 
 // Source represents the source control info
@@ -149,7 +149,7 @@ func FindPHARFiles(rootDir string) ([]string, error) {
 	var pharFiles []string
 
 	log.Printf("FindPHARFiles Debug - searching for PHAR archives in: %s", rootDir)
-	
+
 	err := filepath.Walk(rootDir, func(path string, info os.FileInfo, err error) error {
 		if err != nil {
 			return err
@@ -176,14 +176,14 @@ func FindPHARFiles(rootDir string) ([]string, error) {
 
 // PHARInfo represents information about a PHAR archive
 type PHARInfo struct {
-	Path        string                 `json:"path"`
-	Name        string                 `json:"name"`
-	Size        int64                  `json:"size"`
-	Modified    string                 `json:"modified"`
-	Signature   string                 `json:"signature"`
-	Metadata    map[string]interface{} `json:"metadata"`
-	MainScript  string                 `json:"main_script"`
-	IsExecutable bool                  `json:"is_executable"`
+	Path         string                 `json:"path"`
+	Name         string                 `json:"name"`
+	Size         int64                  `json:"size"`
+	Modified     string                 `json:"modified"`
+	Signature    string                 `json:"signature"`
+	Metadata     map[string]interface{} `json:"metadata"`
+	MainScript   string                 `json:"main_script"`
+	IsExecutable bool                   `json:"is_executable"`
 }
 
 // AnalyzePHARFile analyzes a PHAR archive and extracts metadata
@@ -194,11 +194,11 @@ func AnalyzePHARFile(pharPath string) (*PHARInfo, error) {
 	}
 
 	pharInfo := &PHARInfo{
-		Path:        pharPath,
-		Name:        filepath.Base(pharPath),
-		Size:        info.Size(),
-		Modified:    info.ModTime().Format("2006-01-02T15:04:05Z"),
-		Metadata:    make(map[string]interface{}),
+		Path:         pharPath,
+		Name:         filepath.Base(pharPath),
+		Size:         info.Size(),
+		Modified:     info.ModTime().Format("2006-01-02T15:04:05Z"),
+		Metadata:     make(map[string]interface{}),
 		IsExecutable: isExecutable(pharPath),
 	}
 

@@ -6,7 +6,7 @@ import (
 	"os/exec"
 	"regexp"
 	"strings"
-	
+
 	"github.com/CodeClarityCE/plugin-php-sbom/src/parser"
 )
 
@@ -14,8 +14,8 @@ import (
 type PHPExtension struct {
 	Name        string            `json:"name"`
 	Version     string            `json:"version"`
-	Type        string            `json:"type"`        // "core", "bundled", "external"
-	Status      string            `json:"status"`      // "enabled", "disabled"
+	Type        string            `json:"type"`   // "core", "bundled", "external"
+	Status      string            `json:"status"` // "enabled", "disabled"
 	ZendVersion string            `json:"zend_version,omitempty"`
 	Authors     []string          `json:"authors,omitempty"`
 	Description string            `json:"description,omitempty"`
@@ -24,15 +24,15 @@ type PHPExtension struct {
 
 // PHPExtensionInfo contains comprehensive information about PHP and its extensions
 type PHPExtensionInfo struct {
-	PHPVersion   string                   `json:"php_version"`
-	ZendVersion  string                   `json:"zend_version"`
-	Extensions   map[string]PHPExtension  `json:"extensions"`
-	CoreModules  []string                 `json:"core_modules"`
-	LoadedExtensions []string             `json:"loaded_extensions"`
-	ConfiguredExtensions []string         `json:"configured_extensions"`
-	BuildDate    string                   `json:"build_date,omitempty"`
-	Configure    string                   `json:"configure,omitempty"`
-	ServerAPI    string                   `json:"server_api,omitempty"`
+	PHPVersion           string                  `json:"php_version"`
+	ZendVersion          string                  `json:"zend_version"`
+	Extensions           map[string]PHPExtension `json:"extensions"`
+	CoreModules          []string                `json:"core_modules"`
+	LoadedExtensions     []string                `json:"loaded_extensions"`
+	ConfiguredExtensions []string                `json:"configured_extensions"`
+	BuildDate            string                  `json:"build_date,omitempty"`
+	Configure            string                  `json:"configure,omitempty"`
+	ServerAPI            string                  `json:"server_api,omitempty"`
 }
 
 // DetectPHPExtensions discovers PHP extensions and their versions from the project environment
@@ -82,18 +82,18 @@ func detectFromPHPInfo(info *PHPExtensionInfo) error {
 
 	lines := strings.Split(string(output), "\n")
 	var currentSection string
-	
+
 	for _, line := range lines {
 		line = strings.TrimSpace(line)
 		if line == "" {
 			continue
 		}
-		
+
 		if strings.HasPrefix(line, "[") && strings.HasSuffix(line, "]") {
 			currentSection = strings.Trim(line, "[]")
 			continue
 		}
-		
+
 		switch currentSection {
 		case "PHP Modules":
 			info.LoadedExtensions = append(info.LoadedExtensions, line)
@@ -162,9 +162,8 @@ func detectFromComposerJSON(sourceCodeDir string, info *PHPExtensionInfo) error 
 
 	// Extract PHP extension requirements
 	for packageName, version := range composerData.Require {
-		if strings.HasPrefix(packageName, "ext-") {
-			extName := strings.TrimPrefix(packageName, "ext-")
-			
+		if extName, found := strings.CutPrefix(packageName, "ext-"); found {
+
 			// Add extension to our info
 			info.Extensions[extName] = PHPExtension{
 				Name:    extName,
@@ -172,13 +171,13 @@ func detectFromComposerJSON(sourceCodeDir string, info *PHPExtensionInfo) error 
 				Type:    "external", // Extensions from composer are typically external
 				Status:  "required", // Required by composer.json
 			}
-			
+
 			// Also add to configured extensions list
 			info.ConfiguredExtensions = append(info.ConfiguredExtensions, extName)
-			
+
 			log.Printf("Detected extension from composer.json: %s (%s)", extName, version)
 		}
-		
+
 		// Also check for PHP version requirement
 		if packageName == "php" && info.PHPVersion == "" {
 			info.PHPVersion = version
@@ -188,9 +187,8 @@ func detectFromComposerJSON(sourceCodeDir string, info *PHPExtensionInfo) error 
 
 	// Also check require-dev for development extensions
 	for packageName, version := range composerData.RequireDev {
-		if strings.HasPrefix(packageName, "ext-") {
-			extName := strings.TrimPrefix(packageName, "ext-")
-			
+		if extName, found := strings.CutPrefix(packageName, "ext-"); found {
+
 			// Only add if not already present (require takes precedence over require-dev)
 			if _, exists := info.Extensions[extName]; !exists {
 				info.Extensions[extName] = PHPExtension{
@@ -199,7 +197,7 @@ func detectFromComposerJSON(sourceCodeDir string, info *PHPExtensionInfo) error 
 					Type:    "external",
 					Status:  "dev-required", // Required for development only
 				}
-				
+
 				info.ConfiguredExtensions = append(info.ConfiguredExtensions, extName)
 				log.Printf("Detected dev extension from composer.json: %s (%s)", extName, version)
 			}
@@ -210,17 +208,17 @@ func detectFromComposerJSON(sourceCodeDir string, info *PHPExtensionInfo) error 
 }
 
 // detectFromDockerfile looks for extension installations in Dockerfile
-func detectFromDockerfile(sourceCodeDir string, info *PHPExtensionInfo) error {
+func detectFromDockerfile(_ string, _ *PHPExtensionInfo) error {
 	// Look for docker-php-ext-install commands in Dockerfile
 	// This is common in containerized PHP applications
-	
+
 	return nil // Placeholder
 }
 
 // detectFromPHPIni parses php.ini files for extension configuration
-func detectFromPHPIni(sourceCodeDir string, info *PHPExtensionInfo) error {
+func detectFromPHPIni(_ string, _ *PHPExtensionInfo) error {
 	// Parse php.ini files for extension= directives
-	
+
 	return nil // Placeholder
 }
 
@@ -229,18 +227,18 @@ func enrichExtensionInfo(info *PHPExtensionInfo) {
 	// Add version information for known extensions
 	for name, ext := range info.Extensions {
 		enriched := ext
-		
+
 		// Try to get version information for specific extensions
 		if version := getExtensionVersion(name); version != "" {
 			enriched.Version = version
 		}
-		
+
 		// Categorize extension type
 		enriched.Type = categorizeExtension(name)
-		
+
 		// Add description
 		enriched.Description = getExtensionDescription(name)
-		
+
 		info.Extensions[name] = enriched
 	}
 }
@@ -254,23 +252,23 @@ func getExtensionVersion(extensionName string) string {
 	if err != nil {
 		return ""
 	}
-	
+
 	version := strings.TrimSpace(string(output))
 	if version == "" || strings.Contains(version, "Error") {
 		return ""
 	}
-	
+
 	return version
 }
 
 // categorizeExtension determines the type of extension
 func categorizeExtension(name string) string {
 	coreExtensions := map[string]bool{
-		"core": true, "date": true, "pcre": true, "reflection": true, 
+		"core": true, "date": true, "pcre": true, "reflection": true,
 		"spl": true, "standard": true, "filter": true, "hash": true,
 		"json": true, "libxml": true, "session": true, "tokenizer": true,
 	}
-	
+
 	bundledExtensions := map[string]bool{
 		"bcmath": true, "calendar": true, "ctype": true, "dom": true,
 		"fileinfo": true, "ftp": true, "gd": true, "gettext": true,
@@ -280,14 +278,14 @@ func categorizeExtension(name string) string {
 		"xml": true, "xmlreader": true, "xmlwriter": true, "zip": true,
 		"zlib": true, "curl": true, "exif": true,
 	}
-	
+
 	if coreExtensions[name] {
 		return "core"
 	}
 	if bundledExtensions[name] {
 		return "bundled"
 	}
-	
+
 	return "external"
 }
 
@@ -295,7 +293,7 @@ func categorizeExtension(name string) string {
 func getExtensionDescription(name string) string {
 	descriptions := map[string]string{
 		"curl":      "Client URL Library for HTTP requests",
-		"gd":        "Graphics Draw library for image manipulation", 
+		"gd":        "Graphics Draw library for image manipulation",
 		"json":      "JavaScript Object Notation support",
 		"mbstring":  "Multi-byte string handling",
 		"mysqli":    "MySQL Improved extension",
@@ -327,11 +325,11 @@ func getExtensionDescription(name string) string {
 		"xmlwriter": "XMLWriter support",
 		"exif":      "EXIF metadata from images",
 	}
-	
+
 	if desc, exists := descriptions[name]; exists {
 		return desc
 	}
-	
+
 	return ""
 }
 
@@ -374,6 +372,6 @@ func (ext PHPExtension) IsVulnerabilityRelevant() bool {
 		"simplexml": true,
 		"dom":       true,
 	}
-	
+
 	return vulnerableExtensions[ext.Name] || ext.Type == "external"
 }

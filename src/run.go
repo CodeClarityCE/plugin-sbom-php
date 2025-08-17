@@ -22,10 +22,10 @@ import (
 // Compatible with js-sbom Start function signature
 func Start(sourceCodeDir string, analysisId uuid.UUID, knowledge_db *bun.DB) types.Output {
 	start := time.Now()
-	
+
 	log.Println("Starting PHP SBOM analysis...")
 	log.Printf("PHP SBOM Debug - sourceCodeDir: %s", sourceCodeDir)
-	
+
 	// Check if directory exists
 	if _, err := os.Stat(sourceCodeDir); os.IsNotExist(err) {
 		log.Printf("PHP SBOM Error - Directory does not exist: %s", sourceCodeDir)
@@ -37,7 +37,7 @@ func Start(sourceCodeDir string, analysisId uuid.UUID, knowledge_db *bun.DB) typ
 		)
 		return generateFailureOutput(start, "")
 	}
-	
+
 	// Find PHP projects in the source directory
 	projectInfo, err := project_finder.FindPHPProjects(sourceCodeDir)
 	if err != nil {
@@ -49,17 +49,17 @@ func Start(sourceCodeDir string, analysisId uuid.UUID, knowledge_db *bun.DB) typ
 		)
 		return generateFailureOutput(start, "")
 	}
-	
+
 	log.Printf("Found PHP project: %s (Framework: %s)", projectInfo.Name, projectInfo.Framework)
-	
+
 	// Check if composer.lock exists
 	if projectInfo.ComposerLock == nil {
 		log.Println("Warning: No composer.lock file found. Analysis will be based on composer.json only")
 	}
-	
+
 	// Build workspaces in js-sbom compatible format
 	workspaces := buildCompatibleWorkspaces(projectInfo)
-	
+
 	// Send package information to knowledge service for tracking
 	// Extract all dependencies from all workspaces
 	allDependencies := make(map[string]map[string]types.Versions)
@@ -69,7 +69,7 @@ func Start(sourceCodeDir string, analysisId uuid.UUID, knowledge_db *bun.DB) typ
 		}
 	}
 	knowledge.UpdateKnowledge(allDependencies, analysisId)
-	
+
 	// Detect PHP extensions
 	log.Println("Detecting PHP extensions...")
 	extensionInfo, err := extensions.DetectPHPExtensions(sourceCodeDir)
@@ -82,30 +82,30 @@ func Start(sourceCodeDir string, analysisId uuid.UUID, knowledge_db *bun.DB) typ
 			CoreModules:          []string{},
 		}
 	}
-	
+
 	// Generate analysis info in js-sbom compatible format
 	analysisInfo := generateCompatibleAnalysisInfo(projectInfo, extensionInfo, start)
-	
+
 	// Success output
 	output := types.Output{
 		WorkSpaces:   workspaces,
 		AnalysisInfo: analysisInfo,
 	}
-	
-	log.Printf("PHP SBOM analysis completed successfully. Found %d dependencies", 
+
+	log.Printf("PHP SBOM analysis completed successfully. Found %d dependencies",
 		getTotalDependencyCount(workspaces))
-	
+
 	return output
 }
 
 // buildCompatibleWorkspaces builds workspaces in js-sbom compatible format
 func buildCompatibleWorkspaces(projectInfo *project_finder.ProjectInfo) map[string]types.WorkSpace {
 	workspaces := make(map[string]types.WorkSpace)
-	
+
 	// Main workspace
 	mainWorkspace := buildCompatibleWorkspace(projectInfo.ComposerJSON, projectInfo.ComposerLock)
 	workspaces[types.DEFAULT_WORKSPACE_CHARACTER] = mainWorkspace
-	
+
 	// Additional workspaces if monorepo
 	if projectInfo.IsMonorepo {
 		for _, ws := range projectInfo.Workspaces {
@@ -113,7 +113,7 @@ func buildCompatibleWorkspaces(projectInfo *project_finder.ProjectInfo) map[stri
 			workspaces[ws.RelativeComposerJSON] = workspace
 		}
 	}
-	
+
 	return workspaces
 }
 
@@ -122,13 +122,13 @@ func buildCompatibleWorkspace(composerJSON *parser.ComposerJSON, composerLock *p
 	dependencies := make(map[string]map[string]types.Versions)
 	directDeps := []types.WorkSpaceDependency{}
 	directDevDeps := []types.WorkSpaceDependency{}
-	
+
 	if composerLock != nil {
 		// Process production packages from composer.lock
 		for _, pkg := range composerLock.Packages {
 			// Create version key like js-sbom does
 			versionKey := pkg.Version
-			
+
 			// Create versions map for this dependency
 			versions := make(map[string]types.Versions)
 			versions[versionKey] = types.Versions{
@@ -148,14 +148,14 @@ func buildCompatibleWorkspace(composerJSON *parser.ComposerJSON, composerLock *p
 				Authors:     convertAuthors(pkg.Authors),
 				Description: pkg.Description,
 			}
-			
+
 			dependencies[pkg.Name] = versions
 		}
-		
+
 		// Process dev packages from composer.lock
 		for _, pkg := range composerLock.PackagesDev {
 			versionKey := pkg.Version
-			
+
 			versions := make(map[string]types.Versions)
 			versions[versionKey] = types.Versions{
 				Key:          pkg.Name + VERSION_SEPARATOR + pkg.Version,
@@ -174,11 +174,11 @@ func buildCompatibleWorkspace(composerJSON *parser.ComposerJSON, composerLock *p
 				Authors:     convertAuthors(pkg.Authors),
 				Description: pkg.Description,
 			}
-			
+
 			dependencies[pkg.Name] = versions
 		}
 	}
-	
+
 	// Build direct dependencies list from composer.json
 	if composerJSON != nil {
 		for name, version := range composerJSON.Require {
@@ -190,7 +190,7 @@ func buildCompatibleWorkspace(composerJSON *parser.ComposerJSON, composerLock *p
 				})
 			}
 		}
-		
+
 		for name, version := range composerJSON.RequireDev {
 			directDevDeps = append(directDevDeps, types.WorkSpaceDependency{
 				Name:       name,
@@ -199,7 +199,7 @@ func buildCompatibleWorkspace(composerJSON *parser.ComposerJSON, composerLock *p
 			})
 		}
 	}
-	
+
 	return types.WorkSpace{
 		Dependencies: dependencies,
 		Start: types.Start{
@@ -212,7 +212,7 @@ func buildCompatibleWorkspace(composerJSON *parser.ComposerJSON, composerLock *p
 // generateCompatibleAnalysisInfo generates analysis info in js-sbom compatible format
 func generateCompatibleAnalysisInfo(projectInfo *project_finder.ProjectInfo, extensionInfo *extensions.PHPExtensionInfo, start time.Time) types.AnalysisInfo {
 	end := time.Now()
-	
+
 	// Build paths (composer.json/composer.lock instead of package.json/package-lock.json)
 	paths := types.Paths{
 		Lockfile:             projectInfo.ComposerLockPath,
@@ -221,12 +221,12 @@ func generateCompatibleAnalysisInfo(projectInfo *project_finder.ProjectInfo, ext
 		RelativeLockFile:     projectInfo.RelativeComposerLock,
 		RelativePackageFile:  projectInfo.RelativeComposerJSON,
 	}
-	
+
 	// Add workspace package files for monorepo
 	for _, ws := range projectInfo.Workspaces {
 		paths.WorkSpacePackageFile[ws.Name] = ws.ComposerJSONPath
 	}
-	
+
 	// Build extra with PHP-specific information
 	extra := types.Extra{
 		// Standard fields compatible with js-sbom
@@ -234,15 +234,15 @@ func generateCompatibleAnalysisInfo(projectInfo *project_finder.ProjectInfo, ext
 		ImportPathSeperator: types.IMPORT_PATH_SEPARATOR,
 		LockFileVersion:     1, // Composer lock version
 		// PHP-specific fields
-		PHPVersion:         project_finder.DetectPHPVersion(projectInfo.ComposerJSON),
-		Framework:          projectInfo.Framework,
+		PHPVersion: project_finder.DetectPHPVersion(projectInfo.ComposerJSON),
+		Framework:  projectInfo.Framework,
 		// PHAR and vendor support
 		PHARFiles:          convertPHARInfos(projectInfo.PHARFiles),
 		HasVendorDirectory: projectInfo.HasVendorDirectory,
 		// PHP Extensions
-		PHPExtensions:      convertExtensionInfo(extensionInfo),
+		PHPExtensions: convertExtensionInfo(extensionInfo),
 	}
-	
+
 	if projectInfo.ComposerLock != nil {
 		extra.MinimumStability = projectInfo.ComposerLock.MinimumStability
 		extra.PreferStable = projectInfo.ComposerLock.PreferStable
@@ -250,7 +250,7 @@ func generateCompatibleAnalysisInfo(projectInfo *project_finder.ProjectInfo, ext
 		extra.ContentHash = projectInfo.ComposerLock.ContentHash
 		extra.Platform = projectInfo.ComposerLock.Platform
 	}
-	
+
 	return types.AnalysisInfo{
 		Status:           codeclarity.SUCCESS,
 		ProjectName:      getProjectName(projectInfo.ComposerJSON),
@@ -275,7 +275,7 @@ func generateCompatibleAnalysisInfo(projectInfo *project_finder.ProjectInfo, ext
 // generateFailureOutput generates a failure output
 func generateFailureOutput(start time.Time, projectName string) types.Output {
 	end := time.Now()
-	
+
 	return types.Output{
 		WorkSpaces: make(map[string]types.WorkSpace),
 		AnalysisInfo: types.AnalysisInfo{
@@ -318,12 +318,12 @@ func isDirectDependency(packageName string, composerJSON *parser.ComposerJSON, i
 	if composerJSON == nil {
 		return false
 	}
-	
+
 	if isDev {
 		_, exists := composerJSON.RequireDev[packageName]
 		return exists
 	}
-	
+
 	_, exists := composerJSON.Require[packageName]
 	return exists
 }
@@ -387,7 +387,7 @@ func convertExtensionInfo(extInfo *extensions.PHPExtensionInfo) types.PHPExtensi
 			Extensions: make(map[string]types.PHPExtension),
 		}
 	}
-	
+
 	extensions := make(map[string]types.PHPExtension)
 	for name, ext := range extInfo.Extensions {
 		extensions[name] = types.PHPExtension{
@@ -401,7 +401,7 @@ func convertExtensionInfo(extInfo *extensions.PHPExtensionInfo) types.PHPExtensi
 			Metadata:    ext.Metadata,
 		}
 	}
-	
+
 	return types.PHPExtensionInfo{
 		PHPVersion:           extInfo.PHPVersion,
 		ZendVersion:          extInfo.ZendVersion,

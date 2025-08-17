@@ -18,27 +18,27 @@ func TestE2E_PHPExtensionDetection(t *testing.T) {
 
 	// Verify PHP extensions are detected and included in SBOM
 	assert.NotEmpty(t, out.AnalysisInfo.Extra.PHPExtensions.Extensions, "Should detect PHP extensions")
-	
+
 	// Test that common PHP extensions are detected
 	extensions := out.AnalysisInfo.Extra.PHPExtensions.Extensions
-	
+
 	// Check for expected extensions from composer.json
 	expectedExtensions := []string{"json", "openssl", "curl", "mbstring", "xml", "gd", "zip", "pdo"}
 	foundExtensions := 0
-	
+
 	for _, extName := range expectedExtensions {
 		if ext, exists := extensions[extName]; exists {
 			foundExtensions++
 			assert.NotEmpty(t, ext.Name, "Extension name should not be empty")
 			assert.Contains(t, []string{"enabled", "loaded", "required", "dev-required"}, ext.Status, "Extension should be enabled, loaded, or required by composer")
-			
+
 			// Verify extension type categorization
 			assert.Contains(t, []string{"core", "bundled", "external"}, ext.Type, "Extension should have valid type")
 		}
 	}
-	
+
 	assert.Greater(t, foundExtensions, 3, "Should find at least 4 common PHP extensions")
-	
+
 	// Test that vulnerable extensions are properly flagged
 	vulnerableExtensions := []string{"openssl", "curl", "xml", "gd"}
 	for _, extName := range vulnerableExtensions {
@@ -65,38 +65,38 @@ func TestE2E_VulnerablePackageDetection(t *testing.T) {
 	// Check for known vulnerable packages
 	vulnerablePackages := map[string]string{
 		"symfony/http-foundation": "v4.0.0",
-		"twig/twig":              "v1.35.0",
-		"doctrine/dbal":          "v2.5.0",
-		"monolog/monolog":        "1.17.0",
-		"guzzlehttp/guzzle":      "6.0.0",
-		"phpmailer/phpmailer":    "v5.2.14",
-		"firebase/php-jwt":       "v3.0.0",
-		"league/flysystem":       "1.0.0",
+		"twig/twig":               "v1.35.0",
+		"doctrine/dbal":           "v2.5.0",
+		"monolog/monolog":         "1.17.0",
+		"guzzlehttp/guzzle":       "6.0.0",
+		"phpmailer/phpmailer":     "v5.2.14",
+		"firebase/php-jwt":        "v3.0.0",
+		"league/flysystem":        "1.0.0",
 	}
 
 	foundVulnerablePackages := 0
 	for packageName, expectedVersion := range vulnerablePackages {
 		if versions, exists := defaultWs.Dependencies[packageName]; exists {
 			foundVulnerablePackages++
-			
+
 			// Verify the package version matches what we expect
 			versionFound := false
 			for versionStr, versionInfo := range versions {
 				if versionStr == expectedVersion {
 					versionFound = true
-					
+
 					// Verify package structure
 					assert.NotEmpty(t, versionInfo.Key, "Version key should not be empty")
 					assert.Contains(t, versionInfo.Key, "@", "Version key should contain @ separator")
 					assert.Equal(t, packageName+"@"+expectedVersion, versionInfo.Key, "Version key should match expected format")
-					
+
 					// Verify dependency classification
 					assert.True(t, versionInfo.Prod, "Vulnerable packages should be production dependencies")
 					assert.False(t, versionInfo.Dev, "Production packages should not be marked as dev")
-					
+
 					// Verify licenses are detected
 					assert.NotEmpty(t, versionInfo.Licenses, "Should detect package licenses")
-					
+
 					break
 				}
 			}
@@ -109,7 +109,7 @@ func TestE2E_VulnerablePackageDetection(t *testing.T) {
 	// Verify dev dependencies are separate
 	devPackages := map[string]string{
 		"phpunit/phpunit": "6.0.0",
-		"psy/psysh":      "v0.8.0",
+		"psy/psysh":       "v0.8.0",
 	}
 
 	for packageName, expectedVersion := range devPackages {
@@ -130,13 +130,13 @@ func TestE2E_VulnerablePackageDetection(t *testing.T) {
 // TestE2E_PHPFrameworkDetection tests framework detection across different PHP frameworks
 func TestE2E_PHPFrameworkDetection(t *testing.T) {
 	testCases := map[string]string{
-		"./test1":              "CakePHP",         // Passbolt uses CakePHP
-		"./test2-laravel":      "Laravel",         // Laravel project
-		"./test3-symfony":      "Symfony",         // Symfony project  
-		"./test4-wordpress":    "WordPress",       // WordPress project
-		"./test5-codeigniter":  "CodeIgniter 4",   // CodeIgniter project
+		"./test1":              "CakePHP",            // Passbolt uses CakePHP
+		"./test2-laravel":      "Laravel",            // Laravel project
+		"./test3-symfony":      "Symfony",            // Symfony project
+		"./test4-wordpress":    "WordPress",          // WordPress project
+		"./test5-codeigniter":  "CodeIgniter 4",      // CodeIgniter project
 		"./test6-pure-php":     "Symfony Components", // Pure PHP with Symfony components
-		"./test7-symfony-demo": "Symfony",         // Symfony demo
+		"./test7-symfony-demo": "Symfony",            // Symfony demo
 	}
 
 	for testDir, expectedFramework := range testCases {
@@ -148,7 +148,7 @@ func TestE2E_PHPFrameworkDetection(t *testing.T) {
 
 			// Test framework detection
 			actualFramework := out.AnalysisInfo.Extra.Framework
-			
+
 			// Some frameworks might be detected as "Generic PHP" if specific detection fails
 			if actualFramework != expectedFramework {
 				assert.Contains(t, []string{expectedFramework, "Generic PHP"}, actualFramework,
@@ -223,11 +223,11 @@ func TestE2E_ErrorHandlingAndEdgeCases(t *testing.T) {
 	// Test with non-existent directory
 	t.Run("NonExistentDirectory", func(t *testing.T) {
 		out := plugin.Start("./nonexistent-directory", uuid.UUID{}, nil)
-		
+
 		assert.NotNil(t, out)
 		assert.Equal(t, codeclarity.FAILURE, out.AnalysisInfo.Status)
 		assert.NotEmpty(t, out.AnalysisInfo.Errors, "Should have error messages")
-		
+
 		// Verify error structure
 		for _, err := range out.AnalysisInfo.Errors {
 			assert.NotEmpty(t, err.Public.Description, "Error should have public description")
@@ -238,7 +238,7 @@ func TestE2E_ErrorHandlingAndEdgeCases(t *testing.T) {
 	// Test with directory containing no PHP project
 	t.Run("NonPHPProject", func(t *testing.T) {
 		out := plugin.Start("../", uuid.UUID{}, nil) // Parent directory without composer files
-		
+
 		assert.NotNil(t, out)
 		// Should either fail or succeed with empty dependencies
 		if out.AnalysisInfo.Status == codeclarity.FAILURE {
@@ -253,10 +253,10 @@ func TestE2E_ErrorHandlingAndEdgeCases(t *testing.T) {
 	t.Run("ComposerJSONOnly", func(t *testing.T) {
 		// Most test cases only have composer.json (no working composer.lock)
 		out := plugin.Start("./test2-laravel", uuid.UUID{}, nil)
-		
+
 		assert.NotNil(t, out)
 		assert.Equal(t, codeclarity.SUCCESS, out.AnalysisInfo.Status)
-		
+
 		// Should detect project but have no dependencies without composer.lock
 		assert.NotEmpty(t, out.AnalysisInfo.ProjectName, "Should detect project name")
 		assert.Empty(t, out.WorkSpaces["."].Dependencies, "Should have no dependencies without composer.lock")
@@ -280,7 +280,7 @@ func TestE2E_PerformanceAndMemory(t *testing.T) {
 	for _, ws := range out.WorkSpaces {
 		totalDeps += len(ws.Dependencies)
 	}
-	
+
 	assert.Greater(t, totalDeps, 10, "Should detect at least 10 dependencies in Passbolt")
 	assert.Less(t, totalDeps, 1000, "Should not detect unreasonably high number of dependencies")
 
@@ -291,7 +291,7 @@ func TestE2E_PerformanceAndMemory(t *testing.T) {
 			totalVersions += len(versions)
 		}
 	}
-	
+
 	assert.Equal(t, totalDeps, totalVersions, "Each dependency should have exactly one version in lock file")
 }
 
@@ -306,14 +306,14 @@ func TestE2E_PHPExtensionVulnerabilityRelevance(t *testing.T) {
 
 	// Test that vulnerable extensions are detected and properly categorized
 	vulnerableExtensions := map[string]bool{
-		"openssl": true,
-		"curl":    true, 
-		"xml":     true,
-		"gd":      true,
-		"json":    true,
+		"openssl":  true,
+		"curl":     true,
+		"xml":      true,
+		"gd":       true,
+		"json":     true,
 		"mbstring": true,
-		"zip":     true,
-		"pdo":     true,
+		"zip":      true,
+		"pdo":      true,
 	}
 
 	for extName, shouldBeVulnerable := range vulnerableExtensions {
@@ -321,7 +321,7 @@ func TestE2E_PHPExtensionVulnerabilityRelevance(t *testing.T) {
 			// These extensions should be flagged as relevant for vulnerability tracking
 			assert.NotEmpty(t, ext.Description, "Vulnerable extension %s should have description", extName)
 			assert.Contains(t, []string{"core", "bundled"}, ext.Type, "Vulnerable extension %s should be core or bundled", extName)
-			
+
 			// Note: IsVulnerabilityRelevant would be called by vuln-finder, not SBOM plugin
 			// But we can verify the extensions have the necessary metadata
 			assert.NotEmpty(t, ext.Name, "Extension %s should have name", extName)

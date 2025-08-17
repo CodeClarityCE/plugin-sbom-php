@@ -277,7 +277,7 @@ func TestParseComposerLock(t *testing.T) {
 
 	// Test packages
 	assert.Len(t, result.Packages, 2)
-	
+
 	// Test Symfony Console package
 	symfonyPackage := result.Packages[0]
 	assert.Equal(t, "symfony/console", symfonyPackage.Name)
@@ -321,10 +321,10 @@ func TestFindComposerFiles(t *testing.T) {
 	// Create test files
 	composerJSONPath := filepath.Join(tempDir, "composer.json")
 	composerLockPath := filepath.Join(tempDir, "composer.lock")
-	
+
 	err = os.WriteFile(composerJSONPath, []byte("{}"), 0644)
 	require.NoError(t, err)
-	
+
 	err = os.WriteFile(composerLockPath, []byte("{}"), 0644)
 	require.NoError(t, err)
 
@@ -332,7 +332,7 @@ func TestFindComposerFiles(t *testing.T) {
 	subDir := filepath.Join(tempDir, "packages", "sub-package")
 	err = os.MkdirAll(subDir, 0755)
 	require.NoError(t, err)
-	
+
 	subComposerJSON := filepath.Join(subDir, "composer.json")
 	err = os.WriteFile(subComposerJSON, []byte("{}"), 0644)
 	require.NoError(t, err)
@@ -341,7 +341,7 @@ func TestFindComposerFiles(t *testing.T) {
 	vendorDir := filepath.Join(tempDir, "vendor")
 	err = os.MkdirAll(vendorDir, 0755)
 	require.NoError(t, err)
-	
+
 	vendorComposer := filepath.Join(vendorDir, "composer.json")
 	err = os.WriteFile(vendorComposer, []byte("{}"), 0644)
 	require.NoError(t, err)
@@ -358,7 +358,7 @@ func TestFindComposerFiles(t *testing.T) {
 	assert.Contains(t, jsonFiles, composerJSONPath)
 	assert.Contains(t, jsonFiles, subComposerJSON)
 	assert.Contains(t, lockFiles, composerLockPath)
-	
+
 	// Verify vendor files are not included
 	assert.NotContains(t, jsonFiles, vendorComposer)
 }
@@ -376,10 +376,10 @@ func TestFindPHARFiles(t *testing.T) {
 
 	err = os.WriteFile(pharFile1, []byte("test phar content"), 0644)
 	require.NoError(t, err)
-	
+
 	err = os.WriteFile(pharFile2, []byte("another phar"), 0644)
 	require.NoError(t, err)
-	
+
 	err = os.WriteFile(regularFile, []byte("<?php echo 'test';"), 0644)
 	require.NoError(t, err)
 
@@ -387,7 +387,7 @@ func TestFindPHARFiles(t *testing.T) {
 	vendorDir := filepath.Join(tempDir, "vendor")
 	err = os.MkdirAll(vendorDir, 0755)
 	require.NoError(t, err)
-	
+
 	vendorPhar := filepath.Join(vendorDir, "vendor.phar")
 	err = os.WriteFile(vendorPhar, []byte("vendor phar"), 0644)
 	require.NoError(t, err)
