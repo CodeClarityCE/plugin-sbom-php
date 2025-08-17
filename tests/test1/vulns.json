@@ -1,0 +1,29 @@
+{
+  "workspaces": {
+    ".": {
+      "Vulnerabilities": []
+    }
+  },
+  "analysis_info": {
+    "status": "success",
+    "errors": [
+      {
+        "private_error": {
+          "description": "",
+          "key": "UnsupportedLanguageRequested"
+        },
+        "public_error": {
+          "description": "",
+          "key": "UnsupportedLanguageRequested"
+        }
+      }
+    ],
+    "analysis_start_time": "2025-08-17 10:41:26.746409 +0200 CEST",
+    "analysis_end_time": "2025-08-17 10:41:26.780949 +0200 CEST",
+    "analysis_delta_time": 0.034539917,
+    "version_seperator": "",
+    "import_path_seperator": "",
+    "default_workspace_name": "",
+    "self_managed_workspace_name": ""
+  }
+}
