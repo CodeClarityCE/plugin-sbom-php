@@ -5,46 +5,6 @@
       "start": {
         "dependencies": [
           {
-            "name": "psr/http-message",
-            "version": "",
-            "constraint": "^2.0"
-          },
-          {
-            "name": "guzzlehttp/guzzle",
-            "version": "",
-            "constraint": "^7.8"
-          },
-          {
-            "name": "symfony/validator",
-            "version": "",
-            "constraint": "^7.0"
-          },
-          {
-            "name": "nesbot/carbon",
-            "version": "",
-            "constraint": "^3.0"
-          },
-          {
-            "name": "league/csv",
-            "version": "",
-            "constraint": "^9.15"
-          },
-          {
-            "name": "doctrine/collections",
-            "version": "",
-            "constraint": "^2.1"
-          },
-          {
-            "name": "ramsey/uuid",
-            "version": "",
-            "constraint": "^4.7"
-          },
-          {
-            "name": "psr/http-client",
-            "version": "",
-            "constraint": "^1.0"
-          },
-          {
             "name": "monolog/monolog",
             "version": "",
             "constraint": "^3.5"
@@ -53,6 +13,41 @@
             "name": "psr/log",
             "version": "",
             "constraint": "^3.0"
+          },
+          {
+            "name": "psr/http-client",
+            "version": "",
+            "constraint": "^1.0"
+          },
+          {
+            "name": "guzzlehttp/guzzle",
+            "version": "",
+            "constraint": "^7.8"
+          },
+          {
+            "name": "nesbot/carbon",
+            "version": "",
+            "constraint": "^3.0"
+          },
+          {
+            "name": "psr/http-message",
+            "version": "",
+            "constraint": "^2.0"
+          },
+          {
+            "name": "symfony/validator",
+            "version": "",
+            "constraint": "^7.0"
+          },
+          {
+            "name": "ramsey/uuid",
+            "version": "",
+            "constraint": "^4.7"
+          },
+          {
+            "name": "league/csv",
+            "version": "",
+            "constraint": "^9.15"
           },
           {
             "name": "guzzlehttp/psr7",
@@ -65,27 +60,17 @@
             "constraint": "^7.0"
           },
           {
+            "name": "doctrine/collections",
+            "version": "",
+            "constraint": "^2.1"
+          },
+          {
             "name": "vlucas/phpdotenv",
             "version": "",
             "constraint": "^5.6"
           }
         ],
         "dev_dependencies": [
-          {
-            "name": "phpunit/phpunit",
-            "version": "",
-            "constraint": "^10.5"
-          },
-          {
-            "name": "phpstan/phpstan",
-            "version": "",
-            "constraint": "^1.10"
-          },
-          {
-            "name": "squizlabs/php_codesniffer",
-            "version": "",
-            "constraint": "^3.8"
-          },
           {
             "name": "friendsofphp/php-cs-fixer",
             "version": "",
@@ -105,6 +90,21 @@
             "name": "infection/infection",
             "version": "",
             "constraint": "^0.27"
+          },
+          {
+            "name": "phpunit/phpunit",
+            "version": "",
+            "constraint": "^10.5"
+          },
+          {
+            "name": "phpstan/phpstan",
+            "version": "",
+            "constraint": "^1.10"
+          },
+          {
+            "name": "squizlabs/php_codesniffer",
+            "version": "",
+            "constraint": "^3.8"
           }
         ]
       }
@@ -116,22 +116,11 @@
     "working_directory": "test6-pure-php",
     "package_manager": "composer",
     "time": {
-      "analysis_start_time": "2025-08-17T15:16:06+02:00",
-      "analysis_end_time": "2025-08-17T15:16:06+02:00",
-      "analysis_delta_time": 0.002792
+      "analysis_start_time": "2025-08-17T21:23:11+02:00",
+      "analysis_end_time": "2025-08-17T21:23:11+02:00",
+      "analysis_delta_time": 0.004638958
     },
-    "errors": [
-      {
-        "private_error": {
-          "description": "The source directory does not exist: ./nonexistent",
-          "key": "SourceCodeDirDoesNotExist"
-        },
-        "public_error": {
-          "description": "Source directory not found",
-          "key": "GenericException"
-        }
-      }
-    ],
+    "errors": null,
     "paths": {
       "lock_file_path": "test6-pure-php/composer.lock",
       "package_file_path": "test6-pure-php/composer.json",
@@ -161,6 +150,14 @@
         "type_breakdown": null,
         "vulnerable_packages": 0,
         "outdated_packages": 0
+      },
+      "php_extensions": {
+        "php_version": "",
+        "zend_version": "",
+        "extensions": {},
+        "core_modules": [],
+        "loaded_extensions": [],
+        "configured_extensions": []
       }
     }
   }

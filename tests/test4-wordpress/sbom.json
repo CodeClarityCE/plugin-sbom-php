@@ -5,34 +5,14 @@
       "start": {
         "dependencies": [
           {
-            "name": "wpackagist-plugin/akismet",
-            "version": "",
-            "constraint": "^5.3"
-          },
-          {
-            "name": "wpackagist-plugin/hello-dolly",
-            "version": "",
-            "constraint": "^1.7"
-          },
-          {
-            "name": "monolog/monolog",
-            "version": "",
-            "constraint": "^3.5"
-          },
-          {
-            "name": "johnpbloch/wordpress",
-            "version": "",
-            "constraint": "^6.4"
-          },
-          {
             "name": "johnpbloch/wordpress-core-installer",
             "version": "",
             "constraint": "^2.0"
           },
           {
-            "name": "wpackagist-theme/twentytwentyfour",
+            "name": "monolog/monolog",
             "version": "",
-            "constraint": "^1.0"
+            "constraint": "^3.5"
           },
           {
             "name": "guzzlehttp/guzzle",
@@ -45,9 +25,29 @@
             "constraint": "^3.7"
           },
           {
+            "name": "wpackagist-plugin/akismet",
+            "version": "",
+            "constraint": "^5.3"
+          },
+          {
+            "name": "wpackagist-plugin/hello-dolly",
+            "version": "",
+            "constraint": "^1.7"
+          },
+          {
+            "name": "wpackagist-theme/twentytwentyfour",
+            "version": "",
+            "constraint": "^1.0"
+          },
+          {
             "name": "vlucas/phpdotenv",
             "version": "",
             "constraint": "^5.6"
+          },
+          {
+            "name": "johnpbloch/wordpress",
+            "version": "",
+            "constraint": "^6.4"
           }
         ],
         "dev_dependencies": [
@@ -81,22 +81,11 @@
     "working_directory": "test4-wordpress",
     "package_manager": "composer",
     "time": {
-      "analysis_start_time": "2025-08-17T15:16:06+02:00",
-      "analysis_end_time": "2025-08-17T15:16:06+02:00",
-      "analysis_delta_time": 0.002634667
+      "analysis_start_time": "2025-08-17T21:23:11+02:00",
+      "analysis_end_time": "2025-08-17T21:23:11+02:00",
+      "analysis_delta_time": 0.002830583
     },
-    "errors": [
-      {
-        "private_error": {
-          "description": "The source directory does not exist: ./nonexistent",
-          "key": "SourceCodeDirDoesNotExist"
-        },
-        "public_error": {
-          "description": "Source directory not found",
-          "key": "GenericException"
-        }
-      }
-    ],
+    "errors": null,
     "paths": {
       "lock_file_path": "test4-wordpress/composer.lock",
       "package_file_path": "test4-wordpress/composer.json",
@@ -126,6 +115,14 @@
         "type_breakdown": null,
         "vulnerable_packages": 0,
         "outdated_packages": 0
+      },
+      "php_extensions": {
+        "php_version": "",
+        "zend_version": "",
+        "extensions": {},
+        "core_modules": [],
+        "loaded_extensions": [],
+        "configured_extensions": []
       }
     }
   }

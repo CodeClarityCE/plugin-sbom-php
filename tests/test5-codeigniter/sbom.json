@@ -5,29 +5,9 @@
       "start": {
         "dependencies": [
           {
-            "name": "codeigniter4/framework",
-            "version": "",
-            "constraint": "^4.4"
-          },
-          {
-            "name": "kint-php/kint",
-            "version": "",
-            "constraint": "^5.0.4"
-          },
-          {
             "name": "psr/log",
             "version": "",
             "constraint": "^3.0"
-          },
-          {
-            "name": "guzzlehttp/guzzle",
-            "version": "",
-            "constraint": "^7.8"
-          },
-          {
-            "name": "doctrine/dbal",
-            "version": "",
-            "constraint": "^3.7"
           },
           {
             "name": "firebase/php-jwt",
@@ -38,19 +18,29 @@
             "name": "vlucas/phpdotenv",
             "version": "",
             "constraint": "^5.6"
+          },
+          {
+            "name": "codeigniter4/framework",
+            "version": "",
+            "constraint": "^4.4"
+          },
+          {
+            "name": "kint-php/kint",
+            "version": "",
+            "constraint": "^5.0.4"
+          },
+          {
+            "name": "guzzlehttp/guzzle",
+            "version": "",
+            "constraint": "^7.8"
+          },
+          {
+            "name": "doctrine/dbal",
+            "version": "",
+            "constraint": "^3.7"
           }
         ],
         "dev_dependencies": [
-          {
-            "name": "fakerphp/faker",
-            "version": "",
-            "constraint": "^1.23"
-          },
-          {
-            "name": "mikey179/vfsstream",
-            "version": "",
-            "constraint": "^1.6"
-          },
           {
             "name": "phpunit/phpunit",
             "version": "",
@@ -70,6 +60,16 @@
             "name": "rector/rector",
             "version": "",
             "constraint": "^0.19"
+          },
+          {
+            "name": "fakerphp/faker",
+            "version": "",
+            "constraint": "^1.23"
+          },
+          {
+            "name": "mikey179/vfsstream",
+            "version": "",
+            "constraint": "^1.6"
           }
         ]
       }
@@ -81,22 +81,11 @@
     "working_directory": "test5-codeigniter",
     "package_manager": "composer",
     "time": {
-      "analysis_start_time": "2025-08-17T15:16:06+02:00",
-      "analysis_end_time": "2025-08-17T15:16:06+02:00",
-      "analysis_delta_time": 0.002363042
+      "analysis_start_time": "2025-08-17T21:23:11+02:00",
+      "analysis_end_time": "2025-08-17T21:23:11+02:00",
+      "analysis_delta_time": 0.00300425
     },
-    "errors": [
-      {
-        "private_error": {
-          "description": "The source directory does not exist: ./nonexistent",
-          "key": "SourceCodeDirDoesNotExist"
-        },
-        "public_error": {
-          "description": "Source directory not found",
-          "key": "GenericException"
-        }
-      }
-    ],
+    "errors": null,
     "paths": {
       "lock_file_path": "test5-codeigniter/composer.lock",
       "package_file_path": "test5-codeigniter/composer.json",
@@ -126,6 +115,14 @@
         "type_breakdown": null,
         "vulnerable_packages": 0,
         "outdated_packages": 0
+      },
+      "php_extensions": {
+        "php_version": "",
+        "zend_version": "",
+        "extensions": {},
+        "core_modules": [],
+        "loaded_extensions": [],
+        "configured_extensions": []
       }
     }
   }

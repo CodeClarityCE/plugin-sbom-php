@@ -5,26 +5,6 @@
       "start": {
         "dependencies": [
           {
-            "name": "laravel/framework",
-            "version": "",
-            "constraint": "^11.0"
-          },
-          {
-            "name": "laravel/sanctum",
-            "version": "",
-            "constraint": "^4.0"
-          },
-          {
-            "name": "guzzlehttp/guzzle",
-            "version": "",
-            "constraint": "^7.8"
-          },
-          {
-            "name": "doctrine/dbal",
-            "version": "",
-            "constraint": "^4.0"
-          },
-          {
             "name": "monolog/monolog",
             "version": "",
             "constraint": "^3.0"
@@ -35,17 +15,42 @@
             "constraint": "^7.0"
           },
           {
+            "name": "illuminate/support",
+            "version": "",
+            "constraint": "^11.0"
+          },
+          {
+            "name": "laravel/framework",
+            "version": "",
+            "constraint": "^11.0"
+          },
+          {
+            "name": "laravel/sanctum",
+            "version": "",
+            "constraint": "^4.0"
+          },
+          {
             "name": "laravel/tinker",
             "version": "",
             "constraint": "^2.9"
           },
           {
-            "name": "illuminate/support",
+            "name": "guzzlehttp/guzzle",
             "version": "",
-            "constraint": "^11.0"
+            "constraint": "^7.8"
+          },
+          {
+            "name": "doctrine/dbal",
+            "version": "",
+            "constraint": "^4.0"
           }
         ],
         "dev_dependencies": [
+          {
+            "name": "spatie/laravel-ignition",
+            "version": "",
+            "constraint": "^2.4"
+          },
           {
             "name": "fakerphp/faker",
             "version": "",
@@ -75,11 +80,6 @@
             "name": "phpunit/phpunit",
             "version": "",
             "constraint": "^11.0.1"
-          },
-          {
-            "name": "spatie/laravel-ignition",
-            "version": "",
-            "constraint": "^2.4"
           }
         ]
       }
@@ -91,22 +91,11 @@
     "working_directory": "test2-laravel",
     "package_manager": "composer",
     "time": {
-      "analysis_start_time": "2025-08-17T15:16:06+02:00",
-      "analysis_end_time": "2025-08-17T15:16:06+02:00",
-      "analysis_delta_time": 0.005630084
+      "analysis_start_time": "2025-08-17T21:23:11+02:00",
+      "analysis_end_time": "2025-08-17T21:23:11+02:00",
+      "analysis_delta_time": 0.004065375
     },
-    "errors": [
-      {
-        "private_error": {
-          "description": "The source directory does not exist: ./nonexistent",
-          "key": "SourceCodeDirDoesNotExist"
-        },
-        "public_error": {
-          "description": "Source directory not found",
-          "key": "GenericException"
-        }
-      }
-    ],
+    "errors": null,
     "paths": {
       "lock_file_path": "test2-laravel/composer.lock",
       "package_file_path": "test2-laravel/composer.json",
@@ -136,6 +125,14 @@
         "type_breakdown": null,
         "vulnerable_packages": 0,
         "outdated_packages": 0
+      },
+      "php_extensions": {
+        "php_version": "",
+        "zend_version": "",
+        "extensions": {},
+        "core_modules": [],
+        "loaded_extensions": [],
+        "configured_extensions": []
       }
     }
   }
