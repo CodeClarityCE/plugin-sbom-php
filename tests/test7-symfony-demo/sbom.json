@@ -5,112 +5,7 @@
       "start": {
         "dependencies": [
           {
-            "name": "exercise/htmlpurifier-bundle",
-            "version": "",
-            "constraint": "^6.0"
-          },
-          {
-            "name": "scheb/2fa-bundle",
-            "version": "",
-            "constraint": "^7.3"
-          },
-          {
-            "name": "symfony/property-access",
-            "version": "",
-            "constraint": "7.0.*"
-          },
-          {
-            "name": "symfony/ux-chartjs",
-            "version": "",
-            "constraint": "^2.13"
-          },
-          {
-            "name": "twig/cssinliner-extra",
-            "version": "",
-            "constraint": "^3.8"
-          },
-          {
-            "name": "symfony/asset",
-            "version": "",
-            "constraint": "7.0.*"
-          },
-          {
-            "name": "symfony/console",
-            "version": "",
-            "constraint": "7.0.*"
-          },
-          {
-            "name": "symfony/flex",
-            "version": "",
-            "constraint": "^2"
-          },
-          {
-            "name": "symfony/monolog-bundle",
-            "version": "",
-            "constraint": "^3.0"
-          },
-          {
-            "name": "twig/inky-extra",
-            "version": "",
-            "constraint": "^3.8"
-          },
-          {
-            "name": "doctrine/doctrine-migrations-bundle",
-            "version": "",
-            "constraint": "^3.3"
-          },
-          {
-            "name": "symfony/form",
-            "version": "",
-            "constraint": "7.0.*"
-          },
-          {
-            "name": "symfony/framework-bundle",
-            "version": "",
-            "constraint": "7.0.*"
-          },
-          {
-            "name": "symfony/security-bundle",
-            "version": "",
-            "constraint": "7.0.*"
-          },
-          {
-            "name": "symfony/web-link",
-            "version": "",
-            "constraint": "7.0.*"
-          },
-          {
-            "name": "pagerfanta/doctrine-orm-adapter",
-            "version": "",
-            "constraint": "^4.2"
-          },
-          {
-            "name": "phpstan/phpdoc-parser",
-            "version": "",
-            "constraint": "^1.26"
-          },
-          {
-            "name": "symfony/webpack-encore-bundle",
-            "version": "",
-            "constraint": "^2.1"
-          },
-          {
-            "name": "symfony/yaml",
-            "version": "",
-            "constraint": "7.0.*"
-          },
-          {
-            "name": "doctrine/doctrine-bundle",
-            "version": "",
-            "constraint": "^2.11"
-          },
-          {
-            "name": "phpdocumentor/reflection-docblock",
-            "version": "",
-            "constraint": "^5.3"
-          },
-          {
-            "name": "scheb/2fa-qr-code",
+            "name": "scheb/2fa-totp",
             "version": "",
             "constraint": "^7.3"
           },
@@ -120,79 +15,34 @@
             "constraint": "7.0.*"
           },
           {
-            "name": "symfony/http-client",
-            "version": "",
-            "constraint": "7.0.*"
-          },
-          {
-            "name": "symfony/string",
-            "version": "",
-            "constraint": "7.0.*"
-          },
-          {
-            "name": "symfony/validator",
-            "version": "",
-            "constraint": "7.0.*"
-          },
-          {
-            "name": "scheb/2fa-totp",
-            "version": "",
-            "constraint": "^7.3"
-          },
-          {
             "name": "symfony/expression-language",
             "version": "",
             "constraint": "7.0.*"
           },
           {
-            "name": "symfony/intl",
+            "name": "symfony/flex",
+            "version": "",
+            "constraint": "^2"
+          },
+          {
+            "name": "symfony/framework-bundle",
             "version": "",
             "constraint": "7.0.*"
           },
           {
-            "name": "symfony/mime",
-            "version": "",
-            "constraint": "7.0.*"
-          },
-          {
-            "name": "symfony/serializer",
-            "version": "",
-            "constraint": "7.0.*"
-          },
-          {
-            "name": "symfony/twig-bundle",
-            "version": "",
-            "constraint": "7.0.*"
-          },
-          {
-            "name": "twig/extra-bundle",
-            "version": "",
-            "constraint": "^2.12|^3.0"
-          },
-          {
-            "name": "doctrine/orm",
+            "name": "symfony/monolog-bundle",
             "version": "",
             "constraint": "^3.0"
           },
           {
-            "name": "erusev/parsedown",
+            "name": "twig/cssinliner-extra",
             "version": "",
-            "constraint": "^1.7"
+            "constraint": "^3.8"
           },
           {
-            "name": "symfony/doctrine-messenger",
+            "name": "doctrine/doctrine-migrations-bundle",
             "version": "",
-            "constraint": "7.0.*"
-          },
-          {
-            "name": "symfony/mailer",
-            "version": "",
-            "constraint": "7.0.*"
-          },
-          {
-            "name": "symfony/property-info",
-            "version": "",
-            "constraint": "7.0.*"
+            "constraint": "^3.3"
           },
           {
             "name": "symfony/runtime",
@@ -205,17 +55,12 @@
             "constraint": "7.0.*"
           },
           {
-            "name": "babdev/pagerfanta-bundle",
-            "version": "",
-            "constraint": "^4.4"
-          },
-          {
-            "name": "symfony/notifier",
+            "name": "symfony/twig-bundle",
             "version": "",
             "constraint": "7.0.*"
           },
           {
-            "name": "symfony/process",
+            "name": "symfony/yaml",
             "version": "",
             "constraint": "7.0.*"
           },
@@ -225,19 +70,179 @@
             "constraint": "^3.8"
           },
           {
+            "name": "phpdocumentor/reflection-docblock",
+            "version": "",
+            "constraint": "^5.3"
+          },
+          {
+            "name": "phpstan/phpdoc-parser",
+            "version": "",
+            "constraint": "^1.26"
+          },
+          {
+            "name": "symfony/console",
+            "version": "",
+            "constraint": "7.0.*"
+          },
+          {
+            "name": "babdev/pagerfanta-bundle",
+            "version": "",
+            "constraint": "^4.4"
+          },
+          {
+            "name": "symfony/doctrine-messenger",
+            "version": "",
+            "constraint": "7.0.*"
+          },
+          {
+            "name": "symfony/mailer",
+            "version": "",
+            "constraint": "7.0.*"
+          },
+          {
+            "name": "symfony/process",
+            "version": "",
+            "constraint": "7.0.*"
+          },
+          {
+            "name": "symfony/property-info",
+            "version": "",
+            "constraint": "7.0.*"
+          },
+          {
+            "name": "symfony/serializer",
+            "version": "",
+            "constraint": "7.0.*"
+          },
+          {
+            "name": "scheb/2fa-qr-code",
+            "version": "",
+            "constraint": "^7.3"
+          },
+          {
+            "name": "pagerfanta/doctrine-orm-adapter",
+            "version": "",
+            "constraint": "^4.2"
+          },
+          {
+            "name": "symfony/notifier",
+            "version": "",
+            "constraint": "7.0.*"
+          },
+          {
+            "name": "symfony/validator",
+            "version": "",
+            "constraint": "7.0.*"
+          },
+          {
+            "name": "symfony/web-link",
+            "version": "",
+            "constraint": "7.0.*"
+          },
+          {
+            "name": "symfony/webpack-encore-bundle",
+            "version": "",
+            "constraint": "^2.1"
+          },
+          {
+            "name": "symfony/http-client",
+            "version": "",
+            "constraint": "7.0.*"
+          },
+          {
+            "name": "symfony/property-access",
+            "version": "",
+            "constraint": "7.0.*"
+          },
+          {
+            "name": "symfony/ux-chartjs",
+            "version": "",
+            "constraint": "^2.13"
+          },
+          {
+            "name": "twig/extra-bundle",
+            "version": "",
+            "constraint": "^2.12|^3.0"
+          },
+          {
             "name": "twig/twig",
             "version": "",
             "constraint": "^2.12|^3.0"
+          },
+          {
+            "name": "symfony/mime",
+            "version": "",
+            "constraint": "7.0.*"
+          },
+          {
+            "name": "doctrine/orm",
+            "version": "",
+            "constraint": "^3.0"
+          },
+          {
+            "name": "symfony/asset",
+            "version": "",
+            "constraint": "7.0.*"
+          },
+          {
+            "name": "symfony/security-bundle",
+            "version": "",
+            "constraint": "7.0.*"
+          },
+          {
+            "name": "symfony/string",
+            "version": "",
+            "constraint": "7.0.*"
+          },
+          {
+            "name": "doctrine/doctrine-bundle",
+            "version": "",
+            "constraint": "^2.11"
+          },
+          {
+            "name": "erusev/parsedown",
+            "version": "",
+            "constraint": "^1.7"
+          },
+          {
+            "name": "scheb/2fa-bundle",
+            "version": "",
+            "constraint": "^7.3"
+          },
+          {
+            "name": "symfony/form",
+            "version": "",
+            "constraint": "7.0.*"
+          },
+          {
+            "name": "symfony/intl",
+            "version": "",
+            "constraint": "7.0.*"
+          },
+          {
+            "name": "twig/inky-extra",
+            "version": "",
+            "constraint": "^3.8"
+          },
+          {
+            "name": "exercise/htmlpurifier-bundle",
+            "version": "",
+            "constraint": "^6.0"
           }
         ],
         "dev_dependencies": [
+          {
+            "name": "phpunit/phpunit",
+            "version": "",
+            "constraint": "^10.5"
+          },
           {
             "name": "symfony/browser-kit",
             "version": "",
             "constraint": "7.0.*"
           },
           {
-            "name": "symfony/debug-bundle",
+            "name": "symfony/css-selector",
             "version": "",
             "constraint": "7.0.*"
           },
@@ -252,21 +257,6 @@
             "constraint": "7.0.*"
           },
           {
-            "name": "phpstan/phpstan",
-            "version": "",
-            "constraint": "^1.10"
-          },
-          {
-            "name": "symfony/css-selector",
-            "version": "",
-            "constraint": "7.0.*"
-          },
-          {
-            "name": "symfony/maker-bundle",
-            "version": "",
-            "constraint": "^1.0"
-          },
-          {
             "name": "symfony/web-profiler-bundle",
             "version": "",
             "constraint": "7.0.*"
@@ -277,9 +267,19 @@
             "constraint": "^3.5"
           },
           {
-            "name": "phpunit/phpunit",
+            "name": "phpstan/phpstan",
             "version": "",
-            "constraint": "^10.5"
+            "constraint": "^1.10"
+          },
+          {
+            "name": "symfony/debug-bundle",
+            "version": "",
+            "constraint": "7.0.*"
+          },
+          {
+            "name": "symfony/maker-bundle",
+            "version": "",
+            "constraint": "^1.0"
           }
         ]
       }
@@ -291,9 +291,9 @@
     "working_directory": "test7-symfony-demo",
     "package_manager": "composer",
     "time": {
-      "analysis_start_time": "2025-08-17T15:09:54+02:00",
-      "analysis_end_time": "2025-08-17T15:09:54+02:00",
-      "analysis_delta_time": 0.002738625
+      "analysis_start_time": "2025-08-17T15:16:06+02:00",
+      "analysis_end_time": "2025-08-17T15:16:06+02:00",
+      "analysis_delta_time": 0.0029095
     },
     "errors": [
       {

@@ -5,26 +5,6 @@
       "start": {
         "dependencies": [
           {
-            "name": "johnpbloch/wordpress",
-            "version": "",
-            "constraint": "^6.4"
-          },
-          {
-            "name": "doctrine/dbal",
-            "version": "",
-            "constraint": "^3.7"
-          },
-          {
-            "name": "vlucas/phpdotenv",
-            "version": "",
-            "constraint": "^5.6"
-          },
-          {
-            "name": "johnpbloch/wordpress-core-installer",
-            "version": "",
-            "constraint": "^2.0"
-          },
-          {
             "name": "wpackagist-plugin/akismet",
             "version": "",
             "constraint": "^5.3"
@@ -35,19 +15,39 @@
             "constraint": "^1.7"
           },
           {
-            "name": "wpackagist-theme/twentytwentyfour",
-            "version": "",
-            "constraint": "^1.0"
-          },
-          {
             "name": "monolog/monolog",
             "version": "",
             "constraint": "^3.5"
           },
           {
+            "name": "johnpbloch/wordpress",
+            "version": "",
+            "constraint": "^6.4"
+          },
+          {
+            "name": "johnpbloch/wordpress-core-installer",
+            "version": "",
+            "constraint": "^2.0"
+          },
+          {
+            "name": "wpackagist-theme/twentytwentyfour",
+            "version": "",
+            "constraint": "^1.0"
+          },
+          {
             "name": "guzzlehttp/guzzle",
             "version": "",
             "constraint": "^7.8"
+          },
+          {
+            "name": "doctrine/dbal",
+            "version": "",
+            "constraint": "^3.7"
+          },
+          {
+            "name": "vlucas/phpdotenv",
+            "version": "",
+            "constraint": "^5.6"
           }
         ],
         "dev_dependencies": [
@@ -81,9 +81,9 @@
     "working_directory": "test4-wordpress",
     "package_manager": "composer",
     "time": {
-      "analysis_start_time": "2025-08-17T15:09:54+02:00",
-      "analysis_end_time": "2025-08-17T15:09:54+02:00",
-      "analysis_delta_time": 0.003081167
+      "analysis_start_time": "2025-08-17T15:16:06+02:00",
+      "analysis_end_time": "2025-08-17T15:16:06+02:00",
+      "analysis_delta_time": 0.002634667
     },
     "errors": [
       {

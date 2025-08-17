@@ -5,24 +5,24 @@
       "start": {
         "dependencies": [
           {
-            "name": "doctrine/dbal",
-            "version": "",
-            "constraint": "^4.0"
-          },
-          {
             "name": "laravel/framework",
             "version": "",
             "constraint": "^11.0"
           },
           {
-            "name": "laravel/tinker",
+            "name": "laravel/sanctum",
             "version": "",
-            "constraint": "^2.9"
+            "constraint": "^4.0"
           },
           {
             "name": "guzzlehttp/guzzle",
             "version": "",
             "constraint": "^7.8"
+          },
+          {
+            "name": "doctrine/dbal",
+            "version": "",
+            "constraint": "^4.0"
           },
           {
             "name": "monolog/monolog",
@@ -35,14 +35,14 @@
             "constraint": "^7.0"
           },
           {
+            "name": "laravel/tinker",
+            "version": "",
+            "constraint": "^2.9"
+          },
+          {
             "name": "illuminate/support",
             "version": "",
             "constraint": "^11.0"
-          },
-          {
-            "name": "laravel/sanctum",
-            "version": "",
-            "constraint": "^4.0"
           }
         ],
         "dev_dependencies": [
@@ -91,9 +91,9 @@
     "working_directory": "test2-laravel",
     "package_manager": "composer",
     "time": {
-      "analysis_start_time": "2025-08-17T15:09:54+02:00",
-      "analysis_end_time": "2025-08-17T15:09:54+02:00",
-      "analysis_delta_time": 0.004048084
+      "analysis_start_time": "2025-08-17T15:16:06+02:00",
+      "analysis_end_time": "2025-08-17T15:16:06+02:00",
+      "analysis_delta_time": 0.005630084
     },
     "errors": [
       {

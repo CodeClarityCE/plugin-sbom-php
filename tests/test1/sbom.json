@@ -3881,34 +3881,9 @@
       "start": {
         "dependencies": [
           {
-            "name": "composer/composer",
-            "version": "2.8.6",
-            "constraint": "^2.8.1"
-          },
-          {
-            "name": "cakephp/cakephp",
-            "version": "5.2.6",
-            "constraint": "^5.2.6"
-          },
-          {
-            "name": "cakephp/plugin-installer",
-            "version": "2.0.1",
-            "constraint": "^2.0"
-          },
-          {
-            "name": "ramsey/uuid",
-            "version": "4.7.6",
-            "constraint": "^4.2.3"
-          },
-          {
             "name": "singpolyma/openpgp-php",
             "version": "0.7.0",
             "constraint": "^0.7"
-          },
-          {
-            "name": "lorenzo/cakephp-email-queue",
-            "version": "dev-master",
-            "constraint": "dev-master#30c24a0dbebd5a91ce7db9ce3a67db1a0d4711e3"
           },
           {
             "name": "cakephp/authentication",
@@ -3926,9 +3901,14 @@
             "constraint": "^6.2.0"
           },
           {
-            "name": "cakephp/migrations",
-            "version": "4.6.1",
-            "constraint": "^4.0.0"
+            "name": "spomky-labs/otphp",
+            "version": "11.3.0",
+            "constraint": "^11.3.0"
+          },
+          {
+            "name": "composer/composer",
+            "version": "2.8.6",
+            "constraint": "^2.8.1"
           },
           {
             "name": "donatj/phpuseragentparser",
@@ -3936,14 +3916,49 @@
             "constraint": "^1.10.0"
           },
           {
+            "name": "lorenzo/cakephp-email-queue",
+            "version": "dev-master",
+            "constraint": "dev-master#30c24a0dbebd5a91ce7db9ce3a67db1a0d4711e3"
+          },
+          {
             "name": "imagine/imagine",
             "version": "1.5.0",
             "constraint": "^1.3.2"
           },
           {
-            "name": "spomky-labs/otphp",
-            "version": "11.3.0",
-            "constraint": "^11.3.0"
+            "name": "bacon/bacon-qr-code",
+            "version": "v3.0.1",
+            "constraint": "^3.0.1"
+          },
+          {
+            "name": "cakephp/migrations",
+            "version": "4.6.1",
+            "constraint": "^4.0.0"
+          },
+          {
+            "name": "cakephp/plugin-installer",
+            "version": "2.0.1",
+            "constraint": "^2.0"
+          },
+          {
+            "name": "league/flysystem",
+            "version": "3.29.1",
+            "constraint": "^3.29.1"
+          },
+          {
+            "name": "enygma/yubikey",
+            "version": "3.9",
+            "constraint": "^3.8"
+          },
+          {
+            "name": "cakephp/cakephp",
+            "version": "5.2.6",
+            "constraint": "^5.2.6"
+          },
+          {
+            "name": "ramsey/uuid",
+            "version": "4.7.6",
+            "constraint": "^4.2.3"
           },
           {
             "name": "duosecurity/duo_universal_php",
@@ -3954,43 +3969,28 @@
             "name": "mobiledetect/mobiledetectlib",
             "version": "4.8.07",
             "constraint": "^4.8.03"
-          },
-          {
-            "name": "league/flysystem",
-            "version": "3.29.1",
-            "constraint": "^3.29.1"
-          },
-          {
-            "name": "bacon/bacon-qr-code",
-            "version": "v3.0.1",
-            "constraint": "^3.0.1"
-          },
-          {
-            "name": "enygma/yubikey",
-            "version": "3.9",
-            "constraint": "^3.8"
           }
         ],
         "dev_dependencies": [
+          {
+            "name": "cakedc/cakephp-phpstan",
+            "version": "3.2.0",
+            "constraint": "^3.2"
+          },
           {
             "name": "phpstan/phpstan",
             "version": "1.12.21",
             "constraint": "^1.12.10"
           },
           {
-            "name": "phpunit/phpunit",
-            "version": "10.5.45",
-            "constraint": "^10.1.0"
+            "name": "cakephp/bake",
+            "version": "3.1.1",
+            "constraint": "^3.0.0"
           },
           {
-            "name": "cakephp/cakephp-codesniffer",
-            "version": "5.1.4",
-            "constraint": "^5.0"
-          },
-          {
-            "name": "passbolt/passbolt-selenium-api",
-            "version": "dev-cakephp5",
-            "constraint": "dev-cakephp5#861bc4fe19b5ed58e50dd9a9c52909c997f2934a"
+            "name": "ergebnis/phpunit-slow-test-detector",
+            "version": "2.19.0",
+            "constraint": "^2.19"
           },
           {
             "name": "psalm/phar",
@@ -4008,9 +4008,19 @@
             "constraint": "^5.0.0"
           },
           {
-            "name": "cakephp/bake",
-            "version": "3.1.1",
-            "constraint": "^3.0.0"
+            "name": "phpunit/phpunit",
+            "version": "10.5.45",
+            "constraint": "^10.1.0"
+          },
+          {
+            "name": "cakephp/cakephp-codesniffer",
+            "version": "5.1.4",
+            "constraint": "^5.0"
+          },
+          {
+            "name": "passbolt/passbolt-selenium-api",
+            "version": "dev-cakephp5",
+            "constraint": "dev-cakephp5#861bc4fe19b5ed58e50dd9a9c52909c997f2934a"
           },
           {
             "name": "vierge-noire/cakephp-fixture-factories",
@@ -4021,16 +4031,6 @@
             "name": "cakephp/localized",
             "version": "5.0.2",
             "constraint": "^5.0"
-          },
-          {
-            "name": "cakedc/cakephp-phpstan",
-            "version": "3.2.0",
-            "constraint": "^3.2"
-          },
-          {
-            "name": "ergebnis/phpunit-slow-test-detector",
-            "version": "2.19.0",
-            "constraint": "^2.19"
           }
         ]
       }
@@ -4042,9 +4042,9 @@
     "working_directory": "test1",
     "package_manager": "composer",
     "time": {
-      "analysis_start_time": "2025-08-17T15:09:54+02:00",
-      "analysis_end_time": "2025-08-17T15:09:54+02:00",
-      "analysis_delta_time": 0.008770334
+      "analysis_start_time": "2025-08-17T15:16:06+02:00",
+      "analysis_end_time": "2025-08-17T15:16:06+02:00",
+      "analysis_delta_time": 0.013261958
     },
     "errors": null,
     "paths": {

@@ -10,14 +10,19 @@
             "constraint": "^2.0"
           },
           {
+            "name": "guzzlehttp/guzzle",
+            "version": "",
+            "constraint": "^7.8"
+          },
+          {
             "name": "symfony/validator",
             "version": "",
             "constraint": "^7.0"
           },
           {
-            "name": "doctrine/collections",
+            "name": "nesbot/carbon",
             "version": "",
-            "constraint": "^2.1"
+            "constraint": "^3.0"
           },
           {
             "name": "league/csv",
@@ -25,39 +30,9 @@
             "constraint": "^9.15"
           },
           {
-            "name": "psr/http-client",
+            "name": "doctrine/collections",
             "version": "",
-            "constraint": "^1.0"
-          },
-          {
-            "name": "guzzlehttp/guzzle",
-            "version": "",
-            "constraint": "^7.8"
-          },
-          {
-            "name": "guzzlehttp/psr7",
-            "version": "",
-            "constraint": "^2.6"
-          },
-          {
-            "name": "vlucas/phpdotenv",
-            "version": "",
-            "constraint": "^5.6"
-          },
-          {
-            "name": "symfony/console",
-            "version": "",
-            "constraint": "^7.0"
-          },
-          {
-            "name": "psr/log",
-            "version": "",
-            "constraint": "^3.0"
-          },
-          {
-            "name": "monolog/monolog",
-            "version": "",
-            "constraint": "^3.5"
+            "constraint": "^2.1"
           },
           {
             "name": "ramsey/uuid",
@@ -65,12 +40,42 @@
             "constraint": "^4.7"
           },
           {
-            "name": "nesbot/carbon",
+            "name": "psr/http-client",
+            "version": "",
+            "constraint": "^1.0"
+          },
+          {
+            "name": "monolog/monolog",
+            "version": "",
+            "constraint": "^3.5"
+          },
+          {
+            "name": "psr/log",
             "version": "",
             "constraint": "^3.0"
+          },
+          {
+            "name": "guzzlehttp/psr7",
+            "version": "",
+            "constraint": "^2.6"
+          },
+          {
+            "name": "symfony/console",
+            "version": "",
+            "constraint": "^7.0"
+          },
+          {
+            "name": "vlucas/phpdotenv",
+            "version": "",
+            "constraint": "^5.6"
           }
         ],
         "dev_dependencies": [
+          {
+            "name": "phpunit/phpunit",
+            "version": "",
+            "constraint": "^10.5"
+          },
           {
             "name": "phpstan/phpstan",
             "version": "",
@@ -100,11 +105,6 @@
             "name": "infection/infection",
             "version": "",
             "constraint": "^0.27"
-          },
-          {
-            "name": "phpunit/phpunit",
-            "version": "",
-            "constraint": "^10.5"
           }
         ]
       }
@@ -116,9 +116,9 @@
     "working_directory": "test6-pure-php",
     "package_manager": "composer",
     "time": {
-      "analysis_start_time": "2025-08-17T15:09:54+02:00",
-      "analysis_end_time": "2025-08-17T15:09:54+02:00",
-      "analysis_delta_time": 0.002730666
+      "analysis_start_time": "2025-08-17T15:16:06+02:00",
+      "analysis_end_time": "2025-08-17T15:16:06+02:00",
+      "analysis_delta_time": 0.002792
     },
     "errors": [
       {

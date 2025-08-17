@@ -5,6 +5,11 @@
       "start": {
         "dependencies": [
           {
+            "name": "codeigniter4/framework",
+            "version": "",
+            "constraint": "^4.4"
+          },
+          {
             "name": "kint-php/kint",
             "version": "",
             "constraint": "^5.0.4"
@@ -25,11 +30,6 @@
             "constraint": "^3.7"
           },
           {
-            "name": "codeigniter4/framework",
-            "version": "",
-            "constraint": "^4.4"
-          },
-          {
             "name": "firebase/php-jwt",
             "version": "",
             "constraint": "^6.9"
@@ -41,6 +41,16 @@
           }
         ],
         "dev_dependencies": [
+          {
+            "name": "fakerphp/faker",
+            "version": "",
+            "constraint": "^1.23"
+          },
+          {
+            "name": "mikey179/vfsstream",
+            "version": "",
+            "constraint": "^1.6"
+          },
           {
             "name": "phpunit/phpunit",
             "version": "",
@@ -60,16 +70,6 @@
             "name": "rector/rector",
             "version": "",
             "constraint": "^0.19"
-          },
-          {
-            "name": "fakerphp/faker",
-            "version": "",
-            "constraint": "^1.23"
-          },
-          {
-            "name": "mikey179/vfsstream",
-            "version": "",
-            "constraint": "^1.6"
           }
         ]
       }
@@ -81,9 +81,9 @@
     "working_directory": "test5-codeigniter",
     "package_manager": "composer",
     "time": {
-      "analysis_start_time": "2025-08-17T15:09:54+02:00",
-      "analysis_end_time": "2025-08-17T15:09:54+02:00",
-      "analysis_delta_time": 0.002509083
+      "analysis_start_time": "2025-08-17T15:16:06+02:00",
+      "analysis_end_time": "2025-08-17T15:16:06+02:00",
+      "analysis_delta_time": 0.002363042
     },
     "errors": [
       {
