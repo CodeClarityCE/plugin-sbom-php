@@ -1,31 +1,66 @@
-# PHP SBOM Plugin
-
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/CodeClarityCE/identity/blob/main/logo/vectorized/logo_name_white.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://github.com/CodeClarityCE/identity/blob/main/logo/vectorized/logo_name_black.svg">
+  <img alt="codeclarity-logo" src="https://github.com/CodeClarityCE/identity/blob/main/logo/vectorized/logo_name_black.svg">
+</picture>
+<br>
 <br>
 
-<div align="center">
-    <img src="https://user-images.githubusercontent.com/124595411/233356880-fdc7ea8a-8b1d-4991-8726-67b47e91df9e.svg" width="400px" />
-</div>
+Secure your software empower your team.
 
-<br>
+[![License](https://img.shields.io/github/license/codeclarityce/codeclarity-dev)](LICENSE.txt)
+
+<details open="open">
+<summary>Table of Contents</summary>
+
+- [CodeClarity Plugin - PHP SBOM](#codeclarity-plugin---php-sbom)
+  - [Contributing](#contributing)
+  - [Reporting Issues](#reporting-issues)
+  - [Purpose](#purpose)
+  - [Current Features](#current-features)
+  - [Future Features](#future-features)
+  - [Dev Usage](#dev-usage)
+
+
+</details>
+
+---
+
+# CodeClarity Plugin - PHP SBOM
+
+## Contributing
+
+If you'd like to contribute code or documentation, please see [CONTRIBUTING.md](https://github.com/CodeClarityCE/codeclarity-dev/blob/main/CONTRIBUTING.md) for guidelines on how to do so.
+
+## Reporting Issues
+
+Please report any issues with the setup process or other problems encountered while using this repository by opening a new issue in this project's GitHub page.
 
 ## Purpose
 
-The PHP SBOM (Software Bill of Materials) plugin generates comprehensive dependency inventories for PHP projects using Composer.
+The PHP SBOM (Software Bill of Materials) service creates an inventory of dependencies for PHP applications using Composer.
 
-## Features
+<br> It is the first stage of the Software Composition Analysis process for PHP projects.
 
-- **Composer Integration**: Full support for `composer.json` and `composer.lock` parsing
-- **Framework Detection**: Automatic detection of popular PHP frameworks via composer dependencies
-- **Extension Analysis**: PHP extension dependency tracking from composer.json requirements
-- **PHAR Support**: Analysis of PHAR archives for embedded dependencies
-- **Monorepo Support**: Multi-workspace PHP project analysis
+1. Identify dependencies (SBOM)
+2. Identify known vulnerabile dependencies
+3. Identify licenses & license compliance
+4. Compute and verify upgrades to the application
 
-## Supported PHP Frameworks
+<br>
 
-Framework detection is based on composer.json dependencies:
+## Current Features
+
+1. **Composer Integration**: Full support for `composer.json` and `composer.lock` parsing
+2. **Framework Detection**: Automatic detection of popular PHP frameworks (Laravel, Symfony, WordPress, etc.)
+3. **Extension Analysis**: PHP extension dependency tracking from composer.json requirements
+4. **PHAR Support**: Analysis of PHAR archives for embedded dependencies
+5. **Monorepo Support**: Multi-workspace PHP project analysis
+
+### Supported PHP Frameworks
 
 | Framework | Detection Method | Status |
-|-----------|------------------|---------|
+|-----------|------------------|---------
 | Laravel | `laravel/framework` dependency | ✅ Implemented |
 | Symfony | `symfony/framework-bundle` or `symfony/*` packages | ✅ Implemented |
 | WordPress | `wordpress-plugin`/`wordpress-theme` type or `johnpbloch/wordpress` | ✅ Implemented |
@@ -37,132 +72,26 @@ Framework detection is based on composer.json dependencies:
 | Lumen | `laravel/lumen-framework` dependency | ✅ Implemented |
 | Laminas/Zend | `laminas/laminas-mvc` or `zendframework/zend-mvc` | ✅ Implemented |
 
-## Extension Detection
+<br>
 
-PHP extensions are detected from:
+## Future Features
 
-1. **Composer Requirements** (Primary method):
-   ```json
-   {
-     "require": {
-       "ext-openssl": "*",
-       "ext-curl": "*", 
-       "ext-json": "*",
-       "ext-pdo": "*"
-     }
-   }
-   ```
+1. Support for additional PHP package managers (PEAR, PECL)
+2. Enhanced PHAR analysis with dependency extraction
+3. Private Composer repository support
 
-2. **PHP Binary Detection** (Fallback - requires PHP binary in PATH):
-   ```bash
-   php -m  # List loaded modules
-   php -v  # Get PHP version
-   ```
+<br>
 
-## Configuration
+## Dev Usage
 
-```json
-{
-    "name": "php-sbom",
-    "version": "1.0.0",
-    "stage": 2,
-    "languages": ["PHP"],
-    "description": "PHP Software Bill of Materials generator"
-}
+To execute this service for development purposes, the following parameter is required:
+
+```
+Usage of php-sbom:
+  -source-code-directory string
+    	Absolute Path to the source code directory (Required)
 ```
 
-## Quick Start
+The service will output SBOM data to stdout in JSON format.
 
-```bash
-# Build the plugin
-make build
-
-# Run analysis on a PHP project
-echo '{"source_code_dir": "/path/to/php/project"}' | ./main
-
-# Run tests
-go test ./tests/
-```
-
-## Output Format
-
-The plugin generates SBOM data compatible with the unified analysis pipeline:
-
-```json
-{
-  "analysis_id": "uuid-here",
-  "language": "PHP",
-  "framework": "Laravel",
-  "packages": [
-    {
-      "name": "laravel/framework",
-      "version": "9.52.0",
-      "type": "library",
-      "license": ["MIT"],
-      "purl": "pkg:composer/laravel/framework@9.52.0"
-    }
-  ],
-  "extensions": [
-    {
-      "name": "openssl",
-      "version": "*",
-      "type": "external",
-      "status": "required"
-    }
-  ]
-}
-```
-
-## Testing
-
-Available test projects:
-
-```bash
-# Test with different project types
-ls tests/test*/
-
-# Run specific tests
-go test ./tests/ -run TestFrameworkDetection
-go test ./tests/ -run TestComposerParsing
-go test ./tests/ -run TestExtensionDetection
-```
-
-## Troubleshooting
-
-### Common Issues
-
-**SBOM Generation Fails**:
-```bash
-# Check composer files exist
-ls -la composer.json composer.lock
-
-# Test parsing manually
-cd tests/test1 && go run ../../main.go
-```
-
-**Framework Not Detected**:
-- Check if framework-specific dependencies are listed in composer.json
-- Verify the framework is in the supported list above
-
-**Extensions Not Found**:
-```bash
-# Check composer.json for extension requirements
-grep "ext-" composer.json
-
-# Verify PHP binary is in PATH (for fallback detection)
-which php
-```
-
-## Limitations
-
-- **PHP Binary**: Extension detection falls back to `php` binary if available, but primarily relies on composer.json
-- **Package Database**: PHP package version information requires populated knowledge database
-- **Private Repositories**: Currently only supports public Composer packages
-
-## Integration
-
-This plugin integrates with:
-
-- **vuln-finder**: Provides SBOM data for vulnerability analysis
-- **license-finder**: Provides dependency info for license compliance
-- **knowledge service**: Uses package and vulnerability databases
+<br>
