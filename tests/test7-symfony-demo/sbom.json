@@ -1,0 +1,342 @@
+{
+  "workspaces": {
+    ".": {
+      "dependencies": {},
+      "start": {
+        "dependencies": [
+          {
+            "name": "exercise/htmlpurifier-bundle",
+            "version": "",
+            "constraint": "^6.0"
+          },
+          {
+            "name": "scheb/2fa-bundle",
+            "version": "",
+            "constraint": "^7.3"
+          },
+          {
+            "name": "symfony/property-access",
+            "version": "",
+            "constraint": "7.0.*"
+          },
+          {
+            "name": "symfony/ux-chartjs",
+            "version": "",
+            "constraint": "^2.13"
+          },
+          {
+            "name": "twig/cssinliner-extra",
+            "version": "",
+            "constraint": "^3.8"
+          },
+          {
+            "name": "symfony/asset",
+            "version": "",
+            "constraint": "7.0.*"
+          },
+          {
+            "name": "symfony/console",
+            "version": "",
+            "constraint": "7.0.*"
+          },
+          {
+            "name": "symfony/flex",
+            "version": "",
+            "constraint": "^2"
+          },
+          {
+            "name": "symfony/monolog-bundle",
+            "version": "",
+            "constraint": "^3.0"
+          },
+          {
+            "name": "twig/inky-extra",
+            "version": "",
+            "constraint": "^3.8"
+          },
+          {
+            "name": "doctrine/doctrine-migrations-bundle",
+            "version": "",
+            "constraint": "^3.3"
+          },
+          {
+            "name": "symfony/form",
+            "version": "",
+            "constraint": "7.0.*"
+          },
+          {
+            "name": "symfony/framework-bundle",
+            "version": "",
+            "constraint": "7.0.*"
+          },
+          {
+            "name": "symfony/security-bundle",
+            "version": "",
+            "constraint": "7.0.*"
+          },
+          {
+            "name": "symfony/web-link",
+            "version": "",
+            "constraint": "7.0.*"
+          },
+          {
+            "name": "pagerfanta/doctrine-orm-adapter",
+            "version": "",
+            "constraint": "^4.2"
+          },
+          {
+            "name": "phpstan/phpdoc-parser",
+            "version": "",
+            "constraint": "^1.26"
+          },
+          {
+            "name": "symfony/webpack-encore-bundle",
+            "version": "",
+            "constraint": "^2.1"
+          },
+          {
+            "name": "symfony/yaml",
+            "version": "",
+            "constraint": "7.0.*"
+          },
+          {
+            "name": "doctrine/doctrine-bundle",
+            "version": "",
+            "constraint": "^2.11"
+          },
+          {
+            "name": "phpdocumentor/reflection-docblock",
+            "version": "",
+            "constraint": "^5.3"
+          },
+          {
+            "name": "scheb/2fa-qr-code",
+            "version": "",
+            "constraint": "^7.3"
+          },
+          {
+            "name": "symfony/dotenv",
+            "version": "",
+            "constraint": "7.0.*"
+          },
+          {
+            "name": "symfony/http-client",
+            "version": "",
+            "constraint": "7.0.*"
+          },
+          {
+            "name": "symfony/string",
+            "version": "",
+            "constraint": "7.0.*"
+          },
+          {
+            "name": "symfony/validator",
+            "version": "",
+            "constraint": "7.0.*"
+          },
+          {
+            "name": "scheb/2fa-totp",
+            "version": "",
+            "constraint": "^7.3"
+          },
+          {
+            "name": "symfony/expression-language",
+            "version": "",
+            "constraint": "7.0.*"
+          },
+          {
+            "name": "symfony/intl",
+            "version": "",
+            "constraint": "7.0.*"
+          },
+          {
+            "name": "symfony/mime",
+            "version": "",
+            "constraint": "7.0.*"
+          },
+          {
+            "name": "symfony/serializer",
+            "version": "",
+            "constraint": "7.0.*"
+          },
+          {
+            "name": "symfony/twig-bundle",
+            "version": "",
+            "constraint": "7.0.*"
+          },
+          {
+            "name": "twig/extra-bundle",
+            "version": "",
+            "constraint": "^2.12|^3.0"
+          },
+          {
+            "name": "doctrine/orm",
+            "version": "",
+            "constraint": "^3.0"
+          },
+          {
+            "name": "erusev/parsedown",
+            "version": "",
+            "constraint": "^1.7"
+          },
+          {
+            "name": "symfony/doctrine-messenger",
+            "version": "",
+            "constraint": "7.0.*"
+          },
+          {
+            "name": "symfony/mailer",
+            "version": "",
+            "constraint": "7.0.*"
+          },
+          {
+            "name": "symfony/property-info",
+            "version": "",
+            "constraint": "7.0.*"
+          },
+          {
+            "name": "symfony/runtime",
+            "version": "",
+            "constraint": "7.0.*"
+          },
+          {
+            "name": "symfony/translation",
+            "version": "",
+            "constraint": "7.0.*"
+          },
+          {
+            "name": "babdev/pagerfanta-bundle",
+            "version": "",
+            "constraint": "^4.4"
+          },
+          {
+            "name": "symfony/notifier",
+            "version": "",
+            "constraint": "7.0.*"
+          },
+          {
+            "name": "symfony/process",
+            "version": "",
+            "constraint": "7.0.*"
+          },
+          {
+            "name": "twig/markdown-extra",
+            "version": "",
+            "constraint": "^3.8"
+          },
+          {
+            "name": "twig/twig",
+            "version": "",
+            "constraint": "^2.12|^3.0"
+          }
+        ],
+        "dev_dependencies": [
+          {
+            "name": "symfony/browser-kit",
+            "version": "",
+            "constraint": "7.0.*"
+          },
+          {
+            "name": "symfony/debug-bundle",
+            "version": "",
+            "constraint": "7.0.*"
+          },
+          {
+            "name": "symfony/phpunit-bridge",
+            "version": "",
+            "constraint": "^7.0"
+          },
+          {
+            "name": "symfony/stopwatch",
+            "version": "",
+            "constraint": "7.0.*"
+          },
+          {
+            "name": "phpstan/phpstan",
+            "version": "",
+            "constraint": "^1.10"
+          },
+          {
+            "name": "symfony/css-selector",
+            "version": "",
+            "constraint": "7.0.*"
+          },
+          {
+            "name": "symfony/maker-bundle",
+            "version": "",
+            "constraint": "^1.0"
+          },
+          {
+            "name": "symfony/web-profiler-bundle",
+            "version": "",
+            "constraint": "7.0.*"
+          },
+          {
+            "name": "doctrine/doctrine-fixtures-bundle",
+            "version": "",
+            "constraint": "^3.5"
+          },
+          {
+            "name": "phpunit/phpunit",
+            "version": "",
+            "constraint": "^10.5"
+          }
+        ]
+      }
+    }
+  },
+  "analysis_info": {
+    "status": "success",
+    "project_name": "symfony/demo",
+    "working_directory": "test7-symfony-demo",
+    "package_manager": "composer",
+    "time": {
+      "analysis_start_time": "2025-08-17T15:09:54+02:00",
+      "analysis_end_time": "2025-08-17T15:09:54+02:00",
+      "analysis_delta_time": 0.002738625
+    },
+    "errors": [
+      {
+        "private_error": {
+          "description": "The source directory does not exist: ./nonexistent",
+          "key": "SourceCodeDirDoesNotExist"
+        },
+        "public_error": {
+          "description": "Source directory not found",
+          "key": "GenericException"
+        }
+      }
+    ],
+    "paths": {
+      "lock_file_path": "test7-symfony-demo/composer.lock",
+      "package_file_path": "test7-symfony-demo/composer.json",
+      "work_space_package_file_paths": {},
+      "relative_lock_file_path": "composer.lock",
+      "relative_package_file_path": "composer.json"
+    },
+    "workspaces": {
+      "default_workspace_name": ".",
+      "self_managed_workspace_name": "self-managed",
+      "work_spaces_used": false
+    },
+    "extra": {
+      "version_seperator": "@",
+      "import_path_seperator": "/",
+      "lock_file_version": 1,
+      "php_version": "\u003e=8.2",
+      "framework": "Symfony",
+      "statistics": {
+        "total_packages": 0,
+        "direct_packages": 0,
+        "transitive_packages": 0,
+        "dev_packages": 0,
+        "unique_authors": 0,
+        "unique_licenses": 0,
+        "license_breakdown": null,
+        "type_breakdown": null,
+        "vulnerable_packages": 0,
+        "outdated_packages": 0
+      }
+    }
+  }
+}
