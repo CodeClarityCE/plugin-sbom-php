@@ -7,6 +7,7 @@ import (
 	"path/filepath"
 	"time"
 
+	"github.com/CodeClarityCE/plugin-php-sbom/src/knowledge"
 	"github.com/CodeClarityCE/plugin-php-sbom/src/parser"
 	"github.com/CodeClarityCE/plugin-php-sbom/src/project_finder"
 	"github.com/CodeClarityCE/plugin-php-sbom/src/types"
@@ -57,6 +58,16 @@ func Start(sourceCodeDir string, analysisId uuid.UUID, knowledge_db *bun.DB) typ
 	
 	// Build workspaces in js-sbom compatible format
 	workspaces := buildCompatibleWorkspaces(projectInfo)
+	
+	// Send package information to knowledge service for tracking
+	// Extract all dependencies from all workspaces
+	allDependencies := make(map[string]map[string]types.Versions)
+	for _, workspace := range workspaces {
+		for depName, versions := range workspace.Dependencies {
+			allDependencies[depName] = versions
+		}
+	}
+	knowledge.UpdateKnowledge(allDependencies, analysisId)
 	
 	// Generate analysis info in js-sbom compatible format
 	analysisInfo := generateCompatibleAnalysisInfo(projectInfo, start)
