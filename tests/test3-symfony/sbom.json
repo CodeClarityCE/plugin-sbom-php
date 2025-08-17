@@ -1,16 +1,193 @@
 {
   "workspaces": {
     ".": {
-      "dependencies": {},
+      "dependencies": {
+        "doctrine/orm": {
+          "3.0.1": {
+            "key": "doctrine/orm@3.0.1",
+            "requires": {
+              "composer-runtime-api": "^2",
+              "doctrine/cache": "^2.0",
+              "doctrine/collections": "^2.0",
+              "doctrine/common": "^3.0.3",
+              "doctrine/dbal": "^3.6.0|^4.0",
+              "doctrine/deprecations": "^0.5.3|^1.0",
+              "doctrine/event-manager": "^1.2|^2.0",
+              "doctrine/inflector": "^2.0",
+              "doctrine/instantiator": "^1.3|^2.0",
+              "doctrine/lexer": "^2.0|^3.0",
+              "doctrine/persistence": "^3.1",
+              "php": "^8.1",
+              "psr/cache": "^1|^2|^3",
+              "symfony/console": "^5.4|^6.0|^7.0",
+              "symfony/polyfill-php80": "^1.16",
+              "symfony/polyfill-php81": "^1.25"
+            },
+            "dependencies": {
+              "composer-runtime-api": "^2",
+              "doctrine/cache": "^2.0",
+              "doctrine/collections": "^2.0",
+              "doctrine/common": "^3.0.3",
+              "doctrine/dbal": "^3.6.0|^4.0",
+              "doctrine/deprecations": "^0.5.3|^1.0",
+              "doctrine/event-manager": "^1.2|^2.0",
+              "doctrine/inflector": "^2.0",
+              "doctrine/instantiator": "^1.3|^2.0",
+              "doctrine/lexer": "^2.0|^3.0",
+              "doctrine/persistence": "^3.1",
+              "php": "^8.1",
+              "psr/cache": "^1|^2|^3",
+              "symfony/console": "^5.4|^6.0|^7.0",
+              "symfony/polyfill-php80": "^1.16",
+              "symfony/polyfill-php81": "^1.25"
+            },
+            "optional": false,
+            "bundled": false,
+            "dev": false,
+            "prod": true,
+            "direct": true,
+            "transitive": false,
+            "licenses": [
+              "MIT"
+            ],
+            "type": "library",
+            "authors": [
+              {
+                "name": "Guilherme Blanco",
+                "email": "guilhermeblanco@gmail.com"
+              },
+              {
+                "name": "Roman Borschel",
+                "email": "roman@code-factory.org"
+              },
+              {
+                "name": "Benjamin Eberlei",
+                "email": "kontakt@beberlei.de"
+              },
+              {
+                "name": "Jonathan Wage",
+                "email": "jonwage@gmail.com"
+              },
+              {
+                "name": "Marco Pivetta",
+                "email": "ocramius@gmail.com"
+              }
+            ],
+            "description": "Object-Relational-Mapping for PHP"
+          }
+        },
+        "symfony/framework-bundle": {
+          "v7.0.1": {
+            "key": "symfony/framework-bundle@v7.0.1",
+            "requires": {
+              "ext-xml": "*",
+              "php": "\u003e=8.2",
+              "symfony/cache": "^6.4|^7.0",
+              "symfony/config": "^6.4|^7.0",
+              "symfony/dependency-injection": "^6.4|^7.0",
+              "symfony/deprecation-contracts": "^2.5|^3",
+              "symfony/error-handler": "^6.4|^7.0",
+              "symfony/event-dispatcher": "^6.4|^7.0",
+              "symfony/filesystem": "^6.4|^7.0",
+              "symfony/finder": "^6.4|^7.0",
+              "symfony/http-foundation": "^6.4|^7.0",
+              "symfony/http-kernel": "^6.4|^7.0",
+              "symfony/polyfill-mbstring": "~1.0",
+              "symfony/routing": "^6.4|^7.0"
+            },
+            "dependencies": {
+              "ext-xml": "*",
+              "php": "\u003e=8.2",
+              "symfony/cache": "^6.4|^7.0",
+              "symfony/config": "^6.4|^7.0",
+              "symfony/dependency-injection": "^6.4|^7.0",
+              "symfony/deprecation-contracts": "^2.5|^3",
+              "symfony/error-handler": "^6.4|^7.0",
+              "symfony/event-dispatcher": "^6.4|^7.0",
+              "symfony/filesystem": "^6.4|^7.0",
+              "symfony/finder": "^6.4|^7.0",
+              "symfony/http-foundation": "^6.4|^7.0",
+              "symfony/http-kernel": "^6.4|^7.0",
+              "symfony/polyfill-mbstring": "~1.0",
+              "symfony/routing": "^6.4|^7.0"
+            },
+            "optional": false,
+            "bundled": false,
+            "dev": false,
+            "prod": true,
+            "direct": true,
+            "transitive": false,
+            "licenses": [
+              "MIT"
+            ],
+            "type": "symfony-bundle",
+            "authors": [
+              {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+              },
+              {
+                "name": "Symfony Community"
+              }
+            ],
+            "description": "Provides a tight integration of the Symfony framework with its service container"
+          }
+        },
+        "symfony/maker-bundle": {
+          "v1.52.0": {
+            "key": "symfony/maker-bundle@v1.52.0",
+            "requires": {
+              "doctrine/inflector": "^2.0",
+              "nikic/php-parser": "^4.11|^5.0",
+              "php": "\u003e=8.1",
+              "symfony/console": "^5.4.7|^6.0|^7.0",
+              "symfony/dependency-injection": "^5.4.7|^6.0|^7.0",
+              "symfony/deprecation-contracts": "^2.2|^3",
+              "symfony/filesystem": "^5.4.7|^6.0|^7.0",
+              "symfony/finder": "^5.4.3|^6.0|^7.0",
+              "symfony/framework-bundle": "^5.4.7|^6.0|^7.0",
+              "symfony/http-kernel": "^5.4.7|^6.0|^7.0"
+            },
+            "dependencies": {
+              "doctrine/inflector": "^2.0",
+              "nikic/php-parser": "^4.11|^5.0",
+              "php": "\u003e=8.1",
+              "symfony/console": "^5.4.7|^6.0|^7.0",
+              "symfony/dependency-injection": "^5.4.7|^6.0|^7.0",
+              "symfony/deprecation-contracts": "^2.2|^3",
+              "symfony/filesystem": "^5.4.7|^6.0|^7.0",
+              "symfony/finder": "^5.4.3|^6.0|^7.0",
+              "symfony/framework-bundle": "^5.4.7|^6.0|^7.0",
+              "symfony/http-kernel": "^5.4.7|^6.0|^7.0"
+            },
+            "optional": false,
+            "bundled": false,
+            "dev": true,
+            "prod": false,
+            "direct": true,
+            "transitive": false,
+            "licenses": [
+              "MIT"
+            ],
+            "type": "symfony-bundle",
+            "authors": [
+              {
+                "name": "Javier Eguiluz",
+                "email": "javier.eguiluz@gmail.com"
+              },
+              {
+                "name": "Ryan Weaver",
+                "email": "weaverryan@gmail.com"
+              }
+            ],
+            "description": "Symfony Maker helps you create empty commands, controllers, form classes, tests and more so you can forget about writing boilerplate code."
+          }
+        }
+      },
       "start": {
         "dependencies": [
           {
-            "name": "symfony/twig-bundle",
-            "version": "",
-            "constraint": "7.0.*"
-          },
-          {
-            "name": "twig/extra-bundle",
+            "name": "twig/twig",
             "version": "",
             "constraint": "^2.12|^3.0"
           },
@@ -20,8 +197,33 @@
             "constraint": "^3.3"
           },
           {
+            "name": "twig/extra-bundle",
+            "version": "",
+            "constraint": "^2.12|^3.0"
+          },
+          {
+            "name": "doctrine/doctrine-bundle",
+            "version": "",
+            "constraint": "^2.11"
+          },
+          {
+            "name": "symfony/console",
+            "version": "",
+            "constraint": "7.0.*"
+          },
+          {
             "name": "symfony/dotenv",
             "version": "",
+            "constraint": "7.0.*"
+          },
+          {
+            "name": "symfony/flex",
+            "version": "",
+            "constraint": "^2"
+          },
+          {
+            "name": "symfony/framework-bundle",
+            "version": "v7.0.1",
             "constraint": "7.0.*"
           },
           {
@@ -35,17 +237,7 @@
             "constraint": "7.0.*"
           },
           {
-            "name": "symfony/validator",
-            "version": "",
-            "constraint": "7.0.*"
-          },
-          {
-            "name": "symfony/flex",
-            "version": "",
-            "constraint": "^2"
-          },
-          {
-            "name": "symfony/framework-bundle",
+            "name": "symfony/translation",
             "version": "",
             "constraint": "7.0.*"
           },
@@ -55,37 +247,27 @@
             "constraint": "7.0.*"
           },
           {
+            "name": "symfony/twig-bundle",
+            "version": "",
+            "constraint": "7.0.*"
+          },
+          {
             "name": "symfony/security-bundle",
             "version": "",
             "constraint": "7.0.*"
           },
           {
-            "name": "symfony/form",
+            "name": "symfony/validator",
             "version": "",
             "constraint": "7.0.*"
-          },
-          {
-            "name": "symfony/translation",
-            "version": "",
-            "constraint": "7.0.*"
-          },
-          {
-            "name": "twig/twig",
-            "version": "",
-            "constraint": "^2.12|^3.0"
-          },
-          {
-            "name": "doctrine/doctrine-bundle",
-            "version": "",
-            "constraint": "^2.11"
           },
           {
             "name": "doctrine/orm",
-            "version": "",
+            "version": "3.0.1",
             "constraint": "^3.0"
           },
           {
-            "name": "symfony/console",
+            "name": "symfony/form",
             "version": "",
             "constraint": "7.0.*"
           }
@@ -102,19 +284,24 @@
             "constraint": "7.0.*"
           },
           {
+            "name": "symfony/maker-bundle",
+            "version": "v1.52.0",
+            "constraint": "^1.0"
+          },
+          {
             "name": "symfony/web-profiler-bundle",
             "version": "",
             "constraint": "7.0.*"
           },
           {
+            "name": "phpunit/phpunit",
+            "version": "",
+            "constraint": "^10.5"
+          },
+          {
             "name": "symfony/debug-bundle",
             "version": "",
             "constraint": "7.0.*"
-          },
-          {
-            "name": "symfony/maker-bundle",
-            "version": "",
-            "constraint": "^1.0"
           },
           {
             "name": "symfony/monolog-bundle",
@@ -130,11 +317,6 @@
             "name": "symfony/stopwatch",
             "version": "",
             "constraint": "7.0.*"
-          },
-          {
-            "name": "phpunit/phpunit",
-            "version": "",
-            "constraint": "^10.5"
           }
         ]
       }
@@ -146,11 +328,32 @@
     "working_directory": "test3-symfony",
     "package_manager": "composer",
     "time": {
-      "analysis_start_time": "2025-08-17T21:23:11+02:00",
-      "analysis_end_time": "2025-08-17T21:23:11+02:00",
-      "analysis_delta_time": 0.0028125
+      "analysis_start_time": "2025-08-17T23:13:14+02:00",
+      "analysis_end_time": "2025-08-17T23:13:14+02:00",
+      "analysis_delta_time": 0.004516542
     },
-    "errors": null,
+    "errors": [
+      {
+        "private_error": {
+          "description": "The source directory does not exist: ./nonexistent-directory",
+          "key": "SourceCodeDirDoesNotExist"
+        },
+        "public_error": {
+          "description": "Source directory not found",
+          "key": "GenericException"
+        }
+      },
+      {
+        "private_error": {
+          "description": "The source directory does not exist: ./nonexistent",
+          "key": "SourceCodeDirDoesNotExist"
+        },
+        "public_error": {
+          "description": "Source directory not found",
+          "key": "GenericException"
+        }
+      }
+    ],
     "paths": {
       "lock_file_path": "test3-symfony/composer.lock",
       "package_file_path": "test3-symfony/composer.json",
@@ -169,6 +372,15 @@
       "lock_file_version": 1,
       "php_version": "\u003e=8.2",
       "framework": "Symfony",
+      "minimum_stability": "stable",
+      "prefer_stable": true,
+      "plugin_api_version": "2.6.0",
+      "content_hash": "18c09a1a87a8b4b5d9f8e6b0c7d5e3f2a1b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2",
+      "platform": {
+        "ext-ctype": "*",
+        "ext-iconv": "*",
+        "php": "\u003e=8.2"
+      },
       "statistics": {
         "total_packages": 0,
         "direct_packages": 0,
@@ -182,12 +394,30 @@
         "outdated_packages": 0
       },
       "php_extensions": {
-        "php_version": "",
+        "php_version": "\u003e=8.2",
         "zend_version": "",
-        "extensions": {},
+        "extensions": {
+          "ctype": {
+            "name": "ctype",
+            "version": "*",
+            "type": "bundled",
+            "status": "required",
+            "description": "Character type checking"
+          },
+          "iconv": {
+            "name": "iconv",
+            "version": "*",
+            "type": "bundled",
+            "status": "required",
+            "description": "Character set conversion"
+          }
+        },
         "core_modules": [],
         "loaded_extensions": [],
-        "configured_extensions": []
+        "configured_extensions": [
+          "ctype",
+          "iconv"
+        ]
       }
     }
   }

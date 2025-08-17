@@ -1,17 +1,215 @@
 {
   "workspaces": {
     ".": {
-      "dependencies": {},
+      "dependencies": {
+        "league/csv": {
+          "9.15.0": {
+            "key": "league/csv@9.15.0",
+            "requires": {
+              "ext-json": "*",
+              "php": "^8.1.2"
+            },
+            "dependencies": {
+              "ext-json": "*",
+              "php": "^8.1.2"
+            },
+            "optional": false,
+            "bundled": false,
+            "dev": false,
+            "prod": true,
+            "direct": true,
+            "transitive": false,
+            "licenses": [
+              "MIT"
+            ],
+            "type": "library",
+            "authors": [
+              {
+                "name": "Ignace Nyamagana Butera",
+                "email": "nyamsprod@gmail.com",
+                "role": "Developer"
+              }
+            ],
+            "description": "CSV data manipulation made easy in PHP"
+          }
+        },
+        "phpstan/phpstan": {
+          "1.10.57": {
+            "key": "phpstan/phpstan@1.10.57",
+            "requires": {
+              "php": "^7.2|^8.0"
+            },
+            "dependencies": {
+              "php": "^7.2|^8.0"
+            },
+            "optional": false,
+            "bundled": false,
+            "dev": true,
+            "prod": false,
+            "direct": true,
+            "transitive": false,
+            "licenses": [
+              "MIT"
+            ],
+            "type": "library",
+            "description": "PHPStan - PHP Static Analysis Tool"
+          }
+        },
+        "phpunit/phpunit": {
+          "10.5.5": {
+            "key": "phpunit/phpunit@10.5.5",
+            "requires": {
+              "ext-dom": "*",
+              "ext-json": "*",
+              "ext-libxml": "*",
+              "ext-mbstring": "*",
+              "ext-xml": "*",
+              "ext-xmlwriter": "*",
+              "myclabs/deep-copy": "^1.10.1",
+              "phar-io/manifest": "^2.0.3",
+              "phar-io/version": "^3.0.2",
+              "php": "\u003e=8.1",
+              "phpunit/php-code-coverage": "^10.1.5",
+              "phpunit/php-file-iterator": "^4.0",
+              "phpunit/php-invoker": "^4.0",
+              "phpunit/php-text-template": "^3.0",
+              "phpunit/php-timer": "^6.0",
+              "sebastian/cli-parser": "^2.0",
+              "sebastian/code-unit": "^2.0",
+              "sebastian/comparator": "^5.0",
+              "sebastian/diff": "^5.0",
+              "sebastian/environment": "^6.0",
+              "sebastian/exporter": "^5.1",
+              "sebastian/global-state": "^6.0.1",
+              "sebastian/object-enumerator": "^5.0",
+              "sebastian/recursion-context": "^5.0",
+              "sebastian/type": "^4.0",
+              "sebastian/version": "^4.0"
+            },
+            "dependencies": {
+              "ext-dom": "*",
+              "ext-json": "*",
+              "ext-libxml": "*",
+              "ext-mbstring": "*",
+              "ext-xml": "*",
+              "ext-xmlwriter": "*",
+              "myclabs/deep-copy": "^1.10.1",
+              "phar-io/manifest": "^2.0.3",
+              "phar-io/version": "^3.0.2",
+              "php": "\u003e=8.1",
+              "phpunit/php-code-coverage": "^10.1.5",
+              "phpunit/php-file-iterator": "^4.0",
+              "phpunit/php-invoker": "^4.0",
+              "phpunit/php-text-template": "^3.0",
+              "phpunit/php-timer": "^6.0",
+              "sebastian/cli-parser": "^2.0",
+              "sebastian/code-unit": "^2.0",
+              "sebastian/comparator": "^5.0",
+              "sebastian/diff": "^5.0",
+              "sebastian/environment": "^6.0",
+              "sebastian/exporter": "^5.1",
+              "sebastian/global-state": "^6.0.1",
+              "sebastian/object-enumerator": "^5.0",
+              "sebastian/recursion-context": "^5.0",
+              "sebastian/type": "^4.0",
+              "sebastian/version": "^4.0"
+            },
+            "optional": false,
+            "bundled": false,
+            "dev": true,
+            "prod": false,
+            "direct": true,
+            "transitive": false,
+            "licenses": [
+              "BSD-3-Clause"
+            ],
+            "type": "library",
+            "authors": [
+              {
+                "name": "Sebastian Bergmann",
+                "email": "sebastian@phpunit.de",
+                "role": "lead"
+              }
+            ],
+            "description": "The PHP Unit Testing framework."
+          }
+        },
+        "psr/log": {
+          "3.0.0": {
+            "key": "psr/log@3.0.0",
+            "requires": {
+              "php": "\u003e=8.0.0"
+            },
+            "dependencies": {
+              "php": "\u003e=8.0.0"
+            },
+            "optional": false,
+            "bundled": false,
+            "dev": false,
+            "prod": true,
+            "direct": true,
+            "transitive": false,
+            "licenses": [
+              "MIT"
+            ],
+            "type": "library",
+            "authors": [
+              {
+                "name": "PHP-FIG"
+              }
+            ],
+            "description": "Common interface for logging libraries"
+          }
+        },
+        "ramsey/uuid": {
+          "4.7.5": {
+            "key": "ramsey/uuid@4.7.5",
+            "requires": {
+              "brick/math": "^0.8.8 || ^0.9 || ^0.10 || ^0.11",
+              "ext-json": "*",
+              "php": "^8.0",
+              "ramsey/collection": "^1.2 || ^2.0"
+            },
+            "dependencies": {
+              "brick/math": "^0.8.8 || ^0.9 || ^0.10 || ^0.11",
+              "ext-json": "*",
+              "php": "^8.0",
+              "ramsey/collection": "^1.2 || ^2.0"
+            },
+            "optional": false,
+            "bundled": false,
+            "dev": false,
+            "prod": true,
+            "direct": true,
+            "transitive": false,
+            "licenses": [
+              "MIT"
+            ],
+            "type": "library",
+            "description": "A PHP library for generating and working with universally unique identifiers (UUIDs)."
+          }
+        }
+      },
       "start": {
         "dependencies": [
           {
-            "name": "monolog/monolog",
+            "name": "symfony/console",
             "version": "",
-            "constraint": "^3.5"
+            "constraint": "^7.0"
+          },
+          {
+            "name": "nesbot/carbon",
+            "version": "",
+            "constraint": "^3.0"
+          },
+          {
+            "name": "symfony/validator",
+            "version": "",
+            "constraint": "^7.0"
           },
           {
             "name": "psr/log",
-            "version": "",
+            "version": "3.0.0",
             "constraint": "^3.0"
           },
           {
@@ -25,39 +223,9 @@
             "constraint": "^7.8"
           },
           {
-            "name": "nesbot/carbon",
-            "version": "",
-            "constraint": "^3.0"
-          },
-          {
-            "name": "psr/http-message",
-            "version": "",
-            "constraint": "^2.0"
-          },
-          {
-            "name": "symfony/validator",
-            "version": "",
-            "constraint": "^7.0"
-          },
-          {
-            "name": "ramsey/uuid",
-            "version": "",
-            "constraint": "^4.7"
-          },
-          {
-            "name": "league/csv",
-            "version": "",
-            "constraint": "^9.15"
-          },
-          {
             "name": "guzzlehttp/psr7",
             "version": "",
             "constraint": "^2.6"
-          },
-          {
-            "name": "symfony/console",
-            "version": "",
-            "constraint": "^7.0"
           },
           {
             "name": "doctrine/collections",
@@ -65,9 +233,29 @@
             "constraint": "^2.1"
           },
           {
+            "name": "ramsey/uuid",
+            "version": "4.7.5",
+            "constraint": "^4.7"
+          },
+          {
+            "name": "league/csv",
+            "version": "9.15.0",
+            "constraint": "^9.15"
+          },
+          {
             "name": "vlucas/phpdotenv",
             "version": "",
             "constraint": "^5.6"
+          },
+          {
+            "name": "psr/http-message",
+            "version": "",
+            "constraint": "^2.0"
+          },
+          {
+            "name": "monolog/monolog",
+            "version": "",
+            "constraint": "^3.5"
           }
         ],
         "dev_dependencies": [
@@ -93,12 +281,12 @@
           },
           {
             "name": "phpunit/phpunit",
-            "version": "",
+            "version": "10.5.5",
             "constraint": "^10.5"
           },
           {
             "name": "phpstan/phpstan",
-            "version": "",
+            "version": "1.10.57",
             "constraint": "^1.10"
           },
           {
@@ -116,11 +304,32 @@
     "working_directory": "test6-pure-php",
     "package_manager": "composer",
     "time": {
-      "analysis_start_time": "2025-08-17T21:23:11+02:00",
-      "analysis_end_time": "2025-08-17T21:23:11+02:00",
-      "analysis_delta_time": 0.004638958
+      "analysis_start_time": "2025-08-17T23:13:14+02:00",
+      "analysis_end_time": "2025-08-17T23:13:14+02:00",
+      "analysis_delta_time": 0.003326916
     },
-    "errors": null,
+    "errors": [
+      {
+        "private_error": {
+          "description": "The source directory does not exist: ./nonexistent-directory",
+          "key": "SourceCodeDirDoesNotExist"
+        },
+        "public_error": {
+          "description": "Source directory not found",
+          "key": "GenericException"
+        }
+      },
+      {
+        "private_error": {
+          "description": "The source directory does not exist: ./nonexistent",
+          "key": "SourceCodeDirDoesNotExist"
+        },
+        "public_error": {
+          "description": "Source directory not found",
+          "key": "GenericException"
+        }
+      }
+    ],
     "paths": {
       "lock_file_path": "test6-pure-php/composer.lock",
       "package_file_path": "test6-pure-php/composer.json",
@@ -139,6 +348,15 @@
       "lock_file_version": 1,
       "php_version": "\u003e=8.1",
       "framework": "Symfony Components",
+      "minimum_stability": "stable",
+      "prefer_stable": true,
+      "plugin_api_version": "2.6.0",
+      "content_hash": "24c09a1a87a8b4b5d9f8e6b0c7d5e3f2a1b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2",
+      "platform": {
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "php": "\u003e=8.1"
+      },
       "statistics": {
         "total_packages": 0,
         "direct_packages": 0,
@@ -152,12 +370,30 @@
         "outdated_packages": 0
       },
       "php_extensions": {
-        "php_version": "",
+        "php_version": "\u003e=8.1",
         "zend_version": "",
-        "extensions": {},
+        "extensions": {
+          "json": {
+            "name": "json",
+            "version": "*",
+            "type": "core",
+            "status": "required",
+            "description": "JavaScript Object Notation support"
+          },
+          "mbstring": {
+            "name": "mbstring",
+            "version": "*",
+            "type": "bundled",
+            "status": "required",
+            "description": "Multi-byte string handling"
+          }
+        },
         "core_modules": [],
         "loaded_extensions": [],
-        "configured_extensions": []
+        "configured_extensions": [
+          "json",
+          "mbstring"
+        ]
       }
     }
   }

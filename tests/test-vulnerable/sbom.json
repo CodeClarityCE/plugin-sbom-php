@@ -317,19 +317,19 @@
       "start": {
         "dependencies": [
           {
-            "name": "symfony/http-foundation",
-            "version": "v4.0.0",
-            "constraint": "4.0.0"
-          },
-          {
             "name": "firebase/php-jwt",
             "version": "v3.0.0",
             "constraint": "3.0.0"
           },
           {
-            "name": "league/flysystem",
-            "version": "1.0.0",
-            "constraint": "1.0.0"
+            "name": "monolog/monolog",
+            "version": "1.17.0",
+            "constraint": "1.17.0"
+          },
+          {
+            "name": "twig/twig",
+            "version": "v1.35.0",
+            "constraint": "1.35.0"
           },
           {
             "name": "doctrine/dbal",
@@ -342,31 +342,31 @@
             "constraint": "6.0.0"
           },
           {
+            "name": "league/flysystem",
+            "version": "1.0.0",
+            "constraint": "1.0.0"
+          },
+          {
+            "name": "symfony/http-foundation",
+            "version": "v4.0.0",
+            "constraint": "4.0.0"
+          },
+          {
             "name": "phpmailer/phpmailer",
             "version": "v5.2.14",
             "constraint": "5.2.14"
-          },
-          {
-            "name": "twig/twig",
-            "version": "v1.35.0",
-            "constraint": "1.35.0"
-          },
-          {
-            "name": "monolog/monolog",
-            "version": "1.17.0",
-            "constraint": "1.17.0"
           }
         ],
         "dev_dependencies": [
           {
-            "name": "phpunit/phpunit",
-            "version": "6.0.0",
-            "constraint": "6.0.0"
-          },
-          {
             "name": "psy/psysh",
             "version": "v0.8.0",
             "constraint": "0.8.0"
+          },
+          {
+            "name": "phpunit/phpunit",
+            "version": "6.0.0",
+            "constraint": "6.0.0"
           }
         ]
       }
@@ -378,9 +378,9 @@
     "working_directory": "test-vulnerable",
     "package_manager": "composer",
     "time": {
-      "analysis_start_time": "2025-08-17T21:43:18+02:00",
-      "analysis_end_time": "2025-08-17T21:43:18+02:00",
-      "analysis_delta_time": 0.006284334
+      "analysis_start_time": "2025-08-17T23:13:14+02:00",
+      "analysis_end_time": "2025-08-17T23:13:14+02:00",
+      "analysis_delta_time": 0.012390625
     },
     "errors": null,
     "paths": {
@@ -492,11 +492,11 @@
         "configured_extensions": [
           "openssl",
           "curl",
-          "gd",
-          "json",
+          "xml",
           "pdo",
           "mbstring",
-          "xml",
+          "gd",
+          "json",
           "zip"
         ]
       }
