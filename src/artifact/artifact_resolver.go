@@ -156,7 +156,7 @@ func (ar *ArtifactResolver) isZipFile(url string) bool {
 }
 
 // discoverDirectoryArtifacts discovers artifacts from a directory-based repository
-func (ar *ArtifactResolver) discoverDirectoryArtifacts(repo auth.ComposerRepository, packageName string) ([]*ArtifactInfo, error) {
+func (ar *ArtifactResolver) discoverDirectoryArtifacts(repo auth.ComposerRepository, _ string) ([]*ArtifactInfo, error) {
 	// For directory-based repositories, we need to list the directory contents
 	// This would typically require HTTP directory listing or API support
 	
@@ -228,7 +228,7 @@ func (ar *ArtifactResolver) urlExists(url string) bool {
 }
 
 // selectBestArtifact selects the best matching artifact based on version constraints
-func (ar *ArtifactResolver) selectBestArtifact(artifacts []*ArtifactInfo, packageName, constraint string) (*ArtifactInfo, error) {
+func (ar *ArtifactResolver) selectBestArtifact(artifacts []*ArtifactInfo, _, constraint string) (*ArtifactInfo, error) {
 	if len(artifacts) == 0 {
 		return nil, nil
 	}
@@ -278,7 +278,7 @@ func (ar *ArtifactResolver) versionMatches(version, constraint string) bool {
 }
 
 // downloadArtifact downloads and caches an artifact
-func (ar *ArtifactResolver) downloadArtifact(repo auth.ComposerRepository, artifact *ArtifactInfo) error {
+func (ar *ArtifactResolver) downloadArtifact(_ auth.ComposerRepository, artifact *ArtifactInfo) error {
 	log.Printf("Downloading artifact: %s", artifact.URL)
 
 	// Create cache filename

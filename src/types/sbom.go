@@ -98,12 +98,12 @@ type Extra struct {
 	PluginAPIVersion string            `json:"plugin_api_version,omitempty"`
 	ContentHash      string            `json:"content_hash,omitempty"`
 	Platform         map[string]string `json:"platform,omitempty"`
-	Statistics       Statistics        `json:"statistics,omitempty"`
+	Statistics       Statistics        `json:"statistics"`
 	// PHAR and vendor support
 	PHARFiles          []PHARInfo `json:"phar_files,omitempty"`
 	HasVendorDirectory bool       `json:"has_vendor_directory,omitempty"`
 	// PHP Extensions
-	PHPExtensions PHPExtensionInfo `json:"php_extensions,omitempty"`
+	PHPExtensions PHPExtensionInfo `json:"php_extensions"`
 	// Private repository support
 	PrivateRepositoryInfo map[string]any `json:"private_repository_info,omitempty"`
 }

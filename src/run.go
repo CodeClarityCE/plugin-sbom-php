@@ -3,6 +3,7 @@ package src
 import (
 	"fmt"
 	"log"
+	"maps"
 	"os"
 	"path/filepath"
 	"time"
@@ -71,9 +72,7 @@ func Start(sourceCodeDir string, analysisId uuid.UUID, knowledge_db *bun.DB) typ
 	// Extract all dependencies from all workspaces
 	allDependencies := make(map[string]map[string]types.Versions)
 	for _, workspace := range workspaces {
-		for depName, versions := range workspace.Dependencies {
-			allDependencies[depName] = versions
-		}
+		maps.Copy(allDependencies, workspace.Dependencies)
 	}
 	knowledge.UpdateKnowledge(allDependencies, analysisId)
 

@@ -169,9 +169,10 @@ func TestArtifactResolverWithAuthentication(t *testing.T) {
 		}
 
 		// Return success for authenticated requests
-		if r.Method == "HEAD" {
+		switch method := r.Method; method {
+		case "HEAD":
 			w.WriteHeader(http.StatusOK)
-		} else if r.Method == "GET" {
+		case "GET":
 			zipContent := createTestZipFile(t)
 			w.Header().Set("Content-Type", "application/zip")
 			w.Write(zipContent)
@@ -206,9 +207,10 @@ func TestArtifactResolverCaching(t *testing.T) {
 	
 	// Create mock server that counts downloads
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		if r.Method == "HEAD" {
+		switch method := r.Method; method {
+		case "HEAD":
 			w.WriteHeader(http.StatusOK)
-		} else if r.Method == "GET" {
+		case "GET":
 			downloadCount++
 			zipContent := createTestZipFile(t)
 			w.Header().Set("Content-Type", "application/zip")
@@ -249,9 +251,10 @@ func TestArtifactResolverZipSecurity(t *testing.T) {
 	maliciousZip := createMaliciousZipFile(t)
 
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		if r.Method == "HEAD" {
+		switch method := r.Method; method {
+		case "HEAD":
 			w.WriteHeader(http.StatusOK)
-		} else if r.Method == "GET" {
+		case "GET":
 			w.Header().Set("Content-Type", "application/zip")
 			w.Write(maliciousZip)
 		}

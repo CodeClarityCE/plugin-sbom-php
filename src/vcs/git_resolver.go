@@ -633,7 +633,7 @@ func base64Decode(src, dst []byte) (int, error) {
 	j := 0
 	for i := 0; i < len(src); i += 4 {
 		var val uint32
-		for k := 0; k < 4; k++ {
+		for k := range 4 {
 			c := src[i+k]
 			var v uint32
 			if c >= 'A' && c <= 'Z' {

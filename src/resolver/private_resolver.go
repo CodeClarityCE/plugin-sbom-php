@@ -326,17 +326,17 @@ func (r *PrivatePackageResolver) resolveFromArtifactRepository(repo auth.Compose
 }
 
 // resolveFromPathRepository resolves from a local path repository
-func (r *PrivatePackageResolver) resolveFromPathRepository(repo auth.ComposerRepository, name, constraint string) (*PackageInfo, error) {
+func (r *PrivatePackageResolver) resolveFromPathRepository(repo auth.ComposerRepository, _, _ string) (*PackageInfo, error) {
 	// Path resolution would require local filesystem access
 	log.Printf("Path repository resolution not yet implemented for: %s", repo.URL)
 	return nil, nil
 }
 
 // resolveFromPublicRepository resolves from public repositories (fallback)
-func (r *PrivatePackageResolver) resolveFromPublicRepository(name, constraint string) (*PackageInfo, error) {
+func (r *PrivatePackageResolver) resolveFromPublicRepository(_, _ string) (*PackageInfo, error) {
 	// This would typically query packagist.org
 	// For now, return a placeholder
-	log.Printf("Public repository resolution not yet implemented for: %s", name)
+	log.Printf("Public repository resolution not yet implemented")
 	return nil, nil
 }
 
