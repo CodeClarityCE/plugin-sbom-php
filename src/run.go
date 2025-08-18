@@ -219,7 +219,6 @@ func StartWithPrivateRepos(sourceCodeDir string, analysisId uuid.UUID, knowledge
 	perfConfig := performance.DefaultPerformanceConfig()
 	perfManager := performance.NewPerformanceManager(perfConfig)
 	defer func() {
-		perfManager.PrintPerformanceReport()
 		perfManager.Shutdown(5 * time.Second)
 	}()
 
@@ -378,7 +377,6 @@ func StartWithPerformanceOptimizations(sourceCodeDir string, analysisId uuid.UUI
 	perfConfig := performance.DefaultPerformanceConfig()
 	perfManager := performance.NewPerformanceManager(perfConfig)
 	defer func() {
-		perfManager.PrintPerformanceReport()
 		perfManager.Shutdown(5 * time.Second)
 	}()
 
