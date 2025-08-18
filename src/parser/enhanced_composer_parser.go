@@ -8,6 +8,7 @@ import (
 	"path/filepath"
 	"strings"
 
+	"github.com/CodeClarityCE/plugin-php-sbom/src/artifact"
 	"github.com/CodeClarityCE/plugin-php-sbom/src/auth"
 	"github.com/CodeClarityCE/plugin-php-sbom/src/resolver"
 	"github.com/CodeClarityCE/plugin-php-sbom/src/vcs"
@@ -69,6 +70,10 @@ func NewEnhancedComposerParser(projectDir string) (*EnhancedComposerParser, erro
 	// Create and set up Git resolver
 	gitResolver := vcs.NewGitResolver(authManager)
 	packageResolver.SetGitResolver(gitResolver)
+	
+	// Create and set up Artifact resolver
+	artifactResolver := artifact.NewArtifactResolver(authManager)
+	packageResolver.SetArtifactResolver(artifactResolver)
 
 	parser := &EnhancedComposerParser{
 		authManager:     authManager,

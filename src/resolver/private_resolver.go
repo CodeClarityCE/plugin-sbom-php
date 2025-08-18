@@ -92,12 +92,18 @@ type GitResolver interface {
 	ResolveGitRepository(repo auth.ComposerRepository, packageName, constraint string) (*PackageInfo, error)
 }
 
+// ArtifactResolver interface to avoid circular dependency
+type ArtifactResolver interface {
+	ResolveArtifactRepository(repo auth.ComposerRepository, packageName, constraint string) (*PackageInfo, error)
+}
+
 // PrivatePackageResolver resolves package metadata from private repositories
 type PrivatePackageResolver struct {
-	authManager *auth.AuthManager
-	httpClient  *http.Client
-	cache       *PackageCache
-	gitResolver GitResolver
+	authManager      *auth.AuthManager
+	httpClient       *http.Client
+	cache            *PackageCache
+	gitResolver      GitResolver
+	artifactResolver ArtifactResolver
 }
 
 // NewPrivatePackageResolver creates a new private package resolver
@@ -112,14 +118,20 @@ func NewPrivatePackageResolver(authManager *auth.AuthManager) *PrivatePackageRes
 				DisableCompression: false,
 			},
 		},
-		cache:       NewPackageCache(1*time.Hour, 1000), // 1 hour TTL, max 1000 entries
-		gitResolver: nil, // Will be set externally to avoid circular dependency
+		cache:            NewPackageCache(1*time.Hour, 1000), // 1 hour TTL, max 1000 entries
+		gitResolver:      nil, // Will be set externally to avoid circular dependency
+		artifactResolver: nil, // Will be set externally to avoid circular dependency
 	}
 }
 
 // SetGitResolver sets the Git resolver to avoid circular dependency
 func (r *PrivatePackageResolver) SetGitResolver(gitResolver GitResolver) {
 	r.gitResolver = gitResolver
+}
+
+// SetArtifactResolver sets the Artifact resolver to avoid circular dependency
+func (r *PrivatePackageResolver) SetArtifactResolver(artifactResolver ArtifactResolver) {
+	r.artifactResolver = artifactResolver
 }
 
 // ResolvePackage resolves package metadata from public and private repositories
@@ -303,8 +315,14 @@ func (r *PrivatePackageResolver) resolveFromVCSRepository(repo auth.ComposerRepo
 
 // resolveFromArtifactRepository resolves from an artifact repository
 func (r *PrivatePackageResolver) resolveFromArtifactRepository(repo auth.ComposerRepository, name, constraint string) (*PackageInfo, error) {
-	// Artifact resolution would require scanning ZIP files
-	log.Printf("Artifact repository resolution not yet implemented for: %s", repo.URL)
+	log.Printf("Resolving artifact repository: %s for package: %s", repo.URL, name)
+	
+	// Use ArtifactResolver if available
+	if r.artifactResolver != nil {
+		return r.artifactResolver.ResolveArtifactRepository(repo, name, constraint)
+	}
+	
+	log.Printf("Artifact repository resolution not available - ArtifactResolver not set")
 	return nil, nil
 }
 
