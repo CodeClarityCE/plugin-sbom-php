@@ -253,6 +253,7 @@ func (pm *PerformanceManager) GetOptimizedObjectPool() *ObjectPool {
 	return pm.objectPool
 }
 
+
 // GetStats returns comprehensive performance statistics
 func (pm *PerformanceManager) GetStats() PerformanceStats {
 	pm.mu.RLock()
