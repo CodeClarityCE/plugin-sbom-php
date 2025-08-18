@@ -94,7 +94,7 @@ func detectFromPHPInfo(info *PHPExtensionInfo) error {
 			continue
 		}
 
-		switch currentSection {
+		switch section := currentSection; section {
 		case "PHP Modules":
 			info.LoadedExtensions = append(info.LoadedExtensions, line)
 			info.Extensions[line] = PHPExtension{

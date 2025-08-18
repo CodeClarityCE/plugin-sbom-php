@@ -40,7 +40,7 @@ type ComposerJSON struct {
 	Description string                 `json:"description"`
 	Type        string                 `json:"type"`
 	Version     string                 `json:"version"`
-	License     interface{}            `json:"license"`
+	License     any                    `json:"license"`
 	Authors     []Author               `json:"authors"`
 	Require     map[string]string      `json:"require"`
 	RequireDev  map[string]string      `json:"require-dev"`
@@ -260,15 +260,13 @@ func (ar *ArtifactResolver) versionMatches(version, constraint string) bool {
 		return true
 	}
 
-	if strings.HasPrefix(constraint, "^") {
+	if constraintVersion, found := strings.CutPrefix(constraint, "^"); found {
 		// Caret range - match major version
-		constraintVersion := strings.TrimPrefix(constraint, "^")
 		return strings.HasPrefix(version, constraintVersion[:1])
 	}
 
-	if strings.HasPrefix(constraint, "~") {
+	if constraintVersion, found := strings.CutPrefix(constraint, "~"); found {
 		// Tilde range - match major.minor
-		constraintVersion := strings.TrimPrefix(constraint, "~")
 		parts := strings.Split(constraintVersion, ".")
 		if len(parts) >= 2 {
 			prefix := parts[0] + "." + parts[1]
@@ -495,7 +493,7 @@ func (ar *ArtifactResolver) addAuthentication(req *http.Request, artifactURL str
 		return nil // No authentication needed
 	}
 
-	switch auth.Type {
+	switch authType := auth.Type; authType {
 	case "http-basic":
 		req.SetBasicAuth(auth.Username, auth.Password)
 	case "bearer":
@@ -531,7 +529,7 @@ func (ar *ArtifactResolver) extractHost(url string) string {
 }
 
 // normalizeLicense normalizes license information
-func (ar *ArtifactResolver) normalizeLicense(license interface{}) []string {
+func (ar *ArtifactResolver) normalizeLicense(license any) []string {
 	if license == nil {
 		return []string{}
 	}
@@ -544,7 +542,7 @@ func (ar *ArtifactResolver) normalizeLicense(license interface{}) []string {
 		return []string{v}
 	case []string:
 		return v
-	case []interface{}:
+	case []any:
 		result := make([]string, 0, len(v))
 		for _, item := range v {
 			if str, ok := item.(string); ok && str != "" {

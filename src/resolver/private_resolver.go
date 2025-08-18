@@ -220,8 +220,7 @@ func (r *PrivatePackageResolver) matchesPattern(packageName, pattern string) boo
 			prefix := strings.TrimSuffix(pattern, "*")
 			return strings.HasPrefix(packageName, prefix)
 		}
-		if strings.HasPrefix(pattern, "*") {
-			suffix := strings.TrimPrefix(pattern, "*")
+		if suffix, found := strings.CutPrefix(pattern, "*"); found {
 			return strings.HasSuffix(packageName, suffix)
 		}
 	}
@@ -231,7 +230,7 @@ func (r *PrivatePackageResolver) matchesPattern(packageName, pattern string) boo
 
 // resolveFromRepository resolves a package from a specific repository
 func (r *PrivatePackageResolver) resolveFromRepository(repo auth.ComposerRepository, name, constraint string) (*PackageInfo, error) {
-	switch repo.Type {
+	switch repoType := repo.Type; repoType {
 	case "composer":
 		return r.resolveFromComposerRepository(repo, name, constraint)
 	case "vcs":
@@ -353,7 +352,7 @@ func (r *PrivatePackageResolver) addAuthentication(req *http.Request, repoURL st
 		return nil // No authentication needed
 	}
 
-	switch auth.Type {
+	switch authType := auth.Type; authType {
 	case "http-basic":
 		req.SetBasicAuth(auth.Username, auth.Password)
 	case "bearer":
@@ -372,15 +371,15 @@ func (r *PrivatePackageResolver) addAuthentication(req *http.Request, repoURL st
 }
 
 // addCustomHeaders adds custom headers from repository options
-func (r *PrivatePackageResolver) addCustomHeaders(req *http.Request, options map[string]interface{}) {
+func (r *PrivatePackageResolver) addCustomHeaders(req *http.Request, options map[string]any) {
 	if options == nil {
 		return
 	}
 
 	if httpOptions, exists := options["http"]; exists {
-		if httpMap, ok := httpOptions.(map[string]interface{}); ok {
+		if httpMap, ok := httpOptions.(map[string]any); ok {
 			if headers, exists := httpMap["header"]; exists {
-				if headerList, ok := headers.([]interface{}); ok {
+				if headerList, ok := headers.([]any); ok {
 					for _, header := range headerList {
 						if headerStr, ok := header.(string); ok {
 							parts := strings.SplitN(headerStr, ":", 2)

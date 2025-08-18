@@ -375,7 +375,7 @@ func convertLicenses(license any) []string {
 		return []string{v}
 	case []string:
 		return v
-	case []interface{}:
+	case []any:
 		result := make([]string, 0, len(v))
 		for _, item := range v {
 			if str, ok := item.(string); ok && str != "" {
@@ -584,7 +584,7 @@ func convertEnhancedSBOMToStandard(enhancedSBOM *parser.EnhancedSBOM, sourceCode
 			VersionSeperator:    ".",
 			ImportPathSeperator: "/",
 			LockFileVersion:     2,
-			PrivateRepositoryInfo: map[string]interface{}{
+			PrivateRepositoryInfo: map[string]any{
 				"private_packages_count":    enhancedSBOM.GetPrivatePackageCount(),
 				"private_repositories":      len(enhancedSBOM.PrivateRepositories),
 				"authentication_summary":    enhancedSBOM.GetAuthenticationSummary(),

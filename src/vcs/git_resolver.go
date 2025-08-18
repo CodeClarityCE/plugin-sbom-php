@@ -30,7 +30,7 @@ type ComposerJSON struct {
 	Name        string                 `json:"name"`
 	Description string                 `json:"description"`
 	Type        string                 `json:"type"`
-	License     interface{}            `json:"license"`
+	License     any                    `json:"license"`
 	Authors     []Author               `json:"authors"`
 	Require     map[string]string      `json:"require"`
 	RequireDev  map[string]string      `json:"require-dev"`
@@ -122,10 +122,10 @@ func (gr *GitResolver) parseGitURL(gitURL string) (*GitRepositoryInfo, error) {
 	}
 
 	// Check if it's GitHub or GitLab
-	switch {
-	case strings.Contains(u.Host, "github"):
+	switch host := u.Host; {
+	case strings.Contains(host, "github"):
 		info.IsGitHub = true
-	case strings.Contains(u.Host, "gitlab"):
+	case strings.Contains(host, "gitlab"):
 		info.IsGitLab = true
 	}
 
@@ -410,7 +410,7 @@ func (gr *GitResolver) addGitHubAuthentication(req *http.Request, host string) e
 		return nil
 	}
 
-	switch auth.Type {
+	switch authType := auth.Type; authType {
 	case "github-oauth", "github-token":
 		req.Header.Set("Authorization", fmt.Sprintf("token %s", auth.Token))
 	case "http-basic":
@@ -426,7 +426,7 @@ func (gr *GitResolver) addGitLabAuthentication(req *http.Request, host string) e
 		return nil
 	}
 
-	switch auth.Type {
+	switch authType := auth.Type; authType {
 	case "gitlab-token":
 		req.Header.Set("Private-Token", auth.Token)
 	case "http-basic":
@@ -470,7 +470,7 @@ func (gr *GitResolver) setupGitAuthentication(cmd *exec.Cmd, gitInfo *GitReposit
 	}
 
 	// Set up Git credentials based on auth type
-	switch auth.Type {
+	switch authType := auth.Type; authType {
 	case "github-token", "gitlab-token":
 		// Use token-based authentication
 		authenticatedURL := strings.Replace(gitInfo.URL, "https://", fmt.Sprintf("https://%s@", auth.Token), 1)
@@ -567,7 +567,7 @@ func (gr *GitResolver) determineVersionFromConstraint(constraint string, repoInf
 	return "dev-main"
 }
 
-func (gr *GitResolver) normalizeLicense(license interface{}) []string {
+func (gr *GitResolver) normalizeLicense(license any) []string {
 	if license == nil {
 		return []string{}
 	}
@@ -580,7 +580,7 @@ func (gr *GitResolver) normalizeLicense(license interface{}) []string {
 		return []string{v}
 	case []string:
 		return v
-	case []interface{}:
+	case []any:
 		result := make([]string, 0, len(v))
 		for _, item := range v {
 			if str, ok := item.(string); ok && str != "" {

@@ -281,12 +281,12 @@ func TestIntegration_BackwardCompatibility(t *testing.T) {
 // Helper function to create a test project structure
 func createTestProject(t *testing.T, dir string) {
 	// Create composer.json
-	composerJSON := map[string]interface{}{
+	composerJSON := map[string]any{
 		"name":        "test/complete-project",
 		"description": "Complete test project",
 		"type":        "project",
 		"license":     "proprietary",
-		"repositories": []map[string]interface{}{
+		"repositories": []map[string]any{
 			{
 				"type": "composer",
 				"url":  "https://repo.packagist.com/company/",
@@ -310,10 +310,10 @@ func createTestProject(t *testing.T, dir string) {
 	require.NoError(t, err)
 
 	// Create composer.lock
-	composerLock := map[string]interface{}{
+	composerLock := map[string]any{
 		"_readme":      []string{"This file locks the dependencies"},
 		"content-hash": "abc123",
-		"packages": []map[string]interface{}{
+		"packages": []map[string]any{
 			{
 				"name":    "symfony/console",
 				"version": "5.4.0",
@@ -332,7 +332,7 @@ func createTestProject(t *testing.T, dir string) {
 				},
 			},
 		},
-		"packages-dev": []map[string]interface{}{
+		"packages-dev": []map[string]any{
 			{
 				"name":    "phpunit/phpunit",
 				"version": "9.5.0",
@@ -359,7 +359,7 @@ func BenchmarkIntegration_CompleteFlow(b *testing.B) {
 	createTestProject(&testing.T{}, tempDir)
 
 	b.ResetTimer()
-	for i := 0; i < b.N; i++ {
+	for b.Loop() {
 		parser, _ := parser.NewEnhancedComposerParser(tempDir)
 		parser.ParseWithPrivateRepos()
 	}

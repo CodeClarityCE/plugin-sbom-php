@@ -18,7 +18,7 @@ import (
 type EnhancedComposerJSON struct {
 	*ComposerJSON
 	Repositories []auth.ComposerRepository `json:"repositories,omitempty"`
-	Config       map[string]interface{}    `json:"config,omitempty"`
+	Config       map[string]any    `json:"config,omitempty"`
 }
 
 // EnhancedPackageInfo extends PackageInfo with private repository metadata

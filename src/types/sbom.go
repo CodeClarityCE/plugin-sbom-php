@@ -105,7 +105,7 @@ type Extra struct {
 	// PHP Extensions
 	PHPExtensions PHPExtensionInfo `json:"php_extensions,omitempty"`
 	// Private repository support
-	PrivateRepositoryInfo map[string]interface{} `json:"private_repository_info,omitempty"`
+	PrivateRepositoryInfo map[string]any `json:"private_repository_info,omitempty"`
 }
 
 // PHPExtension represents a PHP extension with its version and metadata
@@ -140,7 +140,7 @@ type PHARInfo struct {
 	Size         int64                  `json:"size"`
 	Modified     string                 `json:"modified"`
 	Signature    string                 `json:"signature"`
-	Metadata     map[string]interface{} `json:"metadata"`
+	Metadata     map[string]any `json:"metadata"`
 	MainScript   string                 `json:"main_script"`
 	IsExecutable bool                   `json:"is_executable"`
 }
@@ -185,8 +185,8 @@ const (
 )
 
 // ConvertOutputToMap converts the PHP SBOM output to map (compatible with js-sbom)
-func ConvertOutputToMap(output Output) map[string]interface{} {
-	outputMap := make(map[string]interface{})
+func ConvertOutputToMap(output Output) map[string]any {
+	outputMap := make(map[string]any)
 	outputMap["workspaces"] = output.WorkSpaces
 	outputMap["analysis_info"] = output.AnalysisInfo
 	return outputMap

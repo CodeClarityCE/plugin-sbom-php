@@ -107,17 +107,17 @@ func TestGitResolver(t *testing.T) {
 	t.Run("GitHubAPIResolution", func(t *testing.T) {
 		// Create mock GitHub API server
 		server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-			switch r.URL.Path {
+			switch urlPath := r.URL.Path; urlPath {
 			case "/repos/test/package/contents/composer.json":
 				// Mock composer.json response
-				response := map[string]interface{}{
+				response := map[string]any{
 					"content": "ewogICJuYW1lIjogInRlc3QvcGFja2FnZSIsCiAgImRlc2NyaXB0aW9uIjogIlRlc3QgcGFja2FnZSIsCiAgInR5cGUiOiAibGlicmFyeSIsCiAgImxpY2Vuc2UiOiAiTUlUIgp9", // Base64 encoded composer.json
 					"encoding": "base64",
 				}
 				json.NewEncoder(w).Encode(response)
 			case "/repos/test/package":
 				// Mock repository info
-				response := map[string]interface{}{
+				response := map[string]any{
 					"default_branch": "main",
 					"updated_at":     "2024-01-01T00:00:00Z",
 				}
@@ -355,7 +355,7 @@ func BenchmarkGitResolution(b *testing.B) {
 	}
 
 	b.ResetTimer()
-	for i := 0; i < b.N; i++ {
+	for b.Loop() {
 		gitResolver.ResolveGitRepository(repo, "composer/composer", "*")
 	}
 }

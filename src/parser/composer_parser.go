@@ -181,7 +181,7 @@ type PHARInfo struct {
 	Size         int64                  `json:"size"`
 	Modified     string                 `json:"modified"`
 	Signature    string                 `json:"signature"`
-	Metadata     map[string]interface{} `json:"metadata"`
+	Metadata     map[string]any `json:"metadata"`
 	MainScript   string                 `json:"main_script"`
 	IsExecutable bool                   `json:"is_executable"`
 }
@@ -198,7 +198,7 @@ func AnalyzePHARFile(pharPath string) (*PHARInfo, error) {
 		Name:         filepath.Base(pharPath),
 		Size:         info.Size(),
 		Modified:     info.ModTime().Format("2006-01-02T15:04:05Z"),
-		Metadata:     make(map[string]interface{}),
+		Metadata:     make(map[string]any),
 		IsExecutable: isExecutable(pharPath),
 	}
 

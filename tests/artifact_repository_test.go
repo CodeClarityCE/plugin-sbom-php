@@ -94,7 +94,7 @@ func TestArtifactResolverWithMockServer(t *testing.T) {
 
 	// Create mock HTTP server
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		switch r.Method {
+		switch method := r.Method; method {
 		case "HEAD":
 			// URL existence check
 			if r.URL.Path == "/packages/test-package-1.0.0.zip" {
@@ -466,7 +466,7 @@ func BenchmarkArtifactResolution(b *testing.B) {
 	}
 
 	b.ResetTimer()
-	for i := 0; i < b.N; i++ {
+	for b.Loop() {
 		artifactResolver.ResolveArtifactRepository(repo, "test/package", "*")
 	}
 }

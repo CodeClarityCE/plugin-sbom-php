@@ -429,7 +429,7 @@ func TestGetPackageName(t *testing.T) {
 func TestNormalizeLicense(t *testing.T) {
 	tests := []struct {
 		name     string
-		input    interface{}
+		input    any
 		expected []string
 	}{
 		{
@@ -439,7 +439,7 @@ func TestNormalizeLicense(t *testing.T) {
 		},
 		{
 			name:     "array license",
-			input:    []interface{}{"MIT", "GPL-2.0"},
+			input:    []any{"MIT", "GPL-2.0"},
 			expected: []string{"MIT", "GPL-2.0"},
 		},
 		{
@@ -454,12 +454,12 @@ func TestNormalizeLicense(t *testing.T) {
 		},
 		{
 			name:     "empty array",
-			input:    []interface{}{},
+			input:    []any{},
 			expected: []string(nil),
 		},
 		{
 			name:     "mixed array with empty strings",
-			input:    []interface{}{"MIT", "", "GPL-2.0"},
+			input:    []any{"MIT", "", "GPL-2.0"},
 			expected: []string{"MIT", "", "GPL-2.0"},
 		},
 	}

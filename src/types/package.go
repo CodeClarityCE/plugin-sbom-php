@@ -12,7 +12,7 @@ type PackageInfo struct {
 	Authors     []PackageAuthor        `json:"authors,omitempty"`
 	Require     map[string]string      `json:"require,omitempty"`
 	RequireDev  map[string]string      `json:"require-dev,omitempty"`
-	Extra       map[string]interface{} `json:"extra,omitempty"`
+	Extra       map[string]any `json:"extra,omitempty"`
 	Repository  string                 `json:"repository,omitempty"` // Source repository
 	IsPrivate   bool                   `json:"is_private,omitempty"`
 }

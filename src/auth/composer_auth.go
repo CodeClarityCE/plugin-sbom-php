@@ -33,7 +33,7 @@ type ComposerAuth struct {
 type ComposerRepository struct {
 	Type    string                 `json:"type"`
 	URL     string                 `json:"url,omitempty"`
-	Options map[string]interface{} `json:"options,omitempty"`
+	Options map[string]any `json:"options,omitempty"`
 	Only    []string               `json:"only,omitempty"`
 	Exclude []string               `json:"exclude,omitempty"`
 }
@@ -42,7 +42,7 @@ type ComposerRepository struct {
 type ComposerConfig struct {
 	Repositories []ComposerRepository    `json:"repositories"`
 	Auth         map[string]ComposerAuth `json:"auth"`
-	Config       map[string]interface{}  `json:"config"`
+	Config       map[string]any  `json:"config"`
 }
 
 // SecurityConfig represents security settings for private repository access
@@ -65,7 +65,7 @@ func NewAuthManager() *AuthManager {
 		config: &ComposerConfig{
 			Repositories: []ComposerRepository{},
 			Auth:         make(map[string]ComposerAuth),
-			Config:       make(map[string]interface{}),
+			Config:       make(map[string]any),
 		},
 		security: &SecurityConfig{
 			AllowPrivateRepos: true,
@@ -85,7 +85,7 @@ func (am *AuthManager) LoadFromComposerJSON(composerJSONPath string) error {
 
 	var composerData struct {
 		Repositories []ComposerRepository   `json:"repositories,omitempty"`
-		Config       map[string]interface{} `json:"config,omitempty"`
+		Config       map[string]any `json:"config,omitempty"`
 	}
 
 	if err := json.Unmarshal(data, &composerData); err != nil {
@@ -191,7 +191,7 @@ func (am *AuthManager) LoadFromAuthJSON(projectDir string) error {
 func (am *AuthManager) LoadFromEnvironment() error {
 	// Support COMPOSER_AUTH environment variable (JSON format)
 	if composerAuth := os.Getenv("COMPOSER_AUTH"); composerAuth != "" {
-		var authData map[string]interface{}
+		var authData map[string]any
 		if err := json.Unmarshal([]byte(composerAuth), &authData); err != nil {
 			return fmt.Errorf("failed to parse COMPOSER_AUTH: %w", err)
 		}
@@ -207,15 +207,15 @@ func (am *AuthManager) LoadFromEnvironment() error {
 }
 
 // processEnvironmentAuth processes authentication data from environment variables
-func (am *AuthManager) processEnvironmentAuth(authData map[string]interface{}) error {
+func (am *AuthManager) processEnvironmentAuth(authData map[string]any) error {
 	if am.config.Auth == nil {
 		am.config.Auth = make(map[string]ComposerAuth)
 	}
 
 	// Process http-basic auth
-	if httpBasic, ok := authData["http-basic"].(map[string]interface{}); ok {
+	if httpBasic, ok := authData["http-basic"].(map[string]any); ok {
 		for host, credsData := range httpBasic {
-			if creds, ok := credsData.(map[string]interface{}); ok {
+			if creds, ok := credsData.(map[string]any); ok {
 				username, _ := creds["username"].(string)
 				password, _ := creds["password"].(string)
 				am.config.Auth[host] = ComposerAuth{
@@ -318,8 +318,7 @@ func (am *AuthManager) normalizeHost(host string) string {
 // hostMatches checks if a host matches an auth host pattern
 func (am *AuthManager) hostMatches(host, authHost string) bool {
 	// Simple wildcard matching
-	if strings.HasPrefix(authHost, "*.") {
-		domain := strings.TrimPrefix(authHost, "*.")
+	if domain, found := strings.CutPrefix(authHost, "*."); found {
 		return strings.HasSuffix(host, "."+domain) || host == domain
 	}
 
