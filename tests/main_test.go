@@ -276,3 +276,47 @@ func TestComposerJSONOnly(t *testing.T) {
 	// For now, we'll skip this test as we don't have that test case
 	t.Skip("Test case for composer.json-only project not available yet")
 }
+
+func TestCreateCachet(t *testing.T) {
+	out := plugin.Start("./test8-cachet", uuid.UUID{}, nil)
+	
+	// Basic assertions
+	assert.NotNil(t, out)
+	assert.Equal(t, codeclarity.SUCCESS, out.AnalysisInfo.Status)
+	assert.NotEmpty(t, out.WorkSpaces)
+	
+	// Test workspace
+	defaultWs, exists := out.WorkSpaces["."]
+	assert.True(t, exists, "Default workspace should exist")
+	
+	// Debug output
+	t.Logf("=== SBOM Debug Info ===")
+	t.Logf("Project Name: %s", out.AnalysisInfo.ProjectName)
+	t.Logf("Package Manager: %s", out.AnalysisInfo.PackageManager)
+	t.Logf("Framework: %s", out.AnalysisInfo.Extra.Framework)
+	t.Logf("PHP Version: %s", out.AnalysisInfo.Extra.PHPVersion)
+	t.Logf("Number of Dependencies: %d", len(defaultWs.Dependencies))
+	t.Logf("Number of Dev Dependencies: %d", len(defaultWs.Start.DevDependencies))
+	
+	// Print first few dependencies if any
+	if len(defaultWs.Dependencies) > 0 {
+		t.Logf("\nFirst 5 dependencies:")
+		count := 0
+		for pkgName, versions := range defaultWs.Dependencies {
+			if count >= 5 {
+				break
+			}
+			// Get first version from the versions map
+			for versionKey := range versions {
+				t.Logf("  - %s: %s", pkgName, versionKey)
+				break
+			}
+			count++
+		}
+	} else {
+		t.Errorf("SBOM has 0 dependencies - this may indicate a parsing issue")
+	}
+	
+	// Write output for inspection
+	writeJSON(out, "./test8-cachet/sbom.json")
+}

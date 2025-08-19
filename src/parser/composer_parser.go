@@ -42,7 +42,7 @@ type ComposerLock struct {
 	PreferStable     bool              `json:"prefer-stable"`
 	PreferLowest     bool              `json:"prefer-lowest"`
 	Platform         map[string]string `json:"platform"`
-	PlatformDev      []any             `json:"platform-dev"` // Can be array or map
+	PlatformDev      any               `json:"platform-dev"` // Can be array or map
 	PluginAPIVersion string            `json:"plugin-api-version"`
 }
 
