@@ -9,7 +9,7 @@ import (
 
 	codeclarity_src "github.com/CodeClarityCE/plugin-php-sbom/src"
 	"github.com/CodeClarityCE/plugin-php-sbom/src/types"
-	"github.com/CodeClarityCE/utility-types/ecosystem"
+	"github.com/CodeClarityCE/utility-types/boilerplates"
 	types_amqp "github.com/CodeClarityCE/utility-types/amqp"
 	codeclarity "github.com/CodeClarityCE/utility-types/codeclarity_db"
 	"github.com/CodeClarityCE/utility-types/exceptions"
@@ -21,7 +21,7 @@ type PHPSBOMAnalysisHandler struct{}
 
 // StartAnalysis implements the AnalysisHandler interface
 func (h *PHPSBOMAnalysisHandler) StartAnalysis(
-	databases *ecosystem.PluginDatabases,
+	databases *boilerplates.PluginDatabases,
 	dispatcherMessage types_amqp.DispatcherPluginMessage,
 	config plugin_db.Plugin,
 	analysisDoc codeclarity.Analysis,
@@ -31,7 +31,7 @@ func (h *PHPSBOMAnalysisHandler) StartAnalysis(
 
 // main is the entry point of the program.
 func main() {
-	pluginBase, err := ecosystem.NewPluginBase()
+	pluginBase, err := boilerplates.CreatePluginBase()
 	if err != nil {
 		log.Fatalf("Failed to initialize plugin base: %v", err)
 	}
@@ -52,7 +52,7 @@ func main() {
 // - config: Plugin configuration.
 // - analysis_document: Analysis document containing the analysis configuration.
 // It returns a map[string]any containing the result of the analysis, the analysis status, and an error if any.
-func startAnalysis(databases *ecosystem.PluginDatabases, dispatcherMessage types_amqp.DispatcherPluginMessage, config plugin_db.Plugin, analysis_document codeclarity.Analysis) (map[string]any, codeclarity.AnalysisStatus, error) {
+func startAnalysis(databases *boilerplates.PluginDatabases, dispatcherMessage types_amqp.DispatcherPluginMessage, config plugin_db.Plugin, analysis_document codeclarity.Analysis) (map[string]any, codeclarity.AnalysisStatus, error) {
 	// Get analysis config
 	messageData := analysis_document.Config[config.Name].(map[string]any)
 
