@@ -141,7 +141,7 @@ func TestArtifactResolverWithMockServer(t *testing.T) {
 		}
 
 		packageInfo, err := artifactResolver.ResolveArtifactRepository(repo, "test-package", "1.0.0")
-		
+
 		// This should work if URL pattern matching is implemented correctly
 		if err == nil {
 			assert.NotNil(t, packageInfo)
@@ -181,7 +181,7 @@ func TestArtifactResolverWithAuthentication(t *testing.T) {
 	defer server.Close()
 
 	authManager := auth.NewAuthManager()
-	
+
 	// Note: AuthManager doesn't expose AddAuth method
 	// Would need to set up authentication through environment or config files
 	// For now, test without authentication
@@ -195,7 +195,7 @@ func TestArtifactResolverWithAuthentication(t *testing.T) {
 	}
 
 	_, err := artifactResolver.ResolveArtifactRepository(repo, "test/package", "*")
-	
+
 	// Without proper authentication setup, this will likely fail
 	// Just ensure it doesn't panic
 	assert.True(t, err != nil || err == nil)
@@ -204,7 +204,7 @@ func TestArtifactResolverWithAuthentication(t *testing.T) {
 // TestArtifactResolverCaching tests caching functionality
 func TestArtifactResolverCaching(t *testing.T) {
 	downloadCount := 0
-	
+
 	// Create mock server that counts downloads
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		switch method := r.Method; method {
@@ -272,7 +272,7 @@ func TestArtifactResolverZipSecurity(t *testing.T) {
 
 	// Should fail due to security check
 	_, err := artifactResolver.ResolveArtifactRepository(repo, "test/package", "*")
-	
+
 	// Should either error or handle safely
 	if err != nil {
 		// Should contain security-related error
@@ -429,7 +429,7 @@ func createEmptyZipFile(t *testing.T) []byte {
 	defer os.Remove(tempFile.Name())
 
 	zipWriter := zip.NewWriter(tempFile)
-	
+
 	// Add a dummy file but no composer.json
 	writer, err := zipWriter.Create("README.md")
 	require.NoError(t, err)

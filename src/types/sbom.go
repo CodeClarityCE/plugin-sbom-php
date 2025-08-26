@@ -135,14 +135,14 @@ type PHPExtensionInfo struct {
 
 // PHARInfo represents information about a PHAR archive
 type PHARInfo struct {
-	Path         string                 `json:"path"`
-	Name         string                 `json:"name"`
-	Size         int64                  `json:"size"`
-	Modified     string                 `json:"modified"`
-	Signature    string                 `json:"signature"`
+	Path         string         `json:"path"`
+	Name         string         `json:"name"`
+	Size         int64          `json:"size"`
+	Modified     string         `json:"modified"`
+	Signature    string         `json:"signature"`
 	Metadata     map[string]any `json:"metadata"`
-	MainScript   string                 `json:"main_script"`
-	IsExecutable bool                   `json:"is_executable"`
+	MainScript   string         `json:"main_script"`
+	IsExecutable bool           `json:"is_executable"`
 }
 
 // Workspaces contains workspace information

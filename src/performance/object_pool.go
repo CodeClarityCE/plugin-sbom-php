@@ -20,18 +20,18 @@ type ObjectPool struct {
 
 // PoolStats tracks object pool performance
 type PoolStats struct {
-	VersionsCreated    int64
-	VersionsReused     int64
+	VersionsCreated     int64
+	VersionsReused      int64
 	DependenciesCreated int64
-	DependenciesReused int64
-	AuthorsCreated     int64
-	AuthorsReused      int64
-	WorkspacesCreated  int64
-	WorkspacesReused   int64
-	MapsCreated        int64
-	MapsReused         int64
-	TotalAllocations   int64
-	TotalReuse         int64
+	DependenciesReused  int64
+	AuthorsCreated      int64
+	AuthorsReused       int64
+	WorkspacesCreated   int64
+	WorkspacesReused    int64
+	MapsCreated         int64
+	MapsReused          int64
+	TotalAllocations    int64
+	TotalReuse          int64
 }
 
 // NewObjectPool creates a new object pool for SBOM structures
@@ -63,7 +63,7 @@ func NewObjectPool() *ObjectPool {
 		pool.updateStats(func(s *PoolStats) { s.WorkspacesCreated++ })
 		return &types.WorkSpace{
 			Dependencies: make(map[string]map[string]types.Versions),
-			Start:        types.Start{
+			Start: types.Start{
 				Dependencies:    make([]types.WorkSpaceDependency, 0, 10),
 				DevDependencies: make([]types.WorkSpaceDependency, 0, 10),
 			},
@@ -88,11 +88,11 @@ func NewObjectPool() *ObjectPool {
 
 // GetVersions gets a Versions struct from the pool
 func (p *ObjectPool) GetVersions() *types.Versions {
-	p.updateStats(func(s *PoolStats) { 
+	p.updateStats(func(s *PoolStats) {
 		s.VersionsReused++
 		s.TotalReuse++
 	})
-	
+
 	v := p.versionPool.Get().(*types.Versions)
 	p.resetVersions(v)
 	return v
@@ -107,11 +107,11 @@ func (p *ObjectPool) PutVersions(v *types.Versions) {
 
 // GetDependency gets a WorkSpaceDependency from the pool
 func (p *ObjectPool) GetDependency() *types.WorkSpaceDependency {
-	p.updateStats(func(s *PoolStats) { 
+	p.updateStats(func(s *PoolStats) {
 		s.DependenciesReused++
 		s.TotalReuse++
 	})
-	
+
 	dep := p.dependencyPool.Get().(*types.WorkSpaceDependency)
 	p.resetDependency(dep)
 	return dep
@@ -126,11 +126,11 @@ func (p *ObjectPool) PutDependency(dep *types.WorkSpaceDependency) {
 
 // GetAuthor gets an Author from the pool
 func (p *ObjectPool) GetAuthor() *types.Author {
-	p.updateStats(func(s *PoolStats) { 
+	p.updateStats(func(s *PoolStats) {
 		s.AuthorsReused++
 		s.TotalReuse++
 	})
-	
+
 	author := p.authorPool.Get().(*types.Author)
 	p.resetAuthor(author)
 	return author
@@ -145,11 +145,11 @@ func (p *ObjectPool) PutAuthor(author *types.Author) {
 
 // GetWorkspace gets a WorkSpace from the pool
 func (p *ObjectPool) GetWorkspace() *types.WorkSpace {
-	p.updateStats(func(s *PoolStats) { 
+	p.updateStats(func(s *PoolStats) {
 		s.WorkspacesReused++
 		s.TotalReuse++
 	})
-	
+
 	ws := p.workspacePool.Get().(*types.WorkSpace)
 	p.resetWorkspace(ws)
 	return ws
@@ -178,11 +178,11 @@ func (p *ObjectPool) PutStringSlice(slice *[]string) {
 
 // GetStringMap gets a string map from the pool
 func (p *ObjectPool) GetStringMap() *map[string]string {
-	p.updateStats(func(s *PoolStats) { 
+	p.updateStats(func(s *PoolStats) {
 		s.MapsReused++
 		s.TotalReuse++
 	})
-	
+
 	m := p.mapPool.Get().(*map[string]string)
 	p.resetStringMap(m)
 	return m
@@ -231,14 +231,14 @@ func (p *ObjectPool) ReturnDependenciesBatch(deps []*types.WorkSpaceDependency) 
 func (p *ObjectPool) GetStats() PoolStats {
 	p.mu.RLock()
 	defer p.mu.RUnlock()
-	
+
 	stats := p.stats
 	if stats.TotalAllocations > 0 {
 		// Calculate reuse percentage
-		stats.TotalAllocations = stats.VersionsCreated + stats.DependenciesCreated + 
+		stats.TotalAllocations = stats.VersionsCreated + stats.DependenciesCreated +
 			stats.AuthorsCreated + stats.WorkspacesCreated + stats.MapsCreated
 	}
-	
+
 	return stats
 }
 
@@ -285,7 +285,7 @@ func (p *ObjectPool) resetWorkspace(ws *types.WorkSpace) {
 	for k := range ws.Dependencies {
 		delete(ws.Dependencies, k)
 	}
-	
+
 	// Reset slices but keep capacity
 	ws.Start.Dependencies = ws.Start.Dependencies[:0]
 	ws.Start.DevDependencies = ws.Start.DevDependencies[:0]

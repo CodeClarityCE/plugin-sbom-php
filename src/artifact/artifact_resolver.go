@@ -36,14 +36,14 @@ type ArtifactInfo struct {
 
 // ComposerJSON represents basic composer.json structure for artifact resolution
 type ComposerJSON struct {
-	Name        string                 `json:"name"`
-	Description string                 `json:"description"`
-	Type        string                 `json:"type"`
-	Version     string                 `json:"version"`
-	License     any                    `json:"license"`
-	Authors     []Author               `json:"authors"`
-	Require     map[string]string      `json:"require"`
-	RequireDev  map[string]string      `json:"require-dev"`
+	Name        string            `json:"name"`
+	Description string            `json:"description"`
+	Type        string            `json:"type"`
+	Version     string            `json:"version"`
+	License     any               `json:"license"`
+	Authors     []Author          `json:"authors"`
+	Require     map[string]string `json:"require"`
+	RequireDev  map[string]string `json:"require-dev"`
 }
 
 // Author represents an author entry in composer.json
@@ -159,7 +159,7 @@ func (ar *ArtifactResolver) isZipFile(url string) bool {
 func (ar *ArtifactResolver) discoverDirectoryArtifacts(repo auth.ComposerRepository, _ string) ([]*ArtifactInfo, error) {
 	// For directory-based repositories, we need to list the directory contents
 	// This would typically require HTTP directory listing or API support
-	
+
 	log.Printf("Directory-based artifact discovery not yet implemented for: %s", repo.URL)
 	return nil, fmt.Errorf("directory-based artifact repositories not yet supported")
 }
@@ -175,12 +175,12 @@ func (ar *ArtifactResolver) discoverURLPatternArtifacts(repo auth.ComposerReposi
 	}
 
 	urlPattern := repo.URL
-	
+
 	for _, version := range versionPatterns {
 		// Replace placeholders in URL pattern
 		artifactURL := strings.ReplaceAll(urlPattern, "{name}", packageName)
 		artifactURL = strings.ReplaceAll(artifactURL, "{version}", version)
-		
+
 		// Replace vendor/package format
 		if strings.Contains(packageName, "/") {
 			parts := strings.Split(packageName, "/")
@@ -336,11 +336,11 @@ func (ar *ArtifactResolver) getCacheFilename(artifact *ArtifactInfo) string {
 	// Sanitize name for filename
 	name := sanitizeFilename(artifact.Name)
 	version := sanitizeFilename(artifact.Version)
-	
+
 	if version != "" {
 		return fmt.Sprintf("%s-%s.zip", name, version)
 	}
-	
+
 	return fmt.Sprintf("%s.zip", name)
 }
 
@@ -487,7 +487,7 @@ func (ar *ArtifactResolver) parseComposerJSON(filePath string) (*ComposerJSON, e
 func (ar *ArtifactResolver) addAuthentication(req *http.Request, artifactURL string) error {
 	// Extract host from URL
 	host := ar.extractHost(artifactURL)
-	
+
 	auth, hasAuth := ar.authManager.GetAuthForHost(host)
 	if !hasAuth {
 		return nil // No authentication needed
@@ -574,10 +574,10 @@ func sanitizeFilename(name string) string {
 	// Replace invalid characters for filenames
 	reg := regexp.MustCompile(`[<>:"/\\|?*]`)
 	name = reg.ReplaceAllString(name, "_")
-	
+
 	// Replace slashes with hyphens for vendor/package format
 	name = strings.ReplaceAll(name, "/", "-")
-	
+
 	return name
 }
 

@@ -17,7 +17,7 @@ import (
 // PackageInfo is an alias for the shared types.PackageInfo
 type PackageInfo = types.PackageInfo
 
-// PackageAuthor is an alias for the shared types.PackageAuthor  
+// PackageAuthor is an alias for the shared types.PackageAuthor
 type PackageAuthor = types.PackageAuthor
 
 // PackageCache represents a simple in-memory cache for package metadata
@@ -119,8 +119,8 @@ func NewPrivatePackageResolver(authManager *auth.AuthManager) *PrivatePackageRes
 			},
 		},
 		cache:            NewPackageCache(1*time.Hour, 1000), // 1 hour TTL, max 1000 entries
-		gitResolver:      nil, // Will be set externally to avoid circular dependency
-		artifactResolver: nil, // Will be set externally to avoid circular dependency
+		gitResolver:      nil,                                // Will be set externally to avoid circular dependency
+		artifactResolver: nil,                                // Will be set externally to avoid circular dependency
 	}
 }
 
@@ -302,12 +302,12 @@ func (r *PrivatePackageResolver) resolveFromComposerRepository(repo auth.Compose
 // resolveFromVCSRepository resolves from a VCS repository (Git, SVN, etc.)
 func (r *PrivatePackageResolver) resolveFromVCSRepository(repo auth.ComposerRepository, name, constraint string) (*PackageInfo, error) {
 	log.Printf("Resolving VCS repository: %s for package: %s", repo.URL, name)
-	
+
 	// Use GitResolver for Git-based VCS repositories if available
 	if r.gitResolver != nil {
 		return r.gitResolver.ResolveGitRepository(repo, name, constraint)
 	}
-	
+
 	log.Printf("VCS repository resolution not available - GitResolver not set")
 	return nil, nil
 }
@@ -315,12 +315,12 @@ func (r *PrivatePackageResolver) resolveFromVCSRepository(repo auth.ComposerRepo
 // resolveFromArtifactRepository resolves from an artifact repository
 func (r *PrivatePackageResolver) resolveFromArtifactRepository(repo auth.ComposerRepository, name, constraint string) (*PackageInfo, error) {
 	log.Printf("Resolving artifact repository: %s for package: %s", repo.URL, name)
-	
+
 	// Use ArtifactResolver if available
 	if r.artifactResolver != nil {
 		return r.artifactResolver.ResolveArtifactRepository(repo, name, constraint)
 	}
-	
+
 	log.Printf("Artifact repository resolution not available - ArtifactResolver not set")
 	return nil, nil
 }

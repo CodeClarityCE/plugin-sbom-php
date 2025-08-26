@@ -279,16 +279,16 @@ func TestComposerJSONOnly(t *testing.T) {
 
 func TestCreateCachet(t *testing.T) {
 	out := plugin.Start("./test8-cachet", uuid.UUID{}, nil)
-	
+
 	// Basic assertions
 	assert.NotNil(t, out)
 	assert.Equal(t, codeclarity.SUCCESS, out.AnalysisInfo.Status)
 	assert.NotEmpty(t, out.WorkSpaces)
-	
+
 	// Test workspace
 	defaultWs, exists := out.WorkSpaces["."]
 	assert.True(t, exists, "Default workspace should exist")
-	
+
 	// Debug output
 	t.Logf("=== SBOM Debug Info ===")
 	t.Logf("Project Name: %s", out.AnalysisInfo.ProjectName)
@@ -297,7 +297,7 @@ func TestCreateCachet(t *testing.T) {
 	t.Logf("PHP Version: %s", out.AnalysisInfo.Extra.PHPVersion)
 	t.Logf("Number of Dependencies: %d", len(defaultWs.Dependencies))
 	t.Logf("Number of Dev Dependencies: %d", len(defaultWs.Start.DevDependencies))
-	
+
 	// Print first few dependencies if any
 	if len(defaultWs.Dependencies) > 0 {
 		t.Logf("\nFirst 5 dependencies:")
@@ -316,7 +316,7 @@ func TestCreateCachet(t *testing.T) {
 	} else {
 		t.Errorf("SBOM has 0 dependencies - this may indicate a parsing issue")
 	}
-	
+
 	// Write output for inspection
 	writeJSON(out, "./test8-cachet/sbom.json")
 }

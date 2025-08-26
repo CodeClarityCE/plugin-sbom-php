@@ -22,7 +22,7 @@ import (
 )
 
 // Start is the entrypoint for the PHP SBOM plugin
-// Compatible with js-sbom Start function signature  
+// Compatible with js-sbom Start function signature
 func Start(sourceCodeDir string, analysisId uuid.UUID, knowledge_db *bun.DB) types.Output {
 	log.Println("Starting optimized PHP SBOM analysis...")
 	log.Printf("PHP SBOM Debug - sourceCodeDir: %s", sourceCodeDir)
@@ -37,7 +37,6 @@ func Start(sourceCodeDir string, analysisId uuid.UUID, knowledge_db *bun.DB) typ
 	// Default: Use performance optimizations (always enabled)
 	return StartWithPerformanceOptimizations(sourceCodeDir, analysisId, knowledge_db)
 }
-
 
 // Helper functions
 
@@ -214,7 +213,7 @@ func StartWithPrivateRepos(sourceCodeDir string, analysisId uuid.UUID, knowledge
 	start := time.Now()
 
 	log.Println("Starting enhanced PHP SBOM analysis with private repository support and performance optimizations...")
-	
+
 	// Initialize performance manager with optimized configuration
 	perfConfig := performance.DefaultPerformanceConfig()
 	perfManager := performance.NewPerformanceManager(perfConfig)
@@ -372,7 +371,7 @@ func StartWithPerformanceOptimizations(sourceCodeDir string, analysisId uuid.UUI
 	start := time.Now()
 
 	log.Println("Starting optimized PHP SBOM analysis...")
-	
+
 	// Initialize performance manager with optimized configuration
 	perfConfig := performance.DefaultPerformanceConfig()
 	perfManager := performance.NewPerformanceManager(perfConfig)
@@ -408,12 +407,12 @@ func StartWithPerformanceOptimizations(sourceCodeDir string, analysisId uuid.UUI
 
 	// Parse composer files with performance optimization
 	composerJSON, composerLock, err := perfManager.ParseComposerFilesOptimized(
-		projectInfo.ComposerJSONPath, 
+		projectInfo.ComposerJSONPath,
 		projectInfo.ComposerLockPath,
 	)
 	if err != nil {
 		log.Printf("Warning: Optimized parsing failed, falling back to standard parsing: %v", err)
-		
+
 		// Fallback to standard parsing
 		if projectInfo.ComposerJSON != nil {
 			composerJSON = projectInfo.ComposerJSON
@@ -527,7 +526,7 @@ func buildOptimizedWorkspace(composerJSON *parser.ComposerJSON, composerLock *pa
 			versions := make(map[string]types.Versions)
 			versions[versionKey] = *pooledVersions
 			dependencies[pkg.Name] = versions
-			
+
 			// Return to pool
 			objectPool.PutVersions(pooledVersions)
 		}
@@ -557,7 +556,7 @@ func buildOptimizedWorkspace(composerJSON *parser.ComposerJSON, composerLock *pa
 			versions := make(map[string]types.Versions)
 			versions[versionKey] = *pooledVersions
 			dependencies[pkg.Name] = versions
-			
+
 			objectPool.PutVersions(pooledVersions)
 		}
 	}
@@ -596,7 +595,7 @@ func buildOptimizedWorkspace(composerJSON *parser.ComposerJSON, composerLock *pa
 func detectPHPExtensionsOptimized(sourceCodeDir string, perfManager *performance.PerformanceManager) (*extensions.PHPExtensionInfo, error) {
 	// For now, use standard detection but this could be optimized with parallel processing
 	// This is where we would implement parallel PHAR file scanning and extension detection
-	
+
 	// Create a context with timeout for the operation
 	ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
 	defer cancel()
@@ -662,15 +661,15 @@ func generateOptimizedAnalysisInfo(projectInfo *project_finder.ProjectInfo, exte
 		// Performance metrics
 		PrivateRepositoryInfo: map[string]any{
 			"performance_optimization": map[string]any{
-				"files_processed":        perfStats.Overall.FilesProcessed,
-				"packages_processed":     perfStats.Overall.PackagesProcessed,
-				"http_requests":          perfStats.Overall.HTTPRequestsMade,
-				"concurrent_tasks":       perfStats.Overall.ConcurrentTasks,
-				"json_files_processed":   perfStats.JSON.FilesProcessed,
-				"json_streaming_used":    perfStats.JSON.StreamingUsed,
-				"http_connection_reuse":  perfStats.HTTP.ConnectionReuse,
-				"object_pool_reuse":      perfStats.ObjectPool.TotalReuse,
-				"average_http_latency":   perfStats.HTTP.AverageLatency.String(),
+				"files_processed":       perfStats.Overall.FilesProcessed,
+				"packages_processed":    perfStats.Overall.PackagesProcessed,
+				"http_requests":         perfStats.Overall.HTTPRequestsMade,
+				"concurrent_tasks":      perfStats.Overall.ConcurrentTasks,
+				"json_files_processed":  perfStats.JSON.FilesProcessed,
+				"json_streaming_used":   perfStats.JSON.StreamingUsed,
+				"http_connection_reuse": perfStats.HTTP.ConnectionReuse,
+				"object_pool_reuse":     perfStats.ObjectPool.TotalReuse,
+				"average_http_latency":  perfStats.HTTP.AverageLatency.String(),
 			},
 		},
 	}

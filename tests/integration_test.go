@@ -91,10 +91,10 @@ func TestIntegration_PrivateRepositorySupport(t *testing.T) {
 
 		// Verify private repositories are detected
 		assert.Len(t, sbom.PrivateRepositories, 3, "Should detect 3 private repositories")
-		
+
 		// Verify packages are processed
 		assert.Len(t, sbom.Packages, 1, "Should have 1 package")
-		
+
 		// Check first package
 		if len(sbom.Packages) > 0 {
 			pkg := sbom.Packages[0]
@@ -192,7 +192,7 @@ func TestIntegration_EnhancedSBOMGeneration(t *testing.T) {
 
 	// Verify SBOM structure
 	assert.NotEmpty(t, sbom.Packages, "Should have packages")
-	
+
 	// Check for private package indicators
 	hasPrivatePackage := false
 	for _, pkg := range sbom.Packages {
@@ -201,7 +201,7 @@ func TestIntegration_EnhancedSBOMGeneration(t *testing.T) {
 			break
 		}
 	}
-	
+
 	// May or may not have private packages depending on detection
 	t.Logf("Private packages detected: %v", hasPrivatePackage)
 

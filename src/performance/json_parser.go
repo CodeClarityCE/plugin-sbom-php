@@ -22,9 +22,9 @@ type StreamingJSONParser struct {
 type JSONStats struct {
 	FilesProcessed    int64
 	TotalBytesRead    int64
-	LargestFile      int64
-	TotalParseTime   int64 // nanoseconds
-	StreamingUsed    int64
+	LargestFile       int64
+	TotalParseTime    int64 // nanoseconds
+	StreamingUsed     int64
 	MemoryParsingUsed int64
 }
 
@@ -33,7 +33,7 @@ func NewStreamingJSONParser(bufferSize int) *StreamingJSONParser {
 	if bufferSize <= 0 {
 		bufferSize = 64 * 1024 // 64KB default buffer
 	}
-	
+
 	return &StreamingJSONParser{
 		bufferSize: bufferSize,
 		stats:      JSONStats{},
@@ -47,7 +47,7 @@ func (p *StreamingJSONParser) ParseComposerLockOptimized(filePath string) (*pars
 	if err != nil {
 		return nil, fmt.Errorf("failed to stat composer.lock: %w", err)
 	}
-	
+
 	fileSize := fileInfo.Size()
 	p.updateStats(func(s *JSONStats) {
 		s.FilesProcessed++
@@ -56,12 +56,12 @@ func (p *StreamingJSONParser) ParseComposerLockOptimized(filePath string) (*pars
 			s.LargestFile = fileSize
 		}
 	})
-	
+
 	// Use streaming parser for large files (>1MB)
 	if fileSize > 1024*1024 {
 		return p.parseWithStreaming(filePath)
 	}
-	
+
 	// Use memory parser for small files
 	return p.parseInMemory(filePath)
 }
@@ -69,62 +69,62 @@ func (p *StreamingJSONParser) ParseComposerLockOptimized(filePath string) (*pars
 // parseWithStreaming uses streaming JSON parsing for large files
 func (p *StreamingJSONParser) parseWithStreaming(filePath string) (*parser.ComposerLock, error) {
 	p.updateStats(func(s *JSONStats) { s.StreamingUsed++ })
-	
+
 	file, err := os.Open(filePath)
 	if err != nil {
 		return nil, fmt.Errorf("failed to open composer.lock: %w", err)
 	}
 	defer file.Close()
-	
+
 	reader := bufio.NewReaderSize(file, p.bufferSize)
 	decoder := json.NewDecoder(reader)
-	
+
 	// Use streaming decoder for memory efficiency
 	var composerLock parser.ComposerLock
 	if err := decoder.Decode(&composerLock); err != nil {
 		return nil, fmt.Errorf("failed to stream parse composer.lock: %w", err)
 	}
-	
+
 	return &composerLock, nil
 }
 
 // parseInMemory uses traditional in-memory parsing for smaller files
 func (p *StreamingJSONParser) parseInMemory(filePath string) (*parser.ComposerLock, error) {
 	p.updateStats(func(s *JSONStats) { s.MemoryParsingUsed++ })
-	
+
 	data, err := os.ReadFile(filePath)
 	if err != nil {
 		return nil, fmt.Errorf("failed to read composer.lock: %w", err)
 	}
-	
+
 	var composerLock parser.ComposerLock
 	if err := json.Unmarshal(data, &composerLock); err != nil {
 		return nil, fmt.Errorf("failed to parse composer.lock: %w", err)
 	}
-	
+
 	return &composerLock, nil
 }
 
 // ParseComposerJSONOptimized parses composer.json with optimization
 func (p *StreamingJSONParser) ParseComposerJSONOptimized(filePath string) (*parser.ComposerJSON, error) {
 	// composer.json files are typically small, use memory parsing
-	p.updateStats(func(s *JSONStats) { 
+	p.updateStats(func(s *JSONStats) {
 		s.FilesProcessed++
 		s.MemoryParsingUsed++
 	})
-	
+
 	data, err := os.ReadFile(filePath)
 	if err != nil {
 		return nil, fmt.Errorf("failed to read composer.json: %w", err)
 	}
-	
+
 	p.updateStats(func(s *JSONStats) { s.TotalBytesRead += int64(len(data)) })
-	
+
 	var composerJSON parser.ComposerJSON
 	if err := json.Unmarshal(data, &composerJSON); err != nil {
 		return nil, fmt.Errorf("failed to parse composer.json: %w", err)
 	}
-	
+
 	return &composerJSON, nil
 }
 
@@ -133,23 +133,23 @@ func (p *StreamingJSONParser) ParsePackagesBatch(packages []parser.PackageInfo, 
 	if batchSize <= 0 {
 		batchSize = 10
 	}
-	
+
 	results := make([]parser.PackageInfo, len(packages))
 	var wg sync.WaitGroup
 	semaphore := make(chan struct{}, batchSize)
-	
+
 	for i, pkg := range packages {
 		wg.Add(1)
 		go func(index int, package_ parser.PackageInfo) {
 			defer wg.Done()
-			semaphore <- struct{}{} // Acquire semaphore
+			semaphore <- struct{}{}        // Acquire semaphore
 			defer func() { <-semaphore }() // Release semaphore
-			
+
 			// Process package (placeholder for actual processing logic)
 			results[index] = package_
 		}(i, pkg)
 	}
-	
+
 	wg.Wait()
 	return results, nil
 }
@@ -161,10 +161,10 @@ func (p *StreamingJSONParser) ValidateJSON(filePath string) error {
 		return err
 	}
 	defer file.Close()
-	
+
 	reader := bufio.NewReaderSize(file, p.bufferSize)
 	decoder := json.NewDecoder(reader)
-	
+
 	// Validate by attempting to decode to interface{}
 	var temp interface{}
 	return decoder.Decode(&temp)
@@ -176,14 +176,14 @@ func (p *StreamingJSONParser) OptimizeJSONString(jsonStr string) string {
 	lines := strings.Split(jsonStr, "\n")
 	var optimized strings.Builder
 	optimized.Grow(len(jsonStr) * 3 / 4) // Estimate 25% size reduction
-	
+
 	for _, line := range lines {
 		trimmed := strings.TrimSpace(line)
 		if trimmed != "" {
 			optimized.WriteString(trimmed)
 		}
 	}
-	
+
 	return optimized.String()
 }
 
@@ -214,7 +214,7 @@ func (p *StreamingJSONParser) CheckJSONHealth() error {
 	testJSON := `{"test": "value", "number": 123}`
 	reader := strings.NewReader(testJSON)
 	decoder := json.NewDecoder(reader)
-	
+
 	var temp map[string]interface{}
 	return decoder.Decode(&temp)
 }
@@ -223,11 +223,11 @@ func (p *StreamingJSONParser) CheckJSONHealth() error {
 func (p *StreamingJSONParser) GetOptimalBufferSize(fileSize int64) int {
 	switch {
 	case fileSize < 10*1024: // < 10KB
-		return 4 * 1024   // 4KB buffer
+		return 4 * 1024 // 4KB buffer
 	case fileSize < 100*1024: // < 100KB
-		return 16 * 1024  // 16KB buffer
+		return 16 * 1024 // 16KB buffer
 	case fileSize < 1024*1024: // < 1MB
-		return 64 * 1024  // 64KB buffer
+		return 64 * 1024 // 64KB buffer
 	default: // >= 1MB
 		return 256 * 1024 // 256KB buffer
 	}

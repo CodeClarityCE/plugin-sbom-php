@@ -31,18 +31,18 @@ type ComposerAuth struct {
 
 // ComposerRepository represents a repository configuration from composer.json
 type ComposerRepository struct {
-	Type    string                 `json:"type"`
-	URL     string                 `json:"url,omitempty"`
+	Type    string         `json:"type"`
+	URL     string         `json:"url,omitempty"`
 	Options map[string]any `json:"options,omitempty"`
-	Only    []string               `json:"only,omitempty"`
-	Exclude []string               `json:"exclude,omitempty"`
+	Only    []string       `json:"only,omitempty"`
+	Exclude []string       `json:"exclude,omitempty"`
 }
 
 // ComposerConfig represents the complete authentication and repository configuration
 type ComposerConfig struct {
 	Repositories []ComposerRepository    `json:"repositories"`
 	Auth         map[string]ComposerAuth `json:"auth"`
-	Config       map[string]any  `json:"config"`
+	Config       map[string]any          `json:"config"`
 }
 
 // SecurityConfig represents security settings for private repository access
@@ -84,8 +84,8 @@ func (am *AuthManager) LoadFromComposerJSON(composerJSONPath string) error {
 	}
 
 	var composerData struct {
-		Repositories []ComposerRepository   `json:"repositories,omitempty"`
-		Config       map[string]any `json:"config,omitempty"`
+		Repositories []ComposerRepository `json:"repositories,omitempty"`
+		Config       map[string]any       `json:"config,omitempty"`
 	}
 
 	if err := json.Unmarshal(data, &composerData); err != nil {

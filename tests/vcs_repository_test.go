@@ -111,7 +111,7 @@ func TestGitResolver(t *testing.T) {
 			case "/repos/test/package/contents/composer.json":
 				// Mock composer.json response
 				response := map[string]any{
-					"content": "ewogICJuYW1lIjogInRlc3QvcGFja2FnZSIsCiAgImRlc2NyaXB0aW9uIjogIlRlc3QgcGFja2FnZSIsCiAgInR5cGUiOiAibGlicmFyeSIsCiAgImxpY2Vuc2UiOiAiTUlUIgp9", // Base64 encoded composer.json
+					"content":  "ewogICJuYW1lIjogInRlc3QvcGFja2FnZSIsCiAgImRlc2NyaXB0aW9uIjogIlRlc3QgcGFja2FnZSIsCiAgInR5cGUiOiAibGlicmFyeSIsCiAgImxpY2Vuc2UiOiAiTUlUIgp9", // Base64 encoded composer.json
 					"encoding": "base64",
 				}
 				json.NewEncoder(w).Encode(response)
@@ -136,7 +136,7 @@ func TestGitResolver(t *testing.T) {
 
 		// Test resolution
 		packageInfo, err := gitResolver.ResolveGitRepository(repo, "test/package", "1.0.0")
-		
+
 		// Note: This will likely fail as it tries to use real GitHub API
 		// In a real test environment, we'd need to mock the HTTP client
 		assert.True(t, err != nil || packageInfo != nil)
@@ -155,15 +155,15 @@ func TestGitResolver(t *testing.T) {
 		// This tests that authentication is properly added
 		// In real scenario, would need mock server to verify headers
 		packageInfo, err := gitResolver.ResolveGitRepository(repo, "private/repo", "*")
-		
+
 		// Should fail but not panic
 		assert.True(t, err != nil || packageInfo == nil)
 	})
 
 	t.Run("VersionConstraintMatching", func(t *testing.T) {
 		testCases := []struct {
-			version    string
-			constraint string
+			version     string
+			constraint  string
 			shouldMatch bool
 		}{
 			{"1.0.0", "*", true},
@@ -232,7 +232,7 @@ func TestGitResolverWithMockRepository(t *testing.T) {
 	}
 
 	packageInfo, err := gitResolver.ResolveGitRepository(repo, "test/mock-package", "*")
-	
+
 	// Local file:// repositories might not be fully supported
 	// This tests the general flow
 	assert.True(t, err != nil || packageInfo != nil)
@@ -285,7 +285,7 @@ func TestGitResolverCleanup(t *testing.T) {
 
 	// Get temp directory location
 	tempBase := filepath.Join(os.TempDir(), "php-sbom-git-cache")
-	
+
 	// Ensure directory is created
 	_, err := os.Stat(tempBase)
 	if os.IsNotExist(err) {

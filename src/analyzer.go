@@ -1,15 +1,15 @@
 package src
 
 import (
-	"path/filepath"
-	"os"
 	"log"
-	
+	"os"
+	"path/filepath"
+
 	"github.com/CodeClarityCE/plugin-php-sbom/src/types"
 	"github.com/CodeClarityCE/utility-types/boilerplates"
 	codeclarity "github.com/CodeClarityCE/utility-types/codeclarity_db"
-	"github.com/uptrace/bun"
 	"github.com/google/uuid"
+	"github.com/uptrace/bun"
 )
 
 // PHPSBOMAnalyzer implements the SBOMAnalyzer interface for PHP projects
@@ -18,14 +18,14 @@ type PHPSBOMAnalyzer struct{}
 // AnalyzeProject performs PHP SBOM analysis
 func (p *PHPSBOMAnalyzer) AnalyzeProject(projectPath string, analysisId string, knowledgeDB any) (boilerplates.SBOMOutput, error) {
 	log.Printf("PHP SBOM Analysis - Starting analysis for project: %s", projectPath)
-	
+
 	// Convert analysisId string back to UUID for compatibility with existing Start function
 	analysisUUID, err := uuid.Parse(analysisId)
 	if err != nil {
 		log.Printf("Failed to parse analysis ID: %v", err)
 		analysisUUID = uuid.New() // Generate new UUID if parsing fails
 	}
-	
+
 	// Convert knowledgeDB to the expected type
 	var knowledgeDBTyped *bun.DB
 	if knowledgeDB != nil {
@@ -33,10 +33,10 @@ func (p *PHPSBOMAnalyzer) AnalyzeProject(projectPath string, analysisId string, 
 			knowledgeDBTyped = db
 		}
 	}
-	
+
 	// Call the existing PHP SBOM Start function
 	output := Start(projectPath, analysisUUID, knowledgeDBTyped)
-	
+
 	// Wrap the output to implement our SBOMOutput interface
 	return &PHPSBOMOutput{Output: output}, nil
 }
@@ -46,19 +46,19 @@ func (p *PHPSBOMAnalyzer) CanAnalyze(projectPath string) bool {
 	// Check for PHP project files
 	composerJson := filepath.Join(projectPath, "composer.json")
 	composerLock := filepath.Join(projectPath, "composer.lock")
-	
+
 	// At minimum, we need composer.json
 	if _, err := os.Stat(composerJson); err == nil {
 		log.Printf("PHP SBOM - Found composer.json at: %s", composerJson)
 		return true
 	}
-	
+
 	// Also check for composer.lock without composer.json (edge case)
 	if _, err := os.Stat(composerLock); err == nil {
 		log.Printf("PHP SBOM - Found composer.lock at: %s", composerLock)
 		return true
 	}
-	
+
 	log.Printf("PHP SBOM - No PHP project files found in: %s", projectPath)
 	return false
 }
@@ -75,8 +75,8 @@ func (p *PHPSBOMAnalyzer) DetectFramework(projectPath string) string {
 	if _, err := os.Stat(composerJson); os.IsNotExist(err) {
 		return ""
 	}
-	
-	// This is a simplified version - the actual framework detection 
+
+	// This is a simplified version - the actual framework detection
 	// is handled in the existing PHP SBOM code during analysis
 	// We'll return empty here and let the analysis populate it
 	return ""

@@ -27,13 +27,13 @@ type GitResolver struct {
 
 // ComposerJSON represents basic composer.json structure for VCS resolution
 type ComposerJSON struct {
-	Name        string                 `json:"name"`
-	Description string                 `json:"description"`
-	Type        string                 `json:"type"`
-	License     any                    `json:"license"`
-	Authors     []Author               `json:"authors"`
-	Require     map[string]string      `json:"require"`
-	RequireDev  map[string]string      `json:"require-dev"`
+	Name        string            `json:"name"`
+	Description string            `json:"description"`
+	Type        string            `json:"type"`
+	License     any               `json:"license"`
+	Authors     []Author          `json:"authors"`
+	Require     map[string]string `json:"require"`
+	RequireDev  map[string]string `json:"require-dev"`
 }
 
 // Author represents an author entry in composer.json
@@ -92,16 +92,16 @@ func (gr *GitResolver) ResolveGitRepository(repo auth.ComposerRepository, packag
 
 // GitRepositoryInfo represents parsed Git repository information
 type GitRepositoryInfo struct {
-	URL         string
-	Host        string
-	Owner       string
-	Repository  string
-	Branch      string
-	Tag         string
-	Commit      string
-	IsGitHub    bool
-	IsGitLab    bool
-	IsPrivate   bool
+	URL        string
+	Host       string
+	Owner      string
+	Repository string
+	Branch     string
+	Tag        string
+	Commit     string
+	IsGitHub   bool
+	IsGitLab   bool
+	IsPrivate  bool
 }
 
 // parseGitURL parses a Git repository URL and extracts relevant information
@@ -266,7 +266,7 @@ func (gr *GitResolver) resolveViaGitLabAPI(gitInfo *GitRepositoryInfo, packageNa
 	// GitLab API implementation
 	projectPath := fmt.Sprintf("%s/%s", gitInfo.Owner, gitInfo.Repository)
 	encodedPath := url.QueryEscape(projectPath)
-	
+
 	composerURL := fmt.Sprintf("https://%s/api/v4/projects/%s/repository/files/composer.json/raw?ref=main",
 		gitInfo.Host, encodedPath)
 
@@ -291,7 +291,7 @@ func (gr *GitResolver) resolveViaGitLabAPI(gitInfo *GitRepositoryInfo, packageNa
 		composerURL = strings.Replace(composerURL, "ref=main", "ref=master", 1)
 		req, _ = http.NewRequest("GET", composerURL, nil)
 		gr.addGitLabAuthentication(req, gitInfo.Host)
-		
+
 		resp, err = gr.httpClient.Do(req)
 		if err != nil || resp.StatusCode == 404 {
 			return nil, fmt.Errorf("composer.json not found in repository")
@@ -343,7 +343,7 @@ func (gr *GitResolver) resolveViaGitLabAPI(gitInfo *GitRepositoryInfo, packageNa
 func (gr *GitResolver) resolveViaGitClone(gitInfo *GitRepositoryInfo, packageName, constraint string) (*types.PackageInfo, error) {
 	// Create temporary directory for this repository
 	repoDir := filepath.Join(gr.tempDir, sanitizeForFilename(gitInfo.Repository))
-	
+
 	// Remove existing directory if it exists
 	os.RemoveAll(repoDir)
 
@@ -481,7 +481,7 @@ func (gr *GitResolver) setupGitAuthentication(cmd *exec.Cmd, gitInfo *GitReposit
 
 	case "http-basic":
 		// Use basic authentication
-		authenticatedURL := strings.Replace(gitInfo.URL, "https://", 
+		authenticatedURL := strings.Replace(gitInfo.URL, "https://",
 			fmt.Sprintf("https://%s:%s@", auth.Username, auth.Password), 1)
 		if !strings.HasSuffix(authenticatedURL, ".git") {
 			authenticatedURL += ".git"
@@ -495,7 +495,7 @@ func (gr *GitResolver) setupGitAuthentication(cmd *exec.Cmd, gitInfo *GitReposit
 func (gr *GitResolver) getCurrentCommitInfo(repoDir string) (map[string]string, error) {
 	cmd := exec.Command("git", "log", "-1", "--format=%H|%an|%ae|%cd", "--date=iso")
 	cmd.Dir = repoDir
-	
+
 	output, err := cmd.Output()
 	if err != nil {
 		return nil, err
@@ -507,10 +507,10 @@ func (gr *GitResolver) getCurrentCommitInfo(repoDir string) (map[string]string, 
 	}
 
 	return map[string]string{
-		"commit":      parts[0],
-		"author":      parts[1],
+		"commit":       parts[0],
+		"author":       parts[1],
 		"author_email": parts[2],
-		"date":        parts[3],
+		"date":         parts[3],
 	}, nil
 }
 
@@ -611,25 +611,25 @@ func (gr *GitResolver) convertAuthors(authors []Author) []types.PackageAuthor {
 func decodeBase64Content(content string) ([]byte, error) {
 	// Remove whitespace from base64 content
 	content = regexp.MustCompile(`\s+`).ReplaceAllString(content, "")
-	
+
 	// GitHub API returns base64 encoded content
 	decoded := make([]byte, len(content))
 	n, err := base64Decode([]byte(content), decoded)
 	if err != nil {
 		return nil, err
 	}
-	
+
 	return decoded[:n], nil
 }
 
 func base64Decode(src, dst []byte) (int, error) {
 	// Simple base64 decoding implementation
 	const base64Chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
-	
+
 	if len(src)%4 != 0 {
 		return 0, fmt.Errorf("invalid base64 length")
 	}
-	
+
 	j := 0
 	for i := 0; i < len(src); i += 4 {
 		var val uint32
@@ -653,7 +653,7 @@ func base64Decode(src, dst []byte) (int, error) {
 			}
 			val = (val << 6) | v
 		}
-		
+
 		if j < len(dst) {
 			dst[j] = byte(val >> 16)
 			j++
@@ -667,7 +667,7 @@ func base64Decode(src, dst []byte) (int, error) {
 			j++
 		}
 	}
-	
+
 	return j, nil
 }
 

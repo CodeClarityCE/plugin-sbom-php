@@ -18,7 +18,7 @@ import (
 type EnhancedComposerJSON struct {
 	*ComposerJSON
 	Repositories []auth.ComposerRepository `json:"repositories,omitempty"`
-	Config       map[string]any    `json:"config,omitempty"`
+	Config       map[string]any            `json:"config,omitempty"`
 }
 
 // EnhancedPackageInfo extends PackageInfo with private repository metadata
@@ -66,11 +66,11 @@ type EnhancedComposerParser struct {
 func NewEnhancedComposerParser(projectDir string) (*EnhancedComposerParser, error) {
 	authManager := auth.NewAuthManager()
 	packageResolver := resolver.NewPrivatePackageResolver(authManager)
-	
+
 	// Create and set up Git resolver
 	gitResolver := vcs.NewGitResolver(authManager)
 	packageResolver.SetGitResolver(gitResolver)
-	
+
 	// Create and set up Artifact resolver
 	artifactResolver := artifact.NewArtifactResolver(authManager)
 	packageResolver.SetArtifactResolver(artifactResolver)

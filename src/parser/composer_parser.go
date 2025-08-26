@@ -176,14 +176,14 @@ func FindPHARFiles(rootDir string) ([]string, error) {
 
 // PHARInfo represents information about a PHAR archive
 type PHARInfo struct {
-	Path         string                 `json:"path"`
-	Name         string                 `json:"name"`
-	Size         int64                  `json:"size"`
-	Modified     string                 `json:"modified"`
-	Signature    string                 `json:"signature"`
+	Path         string         `json:"path"`
+	Name         string         `json:"name"`
+	Size         int64          `json:"size"`
+	Modified     string         `json:"modified"`
+	Signature    string         `json:"signature"`
 	Metadata     map[string]any `json:"metadata"`
-	MainScript   string                 `json:"main_script"`
-	IsExecutable bool                   `json:"is_executable"`
+	MainScript   string         `json:"main_script"`
+	IsExecutable bool           `json:"is_executable"`
 }
 
 // AnalyzePHARFile analyzes a PHAR archive and extracts metadata
