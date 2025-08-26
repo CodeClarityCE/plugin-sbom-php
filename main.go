@@ -4,7 +4,7 @@ import (
 	"log"
 
 	"github.com/CodeClarityCE/plugin-php-sbom/src"
-	"github.com/CodeClarityCE/utility-types/boilerplates"
+	"github.com/CodeClarityCE/utility-boilerplates"
 )
 
 // main is the entry point for the PHP SBOM plugin

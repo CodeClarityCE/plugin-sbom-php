@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 
 	"github.com/CodeClarityCE/plugin-php-sbom/src/types"
-	"github.com/CodeClarityCE/utility-types/boilerplates"
+	"github.com/CodeClarityCE/utility-boilerplates"
 	codeclarity "github.com/CodeClarityCE/utility-types/codeclarity_db"
 	"github.com/google/uuid"
 	"github.com/uptrace/bun"
