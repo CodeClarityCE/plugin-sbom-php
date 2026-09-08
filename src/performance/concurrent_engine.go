@@ -30,11 +30,11 @@ type ConcurrencyStats struct {
 }
 
 // TaskFunc represents a function that can be executed concurrently
-type TaskFunc func(ctx context.Context, item interface{}) (interface{}, error)
+type TaskFunc func(ctx context.Context, item any) (any, error)
 
 // BatchResult represents the result of batch processing
 type BatchResult struct {
-	Results []interface{}
+	Results []any
 	Errors  []error
 	Stats   ProcessingStats
 }
@@ -66,10 +66,10 @@ func NewConcurrentEngine(workerCount int) *ConcurrentEngine {
 }
 
 // ProcessBatch processes a batch of items concurrently
-func (e *ConcurrentEngine) ProcessBatch(items []interface{}, taskFunc TaskFunc) BatchResult {
+func (e *ConcurrentEngine) ProcessBatch(items []any, taskFunc TaskFunc) BatchResult {
 	start := time.Now()
 
-	results := make([]interface{}, len(items))
+	results := make([]any, len(items))
 	errors := make([]error, len(items))
 	var wg sync.WaitGroup
 
@@ -78,7 +78,7 @@ func (e *ConcurrentEngine) ProcessBatch(items []interface{}, taskFunc TaskFunc) 
 
 	for i, item := range items {
 		wg.Add(1)
-		go func(index int, taskItem interface{}) {
+		go func(index int, taskItem any) {
 			defer wg.Done()
 
 			// Acquire semaphore
@@ -150,7 +150,7 @@ func (e *ConcurrentEngine) ProcessBatch(items []interface{}, taskFunc TaskFunc) 
 
 // ProcessPipeline processes items through a pipeline of functions
 func (e *ConcurrentEngine) ProcessPipeline(
-	items []interface{},
+	items []any,
 	stages ...TaskFunc,
 ) BatchResult {
 	currentItems := items
@@ -164,7 +164,7 @@ func (e *ConcurrentEngine) ProcessPipeline(
 		result := e.ProcessBatch(currentItems, stage)
 
 		// Collect non-nil results for next stage
-		nextItems := make([]interface{}, 0, len(result.Results))
+		nextItems := make([]any, 0, len(result.Results))
 		for i, item := range result.Results {
 			if result.Errors[i] == nil {
 				nextItems = append(nextItems, item)
@@ -187,14 +187,14 @@ func (e *ConcurrentEngine) ProcessPipeline(
 	}
 
 	// Prepare final results
-	finalResults := make([]interface{}, len(items))
+	finalResults := make([]any, len(items))
 	finalErrors := make([]error, len(items))
 
 	// Fill successful results
 	successIndex := 0
 	errorIndex := 0
 
-	for i := 0; i < len(items); i++ {
+	for i := range items {
 		if errorIndex < len(allErrors) {
 			finalErrors[i] = allErrors[errorIndex]
 			errorIndex++
@@ -222,7 +222,7 @@ func (e *ConcurrentEngine) ProcessPipeline(
 
 // ProcessWithTimeout processes items with a timeout
 func (e *ConcurrentEngine) ProcessWithTimeout(
-	items []interface{},
+	items []any,
 	taskFunc TaskFunc,
 	timeout time.Duration,
 ) BatchResult {
@@ -243,8 +243,8 @@ func (e *ConcurrentEngine) ProcessWithTimeout(
 
 // ProcessStream processes items from a channel as they arrive
 func (e *ConcurrentEngine) ProcessStream(
-	input <-chan interface{},
-	output chan<- interface{},
+	input <-chan any,
+	output chan<- any,
 	taskFunc TaskFunc,
 ) {
 	var wg sync.WaitGroup
@@ -255,7 +255,7 @@ func (e *ConcurrentEngine) ProcessStream(
 		for item := range input {
 			wg.Add(1)
 
-			go func(taskItem interface{}) {
+			go func(taskItem any) {
 				defer wg.Done()
 
 				// Acquire semaphore
@@ -369,12 +369,4 @@ func (e *ConcurrentEngine) updatePeakConcurrency(potential int) {
 	if actual > e.stats.PeakConcurrency {
 		e.stats.PeakConcurrency = actual
 	}
-}
-
-// min returns the smaller of two integers
-func min(a, b int) int {
-	if a < b {
-		return a
-	}
-	return b
 }

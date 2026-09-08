@@ -133,20 +133,16 @@ func (pm *PerformanceManager) ParseComposerFilesOptimized(composerJSONPath, comp
 		var wg sync.WaitGroup
 
 		// Parse composer.json
-		wg.Add(1)
-		go func() {
-			defer wg.Done()
+		wg.Go(func() {
 			result.composerJSON, result.jsonErr = pm.jsonParser.ParseComposerJSONOptimized(composerJSONPath)
-		}()
+		})
 
 		// Parse composer.lock
-		wg.Add(1)
-		go func() {
-			defer wg.Done()
+		wg.Go(func() {
 			if composerLockPath != "" {
 				result.composerLock, result.lockErr = pm.jsonParser.ParseComposerLockOptimized(composerLockPath)
 			}
-		}()
+		})
 
 		wg.Wait()
 		resultChan <- result
@@ -178,13 +174,13 @@ func (pm *PerformanceManager) ProcessPackagesConcurrently(packages []parser.Pack
 	}()
 
 	// Convert to interface{} slice for generic processing
-	items := make([]interface{}, len(packages))
+	items := make([]any, len(packages))
 	for i, pkg := range packages {
 		items[i] = pkg
 	}
 
 	// Create wrapper function
-	wrapperFunc := func(ctx context.Context, item interface{}) (interface{}, error) {
+	wrapperFunc := func(ctx context.Context, item any) (any, error) {
 		pkg, ok := item.(parser.PackageInfo)
 		if !ok {
 			return nil, fmt.Errorf("invalid type conversion")

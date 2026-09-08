@@ -166,7 +166,7 @@ func (p *StreamingJSONParser) ValidateJSON(filePath string) error {
 	decoder := json.NewDecoder(reader)
 
 	// Validate by attempting to decode to interface{}
-	var temp interface{}
+	var temp any
 	return decoder.Decode(&temp)
 }
 
@@ -215,7 +215,7 @@ func (p *StreamingJSONParser) CheckJSONHealth() error {
 	reader := strings.NewReader(testJSON)
 	decoder := json.NewDecoder(reader)
 
-	var temp map[string]interface{}
+	var temp map[string]any
 	return decoder.Decode(&temp)
 }
 

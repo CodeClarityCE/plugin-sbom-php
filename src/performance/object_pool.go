@@ -41,25 +41,25 @@ func NewObjectPool() *ObjectPool {
 	}
 
 	// Initialize version pool
-	pool.versionPool.New = func() interface{} {
+	pool.versionPool.New = func() any {
 		pool.updateStats(func(s *PoolStats) { s.VersionsCreated++ })
 		return &types.Versions{}
 	}
 
 	// Initialize workspace dependency pool
-	pool.dependencyPool.New = func() interface{} {
+	pool.dependencyPool.New = func() any {
 		pool.updateStats(func(s *PoolStats) { s.DependenciesCreated++ })
 		return &types.WorkSpaceDependency{}
 	}
 
 	// Initialize author pool
-	pool.authorPool.New = func() interface{} {
+	pool.authorPool.New = func() any {
 		pool.updateStats(func(s *PoolStats) { s.AuthorsCreated++ })
 		return &types.Author{}
 	}
 
 	// Initialize workspace pool
-	pool.workspacePool.New = func() interface{} {
+	pool.workspacePool.New = func() any {
 		pool.updateStats(func(s *PoolStats) { s.WorkspacesCreated++ })
 		return &types.WorkSpace{
 			Dependencies: make(map[string]map[string]types.Versions),
@@ -71,13 +71,13 @@ func NewObjectPool() *ObjectPool {
 	}
 
 	// Initialize string slice pool for licenses, keywords, etc.
-	pool.stringSlicePool.New = func() interface{} {
+	pool.stringSlicePool.New = func() any {
 		slice := make([]string, 0, 5) // Pre-allocate capacity of 5
 		return &slice
 	}
 
 	// Initialize map pool for requires, dependencies
-	pool.mapPool.New = func() interface{} {
+	pool.mapPool.New = func() any {
 		pool.updateStats(func(s *PoolStats) { s.MapsCreated++ })
 		m := make(map[string]string, 10) // Pre-allocate capacity of 10
 		return &m
@@ -198,7 +198,7 @@ func (p *ObjectPool) PutStringMap(m *map[string]string) {
 // CreateVersionsBatch creates multiple Versions structs efficiently
 func (p *ObjectPool) CreateVersionsBatch(count int) []*types.Versions {
 	versions := make([]*types.Versions, count)
-	for i := 0; i < count; i++ {
+	for i := range count {
 		versions[i] = p.GetVersions()
 	}
 	return versions
@@ -207,7 +207,7 @@ func (p *ObjectPool) CreateVersionsBatch(count int) []*types.Versions {
 // CreateDependenciesBatch creates multiple dependencies efficiently
 func (p *ObjectPool) CreateDependenciesBatch(count int) []*types.WorkSpaceDependency {
 	deps := make([]*types.WorkSpaceDependency, count)
-	for i := 0; i < count; i++ {
+	for i := range count {
 		deps[i] = p.GetDependency()
 	}
 	return deps

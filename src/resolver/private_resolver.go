@@ -216,8 +216,8 @@ func (r *PrivatePackageResolver) matchesPattern(packageName, pattern string) boo
 
 	if strings.Contains(pattern, "*") {
 		// Simple wildcard matching
-		if strings.HasSuffix(pattern, "*") {
-			prefix := strings.TrimSuffix(pattern, "*")
+		if before, ok := strings.CutSuffix(pattern, "*"); ok {
+			prefix := before
 			return strings.HasPrefix(packageName, prefix)
 		}
 		if suffix, found := strings.CutPrefix(pattern, "*"); found {
