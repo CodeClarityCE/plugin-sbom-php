@@ -151,9 +151,9 @@ The artifact resolver supports all authentication methods available in the priva
 ### Cache Structure
 ```
 php-sbom-artifact-cache/
-├── vendor-package-1.0.0.zip
-├── acme-library-2.1.0.zip
-└── company-framework-latest.zip
+├── vendor-package-1.0.0-3f2a9c41d07e.zip   (name-version-<URL hash>)
+├── acme-library-2.1.0-8b1e04c9a2f5.zip
+└── company-framework-latest-c56d1e7f0b93.zip
 ```
 
 ### Cache Benefits

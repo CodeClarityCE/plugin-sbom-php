@@ -2,6 +2,8 @@ package artifact
 
 import (
 	"archive/zip"
+	"crypto/sha256"
+	"encoding/hex"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -320,9 +322,11 @@ func (ar *ArtifactResolver) downloadArtifact(_ auth.ComposerRepository, artifact
 	}
 	defer outFile.Close()
 
-	// Copy downloaded content
+	// Copy downloaded content; a partial file must not pass as cached later
 	_, err = io.Copy(outFile, resp.Body)
 	if err != nil {
+		outFile.Close()
+		os.Remove(artifact.LocalPath)
 		return fmt.Errorf("failed to save artifact: %w", err)
 	}
 
@@ -331,17 +335,21 @@ func (ar *ArtifactResolver) downloadArtifact(_ auth.ComposerRepository, artifact
 	return nil
 }
 
-// getCacheFilename generates a cache filename for an artifact
+// getCacheFilename generates a cache filename for an artifact. It includes a
+// hash of the download URL: the same package name and version can come from
+// different repositories, and must not be served from each other's cache.
 func (ar *ArtifactResolver) getCacheFilename(artifact *ArtifactInfo) string {
 	// Sanitize name for filename
 	name := sanitizeFilename(artifact.Name)
 	version := sanitizeFilename(artifact.Version)
+	urlSum := sha256.Sum256([]byte(artifact.URL))
+	urlHash := hex.EncodeToString(urlSum[:6])
 
 	if version != "" {
-		return fmt.Sprintf("%s-%s.zip", name, version)
+		return fmt.Sprintf("%s-%s-%s.zip", name, version, urlHash)
 	}
 
-	return fmt.Sprintf("%s.zip", name)
+	return fmt.Sprintf("%s-%s.zip", name, urlHash)
 }
 
 // extractPackageInfo extracts package information from a downloaded artifact
