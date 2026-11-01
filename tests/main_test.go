@@ -10,6 +10,8 @@ import (
 )
 
 func TestCreatePassbolt(t *testing.T) {
+	requireAMQP(t)
+
 	out := plugin.Start("./test1", uuid.UUID{}, nil)
 
 	// Assert the expected values
@@ -61,6 +63,8 @@ func TestCreatePassbolt(t *testing.T) {
 }
 
 func TestCreateTest1EdgeCases(t *testing.T) {
+	requireAMQP(t)
+
 	out := plugin.Start("./test1", uuid.UUID{}, nil)
 
 	// Test edge cases and detailed structure
@@ -110,6 +114,8 @@ func TestErrorHandling(t *testing.T) {
 }
 
 func TestCreateLaravel(t *testing.T) {
+	requireAMQP(t)
+
 	out := plugin.Start("./test2-laravel", uuid.UUID{}, nil)
 
 	// Assert the expected values
@@ -137,6 +143,8 @@ func TestCreateLaravel(t *testing.T) {
 }
 
 func TestCreateSymfony(t *testing.T) {
+	requireAMQP(t)
+
 	out := plugin.Start("./test3-symfony", uuid.UUID{}, nil)
 
 	// Assert the expected values
@@ -163,6 +171,8 @@ func TestCreateSymfony(t *testing.T) {
 }
 
 func TestCreateWordPress(t *testing.T) {
+	requireAMQP(t)
+
 	out := plugin.Start("./test4-wordpress", uuid.UUID{}, nil)
 
 	// Assert the expected values
@@ -190,6 +200,8 @@ func TestCreateWordPress(t *testing.T) {
 }
 
 func TestCreateCodeIgniter(t *testing.T) {
+	requireAMQP(t)
+
 	out := plugin.Start("./test5-codeigniter", uuid.UUID{}, nil)
 
 	// Assert the expected values
@@ -217,6 +229,8 @@ func TestCreateCodeIgniter(t *testing.T) {
 }
 
 func TestCreatePurePHP(t *testing.T) {
+	requireAMQP(t)
+
 	out := plugin.Start("./test6-pure-php", uuid.UUID{}, nil)
 
 	// Assert the expected values
@@ -244,6 +258,8 @@ func TestCreatePurePHP(t *testing.T) {
 }
 
 func TestCreateSymfonyDemo(t *testing.T) {
+	requireAMQP(t)
+
 	out := plugin.Start("./test7-symfony-demo", uuid.UUID{}, nil)
 
 	// Assert the expected values
@@ -278,6 +294,8 @@ func TestComposerJSONOnly(t *testing.T) {
 }
 
 func TestCreateCachet(t *testing.T) {
+	requireAMQP(t)
+
 	out := plugin.Start("./test8-cachet", uuid.UUID{}, nil)
 
 	// Basic assertions

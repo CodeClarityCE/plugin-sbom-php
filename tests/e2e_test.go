@@ -11,6 +11,8 @@ import (
 
 // TestE2E_PHPExtensionDetection tests that PHP extensions are properly detected and included in SBOM
 func TestE2E_PHPExtensionDetection(t *testing.T) {
+	requireAMQP(t)
+
 	out := plugin.Start("./test1", uuid.UUID{}, nil)
 
 	assert.NotNil(t, out)
@@ -51,6 +53,8 @@ func TestE2E_PHPExtensionDetection(t *testing.T) {
 
 // TestE2E_VulnerablePackageDetection tests detection of packages with known vulnerabilities
 func TestE2E_VulnerablePackageDetection(t *testing.T) {
+	requireAMQP(t)
+
 	out := plugin.Start("./test-vulnerable", uuid.UUID{}, nil)
 
 	assert.NotNil(t, out)
@@ -129,6 +133,8 @@ func TestE2E_VulnerablePackageDetection(t *testing.T) {
 
 // TestE2E_PHPFrameworkDetection tests framework detection across different PHP frameworks
 func TestE2E_PHPFrameworkDetection(t *testing.T) {
+	requireAMQP(t)
+
 	testCases := map[string]string{
 		"./test1":              "CakePHP",            // Passbolt uses CakePHP
 		"./test2-laravel":      "Laravel",            // Laravel project
@@ -167,6 +173,8 @@ func TestE2E_PHPFrameworkDetection(t *testing.T) {
 
 // TestE2E_SBOMStructureCompatibility tests that PHP SBOM structure is compatible with js-sbom
 func TestE2E_SBOMStructureCompatibility(t *testing.T) {
+	requireAMQP(t)
+
 	out := plugin.Start("./test1", uuid.UUID{}, nil)
 
 	assert.NotNil(t, out)
@@ -220,6 +228,8 @@ func TestE2E_SBOMStructureCompatibility(t *testing.T) {
 
 // TestE2E_ErrorHandlingAndEdgeCases tests error handling and edge cases
 func TestE2E_ErrorHandlingAndEdgeCases(t *testing.T) {
+	requireAMQP(t)
+
 	// Test with non-existent directory
 	t.Run("NonExistentDirectory", func(t *testing.T) {
 		out := plugin.Start("./nonexistent-directory", uuid.UUID{}, nil)
@@ -265,6 +275,8 @@ func TestE2E_ErrorHandlingAndEdgeCases(t *testing.T) {
 
 // TestE2E_PerformanceAndMemory tests performance characteristics of PHP SBOM generation
 func TestE2E_PerformanceAndMemory(t *testing.T) {
+	requireAMQP(t)
+
 	// Test with the largest project (test1 - Passbolt)
 	out := plugin.Start("./test1", uuid.UUID{}, nil)
 
@@ -297,6 +309,8 @@ func TestE2E_PerformanceAndMemory(t *testing.T) {
 
 // TestE2E_PHPExtensionVulnerabilityRelevance tests that only relevant extensions are flagged for vulnerability tracking
 func TestE2E_PHPExtensionVulnerabilityRelevance(t *testing.T) {
+	requireAMQP(t)
+
 	out := plugin.Start("./test1", uuid.UUID{}, nil)
 
 	assert.NotNil(t, out)
