@@ -50,18 +50,18 @@ func (p *PlatformMap) UnmarshalJSON(data []byte) error {
 
 // ComposerLock represents the structure of composer.lock
 type ComposerLock struct {
-	Readme           []string          `json:"_readme"`
-	ContentHash      string            `json:"content-hash"`
-	Packages         []PackageInfo     `json:"packages"`
-	PackagesDev      []PackageInfo     `json:"packages-dev"`
-	Aliases          []any             `json:"aliases"`
-	MinimumStability string            `json:"minimum-stability"`
-	StabilityFlags   any               `json:"stability-flags"` // Can be array or map
-	PreferStable     bool              `json:"prefer-stable"`
-	PreferLowest     bool              `json:"prefer-lowest"`
-	Platform         PlatformMap       `json:"platform"`
-	PlatformDev      any               `json:"platform-dev"` // Can be array or map
-	PluginAPIVersion string            `json:"plugin-api-version"`
+	Readme           []string      `json:"_readme"`
+	ContentHash      string        `json:"content-hash"`
+	Packages         []PackageInfo `json:"packages"`
+	PackagesDev      []PackageInfo `json:"packages-dev"`
+	Aliases          []any         `json:"aliases"`
+	MinimumStability string        `json:"minimum-stability"`
+	StabilityFlags   any           `json:"stability-flags"` // Can be array or map
+	PreferStable     bool          `json:"prefer-stable"`
+	PreferLowest     bool          `json:"prefer-lowest"`
+	Platform         PlatformMap   `json:"platform"`
+	PlatformDev      any           `json:"platform-dev"` // Can be array or map
+	PluginAPIVersion string        `json:"plugin-api-version"`
 }
 
 // PackageInfo represents a package in composer.lock
