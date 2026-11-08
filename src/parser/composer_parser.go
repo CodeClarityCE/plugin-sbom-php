@@ -30,6 +30,24 @@ type Author struct {
 	Role  string `json:"role"`
 }
 
+// PlatformMap holds platform requirements; Composer writes an empty one as [].
+type PlatformMap map[string]string
+
+// UnmarshalJSON accepts an object or an empty array.
+func (p *PlatformMap) UnmarshalJSON(data []byte) error {
+	var empty []any
+	if err := json.Unmarshal(data, &empty); err == nil && len(empty) == 0 {
+		*p = PlatformMap{}
+		return nil
+	}
+	var values map[string]string
+	if err := json.Unmarshal(data, &values); err != nil {
+		return err
+	}
+	*p = values
+	return nil
+}
+
 // ComposerLock represents the structure of composer.lock
 type ComposerLock struct {
 	Readme           []string          `json:"_readme"`
@@ -41,7 +59,7 @@ type ComposerLock struct {
 	StabilityFlags   any               `json:"stability-flags"` // Can be array or map
 	PreferStable     bool              `json:"prefer-stable"`
 	PreferLowest     bool              `json:"prefer-lowest"`
-	Platform         map[string]string `json:"platform"`
+	Platform         PlatformMap       `json:"platform"`
 	PlatformDev      any               `json:"platform-dev"` // Can be array or map
 	PluginAPIVersion string            `json:"plugin-api-version"`
 }

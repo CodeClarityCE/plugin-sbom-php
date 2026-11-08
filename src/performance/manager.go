@@ -156,8 +156,7 @@ func (pm *PerformanceManager) ParseComposerFilesOptimized(composerJSONPath, comp
 	}
 
 	if result.lockErr != nil && composerLockPath != "" {
-		log.Printf("Warning: failed to parse composer.lock: %v", result.lockErr)
-		// Continue without composer.lock
+		return nil, nil, fmt.Errorf("failed to parse composer.lock: %w", result.lockErr)
 	}
 
 	return result.composerJSON, result.composerLock, nil

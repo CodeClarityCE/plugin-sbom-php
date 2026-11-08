@@ -501,3 +501,19 @@ func TestAnalyzePHARFileNonExistent(t *testing.T) {
 	assert.Error(t, err)
 	assert.Contains(t, err.Error(), "failed to stat PHAR file")
 }
+
+// Composer writes an empty platform as [], which must still parse.
+func TestParseComposerLockEmptyPlatformArray(t *testing.T) {
+	path := filepath.Join(t.TempDir(), "composer.lock")
+	lock := `{"packages":[{"name":"guzzlehttp/guzzle","version":"7.4.0"}],"packages-dev":[],"platform":[],"platform-dev":[]}`
+	if err := os.WriteFile(path, []byte(lock), 0o600); err != nil {
+		t.Fatal(err)
+	}
+	parsed, err := parser.ParseComposerLock(path)
+	if err != nil {
+		t.Fatalf("expected lock to parse: %v", err)
+	}
+	if len(parsed.Packages) != 1 {
+		t.Fatalf("expected 1 package, got %d", len(parsed.Packages))
+	}
+}
