@@ -420,6 +420,16 @@ func StartWithPerformanceOptimizations(sourceCodeDir string, analysisId uuid.UUI
 		if projectInfo.ComposerLock != nil {
 			composerLock = projectInfo.ComposerLock
 		}
+		// A lock file that exists but cannot be read must not pass as empty.
+		if projectInfo.ComposerLockPath != "" && composerLock == nil {
+			exceptionManager.AddError(
+				"composer.lock could not be read",
+				exceptionManager.GENERIC_ERROR,
+				"The composer.lock file in this project is invalid",
+				"ComposerLockInvalid",
+			)
+			return generateFailureOutput(start, "")
+		}
 	} else {
 		// Update project info with optimized parsing results
 		projectInfo.ComposerJSON = composerJSON
