@@ -81,7 +81,7 @@ func TestComposerAuth_LoadFromAuthJSON(t *testing.T) {
 			"github.com": "ghp_xxxxxxxxxxxxxxxxxxxx"
 		},
 		"gitlab-token": {
-			"gitlab.company.com": "glpat-xxxxxxxxxxxxxxxxxxxx"
+			"gitlab.company.com": "glpat-test-token"
 		}
 	}`
 
@@ -135,7 +135,7 @@ func TestComposerAuth_LoadFromAuthJSON(t *testing.T) {
 		if gitlabAuth.Type != auth.GitLabToken {
 			t.Errorf("Expected GitLab token type, got %s", gitlabAuth.Type)
 		}
-		if gitlabAuth.Token != "glpat-xxxxxxxxxxxxxxxxxxxx" {
+		if gitlabAuth.Token != "glpat-test-token" {
 			t.Errorf("Expected GitLab token, got %s", gitlabAuth.Token)
 		}
 	}
