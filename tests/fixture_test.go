@@ -49,7 +49,7 @@ func useFixture(t *testing.T, name string) (startPath string, sourceDir string) 
 	if err != nil {
 		t.Fatalf("copy fixture %s: %v", name, err)
 	}
-	// Same cwd-relative path as before, so output paths match the goldens.
+	// Run from the tempdir with a relative path, so output paths match the goldens.
 	t.Chdir(root)
 	return "./" + name, sourceDir
 }

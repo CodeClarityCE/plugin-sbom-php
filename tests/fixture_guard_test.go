@@ -8,12 +8,13 @@ import (
 
 // Manifest and lockfile names that GitHub scans for dependency alerts.
 var realManifestNames = map[string]bool{
-	"composer.json":     true,
-	"composer.lock":     true,
-	"package.json":      true,
-	"package-lock.json": true,
-	"yarn.lock":         true,
-	"pnpm-lock.yaml":    true,
+	"composer.json":       true,
+	"composer.lock":       true,
+	"package.json":        true,
+	"package-lock.json":   true,
+	"npm-shrinkwrap.json": true,
+	"yarn.lock":           true,
+	"pnpm-lock.yaml":      true,
 }
 
 // TestFixturesStoreManifestsRenamed fails on any real-named manifest in a test project.
