@@ -1,6 +1,8 @@
 package main
 
 import (
+	"path/filepath"
+	"strings"
 	"testing"
 
 	plugin "github.com/CodeClarityCE/plugin-php-sbom/src"
@@ -13,7 +15,8 @@ import (
 func TestE2E_PHPExtensionDetection(t *testing.T) {
 	requireAMQP(t)
 
-	out := plugin.Start("./test1", uuid.UUID{}, nil)
+	dir, _ := useFixture(t, "test1")
+	out := plugin.Start(dir, uuid.UUID{}, nil)
 
 	assert.NotNil(t, out)
 	assert.Equal(t, codeclarity.SUCCESS, out.AnalysisInfo.Status)
@@ -55,7 +58,8 @@ func TestE2E_PHPExtensionDetection(t *testing.T) {
 func TestE2E_VulnerablePackageDetection(t *testing.T) {
 	requireAMQP(t)
 
-	out := plugin.Start("./test-vulnerable", uuid.UUID{}, nil)
+	dir, src := useFixture(t, "test-vulnerable")
+	out := plugin.Start(dir, uuid.UUID{}, nil)
 
 	assert.NotNil(t, out)
 	assert.Equal(t, codeclarity.SUCCESS, out.AnalysisInfo.Status)
@@ -128,7 +132,7 @@ func TestE2E_VulnerablePackageDetection(t *testing.T) {
 		}
 	}
 
-	writeJSON(out, "./test-vulnerable/sbom.json")
+	writeJSON(out, filepath.Join(src, "sbom.json"))
 }
 
 // TestE2E_PHPFrameworkDetection tests framework detection across different PHP frameworks
@@ -147,7 +151,8 @@ func TestE2E_PHPFrameworkDetection(t *testing.T) {
 
 	for testDir, expectedFramework := range testCases {
 		t.Run(testDir, func(t *testing.T) {
-			out := plugin.Start(testDir, uuid.UUID{}, nil)
+			dir, _ := useFixture(t, strings.TrimPrefix(testDir, "./"))
+			out := plugin.Start(dir, uuid.UUID{}, nil)
 
 			assert.NotNil(t, out)
 			assert.Equal(t, codeclarity.SUCCESS, out.AnalysisInfo.Status)
@@ -175,7 +180,8 @@ func TestE2E_PHPFrameworkDetection(t *testing.T) {
 func TestE2E_SBOMStructureCompatibility(t *testing.T) {
 	requireAMQP(t)
 
-	out := plugin.Start("./test1", uuid.UUID{}, nil)
+	dir, _ := useFixture(t, "test1")
+	out := plugin.Start(dir, uuid.UUID{}, nil)
 
 	assert.NotNil(t, out)
 	assert.Equal(t, codeclarity.SUCCESS, out.AnalysisInfo.Status)
@@ -262,7 +268,8 @@ func TestE2E_ErrorHandlingAndEdgeCases(t *testing.T) {
 	// Test with composer.json but no composer.lock
 	t.Run("ComposerJSONOnly", func(t *testing.T) {
 		// Most test cases only have composer.json (no working composer.lock)
-		out := plugin.Start("./test2-laravel", uuid.UUID{}, nil)
+		dir, _ := useFixture(t, "test2-laravel")
+		out := plugin.Start(dir, uuid.UUID{}, nil)
 
 		assert.NotNil(t, out)
 		assert.Equal(t, codeclarity.SUCCESS, out.AnalysisInfo.Status)
@@ -278,7 +285,8 @@ func TestE2E_PerformanceAndMemory(t *testing.T) {
 	requireAMQP(t)
 
 	// Test with the largest project (test1 - Passbolt)
-	out := plugin.Start("./test1", uuid.UUID{}, nil)
+	dir, _ := useFixture(t, "test1")
+	out := plugin.Start(dir, uuid.UUID{}, nil)
 
 	assert.NotNil(t, out)
 	assert.Equal(t, codeclarity.SUCCESS, out.AnalysisInfo.Status)
@@ -311,7 +319,8 @@ func TestE2E_PerformanceAndMemory(t *testing.T) {
 func TestE2E_PHPExtensionVulnerabilityRelevance(t *testing.T) {
 	requireAMQP(t)
 
-	out := plugin.Start("./test1", uuid.UUID{}, nil)
+	dir, _ := useFixture(t, "test1")
+	out := plugin.Start(dir, uuid.UUID{}, nil)
 
 	assert.NotNil(t, out)
 	assert.Equal(t, codeclarity.SUCCESS, out.AnalysisInfo.Status)
