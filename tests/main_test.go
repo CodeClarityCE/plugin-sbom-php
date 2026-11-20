@@ -1,6 +1,7 @@
 package main
 
 import (
+	"path/filepath"
 	"testing"
 
 	plugin "github.com/CodeClarityCE/plugin-php-sbom/src"
@@ -12,7 +13,8 @@ import (
 func TestCreatePassbolt(t *testing.T) {
 	requireAMQP(t)
 
-	out := plugin.Start("./test1", uuid.UUID{}, nil)
+	dir, src := useFixture(t, "test1")
+	out := plugin.Start(dir, uuid.UUID{}, nil)
 
 	// Assert the expected values
 	assert.NotNil(t, out)
@@ -59,13 +61,14 @@ func TestCreatePassbolt(t *testing.T) {
 	}
 	assert.True(t, foundLicenses, "Should detect licenses in dependencies")
 
-	writeJSON(out, "./test1/sbom.json")
+	writeJSON(out, filepath.Join(src, "sbom.json"))
 }
 
 func TestCreateTest1EdgeCases(t *testing.T) {
 	requireAMQP(t)
 
-	out := plugin.Start("./test1", uuid.UUID{}, nil)
+	dir, _ := useFixture(t, "test1")
+	out := plugin.Start(dir, uuid.UUID{}, nil)
 
 	// Test edge cases and detailed structure
 	assert.NotNil(t, out)
@@ -116,7 +119,8 @@ func TestErrorHandling(t *testing.T) {
 func TestCreateLaravel(t *testing.T) {
 	requireAMQP(t)
 
-	out := plugin.Start("./test2-laravel", uuid.UUID{}, nil)
+	dir, src := useFixture(t, "test2-laravel")
+	out := plugin.Start(dir, uuid.UUID{}, nil)
 
 	// Assert the expected values
 	assert.NotNil(t, out)
@@ -139,13 +143,14 @@ func TestCreateLaravel(t *testing.T) {
 	// This test demonstrates the plugin behavior with composer.json detection
 	assert.Empty(t, defaultWs.Dependencies, "Dependencies should be empty until composer.lock detection is fixed")
 
-	writeJSON(out, "./test2-laravel/sbom.json")
+	writeJSON(out, filepath.Join(src, "sbom.json"))
 }
 
 func TestCreateSymfony(t *testing.T) {
 	requireAMQP(t)
 
-	out := plugin.Start("./test3-symfony", uuid.UUID{}, nil)
+	dir, src := useFixture(t, "test3-symfony")
+	out := plugin.Start(dir, uuid.UUID{}, nil)
 
 	// Assert the expected values
 	assert.NotNil(t, out)
@@ -167,13 +172,14 @@ func TestCreateSymfony(t *testing.T) {
 	// This test demonstrates the plugin behavior with composer.json detection
 	assert.Empty(t, defaultWs.Dependencies, "Dependencies should be empty until composer.lock detection is fixed")
 
-	writeJSON(out, "./test3-symfony/sbom.json")
+	writeJSON(out, filepath.Join(src, "sbom.json"))
 }
 
 func TestCreateWordPress(t *testing.T) {
 	requireAMQP(t)
 
-	out := plugin.Start("./test4-wordpress", uuid.UUID{}, nil)
+	dir, src := useFixture(t, "test4-wordpress")
+	out := plugin.Start(dir, uuid.UUID{}, nil)
 
 	// Assert the expected values
 	assert.NotNil(t, out)
@@ -196,13 +202,14 @@ func TestCreateWordPress(t *testing.T) {
 	// This test demonstrates the plugin behavior with composer.json detection
 	assert.Empty(t, defaultWs.Dependencies, "Dependencies should be empty until composer.lock detection is fixed")
 
-	writeJSON(out, "./test4-wordpress/sbom.json")
+	writeJSON(out, filepath.Join(src, "sbom.json"))
 }
 
 func TestCreateCodeIgniter(t *testing.T) {
 	requireAMQP(t)
 
-	out := plugin.Start("./test5-codeigniter", uuid.UUID{}, nil)
+	dir, src := useFixture(t, "test5-codeigniter")
+	out := plugin.Start(dir, uuid.UUID{}, nil)
 
 	// Assert the expected values
 	assert.NotNil(t, out)
@@ -225,13 +232,14 @@ func TestCreateCodeIgniter(t *testing.T) {
 	// This test demonstrates the plugin behavior with composer.json only
 	assert.Empty(t, defaultWs.Dependencies, "Dependencies should be empty without composer.lock")
 
-	writeJSON(out, "./test5-codeigniter/sbom.json")
+	writeJSON(out, filepath.Join(src, "sbom.json"))
 }
 
 func TestCreatePurePHP(t *testing.T) {
 	requireAMQP(t)
 
-	out := plugin.Start("./test6-pure-php", uuid.UUID{}, nil)
+	dir, src := useFixture(t, "test6-pure-php")
+	out := plugin.Start(dir, uuid.UUID{}, nil)
 
 	// Assert the expected values
 	assert.NotNil(t, out)
@@ -254,13 +262,14 @@ func TestCreatePurePHP(t *testing.T) {
 	// This test demonstrates the plugin behavior with composer.json only
 	assert.Empty(t, defaultWs.Dependencies, "Dependencies should be empty without composer.lock")
 
-	writeJSON(out, "./test6-pure-php/sbom.json")
+	writeJSON(out, filepath.Join(src, "sbom.json"))
 }
 
 func TestCreateSymfonyDemo(t *testing.T) {
 	requireAMQP(t)
 
-	out := plugin.Start("./test7-symfony-demo", uuid.UUID{}, nil)
+	dir, src := useFixture(t, "test7-symfony-demo")
+	out := plugin.Start(dir, uuid.UUID{}, nil)
 
 	// Assert the expected values
 	assert.NotNil(t, out)
@@ -284,7 +293,7 @@ func TestCreateSymfonyDemo(t *testing.T) {
 	// TODO: Fix composer.lock file detection in plugin
 	assert.Empty(t, defaultWs.Dependencies, "Dependencies should be empty until composer.lock detection is fixed")
 
-	writeJSON(out, "./test7-symfony-demo/sbom.json")
+	writeJSON(out, filepath.Join(src, "sbom.json"))
 }
 
 func TestComposerJSONOnly(t *testing.T) {
@@ -296,7 +305,8 @@ func TestComposerJSONOnly(t *testing.T) {
 func TestCreateCachet(t *testing.T) {
 	requireAMQP(t)
 
-	out := plugin.Start("./test8-cachet", uuid.UUID{}, nil)
+	dir, src := useFixture(t, "test8-cachet")
+	out := plugin.Start(dir, uuid.UUID{}, nil)
 
 	// Basic assertions
 	assert.NotNil(t, out)
@@ -336,5 +346,5 @@ func TestCreateCachet(t *testing.T) {
 	}
 
 	// Write output for inspection
-	writeJSON(out, "./test8-cachet/sbom.json")
+	writeJSON(out, filepath.Join(src, "sbom.json"))
 }
