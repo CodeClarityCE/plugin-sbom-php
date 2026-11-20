@@ -2,6 +2,7 @@ package knowledge
 
 import (
 	"encoding/json"
+	"log"
 
 	"github.com/CodeClarityCE/plugin-php-sbom/src/types"
 	amqp_helper "github.com/CodeClarityCE/utility-amqp-helper"
@@ -22,5 +23,8 @@ func UpdateKnowledge(dependencies map[string]map[string]types.Versions, analysis
 		Language:      "php",
 	}
 	data, _ := json.Marshal(sbom_message)
-	amqp_helper.Send("sbom_packageFollower", data)
+	// Best-effort notification: a broker outage must not abort SBOM generation.
+	if err := amqp_helper.TrySend("sbom_packageFollower", data); err != nil {
+		log.Printf("Failed to notify packageFollower (continuing): %v", err)
+	}
 }
