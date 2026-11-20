@@ -3,8 +3,8 @@ module github.com/CodeClarityCE/plugin-php-sbom
 go 1.27.4
 
 require (
-	github.com/CodeClarityCE/utility-amqp-helper v0.0.19-alpha
-	github.com/CodeClarityCE/utility-boilerplates v0.0.15-alpha
+	github.com/CodeClarityCE/utility-amqp-helper v0.0.20-alpha
+	github.com/CodeClarityCE/utility-boilerplates v0.0.16-alpha
 	github.com/CodeClarityCE/utility-types v0.0.26-alpha
 	github.com/google/uuid v1.6.0
 	github.com/stretchr/testify v1.12.1
@@ -12,7 +12,7 @@ require (
 )
 
 require (
-	github.com/CodeClarityCE/utility-dbhelper v0.0.22-alpha // indirect
+	github.com/CodeClarityCE/utility-dbhelper v0.0.23-alpha // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/cespare/xxhash/v2 v2.3.0 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
@@ -30,8 +30,8 @@ require (
 	github.com/uptrace/bun/driver/pgdriver v1.2.18 // indirect
 	github.com/vmihailenco/msgpack/v5 v5.4.1 // indirect
 	github.com/vmihailenco/tagparser/v2 v2.0.0 // indirect
-	go.opentelemetry.io/otel v1.46.0 // indirect
-	go.opentelemetry.io/otel/trace v1.46.0 // indirect
+	go.opentelemetry.io/otel v1.47.0 // indirect
+	go.opentelemetry.io/otel/trace v1.47.0 // indirect
 	go.yaml.in/yaml/v3 v3.0.5 // indirect
 	golang.org/x/crypto v0.57.0 // indirect
 	golang.org/x/sys v0.48.0 // indirect
