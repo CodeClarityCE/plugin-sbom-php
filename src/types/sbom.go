@@ -32,6 +32,11 @@ type Versions struct {
 	Direct       bool              `json:"direct"`
 	Transitive   bool              `json:"transitive"`
 	Licenses     []string          `json:"licenses"`
+	// Import paths: each path runs from a top-level dependency ("name@version") down to this version.
+	IsTopLevel                    bool       `json:"is_top_level"`
+	ImportingTopLevelDependencies []string   `json:"importing_top_level_dependencies"`
+	ImportPaths                   [][]string `json:"import_paths"`
+	DevImportPaths                [][]string `json:"dev_import_paths"`
 	// PHP-specific fields (will be filtered in extra processing)
 	PHPVersion  string   `json:"php_version,omitempty"`
 	Type        string   `json:"type,omitempty"`
