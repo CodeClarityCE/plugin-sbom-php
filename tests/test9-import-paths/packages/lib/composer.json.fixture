@@ -1,0 +1,6 @@
+{
+    "name": "acme/lib",
+    "require": {
+        "acme/leaf": "^1.0"
+    }
+}
