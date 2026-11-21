@@ -326,7 +326,7 @@ func convertEnhancedSBOMToStandard(enhancedSBOM *parser.EnhancedSBOM, sourceCode
 		})
 	}
 
-	workspaces["default"] = defaultWorkspace
+	workspaces["default"] = fillImportPaths(defaultWorkspace)
 
 	// Generate analysis info with private repository information
 	analysisInfo := types.AnalysisInfo{
@@ -592,13 +592,13 @@ func buildOptimizedWorkspace(composerJSON *parser.ComposerJSON, composerLock *pa
 		}
 	}
 
-	return types.WorkSpace{
+	return fillImportPaths(types.WorkSpace{
 		Dependencies: dependencies,
 		Start: types.Start{
 			Dependencies:    directDeps,
 			DevDependencies: directDevDeps,
 		},
-	}
+	})
 }
 
 // detectPHPExtensionsOptimized detects PHP extensions using parallel processing

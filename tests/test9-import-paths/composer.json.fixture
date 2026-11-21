@@ -1,0 +1,11 @@
+{
+    "name": "acme/root",
+    "require": {
+        "php": ">=8.1",
+        "ext-json": "*",
+        "acme/app": "^1.0"
+    },
+    "require-dev": {
+        "acme/tool": "^2.0"
+    }
+}

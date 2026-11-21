@@ -7,6 +7,7 @@ import (
 	amqp_helper "github.com/CodeClarityCE/utility-amqp-helper"
 	types_amqp "github.com/CodeClarityCE/utility-types/amqp"
 	"github.com/google/uuid"
+	"github.com/sirupsen/logrus"
 )
 
 func UpdateKnowledge(dependencies map[string]map[string]types.Versions, analysisId uuid.UUID) {
@@ -22,5 +23,11 @@ func UpdateKnowledge(dependencies map[string]map[string]types.Versions, analysis
 		Language:      "php",
 	}
 	data, _ := json.Marshal(sbom_message)
-	amqp_helper.Send("sbom_packageFollower", data)
+	// Best-effort notification: a broker outage must not abort SBOM generation.
+	if err := amqp_helper.TrySend("sbom_packageFollower", data); err != nil {
+		logrus.WithFields(logrus.Fields{
+			"analysis_id": analysisId.String(),
+			"queue":       "sbom_packageFollower",
+		}).WithError(err).Warn("Could not notify the package follower, continuing")
+	}
 }

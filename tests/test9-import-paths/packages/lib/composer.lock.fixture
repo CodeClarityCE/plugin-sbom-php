@@ -1,0 +1,13 @@
+{
+    "content-hash": "0000000000000000000000000000000000000000000000000000000000000002",
+    "packages": [
+        {
+            "name": "acme/leaf",
+            "version": "1.0.3",
+            "type": "library",
+            "license": ["MIT"]
+        }
+    ],
+    "packages-dev": [],
+    "plugin-api-version": "2.6.0"
+}
