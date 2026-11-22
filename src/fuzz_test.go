@@ -39,7 +39,7 @@ func FuzzParseComposerProject(f *testing.F) {
 		f.Fatal(err)
 	}
 	for _, manifest := range manifests {
-		jsonData, err := os.ReadFile(manifest)
+		jsonData, err := os.ReadFile(manifest) //nolint:gosec // G304: seed paths come from the repo's own testdata
 		if err != nil {
 			f.Fatal(err)
 		}

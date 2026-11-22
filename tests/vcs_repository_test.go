@@ -290,7 +290,7 @@ func TestGitResolverCleanup(t *testing.T) {
 	// Get temp directory location
 	tempBase := filepath.Join(os.TempDir(), "php-sbom-git-cache")
 
-	require.NoError(t, os.MkdirAll(tempBase, 0o755))
+	require.NoError(t, os.MkdirAll(tempBase, 0o750))
 
 	// Cleanup should remove the directory
 	gitResolver.Cleanup()

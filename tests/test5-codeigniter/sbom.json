@@ -36,6 +36,16 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "codeigniter4/framework@v4.4.5"
+            ],
+            "import_paths": [
+              [
+                "codeigniter4/framework@v4.4.5"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "project",
             "description": "The CodeIgniter framework v4"
           }
@@ -61,6 +71,16 @@
             "transitive": false,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "fakerphp/faker@v1.23.1"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "fakerphp/faker@v1.23.1"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -89,6 +109,16 @@
             "licenses": [
               "BSD-3-Clause"
             ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "firebase/php-jwt@v6.9.0"
+            ],
+            "import_paths": [
+              [
+                "firebase/php-jwt@v6.9.0"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -123,6 +153,21 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "codeigniter4/framework@v4.4.5",
+              "kint-php/kint@5.0.7"
+            ],
+            "import_paths": [
+              [
+                "codeigniter4/framework@v4.4.5",
+                "kint-php/kint@5.0.7"
+              ],
+              [
+                "kint-php/kint@5.0.7"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -139,9 +184,14 @@
       "start": {
         "dependencies": [
           {
-            "name": "doctrine/dbal",
+            "name": "psr/log",
             "version": "",
-            "constraint": "^3.7"
+            "constraint": "^3.0"
+          },
+          {
+            "name": "guzzlehttp/guzzle",
+            "version": "",
+            "constraint": "^7.8"
           },
           {
             "name": "vlucas/phpdotenv",
@@ -159,19 +209,14 @@
             "constraint": "^5.0.4"
           },
           {
-            "name": "psr/log",
+            "name": "doctrine/dbal",
             "version": "",
-            "constraint": "^3.0"
+            "constraint": "^3.7"
           },
           {
             "name": "firebase/php-jwt",
             "version": "v6.9.0",
             "constraint": "^6.9"
-          },
-          {
-            "name": "guzzlehttp/guzzle",
-            "version": "",
-            "constraint": "^7.8"
           }
         ],
         "dev_dependencies": [
@@ -215,9 +260,9 @@
     "working_directory": "test5-codeigniter",
     "package_manager": "composer",
     "time": {
-      "analysis_start_time": "2025-08-17T23:13:14+02:00",
-      "analysis_end_time": "2025-08-17T23:13:14+02:00",
-      "analysis_delta_time": 0.004575458
+      "analysis_start_time": "2026-11-22T19:09:35Z",
+      "analysis_end_time": "2026-11-22T19:09:35Z",
+      "analysis_delta_time": 0.000453416
     },
     "errors": [
       {
@@ -228,6 +273,16 @@
         "public_error": {
           "description": "Source directory not found",
           "key": "GenericException"
+        }
+      },
+      {
+        "private_error": {
+          "description": "Error finding PHP projects: no composer.json files found",
+          "key": "UnsupportedLanguageRequested"
+        },
+        "public_error": {
+          "description": "No PHP project found in the source directory",
+          "key": "UnsupportedLanguageRequested"
         }
       },
       {
@@ -318,11 +373,24 @@
         "core_modules": [],
         "loaded_extensions": [],
         "configured_extensions": [
-          "intl",
-          "fileinfo",
           "curl",
+          "fileinfo",
+          "intl",
           "mbstring"
         ]
+      },
+      "private_repository_info": {
+        "performance_optimization": {
+          "average_http_latency": "0s",
+          "concurrent_tasks": 0,
+          "files_processed": 2,
+          "http_connection_reuse": 0,
+          "http_requests": 0,
+          "json_files_processed": 2,
+          "json_streaming_used": 0,
+          "object_pool_reuse": 5,
+          "packages_processed": 0
+        }
       }
     }
   }

@@ -22,6 +22,19 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "spatie/laravel-data@4.13.0",
+                "spatie/php-structure-discoverer@2.3.0",
+                "amphp/amp@v3.1.0"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -74,6 +87,20 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "spatie/laravel-data@4.13.0",
+                "spatie/php-structure-discoverer@2.3.0",
+                "amphp/parallel@v2.3.1",
+                "amphp/byte-stream@v2.1.1"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -114,6 +141,20 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "spatie/laravel-data@4.13.0",
+                "spatie/php-structure-discoverer@2.3.0",
+                "amphp/parallel@v2.3.1",
+                "amphp/cache@v2.0.1"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -168,6 +209,21 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "spatie/laravel-data@4.13.0",
+                "spatie/php-structure-discoverer@2.3.0",
+                "amphp/parallel@v2.3.1",
+                "amphp/socket@v2.3.1",
+                "amphp/dns@v2.4.0"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -232,6 +288,19 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "spatie/laravel-data@4.13.0",
+                "spatie/php-structure-discoverer@2.3.0",
+                "amphp/parallel@v2.3.1"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -268,6 +337,20 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "spatie/laravel-data@4.13.0",
+                "spatie/php-structure-discoverer@2.3.0",
+                "amphp/parallel@v2.3.1",
+                "amphp/parser@v1.1.1"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -304,6 +387,20 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "spatie/laravel-data@4.13.0",
+                "spatie/php-structure-discoverer@2.3.0",
+                "amphp/parallel@v2.3.1",
+                "amphp/pipeline@v1.2.2"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -344,6 +441,20 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "spatie/laravel-data@4.13.0",
+                "spatie/php-structure-discoverer@2.3.0",
+                "amphp/parallel@v2.3.1",
+                "amphp/process@v2.0.3"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -380,6 +491,20 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "spatie/laravel-data@4.13.0",
+                "spatie/php-structure-discoverer@2.3.0",
+                "amphp/parallel@v2.3.1",
+                "amphp/serialization@v1.0.0"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -428,6 +553,20 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "spatie/laravel-data@4.13.0",
+                "spatie/php-structure-discoverer@2.3.0",
+                "amphp/parallel@v2.3.1",
+                "amphp/socket@v2.3.1"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -472,6 +611,20 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "spatie/laravel-data@4.13.0",
+                "spatie/php-structure-discoverer@2.3.0",
+                "amphp/parallel@v2.3.1",
+                "amphp/sync@v2.3.0"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -510,6 +663,19 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/actions@v3.2.140",
+                "anourvalar/eloquent-serialize@1.2.28"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "description": "Laravel Query Builder (Eloquent) serialization"
           }
@@ -536,6 +702,19 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/support@v3.2.140",
+                "blade-ui-kit/blade-heroicons@2.5.0"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -575,6 +754,20 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/support@v3.2.140",
+                "blade-ui-kit/blade-heroicons@2.5.0",
+                "blade-ui-kit/blade-icons@1.7.2"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -628,6 +821,23 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "pestphp/pest-plugin-laravel@v2.4.0",
+              "pestphp/pest@v2.36.0"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "pestphp/pest@v2.36.0",
+                "brianium/paratest@v7.4.8"
+              ],
+              [
+                "pestphp/pest@v2.36.0",
+                "brianium/paratest@v7.4.8"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -661,6 +871,39 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/actions@v3.2.140",
+                "anourvalar/eloquent-serialize@1.2.28",
+                "laravel/framework@v11.45.2",
+                "brick/math@0.12.3"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "brick/math@0.12.3"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "laravel/framework@v11.45.2",
+                "brick/math@0.12.3"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "brick/math@0.12.3"
+              ]
             ],
             "type": "library",
             "description": "Arbitrary-precision arithmetic library"
@@ -722,6 +965,16 @@
             "licenses": [
               "proprietary"
             ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -749,6 +1002,38 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "nesbot/carbon@2.73.0",
+                "carbonphp/carbon-doctrine-types@2.1.0"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "nesbot/carbon@2.73.0",
+                "carbonphp/carbon-doctrine-types@2.1.0"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "nesbot/carbon@2.73.0",
+                "carbonphp/carbon-doctrine-types@2.1.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "nesbot/carbon@2.73.0",
+                "carbonphp/carbon-doctrine-types@2.1.0"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -778,6 +1063,19 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/forms@v3.2.140",
+                "danharrin/date-format-converter@v0.3.1"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -808,6 +1106,18 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "danharrin/livewire-rate-limiting@v2.0.1"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -838,6 +1148,22 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "spatie/laravel-data@4.13.0",
+                "spatie/php-structure-discoverer@2.3.0",
+                "amphp/parallel@v2.3.1",
+                "amphp/socket@v2.3.1",
+                "amphp/dns@v2.4.0",
+                "daverandom/libdns@v2.1.0"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "description": "DNS protocol implementation written in pure PHP"
           }
@@ -859,6 +1185,47 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/actions@v3.2.140",
+                "anourvalar/eloquent-serialize@1.2.28",
+                "laravel/framework@v11.45.2",
+                "league/commonmark@2.7.1",
+                "league/config@v1.2.0",
+                "dflydev/dot-access-data@v3.0.3"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "league/commonmark@2.7.1",
+                "league/config@v1.2.0",
+                "dflydev/dot-access-data@v3.0.3"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "laravel/framework@v11.45.2",
+                "league/commonmark@2.7.1",
+                "league/config@v1.2.0",
+                "dflydev/dot-access-data@v3.0.3"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "league/commonmark@2.7.1",
+                "league/config@v1.2.0",
+                "dflydev/dot-access-data@v3.0.3"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -900,6 +1267,18 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "doctrine/dbal@3.9.4",
+                "doctrine/cache@2.2.0"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -956,6 +1335,17 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "doctrine/dbal@3.9.4"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -996,6 +1386,36 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "pestphp/pest-plugin-laravel@v2.4.0",
+              "pestphp/pest@v2.36.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "doctrine/dbal@3.9.4",
+                "doctrine/deprecations@1.1.5"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "pestphp/pest@v2.36.0",
+                "pestphp/pest-plugin-arch@v2.7.0",
+                "ta-tikoma/phpunit-architecture-test@0.8.4",
+                "phpdocumentor/reflection-docblock@5.6.2",
+                "doctrine/deprecations@1.1.5"
+              ],
+              [
+                "pestphp/pest@v2.36.0",
+                "pestphp/pest-plugin-arch@v2.7.0",
+                "ta-tikoma/phpunit-architecture-test@0.8.4",
+                "phpdocumentor/reflection-docblock@5.6.2",
+                "doctrine/deprecations@1.1.5"
+              ]
+            ],
             "type": "library",
             "description": "A small layer on top of trigger_error(E_USER_DEPRECATED) or PSR-3 logging with options to disable all deprecations or selectively for packages."
           }
@@ -1018,6 +1438,18 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "doctrine/dbal@3.9.4",
+                "doctrine/event-manager@2.0.1"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -1066,6 +1498,39 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/actions@v3.2.140",
+                "anourvalar/eloquent-serialize@1.2.28",
+                "laravel/framework@v11.45.2",
+                "doctrine/inflector@2.1.0"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "doctrine/inflector@2.1.0"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "laravel/framework@v11.45.2",
+                "doctrine/inflector@2.1.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "doctrine/inflector@2.1.0"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -1110,6 +1575,43 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/actions@v3.2.140",
+                "anourvalar/eloquent-serialize@1.2.28",
+                "laravel/framework@v11.45.2",
+                "egulias/email-validator@4.0.4",
+                "doctrine/lexer@3.0.1"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "egulias/email-validator@4.0.4",
+                "doctrine/lexer@3.0.1"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "laravel/framework@v11.45.2",
+                "egulias/email-validator@4.0.4",
+                "doctrine/lexer@3.0.1"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "egulias/email-validator@4.0.4",
+                "doctrine/lexer@3.0.1"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -1148,6 +1650,39 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/actions@v3.2.140",
+                "anourvalar/eloquent-serialize@1.2.28",
+                "laravel/framework@v11.45.2",
+                "dragonmantank/cron-expression@v3.4.0"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "dragonmantank/cron-expression@v3.4.0"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "laravel/framework@v11.45.2",
+                "dragonmantank/cron-expression@v3.4.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "dragonmantank/cron-expression@v3.4.0"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -1180,6 +1715,39 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/actions@v3.2.140",
+                "anourvalar/eloquent-serialize@1.2.28",
+                "laravel/framework@v11.45.2",
+                "egulias/email-validator@4.0.4"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "egulias/email-validator@4.0.4"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "laravel/framework@v11.45.2",
+                "egulias/email-validator@4.0.4"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "egulias/email-validator@4.0.4"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -1211,6 +1779,16 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "fakerphp/faker@v1.24.1"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "fakerphp/faker@v1.24.1"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -1237,6 +1815,25 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "pestphp/pest-plugin-laravel@v2.4.0",
+              "pestphp/pest@v2.36.0"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "pestphp/pest@v2.36.0",
+                "brianium/paratest@v7.4.8",
+                "fidry/cpu-core-counter@1.2.0"
+              ],
+              [
+                "pestphp/pest@v2.36.0",
+                "brianium/paratest@v7.4.8",
+                "fidry/cpu-core-counter@1.2.0"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -1288,6 +1885,18 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/actions@v3.2.140"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "description": "Easily add beautiful action modals to any Livewire component."
           }
@@ -1348,6 +1957,17 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "description": "A collection of full-stack components for accelerated Laravel app development."
           }
@@ -1392,6 +2012,18 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/forms@v3.2.140"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "description": "Easily add beautiful forms to any Livewire component."
           }
@@ -1432,6 +2064,18 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/infolists@v3.2.140"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "description": "Easily add beautiful read-only infolists to any Livewire component."
           }
@@ -1468,6 +2112,18 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/notifications@v3.2.140"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "description": "Easily add beautiful notifications to any Livewire app."
           }
@@ -1500,6 +2156,17 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/spatie-laravel-settings-plugin@v3.2.140"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "description": "Filament support for `spatie/laravel-settings`."
           }
@@ -1550,6 +2217,18 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/support@v3.2.140"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "description": "Core helper methods and foundation code for all Filament packages."
           }
@@ -1592,6 +2271,18 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/tables@v3.2.140"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "description": "Easily add beautiful tables to any Livewire component."
           }
@@ -1618,6 +2309,18 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/widgets@v3.2.140"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "description": "Easily add beautiful dashboard widgets to any Livewire component."
           }
@@ -1641,6 +2344,30 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "nunomaduro/collision@v8.5.0",
+              "pestphp/pest-plugin-laravel@v2.4.0",
+              "pestphp/pest@v2.36.0"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "nunomaduro/collision@v8.5.0",
+                "filp/whoops@2.17.0"
+              ],
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "pestphp/pest@v2.36.0",
+                "nunomaduro/collision@v8.5.0",
+                "filp/whoops@2.17.0"
+              ],
+              [
+                "pestphp/pest@v2.36.0",
+                "nunomaduro/collision@v8.5.0",
+                "filp/whoops@2.17.0"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -1671,6 +2398,39 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/actions@v3.2.140",
+                "anourvalar/eloquent-serialize@1.2.28",
+                "laravel/framework@v11.45.2",
+                "fruitcake/php-cors@v1.3.0"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "fruitcake/php-cors@v1.3.0"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "laravel/framework@v11.45.2",
+                "fruitcake/php-cors@v1.3.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "fruitcake/php-cors@v1.3.0"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -1704,6 +2464,43 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/actions@v3.2.140",
+                "anourvalar/eloquent-serialize@1.2.28",
+                "laravel/framework@v11.45.2",
+                "vlucas/phpdotenv@v5.6.2",
+                "graham-campbell/result-type@v1.1.3"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "vlucas/phpdotenv@v5.6.2",
+                "graham-campbell/result-type@v1.1.3"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "laravel/framework@v11.45.2",
+                "vlucas/phpdotenv@v5.6.2",
+                "graham-campbell/result-type@v1.1.3"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "vlucas/phpdotenv@v5.6.2",
+                "graham-campbell/result-type@v1.1.3"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -1742,6 +2539,39 @@
             "transitive": false,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "guzzlehttp/guzzle@7.9.3",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "guzzlehttp/guzzle@7.9.3"
+              ],
+              [
+                "guzzlehttp/guzzle@7.9.3"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "guzzlehttp/guzzle@7.9.3"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "laravel/framework@v11.45.2",
+                "guzzlehttp/guzzle@7.9.3"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "guzzlehttp/guzzle@7.9.3"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -1795,6 +2625,42 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "guzzlehttp/guzzle@7.9.3",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "guzzlehttp/guzzle@7.9.3",
+                "guzzlehttp/promises@2.2.0"
+              ],
+              [
+                "guzzlehttp/guzzle@7.9.3",
+                "guzzlehttp/promises@2.2.0"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "guzzlehttp/guzzle@7.9.3",
+                "guzzlehttp/promises@2.2.0"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "guzzlehttp/promises@2.2.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "guzzlehttp/guzzle@7.9.3",
+                "guzzlehttp/promises@2.2.0"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -1840,6 +2706,44 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "guzzlehttp/guzzle@7.9.3",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "guzzlehttp/guzzle@7.9.3",
+                "guzzlehttp/psr7@2.7.1"
+              ],
+              [
+                "guzzlehttp/guzzle@7.9.3",
+                "guzzlehttp/psr7@2.7.1"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "guzzlehttp/guzzle@7.9.3",
+                "guzzlehttp/psr7@2.7.1"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "laravel/framework@v11.45.2",
+                "guzzlehttp/guzzle@7.9.3",
+                "guzzlehttp/psr7@2.7.1"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "guzzlehttp/guzzle@7.9.3",
+                "guzzlehttp/psr7@2.7.1"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -1895,6 +2799,39 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/actions@v3.2.140",
+                "anourvalar/eloquent-serialize@1.2.28",
+                "laravel/framework@v11.45.2",
+                "guzzlehttp/uri-template@v1.0.4"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "guzzlehttp/uri-template@v1.0.4"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "laravel/framework@v11.45.2",
+                "guzzlehttp/uri-template@v1.0.4"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "guzzlehttp/uri-template@v1.0.4"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -1935,6 +2872,17 @@
             "licenses": [
               "BSD-3-Clause"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "mockery/mockery@1.6.12"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "mockery/mockery@1.6.12",
+                "hamcrest/hamcrest-php@v2.0.1"
+              ]
+            ],
             "type": "library",
             "description": "This is the PHP port of Hamcrest Matchers"
           }
@@ -1958,6 +2906,25 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "pestphp/pest-plugin-laravel@v2.4.0",
+              "pestphp/pest@v2.36.0"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "pestphp/pest@v2.36.0",
+                "brianium/paratest@v7.4.8",
+                "jean85/pretty-package-versions@2.1.0"
+              ],
+              [
+                "pestphp/pest@v2.36.0",
+                "brianium/paratest@v7.4.8",
+                "jean85/pretty-package-versions@2.1.0"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -1989,6 +2956,21 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "spatie/laravel-data@4.13.0",
+                "spatie/php-structure-discoverer@2.3.0",
+                "amphp/parallel@v2.3.1",
+                "amphp/socket@v2.3.1",
+                "kelunik/certificate@v1.1.3"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -2021,6 +3003,19 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/support@v3.2.140",
+                "kirschbaum-development/eloquent-power-joins@4.1.0"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -2136,6 +3131,35 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/actions@v3.2.140",
+                "anourvalar/eloquent-serialize@1.2.28",
+                "laravel/framework@v11.45.2"
+              ],
+              [
+                "laravel/framework@v11.45.2"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "laravel/framework@v11.45.2"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -2184,6 +3208,16 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "laravel/nightwatch@v1.12.0"
+            ],
+            "import_paths": [
+              [
+                "laravel/nightwatch@v1.12.0"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -2228,6 +3262,16 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "laravel/pail@v1.2.3"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "laravel/pail@v1.2.3"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -2268,6 +3312,16 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "laravel/pint@v1.24.0"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "laravel/pint@v1.24.0"
+              ]
+            ],
             "type": "project",
             "authors": [
               {
@@ -2301,6 +3355,38 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/support@v3.2.140",
+                "livewire/livewire@v3.6.4",
+                "laravel/prompts@v0.3.6"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "laravel/prompts@v0.3.6"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "laravel/framework@v11.45.2",
+                "laravel/prompts@v0.3.6"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "laravel/prompts@v0.3.6"
+              ]
             ],
             "type": "library",
             "description": "Add beautiful and user-friendly forms to your command-line applications."
@@ -2336,6 +3422,21 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/sanctum@v4.2.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "laravel/sanctum@v4.2.0"
+              ],
+              [
+                "laravel/sanctum@v4.2.0"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -2363,6 +3464,39 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/actions@v3.2.140",
+                "anourvalar/eloquent-serialize@1.2.28",
+                "laravel/framework@v11.45.2",
+                "laravel/serializable-closure@v2.0.4"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "laravel/serializable-closure@v2.0.4"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "laravel/framework@v11.45.2",
+                "laravel/serializable-closure@v2.0.4"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "laravel/serializable-closure@v2.0.4"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -2406,6 +3540,16 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "laravel/tinker@v2.10.1"
+            ],
+            "import_paths": [
+              [
+                "laravel/tinker@v2.10.1"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -2444,6 +3588,39 @@
             "licenses": [
               "BSD-3-Clause"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/actions@v3.2.140",
+                "anourvalar/eloquent-serialize@1.2.28",
+                "laravel/framework@v11.45.2",
+                "league/commonmark@2.7.1"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "league/commonmark@2.7.1"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "laravel/framework@v11.45.2",
+                "league/commonmark@2.7.1"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "league/commonmark@2.7.1"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -2477,6 +3654,43 @@
             "licenses": [
               "BSD-3-Clause"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/actions@v3.2.140",
+                "anourvalar/eloquent-serialize@1.2.28",
+                "laravel/framework@v11.45.2",
+                "league/commonmark@2.7.1",
+                "league/config@v1.2.0"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "league/commonmark@2.7.1",
+                "league/config@v1.2.0"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "laravel/framework@v11.45.2",
+                "league/commonmark@2.7.1",
+                "league/config@v1.2.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "league/commonmark@2.7.1",
+                "league/config@v1.2.0"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -2508,6 +3722,19 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/actions@v3.2.140",
+                "league/csv@9.21.0"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -2540,6 +3767,39 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/actions@v3.2.140",
+                "anourvalar/eloquent-serialize@1.2.28",
+                "laravel/framework@v11.45.2",
+                "league/flysystem@3.30.0"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "league/flysystem@3.30.0"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "laravel/framework@v11.45.2",
+                "league/flysystem@3.30.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "league/flysystem@3.30.0"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -2575,6 +3835,39 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/actions@v3.2.140",
+                "anourvalar/eloquent-serialize@1.2.28",
+                "laravel/framework@v11.45.2",
+                "league/flysystem-local@3.30.0"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "league/flysystem-local@3.30.0"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "laravel/framework@v11.45.2",
+                "league/flysystem-local@3.30.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "league/flysystem-local@3.30.0"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -2605,6 +3898,41 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/support@v3.2.140",
+                "livewire/livewire@v3.6.4",
+                "league/mime-type-detection@1.16.0"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "league/flysystem@3.30.0",
+                "league/mime-type-detection@1.16.0"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "laravel/framework@v11.45.2",
+                "league/flysystem@3.30.0",
+                "league/mime-type-detection@1.16.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "league/flysystem@3.30.0",
+                "league/mime-type-detection@1.16.0"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -2634,6 +3962,38 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/support@v3.2.140",
+                "symfony/html-sanitizer@v7.2.3",
+                "league/uri@7.5.1"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "league/uri@7.5.1"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "laravel/framework@v11.45.2",
+                "league/uri@7.5.1"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "league/uri@7.5.1"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -2668,6 +4028,42 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/support@v3.2.140",
+                "symfony/html-sanitizer@v7.2.3",
+                "league/uri@7.5.1",
+                "league/uri-interfaces@7.5.0"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "league/uri@7.5.1",
+                "league/uri-interfaces@7.5.0"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "laravel/framework@v11.45.2",
+                "league/uri@7.5.1",
+                "league/uri-interfaces@7.5.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "league/uri@7.5.1",
+                "league/uri-interfaces@7.5.0"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -2713,6 +4109,19 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/support@v3.2.140",
+                "livewire/livewire@v3.6.4"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -2743,6 +4152,20 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/support@v3.2.140",
+                "symfony/html-sanitizer@v7.2.3",
+                "masterminds/html5@2.9.0"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -2782,6 +4205,16 @@
             "transitive": false,
             "licenses": [
               "BSD-3-Clause"
+            ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "mockery/mockery@1.6.12"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "mockery/mockery@1.6.12"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -2824,6 +4257,38 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/actions@v3.2.140",
+                "anourvalar/eloquent-serialize@1.2.28",
+                "laravel/framework@v11.45.2",
+                "monolog/monolog@3.9.0"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "monolog/monolog@3.9.0"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "monolog/monolog@3.9.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "monolog/monolog@3.9.0"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -2851,6 +4316,25 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "pestphp/pest-plugin-laravel@v2.4.0",
+              "pestphp/pest@v2.36.0"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "pestphp/pest@v2.36.0",
+                "phpunit/phpunit@10.5.36",
+                "myclabs/deep-copy@1.13.0"
+              ],
+              [
+                "pestphp/pest@v2.36.0",
+                "phpunit/phpunit@10.5.36",
+                "myclabs/deep-copy@1.13.0"
+              ]
             ],
             "type": "library",
             "description": "Create deep copies (clones) of your objects"
@@ -2885,6 +4369,34 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "nesbot/carbon@2.73.0"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "nesbot/carbon@2.73.0"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "nesbot/carbon@2.73.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "nesbot/carbon@2.73.0"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -2921,6 +4433,47 @@
               "GPL-2.0-only",
               "GPL-3.0-only"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/actions@v3.2.140",
+                "anourvalar/eloquent-serialize@1.2.28",
+                "laravel/framework@v11.45.2",
+                "league/commonmark@2.7.1",
+                "league/config@v1.2.0",
+                "nette/schema@v1.3.2"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "league/commonmark@2.7.1",
+                "league/config@v1.2.0",
+                "nette/schema@v1.3.2"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "laravel/framework@v11.45.2",
+                "league/commonmark@2.7.1",
+                "league/config@v1.2.0",
+                "nette/schema@v1.3.2"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "league/commonmark@2.7.1",
+                "league/config@v1.2.0",
+                "nette/schema@v1.3.2"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -2952,6 +4505,51 @@
               "BSD-3-Clause",
               "GPL-2.0-only",
               "GPL-3.0-only"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/actions@v3.2.140",
+                "anourvalar/eloquent-serialize@1.2.28",
+                "laravel/framework@v11.45.2",
+                "league/commonmark@2.7.1",
+                "league/config@v1.2.0",
+                "nette/schema@v1.3.2",
+                "nette/utils@v4.0.8"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "league/commonmark@2.7.1",
+                "league/config@v1.2.0",
+                "nette/schema@v1.3.2",
+                "nette/utils@v4.0.8"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "laravel/framework@v11.45.2",
+                "league/commonmark@2.7.1",
+                "league/config@v1.2.0",
+                "nette/schema@v1.3.2",
+                "nette/utils@v4.0.8"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "league/commonmark@2.7.1",
+                "league/config@v1.2.0",
+                "nette/schema@v1.3.2",
+                "nette/utils@v4.0.8"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -2989,6 +4587,41 @@
             "licenses": [
               "BSD-3-Clause"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/tinker@v2.10.1",
+              "pestphp/pest-plugin-laravel@v2.4.0",
+              "pestphp/pest@v2.36.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "spatie/laravel-data@4.13.0",
+                "phpdocumentor/reflection@6.1.0",
+                "nikic/php-parser@v5.4.0"
+              ],
+              [
+                "laravel/tinker@v2.10.1",
+                "psy/psysh@v0.12.7",
+                "nikic/php-parser@v5.4.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "pestphp/pest@v2.36.0",
+                "brianium/paratest@v7.4.8",
+                "phpunit/php-code-coverage@10.1.16",
+                "nikic/php-parser@v5.4.0"
+              ],
+              [
+                "pestphp/pest@v2.36.0",
+                "brianium/paratest@v7.4.8",
+                "phpunit/php-code-coverage@10.1.16",
+                "nikic/php-parser@v5.4.0"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -3022,6 +4655,27 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "nunomaduro/collision@v8.5.0",
+              "pestphp/pest-plugin-laravel@v2.4.0",
+              "pestphp/pest@v2.36.0"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "nunomaduro/collision@v8.5.0"
+              ],
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "pestphp/pest@v2.36.0",
+                "nunomaduro/collision@v8.5.0"
+              ],
+              [
+                "pestphp/pest@v2.36.0",
+                "nunomaduro/collision@v8.5.0"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -3053,6 +4707,54 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "laravel/pail@v1.2.3",
+              "nunomaduro/collision@v8.5.0",
+              "pestphp/pest-plugin-laravel@v2.4.0",
+              "pestphp/pest@v2.36.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/actions@v3.2.140",
+                "anourvalar/eloquent-serialize@1.2.28",
+                "laravel/framework@v11.45.2",
+                "nunomaduro/termwind@v2.3.1"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "nunomaduro/termwind@v2.3.1"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "laravel/framework@v11.45.2",
+                "nunomaduro/termwind@v2.3.1"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "laravel/pail@v1.2.3",
+                "nunomaduro/termwind@v2.3.1"
+              ],
+              [
+                "nunomaduro/collision@v8.5.0",
+                "nunomaduro/termwind@v2.3.1"
+              ],
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "nunomaduro/termwind@v2.3.1"
+              ],
+              [
+                "pestphp/pest@v2.36.0",
+                "nunomaduro/termwind@v2.3.1"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -3094,6 +4796,19 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/actions@v3.2.140",
+                "openspout/openspout@v4.28.5"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -3134,6 +4849,21 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "pestphp/pest-plugin-laravel@v2.4.0",
+              "pestphp/pest@v2.36.0"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "pestphp/pest@v2.36.0"
+              ],
+              [
+                "pestphp/pest@v2.36.0"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -3166,6 +4896,23 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "pestphp/pest-plugin-laravel@v2.4.0",
+              "pestphp/pest@v2.36.0"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "pestphp/pest@v2.36.0",
+                "pestphp/pest-plugin@v2.1.1"
+              ],
+              [
+                "pestphp/pest@v2.36.0",
+                "pestphp/pest-plugin@v2.1.1"
+              ]
+            ],
             "type": "composer-plugin",
             "description": "The Pest plugin manager"
           }
@@ -3194,6 +4941,23 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "pestphp/pest-plugin-laravel@v2.4.0",
+              "pestphp/pest@v2.36.0"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "pestphp/pest@v2.36.0",
+                "pestphp/pest-plugin-arch@v2.7.0"
+              ],
+              [
+                "pestphp/pest@v2.36.0",
+                "pestphp/pest-plugin-arch@v2.7.0"
+              ]
+            ],
             "type": "library",
             "description": "The Arch plugin for Pest PHP."
           }
@@ -3219,6 +4983,16 @@
             "transitive": false,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0"
+              ]
             ],
             "type": "library",
             "description": "The Pest Laravel Plugin"
@@ -3251,6 +5025,25 @@
             "transitive": true,
             "licenses": [
               "BSD-3-Clause"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "pestphp/pest-plugin-laravel@v2.4.0",
+              "pestphp/pest@v2.36.0"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "pestphp/pest@v2.36.0",
+                "phpunit/phpunit@10.5.36",
+                "phar-io/manifest@2.0.4"
+              ],
+              [
+                "pestphp/pest@v2.36.0",
+                "phpunit/phpunit@10.5.36",
+                "phar-io/manifest@2.0.4"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -3290,6 +5083,25 @@
             "transitive": true,
             "licenses": [
               "BSD-3-Clause"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "pestphp/pest-plugin-laravel@v2.4.0",
+              "pestphp/pest@v2.36.0"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "pestphp/pest@v2.36.0",
+                "phpunit/phpunit@10.5.36",
+                "phar-io/version@3.2.1"
+              ],
+              [
+                "pestphp/pest@v2.36.0",
+                "phpunit/phpunit@10.5.36",
+                "phar-io/version@3.2.1"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -3342,6 +5154,18 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "spatie/laravel-data@4.13.0",
+                "phpdocumentor/reflection@6.1.0"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "description": "Reflection library to do Static Analysis for PHP Projects"
           }
@@ -3363,6 +5187,37 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "pestphp/pest-plugin-laravel@v2.4.0",
+              "pestphp/pest@v2.36.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "spatie/laravel-data@4.13.0",
+                "phpdocumentor/reflection@6.1.0",
+                "phpdocumentor/reflection-common@2.2.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "pestphp/pest@v2.36.0",
+                "pestphp/pest-plugin-arch@v2.7.0",
+                "ta-tikoma/phpunit-architecture-test@0.8.4",
+                "phpdocumentor/reflection-docblock@5.6.2",
+                "phpdocumentor/reflection-common@2.2.0"
+              ],
+              [
+                "pestphp/pest@v2.36.0",
+                "pestphp/pest-plugin-arch@v2.7.0",
+                "ta-tikoma/phpunit-architecture-test@0.8.4",
+                "phpdocumentor/reflection-docblock@5.6.2",
+                "phpdocumentor/reflection-common@2.2.0"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -3404,6 +5259,35 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "pestphp/pest-plugin-laravel@v2.4.0",
+              "pestphp/pest@v2.36.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "spatie/laravel-data@4.13.0",
+                "phpdocumentor/reflection@6.1.0",
+                "phpdocumentor/reflection-docblock@5.6.2"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "pestphp/pest@v2.36.0",
+                "pestphp/pest-plugin-arch@v2.7.0",
+                "ta-tikoma/phpunit-architecture-test@0.8.4",
+                "phpdocumentor/reflection-docblock@5.6.2"
+              ],
+              [
+                "pestphp/pest@v2.36.0",
+                "pestphp/pest-plugin-arch@v2.7.0",
+                "ta-tikoma/phpunit-architecture-test@0.8.4",
+                "phpdocumentor/reflection-docblock@5.6.2"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -3442,6 +5326,36 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "pestphp/pest-plugin-laravel@v2.4.0",
+              "pestphp/pest@v2.36.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "spatie/laravel-settings@3.4.1",
+                "phpdocumentor/type-resolver@1.10.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "pestphp/pest@v2.36.0",
+                "pestphp/pest-plugin-arch@v2.7.0",
+                "ta-tikoma/phpunit-architecture-test@0.8.4",
+                "phpdocumentor/reflection-docblock@5.6.2",
+                "phpdocumentor/type-resolver@1.10.0"
+              ],
+              [
+                "pestphp/pest@v2.36.0",
+                "pestphp/pest-plugin-arch@v2.7.0",
+                "ta-tikoma/phpunit-architecture-test@0.8.4",
+                "phpdocumentor/reflection-docblock@5.6.2",
+                "phpdocumentor/type-resolver@1.10.0"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -3469,6 +5383,43 @@
             "transitive": true,
             "licenses": [
               "Apache-2.0"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/actions@v3.2.140",
+                "anourvalar/eloquent-serialize@1.2.28",
+                "laravel/framework@v11.45.2",
+                "vlucas/phpdotenv@v5.6.2",
+                "phpoption/phpoption@1.9.3"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "vlucas/phpdotenv@v5.6.2",
+                "phpoption/phpoption@1.9.3"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "laravel/framework@v11.45.2",
+                "vlucas/phpdotenv@v5.6.2",
+                "phpoption/phpoption@1.9.3"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "vlucas/phpdotenv@v5.6.2",
+                "phpoption/phpoption@1.9.3"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -3501,6 +5452,37 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "pestphp/pest-plugin-laravel@v2.4.0",
+              "pestphp/pest@v2.36.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "spatie/laravel-settings@3.4.1",
+                "phpdocumentor/type-resolver@1.10.0",
+                "phpstan/phpdoc-parser@2.2.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "pestphp/pest@v2.36.0",
+                "pestphp/pest-plugin-arch@v2.7.0",
+                "ta-tikoma/phpunit-architecture-test@0.8.4",
+                "phpdocumentor/reflection-docblock@5.6.2",
+                "phpstan/phpdoc-parser@2.2.0"
+              ],
+              [
+                "pestphp/pest@v2.36.0",
+                "pestphp/pest-plugin-arch@v2.7.0",
+                "ta-tikoma/phpunit-architecture-test@0.8.4",
+                "phpdocumentor/reflection-docblock@5.6.2",
+                "phpstan/phpdoc-parser@2.2.0"
+              ]
             ],
             "type": "library",
             "description": "PHPDoc parser with support for nullable, intersection and generic types"
@@ -3548,6 +5530,25 @@
             "licenses": [
               "BSD-3-Clause"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "pestphp/pest-plugin-laravel@v2.4.0",
+              "pestphp/pest@v2.36.0"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "pestphp/pest@v2.36.0",
+                "brianium/paratest@v7.4.8",
+                "phpunit/php-code-coverage@10.1.16"
+              ],
+              [
+                "pestphp/pest@v2.36.0",
+                "brianium/paratest@v7.4.8",
+                "phpunit/php-code-coverage@10.1.16"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -3576,6 +5577,25 @@
             "transitive": true,
             "licenses": [
               "BSD-3-Clause"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "pestphp/pest-plugin-laravel@v2.4.0",
+              "pestphp/pest@v2.36.0"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "pestphp/pest@v2.36.0",
+                "brianium/paratest@v7.4.8",
+                "phpunit/php-file-iterator@4.1.0"
+              ],
+              [
+                "pestphp/pest@v2.36.0",
+                "brianium/paratest@v7.4.8",
+                "phpunit/php-file-iterator@4.1.0"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -3606,6 +5626,25 @@
             "licenses": [
               "BSD-3-Clause"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "pestphp/pest-plugin-laravel@v2.4.0",
+              "pestphp/pest@v2.36.0"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "pestphp/pest@v2.36.0",
+                "phpunit/phpunit@10.5.36",
+                "phpunit/php-invoker@4.0.0"
+              ],
+              [
+                "pestphp/pest@v2.36.0",
+                "phpunit/phpunit@10.5.36",
+                "phpunit/php-invoker@4.0.0"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -3635,6 +5674,25 @@
             "licenses": [
               "BSD-3-Clause"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "pestphp/pest-plugin-laravel@v2.4.0",
+              "pestphp/pest@v2.36.0"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "pestphp/pest@v2.36.0",
+                "phpunit/phpunit@10.5.36",
+                "phpunit/php-text-template@3.0.1"
+              ],
+              [
+                "pestphp/pest@v2.36.0",
+                "phpunit/phpunit@10.5.36",
+                "phpunit/php-text-template@3.0.1"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -3663,6 +5721,25 @@
             "transitive": true,
             "licenses": [
               "BSD-3-Clause"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "pestphp/pest-plugin-laravel@v2.4.0",
+              "pestphp/pest@v2.36.0"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "pestphp/pest@v2.36.0",
+                "brianium/paratest@v7.4.8",
+                "phpunit/php-timer@6.0.0"
+              ],
+              [
+                "pestphp/pest@v2.36.0",
+                "brianium/paratest@v7.4.8",
+                "phpunit/php-timer@6.0.0"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -3743,6 +5820,23 @@
             "licenses": [
               "BSD-3-Clause"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "pestphp/pest-plugin-laravel@v2.4.0",
+              "pestphp/pest@v2.36.0"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "pestphp/pest@v2.36.0",
+                "phpunit/phpunit@10.5.36"
+              ],
+              [
+                "pestphp/pest@v2.36.0",
+                "phpunit/phpunit@10.5.36"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -3772,6 +5866,18 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "doctrine/dbal@3.9.4",
+                "psr/cache@3.0.0"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -3798,6 +5904,38 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "nesbot/carbon@2.73.0",
+                "psr/clock@1.0.0"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "nesbot/carbon@2.73.0",
+                "psr/clock@1.0.0"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "nesbot/carbon@2.73.0",
+                "psr/clock@1.0.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "nesbot/carbon@2.73.0",
+                "psr/clock@1.0.0"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -3826,6 +5964,80 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "fakerphp/faker@v1.24.1",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "laravel/pail@v1.2.3",
+              "laravel/sanctum@v4.2.0",
+              "laravel/tinker@v2.10.1",
+              "nunomaduro/collision@v8.5.0",
+              "pestphp/pest-plugin-laravel@v2.4.0",
+              "pestphp/pest@v2.36.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "laravel/sanctum@v4.2.0",
+                "symfony/console@v7.3.2",
+                "symfony/service-contracts@v3.6.0",
+                "psr/container@2.0.2"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "psr/container@2.0.2"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "laravel/framework@v11.45.2",
+                "psr/container@2.0.2"
+              ],
+              [
+                "laravel/sanctum@v4.2.0",
+                "symfony/console@v7.3.2",
+                "symfony/service-contracts@v3.6.0",
+                "psr/container@2.0.2"
+              ],
+              [
+                "laravel/tinker@v2.10.1",
+                "psy/psysh@v0.12.7",
+                "symfony/console@v7.3.2",
+                "symfony/service-contracts@v3.6.0",
+                "psr/container@2.0.2"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "fakerphp/faker@v1.24.1",
+                "psr/container@2.0.2"
+              ],
+              [
+                "laravel/pail@v1.2.3",
+                "symfony/console@v7.3.2",
+                "symfony/service-contracts@v3.6.0",
+                "psr/container@2.0.2"
+              ],
+              [
+                "nunomaduro/collision@v8.5.0",
+                "symfony/console@v7.3.2",
+                "symfony/service-contracts@v3.6.0",
+                "psr/container@2.0.2"
+              ],
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "psr/container@2.0.2"
+              ],
+              [
+                "pestphp/pest@v2.36.0",
+                "brianium/paratest@v7.4.8",
+                "symfony/console@v7.3.2",
+                "symfony/service-contracts@v3.6.0",
+                "psr/container@2.0.2"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -3852,6 +6064,42 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "timacdonald/json-api@v1.0.0-beta.8",
+                "symfony/http-kernel@v7.3.2",
+                "symfony/event-dispatcher@v7.3.0",
+                "symfony/event-dispatcher-contracts@v3.6.0",
+                "psr/event-dispatcher@1.0.0"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "league/commonmark@2.7.1",
+                "psr/event-dispatcher@1.0.0"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "laravel/framework@v11.45.2",
+                "league/commonmark@2.7.1",
+                "psr/event-dispatcher@1.0.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "league/commonmark@2.7.1",
+                "psr/event-dispatcher@1.0.0"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -3882,6 +6130,44 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "guzzlehttp/guzzle@7.9.3",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "guzzlehttp/guzzle@7.9.3",
+                "psr/http-client@1.0.3"
+              ],
+              [
+                "guzzlehttp/guzzle@7.9.3",
+                "psr/http-client@1.0.3"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "guzzlehttp/guzzle@7.9.3",
+                "psr/http-client@1.0.3"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "laravel/framework@v11.45.2",
+                "guzzlehttp/guzzle@7.9.3",
+                "psr/http-client@1.0.3"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "guzzlehttp/guzzle@7.9.3",
+                "psr/http-client@1.0.3"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -3911,6 +6197,49 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "guzzlehttp/guzzle@7.9.3",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "guzzlehttp/guzzle@7.9.3",
+                "guzzlehttp/psr7@2.7.1",
+                "psr/http-factory@1.1.0"
+              ],
+              [
+                "guzzlehttp/guzzle@7.9.3",
+                "guzzlehttp/psr7@2.7.1",
+                "psr/http-factory@1.1.0"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "guzzlehttp/guzzle@7.9.3",
+                "guzzlehttp/psr7@2.7.1",
+                "psr/http-factory@1.1.0"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "laravel/framework@v11.45.2",
+                "guzzlehttp/guzzle@7.9.3",
+                "guzzlehttp/psr7@2.7.1",
+                "psr/http-factory@1.1.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "guzzlehttp/guzzle@7.9.3",
+                "guzzlehttp/psr7@2.7.1",
+                "psr/http-factory@1.1.0"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -3937,6 +6266,46 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "guzzlehttp/guzzle@7.9.3",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "guzzlehttp/guzzle@7.9.3",
+                "guzzlehttp/psr7@2.7.1",
+                "psr/http-message@2.0"
+              ],
+              [
+                "guzzlehttp/guzzle@7.9.3",
+                "guzzlehttp/psr7@2.7.1",
+                "psr/http-message@2.0"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "guzzlehttp/guzzle@7.9.3",
+                "guzzlehttp/psr7@2.7.1",
+                "psr/http-message@2.0"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "psr/http-message@2.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "guzzlehttp/guzzle@7.9.3",
+                "guzzlehttp/psr7@2.7.1",
+                "psr/http-message@2.0"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -3965,6 +6334,48 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "nunomaduro/collision@v8.5.0",
+              "pestphp/pest-plugin-laravel@v2.4.0",
+              "pestphp/pest@v2.36.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "doctrine/dbal@3.9.4",
+                "psr/log@3.0.2"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "psr/log@3.0.2"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "psr/log@3.0.2"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "nunomaduro/collision@v8.5.0",
+                "filp/whoops@2.17.0",
+                "psr/log@3.0.2"
+              ],
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "psr/log@3.0.2"
+              ],
+              [
+                "pestphp/pest@v2.36.0",
+                "nunomaduro/collision@v8.5.0",
+                "filp/whoops@2.17.0",
+                "psr/log@3.0.2"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -3991,6 +6402,39 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/actions@v3.2.140",
+                "anourvalar/eloquent-serialize@1.2.28",
+                "laravel/framework@v11.45.2",
+                "psr/simple-cache@3.0.0"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "psr/simple-cache@3.0.0"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "laravel/framework@v11.45.2",
+                "psr/simple-cache@3.0.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "psr/simple-cache@3.0.0"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -4029,6 +6473,17 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "laravel/tinker@v2.10.1"
+            ],
+            "import_paths": [
+              [
+                "laravel/tinker@v2.10.1",
+                "psy/psysh@v0.12.7"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -4057,6 +6512,49 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "guzzlehttp/guzzle@7.9.3",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "guzzlehttp/guzzle@7.9.3",
+                "guzzlehttp/psr7@2.7.1",
+                "ralouphie/getallheaders@3.0.3"
+              ],
+              [
+                "guzzlehttp/guzzle@7.9.3",
+                "guzzlehttp/psr7@2.7.1",
+                "ralouphie/getallheaders@3.0.3"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "guzzlehttp/guzzle@7.9.3",
+                "guzzlehttp/psr7@2.7.1",
+                "ralouphie/getallheaders@3.0.3"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "laravel/framework@v11.45.2",
+                "guzzlehttp/guzzle@7.9.3",
+                "guzzlehttp/psr7@2.7.1",
+                "ralouphie/getallheaders@3.0.3"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "guzzlehttp/guzzle@7.9.3",
+                "guzzlehttp/psr7@2.7.1",
+                "ralouphie/getallheaders@3.0.3"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -4084,6 +6582,42 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/actions@v3.2.140",
+                "anourvalar/eloquent-serialize@1.2.28",
+                "laravel/framework@v11.45.2",
+                "ramsey/uuid@4.9.0",
+                "ramsey/collection@2.1.1"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "ramsey/uuid@4.9.0",
+                "ramsey/collection@2.1.1"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "ramsey/uuid@4.9.0",
+                "ramsey/collection@2.1.1"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "ramsey/uuid@4.9.0",
+                "ramsey/collection@2.1.1"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -4117,6 +6651,38 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/actions@v3.2.140",
+                "anourvalar/eloquent-serialize@1.2.28",
+                "laravel/framework@v11.45.2",
+                "ramsey/uuid@4.9.0"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "ramsey/uuid@4.9.0"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "ramsey/uuid@4.9.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "ramsey/uuid@4.9.0"
+              ]
+            ],
             "type": "library",
             "description": "A PHP library for generating and working with universally unique identifiers (UUIDs)."
           }
@@ -4139,6 +6705,20 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "spatie/laravel-data@4.13.0",
+                "spatie/php-structure-discoverer@2.3.0",
+                "amphp/amp@v3.1.0",
+                "revolt/event-loop@v1.0.6"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -4183,6 +6763,19 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/support@v3.2.140",
+                "ryangjchandler/blade-capture-directive@v1.0.0"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -4211,6 +6804,25 @@
             "transitive": true,
             "licenses": [
               "BSD-3-Clause"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "pestphp/pest-plugin-laravel@v2.4.0",
+              "pestphp/pest@v2.36.0"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "pestphp/pest@v2.36.0",
+                "phpunit/phpunit@10.5.36",
+                "sebastian/cli-parser@2.0.1"
+              ],
+              [
+                "pestphp/pest@v2.36.0",
+                "phpunit/phpunit@10.5.36",
+                "sebastian/cli-parser@2.0.1"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -4241,6 +6853,25 @@
             "licenses": [
               "BSD-3-Clause"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "pestphp/pest-plugin-laravel@v2.4.0",
+              "pestphp/pest@v2.36.0"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "pestphp/pest@v2.36.0",
+                "phpunit/phpunit@10.5.36",
+                "sebastian/code-unit@2.0.0"
+              ],
+              [
+                "pestphp/pest@v2.36.0",
+                "phpunit/phpunit@10.5.36",
+                "sebastian/code-unit@2.0.0"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -4269,6 +6900,27 @@
             "transitive": true,
             "licenses": [
               "BSD-3-Clause"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "pestphp/pest-plugin-laravel@v2.4.0",
+              "pestphp/pest@v2.36.0"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "pestphp/pest@v2.36.0",
+                "brianium/paratest@v7.4.8",
+                "phpunit/php-code-coverage@10.1.16",
+                "sebastian/code-unit-reverse-lookup@3.0.0"
+              ],
+              [
+                "pestphp/pest@v2.36.0",
+                "brianium/paratest@v7.4.8",
+                "phpunit/php-code-coverage@10.1.16",
+                "sebastian/code-unit-reverse-lookup@3.0.0"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -4305,6 +6957,25 @@
             "transitive": true,
             "licenses": [
               "BSD-3-Clause"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "pestphp/pest-plugin-laravel@v2.4.0",
+              "pestphp/pest@v2.36.0"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "pestphp/pest@v2.36.0",
+                "phpunit/phpunit@10.5.36",
+                "sebastian/comparator@5.0.3"
+              ],
+              [
+                "pestphp/pest@v2.36.0",
+                "phpunit/phpunit@10.5.36",
+                "sebastian/comparator@5.0.3"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -4348,6 +7019,27 @@
             "licenses": [
               "BSD-3-Clause"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "pestphp/pest-plugin-laravel@v2.4.0",
+              "pestphp/pest@v2.36.0"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "pestphp/pest@v2.36.0",
+                "brianium/paratest@v7.4.8",
+                "phpunit/php-code-coverage@10.1.16",
+                "sebastian/complexity@3.2.0"
+              ],
+              [
+                "pestphp/pest@v2.36.0",
+                "brianium/paratest@v7.4.8",
+                "phpunit/php-code-coverage@10.1.16",
+                "sebastian/complexity@3.2.0"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -4376,6 +7068,25 @@
             "transitive": true,
             "licenses": [
               "BSD-3-Clause"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "pestphp/pest-plugin-laravel@v2.4.0",
+              "pestphp/pest@v2.36.0"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "pestphp/pest@v2.36.0",
+                "phpunit/phpunit@10.5.36",
+                "sebastian/diff@5.1.1"
+              ],
+              [
+                "pestphp/pest@v2.36.0",
+                "phpunit/phpunit@10.5.36",
+                "sebastian/diff@5.1.1"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -4409,6 +7120,25 @@
             "licenses": [
               "BSD-3-Clause"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "pestphp/pest-plugin-laravel@v2.4.0",
+              "pestphp/pest@v2.36.0"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "pestphp/pest@v2.36.0",
+                "brianium/paratest@v7.4.8",
+                "sebastian/environment@6.1.0"
+              ],
+              [
+                "pestphp/pest@v2.36.0",
+                "brianium/paratest@v7.4.8",
+                "sebastian/environment@6.1.0"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -4440,6 +7170,25 @@
             "transitive": true,
             "licenses": [
               "BSD-3-Clause"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "pestphp/pest-plugin-laravel@v2.4.0",
+              "pestphp/pest@v2.36.0"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "pestphp/pest@v2.36.0",
+                "phpunit/phpunit@10.5.36",
+                "sebastian/exporter@5.1.2"
+              ],
+              [
+                "pestphp/pest@v2.36.0",
+                "phpunit/phpunit@10.5.36",
+                "sebastian/exporter@5.1.2"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -4489,6 +7238,25 @@
             "licenses": [
               "BSD-3-Clause"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "pestphp/pest-plugin-laravel@v2.4.0",
+              "pestphp/pest@v2.36.0"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "pestphp/pest@v2.36.0",
+                "phpunit/phpunit@10.5.36",
+                "sebastian/global-state@6.0.2"
+              ],
+              [
+                "pestphp/pest@v2.36.0",
+                "phpunit/phpunit@10.5.36",
+                "sebastian/global-state@6.0.2"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -4518,6 +7286,27 @@
             "transitive": true,
             "licenses": [
               "BSD-3-Clause"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "pestphp/pest-plugin-laravel@v2.4.0",
+              "pestphp/pest@v2.36.0"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "pestphp/pest@v2.36.0",
+                "brianium/paratest@v7.4.8",
+                "phpunit/php-code-coverage@10.1.16",
+                "sebastian/lines-of-code@2.0.2"
+              ],
+              [
+                "pestphp/pest@v2.36.0",
+                "brianium/paratest@v7.4.8",
+                "phpunit/php-code-coverage@10.1.16",
+                "sebastian/lines-of-code@2.0.2"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -4552,6 +7341,25 @@
             "licenses": [
               "BSD-3-Clause"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "pestphp/pest-plugin-laravel@v2.4.0",
+              "pestphp/pest@v2.36.0"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "pestphp/pest@v2.36.0",
+                "phpunit/phpunit@10.5.36",
+                "sebastian/object-enumerator@5.0.0"
+              ],
+              [
+                "pestphp/pest@v2.36.0",
+                "phpunit/phpunit@10.5.36",
+                "sebastian/object-enumerator@5.0.0"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -4580,6 +7388,27 @@
             "licenses": [
               "BSD-3-Clause"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "pestphp/pest-plugin-laravel@v2.4.0",
+              "pestphp/pest@v2.36.0"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "pestphp/pest@v2.36.0",
+                "phpunit/phpunit@10.5.36",
+                "sebastian/global-state@6.0.2",
+                "sebastian/object-reflector@3.0.0"
+              ],
+              [
+                "pestphp/pest@v2.36.0",
+                "phpunit/phpunit@10.5.36",
+                "sebastian/global-state@6.0.2",
+                "sebastian/object-reflector@3.0.0"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -4607,6 +7436,25 @@
             "transitive": true,
             "licenses": [
               "BSD-3-Clause"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "pestphp/pest-plugin-laravel@v2.4.0",
+              "pestphp/pest@v2.36.0"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "pestphp/pest@v2.36.0",
+                "phpunit/phpunit@10.5.36",
+                "sebastian/recursion-context@5.0.0"
+              ],
+              [
+                "pestphp/pest@v2.36.0",
+                "phpunit/phpunit@10.5.36",
+                "sebastian/recursion-context@5.0.0"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -4644,6 +7492,25 @@
             "licenses": [
               "BSD-3-Clause"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "pestphp/pest-plugin-laravel@v2.4.0",
+              "pestphp/pest@v2.36.0"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "pestphp/pest@v2.36.0",
+                "phpunit/phpunit@10.5.36",
+                "sebastian/type@4.0.0"
+              ],
+              [
+                "pestphp/pest@v2.36.0",
+                "phpunit/phpunit@10.5.36",
+                "sebastian/type@4.0.0"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -4672,6 +7539,25 @@
             "transitive": true,
             "licenses": [
               "BSD-3-Clause"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "pestphp/pest-plugin-laravel@v2.4.0",
+              "pestphp/pest@v2.36.0"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "pestphp/pest@v2.36.0",
+                "phpunit/phpunit@10.5.36",
+                "sebastian/version@4.0.1"
+              ],
+              [
+                "pestphp/pest@v2.36.0",
+                "phpunit/phpunit@10.5.36",
+                "sebastian/version@4.0.1"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -4702,6 +7588,19 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/support@v3.2.140",
+                "spatie/color@1.8.0"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -4731,6 +7630,19 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/support@v3.2.140",
+                "spatie/invade@2.1.0"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -4768,6 +7680,17 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "spatie/laravel-data@4.13.0"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -4799,6 +7722,18 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "spatie/laravel-package-tools@1.19.0"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -4836,6 +7771,17 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "spatie/laravel-query-builder@5.8.1"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -4873,6 +7819,17 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "spatie/laravel-settings@3.4.1"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -4914,6 +7871,17 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "spatie/laravel-webhook-server@3.8.2"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -4953,6 +7921,18 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "spatie/laravel-data@4.13.0",
+                "spatie/php-structure-discoverer@2.3.0"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -4982,6 +7962,18 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "spatie/laravel-settings@3.4.1",
+                "spatie/temporary-directory@2.3.0"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -5019,6 +8011,62 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "laravel/pail@v1.2.3",
+              "laravel/sanctum@v4.2.0",
+              "laravel/tinker@v2.10.1",
+              "nunomaduro/collision@v8.5.0",
+              "pestphp/pest-plugin-laravel@v2.4.0",
+              "pestphp/pest@v2.36.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "laravel/sanctum@v4.2.0",
+                "symfony/console@v7.3.2"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "symfony/console@v7.3.2"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "symfony/console@v7.3.2"
+              ],
+              [
+                "laravel/sanctum@v4.2.0",
+                "symfony/console@v7.3.2"
+              ],
+              [
+                "laravel/tinker@v2.10.1",
+                "psy/psysh@v0.12.7",
+                "symfony/console@v7.3.2"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "laravel/pail@v1.2.3",
+                "symfony/console@v7.3.2"
+              ],
+              [
+                "nunomaduro/collision@v8.5.0",
+                "symfony/console@v7.3.2"
+              ],
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "symfony/console@v7.3.2"
+              ],
+              [
+                "pestphp/pest@v2.36.0",
+                "brianium/paratest@v7.4.8",
+                "symfony/console@v7.3.2"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -5049,6 +8097,43 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/actions@v3.2.140",
+                "anourvalar/eloquent-serialize@1.2.28",
+                "laravel/framework@v11.45.2",
+                "tijsverkoyen/css-to-inline-styles@v2.3.0",
+                "symfony/css-selector@v7.3.0"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "tijsverkoyen/css-to-inline-styles@v2.3.0",
+                "symfony/css-selector@v7.3.0"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "laravel/framework@v11.45.2",
+                "tijsverkoyen/css-to-inline-styles@v2.3.0",
+                "symfony/css-selector@v7.3.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "tijsverkoyen/css-to-inline-styles@v2.3.0",
+                "symfony/css-selector@v7.3.0"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -5085,6 +8170,79 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "fakerphp/faker@v1.24.1",
+              "guzzlehttp/guzzle@7.9.3",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "laravel/pail@v1.2.3",
+              "laravel/sanctum@v4.2.0",
+              "laravel/tinker@v2.10.1",
+              "nunomaduro/collision@v8.5.0",
+              "pestphp/pest-plugin-laravel@v2.4.0",
+              "pestphp/pest@v2.36.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "guzzlehttp/guzzle@7.9.3",
+                "symfony/deprecation-contracts@v3.6.0"
+              ],
+              [
+                "guzzlehttp/guzzle@7.9.3",
+                "symfony/deprecation-contracts@v3.6.0"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "guzzlehttp/guzzle@7.9.3",
+                "symfony/deprecation-contracts@v3.6.0"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "symfony/console@v7.3.2",
+                "symfony/deprecation-contracts@v3.6.0"
+              ],
+              [
+                "laravel/sanctum@v4.2.0",
+                "symfony/console@v7.3.2",
+                "symfony/deprecation-contracts@v3.6.0"
+              ],
+              [
+                "laravel/tinker@v2.10.1",
+                "symfony/var-dumper@v7.3.2",
+                "symfony/deprecation-contracts@v3.6.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "fakerphp/faker@v1.24.1",
+                "symfony/deprecation-contracts@v3.6.0"
+              ],
+              [
+                "laravel/pail@v1.2.3",
+                "symfony/console@v7.3.2",
+                "symfony/deprecation-contracts@v3.6.0"
+              ],
+              [
+                "nunomaduro/collision@v8.5.0",
+                "symfony/console@v7.3.2",
+                "symfony/deprecation-contracts@v3.6.0"
+              ],
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "guzzlehttp/guzzle@7.9.3",
+                "symfony/deprecation-contracts@v3.6.0"
+              ],
+              [
+                "pestphp/pest@v2.36.0",
+                "brianium/paratest@v7.4.8",
+                "symfony/console@v7.3.2",
+                "symfony/deprecation-contracts@v3.6.0"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -5120,6 +8278,37 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "timacdonald/json-api@v1.0.0-beta.8",
+                "symfony/http-kernel@v7.3.2",
+                "symfony/error-handler@v7.3.2"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "symfony/error-handler@v7.3.2"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "laravel/framework@v11.45.2",
+                "symfony/error-handler@v7.3.2"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "symfony/error-handler@v7.3.2"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -5152,6 +8341,40 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "timacdonald/json-api@v1.0.0-beta.8",
+                "symfony/http-kernel@v7.3.2",
+                "symfony/event-dispatcher@v7.3.0"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "symfony/http-kernel@v7.3.2",
+                "symfony/event-dispatcher@v7.3.0"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "laravel/framework@v11.45.2",
+                "symfony/http-kernel@v7.3.2",
+                "symfony/event-dispatcher@v7.3.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "symfony/http-kernel@v7.3.2",
+                "symfony/event-dispatcher@v7.3.0"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -5186,6 +8409,44 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "timacdonald/json-api@v1.0.0-beta.8",
+                "symfony/http-kernel@v7.3.2",
+                "symfony/event-dispatcher@v7.3.0",
+                "symfony/event-dispatcher-contracts@v3.6.0"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "symfony/http-kernel@v7.3.2",
+                "symfony/event-dispatcher@v7.3.0",
+                "symfony/event-dispatcher-contracts@v3.6.0"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "laravel/framework@v11.45.2",
+                "symfony/http-kernel@v7.3.2",
+                "symfony/event-dispatcher@v7.3.0",
+                "symfony/event-dispatcher-contracts@v3.6.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "symfony/http-kernel@v7.3.2",
+                "symfony/event-dispatcher@v7.3.0",
+                "symfony/event-dispatcher-contracts@v3.6.0"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -5216,6 +8477,44 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0",
+              "pestphp/pest@v2.36.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "spatie/laravel-data@4.13.0",
+                "spatie/php-structure-discoverer@2.3.0",
+                "symfony/finder@v7.3.2"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "symfony/finder@v7.3.2"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "laravel/framework@v11.45.2",
+                "symfony/finder@v7.3.2"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "symfony/finder@v7.3.2"
+              ],
+              [
+                "pestphp/pest@v2.36.0",
+                "pestphp/pest-plugin-arch@v2.7.0",
+                "ta-tikoma/phpunit-architecture-test@0.8.4",
+                "symfony/finder@v7.3.2"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -5254,6 +8553,19 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/support@v3.2.140",
+                "symfony/html-sanitizer@v7.2.3"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -5290,6 +8602,36 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "timacdonald/json-api@v1.0.0-beta.8",
+                "symfony/http-kernel@v7.3.2",
+                "symfony/http-foundation@v7.3.2"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "symfony/http-foundation@v7.3.2"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "symfony/http-foundation@v7.3.2"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "symfony/http-foundation@v7.3.2"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -5334,6 +8676,36 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "timacdonald/json-api@v1.0.0-beta.8",
+                "symfony/http-kernel@v7.3.2"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "symfony/http-kernel@v7.3.2"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "laravel/framework@v11.45.2",
+                "symfony/http-kernel@v7.3.2"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "symfony/http-kernel@v7.3.2"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -5377,6 +8749,39 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/actions@v3.2.140",
+                "anourvalar/eloquent-serialize@1.2.28",
+                "laravel/framework@v11.45.2",
+                "symfony/mailer@v7.3.2"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "symfony/mailer@v7.3.2"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "laravel/framework@v11.45.2",
+                "symfony/mailer@v7.3.2"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "symfony/mailer@v7.3.2"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -5412,6 +8817,39 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/actions@v3.2.140",
+                "anourvalar/eloquent-serialize@1.2.28",
+                "laravel/framework@v11.45.2",
+                "symfony/mime@v7.3.2"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "symfony/mime@v7.3.2"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "laravel/framework@v11.45.2",
+                "symfony/mime@v7.3.2"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "symfony/mime@v7.3.2"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -5443,6 +8881,76 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "laravel/pail@v1.2.3",
+              "laravel/sanctum@v4.2.0",
+              "laravel/tinker@v2.10.1",
+              "nunomaduro/collision@v8.5.0",
+              "pestphp/pest-plugin-laravel@v2.4.0",
+              "pestphp/pest@v2.36.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "twig/twig@v3.20.0",
+                "symfony/polyfill-ctype@v1.32.0"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "symfony/http-kernel@v7.3.2",
+                "symfony/polyfill-ctype@v1.32.0"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "laravel/framework@v11.45.2",
+                "symfony/http-kernel@v7.3.2",
+                "symfony/polyfill-ctype@v1.32.0"
+              ],
+              [
+                "laravel/sanctum@v4.2.0",
+                "symfony/console@v7.3.2",
+                "symfony/string@v7.3.2",
+                "symfony/polyfill-ctype@v1.32.0"
+              ],
+              [
+                "laravel/tinker@v2.10.1",
+                "psy/psysh@v0.12.7",
+                "symfony/console@v7.3.2",
+                "symfony/string@v7.3.2",
+                "symfony/polyfill-ctype@v1.32.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "laravel/pail@v1.2.3",
+                "symfony/console@v7.3.2",
+                "symfony/string@v7.3.2",
+                "symfony/polyfill-ctype@v1.32.0"
+              ],
+              [
+                "nunomaduro/collision@v8.5.0",
+                "symfony/console@v7.3.2",
+                "symfony/string@v7.3.2",
+                "symfony/polyfill-ctype@v1.32.0"
+              ],
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "symfony/http-kernel@v7.3.2",
+                "symfony/polyfill-ctype@v1.32.0"
+              ],
+              [
+                "pestphp/pest@v2.36.0",
+                "brianium/paratest@v7.4.8",
+                "symfony/console@v7.3.2",
+                "symfony/string@v7.3.2",
+                "symfony/polyfill-ctype@v1.32.0"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -5473,6 +8981,80 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "laravel/pail@v1.2.3",
+              "laravel/sanctum@v4.2.0",
+              "laravel/tinker@v2.10.1",
+              "nunomaduro/collision@v8.5.0",
+              "pestphp/pest-plugin-laravel@v2.4.0",
+              "pestphp/pest@v2.36.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "laravel/sanctum@v4.2.0",
+                "symfony/console@v7.3.2",
+                "symfony/string@v7.3.2",
+                "symfony/polyfill-intl-grapheme@v1.32.0"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "symfony/console@v7.3.2",
+                "symfony/string@v7.3.2",
+                "symfony/polyfill-intl-grapheme@v1.32.0"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "symfony/console@v7.3.2",
+                "symfony/string@v7.3.2",
+                "symfony/polyfill-intl-grapheme@v1.32.0"
+              ],
+              [
+                "laravel/sanctum@v4.2.0",
+                "symfony/console@v7.3.2",
+                "symfony/string@v7.3.2",
+                "symfony/polyfill-intl-grapheme@v1.32.0"
+              ],
+              [
+                "laravel/tinker@v2.10.1",
+                "psy/psysh@v0.12.7",
+                "symfony/console@v7.3.2",
+                "symfony/string@v7.3.2",
+                "symfony/polyfill-intl-grapheme@v1.32.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "laravel/pail@v1.2.3",
+                "symfony/console@v7.3.2",
+                "symfony/string@v7.3.2",
+                "symfony/polyfill-intl-grapheme@v1.32.0"
+              ],
+              [
+                "nunomaduro/collision@v8.5.0",
+                "symfony/console@v7.3.2",
+                "symfony/string@v7.3.2",
+                "symfony/polyfill-intl-grapheme@v1.32.0"
+              ],
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "symfony/console@v7.3.2",
+                "symfony/string@v7.3.2",
+                "symfony/polyfill-intl-grapheme@v1.32.0"
+              ],
+              [
+                "pestphp/pest@v2.36.0",
+                "brianium/paratest@v7.4.8",
+                "symfony/console@v7.3.2",
+                "symfony/string@v7.3.2",
+                "symfony/polyfill-intl-grapheme@v1.32.0"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -5506,6 +9088,43 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/actions@v3.2.140",
+                "anourvalar/eloquent-serialize@1.2.28",
+                "laravel/framework@v11.45.2",
+                "egulias/email-validator@4.0.4",
+                "symfony/polyfill-intl-idn@v1.32.0"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "egulias/email-validator@4.0.4",
+                "symfony/polyfill-intl-idn@v1.32.0"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "laravel/framework@v11.45.2",
+                "egulias/email-validator@4.0.4",
+                "symfony/polyfill-intl-idn@v1.32.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "egulias/email-validator@4.0.4",
+                "symfony/polyfill-intl-idn@v1.32.0"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -5542,6 +9161,80 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "laravel/pail@v1.2.3",
+              "laravel/sanctum@v4.2.0",
+              "laravel/tinker@v2.10.1",
+              "nunomaduro/collision@v8.5.0",
+              "pestphp/pest-plugin-laravel@v2.4.0",
+              "pestphp/pest@v2.36.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "laravel/sanctum@v4.2.0",
+                "symfony/console@v7.3.2",
+                "symfony/string@v7.3.2",
+                "symfony/polyfill-intl-normalizer@v1.32.0"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "egulias/email-validator@4.0.4",
+                "symfony/polyfill-intl-idn@v1.32.0",
+                "symfony/polyfill-intl-normalizer@v1.32.0"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "symfony/console@v7.3.2",
+                "symfony/string@v7.3.2",
+                "symfony/polyfill-intl-normalizer@v1.32.0"
+              ],
+              [
+                "laravel/sanctum@v4.2.0",
+                "symfony/console@v7.3.2",
+                "symfony/string@v7.3.2",
+                "symfony/polyfill-intl-normalizer@v1.32.0"
+              ],
+              [
+                "laravel/tinker@v2.10.1",
+                "psy/psysh@v0.12.7",
+                "symfony/console@v7.3.2",
+                "symfony/string@v7.3.2",
+                "symfony/polyfill-intl-normalizer@v1.32.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "laravel/pail@v1.2.3",
+                "symfony/console@v7.3.2",
+                "symfony/string@v7.3.2",
+                "symfony/polyfill-intl-normalizer@v1.32.0"
+              ],
+              [
+                "nunomaduro/collision@v8.5.0",
+                "symfony/console@v7.3.2",
+                "symfony/string@v7.3.2",
+                "symfony/polyfill-intl-normalizer@v1.32.0"
+              ],
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "egulias/email-validator@4.0.4",
+                "symfony/polyfill-intl-idn@v1.32.0",
+                "symfony/polyfill-intl-normalizer@v1.32.0"
+              ],
+              [
+                "pestphp/pest@v2.36.0",
+                "brianium/paratest@v7.4.8",
+                "symfony/console@v7.3.2",
+                "symfony/string@v7.3.2",
+                "symfony/polyfill-intl-normalizer@v1.32.0"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -5575,6 +9268,69 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "laravel/pail@v1.2.3",
+              "laravel/sanctum@v4.2.0",
+              "laravel/tinker@v2.10.1",
+              "nunomaduro/collision@v8.5.0",
+              "pestphp/pest-plugin-laravel@v2.4.0",
+              "pestphp/pest@v2.36.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "nesbot/carbon@2.73.0",
+                "symfony/polyfill-mbstring@v1.32.0"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "nesbot/carbon@2.73.0",
+                "symfony/polyfill-mbstring@v1.32.0"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "nesbot/carbon@2.73.0",
+                "symfony/polyfill-mbstring@v1.32.0"
+              ],
+              [
+                "laravel/sanctum@v4.2.0",
+                "symfony/console@v7.3.2",
+                "symfony/polyfill-mbstring@v1.32.0"
+              ],
+              [
+                "laravel/tinker@v2.10.1",
+                "symfony/var-dumper@v7.3.2",
+                "symfony/polyfill-mbstring@v1.32.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "laravel/pail@v1.2.3",
+                "symfony/console@v7.3.2",
+                "symfony/polyfill-mbstring@v1.32.0"
+              ],
+              [
+                "nunomaduro/collision@v8.5.0",
+                "symfony/console@v7.3.2",
+                "symfony/polyfill-mbstring@v1.32.0"
+              ],
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "nesbot/carbon@2.73.0",
+                "symfony/polyfill-mbstring@v1.32.0"
+              ],
+              [
+                "pestphp/pest@v2.36.0",
+                "brianium/paratest@v7.4.8",
+                "symfony/console@v7.3.2",
+                "symfony/polyfill-mbstring@v1.32.0"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -5605,6 +9361,38 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "nesbot/carbon@2.73.0",
+                "symfony/polyfill-php80@v1.32.0"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "guzzlehttp/uri-template@v1.0.4",
+                "symfony/polyfill-php80@v1.32.0"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "nesbot/carbon@2.73.0",
+                "symfony/polyfill-php80@v1.32.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "guzzlehttp/uri-template@v1.0.4",
+                "symfony/polyfill-php80@v1.32.0"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -5641,6 +9429,38 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "timacdonald/json-api@v1.0.0-beta.8",
+                "symfony/http-kernel@v7.3.2",
+                "symfony/http-foundation@v7.3.2",
+                "symfony/polyfill-php83@v1.32.0"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "symfony/polyfill-php83@v1.32.0"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "laravel/framework@v11.45.2",
+                "symfony/polyfill-php83@v1.32.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "symfony/polyfill-php83@v1.32.0"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -5672,6 +9492,43 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/actions@v3.2.140",
+                "anourvalar/eloquent-serialize@1.2.28",
+                "laravel/framework@v11.45.2",
+                "symfony/uid@v7.3.1",
+                "symfony/polyfill-uuid@v1.32.0"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "symfony/uid@v7.3.1",
+                "symfony/polyfill-uuid@v1.32.0"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "laravel/framework@v11.45.2",
+                "symfony/uid@v7.3.1",
+                "symfony/polyfill-uuid@v1.32.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "symfony/uid@v7.3.1",
+                "symfony/polyfill-uuid@v1.32.0"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -5702,6 +9559,45 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0",
+              "pestphp/pest@v2.36.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/actions@v3.2.140",
+                "anourvalar/eloquent-serialize@1.2.28",
+                "laravel/framework@v11.45.2",
+                "symfony/process@v7.3.0"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "symfony/process@v7.3.0"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "laravel/framework@v11.45.2",
+                "symfony/process@v7.3.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "symfony/process@v7.3.0"
+              ],
+              [
+                "pestphp/pest@v2.36.0",
+                "brianium/paratest@v7.4.8",
+                "symfony/process@v7.3.0"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -5735,6 +9631,39 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/actions@v3.2.140",
+                "anourvalar/eloquent-serialize@1.2.28",
+                "laravel/framework@v11.45.2",
+                "symfony/routing@v7.3.2"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "symfony/routing@v7.3.2"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "laravel/framework@v11.45.2",
+                "symfony/routing@v7.3.2"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "symfony/routing@v7.3.2"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -5770,6 +9699,71 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "laravel/pail@v1.2.3",
+              "laravel/sanctum@v4.2.0",
+              "laravel/tinker@v2.10.1",
+              "nunomaduro/collision@v8.5.0",
+              "pestphp/pest-plugin-laravel@v2.4.0",
+              "pestphp/pest@v2.36.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "laravel/sanctum@v4.2.0",
+                "symfony/console@v7.3.2",
+                "symfony/service-contracts@v3.6.0"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "symfony/console@v7.3.2",
+                "symfony/service-contracts@v3.6.0"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "symfony/console@v7.3.2",
+                "symfony/service-contracts@v3.6.0"
+              ],
+              [
+                "laravel/sanctum@v4.2.0",
+                "symfony/console@v7.3.2",
+                "symfony/service-contracts@v3.6.0"
+              ],
+              [
+                "laravel/tinker@v2.10.1",
+                "psy/psysh@v0.12.7",
+                "symfony/console@v7.3.2",
+                "symfony/service-contracts@v3.6.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "laravel/pail@v1.2.3",
+                "symfony/console@v7.3.2",
+                "symfony/service-contracts@v3.6.0"
+              ],
+              [
+                "nunomaduro/collision@v8.5.0",
+                "symfony/console@v7.3.2",
+                "symfony/service-contracts@v3.6.0"
+              ],
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "symfony/console@v7.3.2",
+                "symfony/service-contracts@v3.6.0"
+              ],
+              [
+                "pestphp/pest@v2.36.0",
+                "brianium/paratest@v7.4.8",
+                "symfony/console@v7.3.2",
+                "symfony/service-contracts@v3.6.0"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -5810,6 +9804,71 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "laravel/pail@v1.2.3",
+              "laravel/sanctum@v4.2.0",
+              "laravel/tinker@v2.10.1",
+              "nunomaduro/collision@v8.5.0",
+              "pestphp/pest-plugin-laravel@v2.4.0",
+              "pestphp/pest@v2.36.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "laravel/sanctum@v4.2.0",
+                "symfony/console@v7.3.2",
+                "symfony/string@v7.3.2"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "symfony/console@v7.3.2",
+                "symfony/string@v7.3.2"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "symfony/console@v7.3.2",
+                "symfony/string@v7.3.2"
+              ],
+              [
+                "laravel/sanctum@v4.2.0",
+                "symfony/console@v7.3.2",
+                "symfony/string@v7.3.2"
+              ],
+              [
+                "laravel/tinker@v2.10.1",
+                "psy/psysh@v0.12.7",
+                "symfony/console@v7.3.2",
+                "symfony/string@v7.3.2"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "laravel/pail@v1.2.3",
+                "symfony/console@v7.3.2",
+                "symfony/string@v7.3.2"
+              ],
+              [
+                "nunomaduro/collision@v8.5.0",
+                "symfony/console@v7.3.2",
+                "symfony/string@v7.3.2"
+              ],
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "symfony/console@v7.3.2",
+                "symfony/string@v7.3.2"
+              ],
+              [
+                "pestphp/pest@v2.36.0",
+                "brianium/paratest@v7.4.8",
+                "symfony/console@v7.3.2",
+                "symfony/string@v7.3.2"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -5847,6 +9906,38 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "nesbot/carbon@2.73.0",
+                "symfony/translation@v6.4.24"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "nesbot/carbon@2.73.0",
+                "symfony/translation@v6.4.24"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "nesbot/carbon@2.73.0",
+                "symfony/translation@v6.4.24"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "nesbot/carbon@2.73.0",
+                "symfony/translation@v6.4.24"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -5877,6 +9968,42 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "nesbot/carbon@2.73.0",
+                "symfony/translation@v6.4.24",
+                "symfony/translation-contracts@v3.6.0"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "nesbot/carbon@2.73.0",
+                "symfony/translation@v6.4.24",
+                "symfony/translation-contracts@v3.6.0"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "nesbot/carbon@2.73.0",
+                "symfony/translation@v6.4.24",
+                "symfony/translation-contracts@v3.6.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "nesbot/carbon@2.73.0",
+                "symfony/translation@v6.4.24",
+                "symfony/translation-contracts@v3.6.0"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -5910,6 +10037,39 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/actions@v3.2.140",
+                "anourvalar/eloquent-serialize@1.2.28",
+                "laravel/framework@v11.45.2",
+                "symfony/uid@v7.3.1"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "symfony/uid@v7.3.1"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "laravel/framework@v11.45.2",
+                "symfony/uid@v7.3.1"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "symfony/uid@v7.3.1"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -5950,6 +10110,43 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "laravel/tinker@v2.10.1",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "timacdonald/json-api@v1.0.0-beta.8",
+                "symfony/http-kernel@v7.3.2",
+                "symfony/error-handler@v7.3.2",
+                "symfony/var-dumper@v7.3.2"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "symfony/var-dumper@v7.3.2"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "laravel/framework@v11.45.2",
+                "symfony/var-dumper@v7.3.2"
+              ],
+              [
+                "laravel/tinker@v2.10.1",
+                "symfony/var-dumper@v7.3.2"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "symfony/var-dumper@v7.3.2"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -5989,6 +10186,25 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "pestphp/pest-plugin-laravel@v2.4.0",
+              "pestphp/pest@v2.36.0"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "pestphp/pest@v2.36.0",
+                "pestphp/pest-plugin-arch@v2.7.0",
+                "ta-tikoma/phpunit-architecture-test@0.8.4"
+              ],
+              [
+                "pestphp/pest@v2.36.0",
+                "pestphp/pest-plugin-arch@v2.7.0",
+                "ta-tikoma/phpunit-architecture-test@0.8.4"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -6027,6 +10243,27 @@
             "licenses": [
               "BSD-3-Clause"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "pestphp/pest-plugin-laravel@v2.4.0",
+              "pestphp/pest@v2.36.0"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "pestphp/pest@v2.36.0",
+                "brianium/paratest@v7.4.8",
+                "phpunit/php-code-coverage@10.1.16",
+                "theseer/tokenizer@1.2.3"
+              ],
+              [
+                "pestphp/pest@v2.36.0",
+                "brianium/paratest@v7.4.8",
+                "phpunit/php-code-coverage@10.1.16",
+                "theseer/tokenizer@1.2.3"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -6061,6 +10298,39 @@
             "transitive": true,
             "licenses": [
               "BSD-3-Clause"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/actions@v3.2.140",
+                "anourvalar/eloquent-serialize@1.2.28",
+                "laravel/framework@v11.45.2",
+                "tijsverkoyen/css-to-inline-styles@v2.3.0"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "tijsverkoyen/css-to-inline-styles@v2.3.0"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "laravel/framework@v11.45.2",
+                "tijsverkoyen/css-to-inline-styles@v2.3.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "tijsverkoyen/css-to-inline-styles@v2.3.0"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -6101,6 +10371,17 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "timacdonald/json-api@v1.0.0-beta.8"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -6135,6 +10416,17 @@
             "licenses": [
               "BSD-3-Clause"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "twig/twig@v3.20.0"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -6185,6 +10477,39 @@
             "licenses": [
               "BSD-3-Clause"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/actions@v3.2.140",
+                "anourvalar/eloquent-serialize@1.2.28",
+                "laravel/framework@v11.45.2",
+                "vlucas/phpdotenv@v5.6.2"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "vlucas/phpdotenv@v5.6.2"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "laravel/framework@v11.45.2",
+                "vlucas/phpdotenv@v5.6.2"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "vlucas/phpdotenv@v5.6.2"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -6217,6 +10542,39 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "filament/filament@v3.2.140",
+                "filament/actions@v3.2.140",
+                "anourvalar/eloquent-serialize@1.2.28",
+                "laravel/framework@v11.45.2",
+                "voku/portable-ascii@2.0.3"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "voku/portable-ascii@2.0.3"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "laravel/framework@v11.45.2",
+                "voku/portable-ascii@2.0.3"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "voku/portable-ascii@2.0.3"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -6246,6 +10604,48 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cachethq/core@dev-main",
+              "laravel/framework@v11.45.2",
+              "laravel/nightwatch@v1.12.0",
+              "pestphp/pest-plugin-laravel@v2.4.0",
+              "pestphp/pest@v2.36.0"
+            ],
+            "import_paths": [
+              [
+                "cachethq/core@dev-main",
+                "spatie/laravel-data@4.13.0",
+                "phpdocumentor/reflection@6.1.0",
+                "webmozart/assert@1.11.0"
+              ],
+              [
+                "laravel/framework@v11.45.2",
+                "dragonmantank/cron-expression@v3.4.0",
+                "webmozart/assert@1.11.0"
+              ],
+              [
+                "laravel/nightwatch@v1.12.0",
+                "laravel/framework@v11.45.2",
+                "dragonmantank/cron-expression@v3.4.0",
+                "webmozart/assert@1.11.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "pestphp/pest-plugin-laravel@v2.4.0",
+                "laravel/framework@v11.45.2",
+                "dragonmantank/cron-expression@v3.4.0",
+                "webmozart/assert@1.11.0"
+              ],
+              [
+                "pestphp/pest@v2.36.0",
+                "pestphp/pest-plugin-arch@v2.7.0",
+                "ta-tikoma/phpunit-architecture-test@0.8.4",
+                "phpdocumentor/reflection-docblock@5.6.2",
+                "webmozart/assert@1.11.0"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -6259,6 +10659,16 @@
       },
       "start": {
         "dependencies": [
+          {
+            "name": "laravel/nightwatch",
+            "version": "v1.12.0",
+            "constraint": "^1.0"
+          },
+          {
+            "name": "laravel/sanctum",
+            "version": "v4.2.0",
+            "constraint": "^4.0"
+          },
           {
             "name": "laravel/tinker",
             "version": "v2.10.1",
@@ -6278,19 +10688,24 @@
             "name": "laravel/framework",
             "version": "v11.45.2",
             "constraint": "^11.2"
-          },
-          {
-            "name": "laravel/nightwatch",
-            "version": "v1.12.0",
-            "constraint": "^1.0"
-          },
-          {
-            "name": "laravel/sanctum",
-            "version": "v4.2.0",
-            "constraint": "^4.0"
           }
         ],
         "dev_dependencies": [
+          {
+            "name": "pestphp/pest-plugin-laravel",
+            "version": "v2.4.0",
+            "constraint": "^2.2"
+          },
+          {
+            "name": "fakerphp/faker",
+            "version": "v1.24.1",
+            "constraint": "^1.23"
+          },
+          {
+            "name": "laravel/pail",
+            "version": "v1.2.3",
+            "constraint": "^1.1"
+          },
           {
             "name": "laravel/pint",
             "version": "v1.24.0",
@@ -6310,21 +10725,6 @@
             "name": "pestphp/pest",
             "version": "v2.36.0",
             "constraint": "^2.23"
-          },
-          {
-            "name": "pestphp/pest-plugin-laravel",
-            "version": "v2.4.0",
-            "constraint": "^2.2"
-          },
-          {
-            "name": "fakerphp/faker",
-            "version": "v1.24.1",
-            "constraint": "^1.23"
-          },
-          {
-            "name": "laravel/pail",
-            "version": "v1.2.3",
-            "constraint": "^1.1"
           }
         ]
       }
@@ -6336,11 +10736,42 @@
     "working_directory": "test8-cachet",
     "package_manager": "composer",
     "time": {
-      "analysis_start_time": "2025-08-19T10:19:06+02:00",
-      "analysis_end_time": "2025-08-19T10:19:06+02:00",
-      "analysis_delta_time": 0.021045875
+      "analysis_start_time": "2026-11-22T19:09:35Z",
+      "analysis_end_time": "2026-11-22T19:09:35Z",
+      "analysis_delta_time": 0.005929584
     },
-    "errors": null,
+    "errors": [
+      {
+        "private_error": {
+          "description": "The source directory does not exist: ./nonexistent-directory",
+          "key": "SourceCodeDirDoesNotExist"
+        },
+        "public_error": {
+          "description": "Source directory not found",
+          "key": "GenericException"
+        }
+      },
+      {
+        "private_error": {
+          "description": "Error finding PHP projects: no composer.json files found",
+          "key": "UnsupportedLanguageRequested"
+        },
+        "public_error": {
+          "description": "No PHP project found in the source directory",
+          "key": "UnsupportedLanguageRequested"
+        }
+      },
+      {
+        "private_error": {
+          "description": "The source directory does not exist: ./nonexistent",
+          "key": "SourceCodeDirDoesNotExist"
+        },
+        "public_error": {
+          "description": "Source directory not found",
+          "key": "GenericException"
+        }
+      }
+    ],
     "paths": {
       "lock_file_path": "test8-cachet/composer.lock",
       "package_file_path": "test8-cachet/composer.json",

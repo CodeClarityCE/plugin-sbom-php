@@ -24,6 +24,16 @@
             "licenses": [
               "BSD-2-Clause"
             ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "bacon/bacon-qr-code@v3.0.1"
+            ],
+            "import_paths": [
+              [
+                "bacon/bacon-qr-code@v3.0.1"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -55,6 +65,16 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "bcrowe/cakephp-api-pagination@dev-cakephp5"
+            ],
+            "import_paths": [
+              [
+                "bcrowe/cakephp-api-pagination@dev-cakephp5"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "cakephp-plugin",
             "authors": [
               {
@@ -84,6 +104,17 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "ramsey/uuid@4.7.6"
+            ],
+            "import_paths": [
+              [
+                "ramsey/uuid@4.7.6",
+                "brick/math@0.12.3"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "description": "Arbitrary-precision arithmetic library"
           }
@@ -107,6 +138,17 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cakephp/bake@3.1.1"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "cakephp/bake@3.1.1",
+                "brick/varexporter@0.4.0"
+              ]
             ],
             "type": "library",
             "description": "A powerful alternative to var_export(), which can export closures and objects without __set_state()"
@@ -133,6 +175,16 @@
             "transitive": false,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "cakedc/cakephp-phpstan@3.2.0"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "cakedc/cakephp-phpstan@3.2.0"
+              ]
             ],
             "type": "phpstan-extension",
             "authors": [
@@ -172,6 +224,16 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "cakephp/authentication@3.2.1"
+            ],
+            "import_paths": [
+              [
+                "cakephp/authentication@3.2.1"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "cakephp-plugin",
             "authors": [
               {
@@ -206,6 +268,16 @@
             "transitive": false,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "cakephp/bake@3.1.1"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "cakephp/bake@3.1.1"
+              ]
             ],
             "type": "cakephp-plugin",
             "authors": [
@@ -266,6 +338,58 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "bcrowe/cakephp-api-pagination@dev-cakephp5",
+              "cakedc/cakephp-phpstan@3.2.0",
+              "cakephp/bake@3.1.1",
+              "cakephp/cakephp@5.2.6",
+              "cakephp/debug_kit@5.0.6",
+              "cakephp/localized@5.0.2",
+              "lorenzo/cakephp-email-queue@dev-master",
+              "passbolt/passbolt-selenium-api@dev-cakephp5",
+              "vierge-noire/cakephp-fixture-factories@v3.0.2"
+            ],
+            "import_paths": [
+              [
+                "bcrowe/cakephp-api-pagination@dev-cakephp5",
+                "cakephp/cakephp@5.2.6"
+              ],
+              [
+                "cakephp/cakephp@5.2.6"
+              ],
+              [
+                "lorenzo/cakephp-email-queue@dev-master",
+                "cakephp/cakephp@5.2.6"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "cakedc/cakephp-phpstan@3.2.0",
+                "cakephp/cakephp@5.2.6"
+              ],
+              [
+                "cakephp/bake@3.1.1",
+                "cakephp/cakephp@5.2.6"
+              ],
+              [
+                "cakephp/debug_kit@5.0.6",
+                "cakephp/cakephp@5.2.6"
+              ],
+              [
+                "cakephp/localized@5.0.2",
+                "cakephp/cakephp@5.2.6"
+              ],
+              [
+                "passbolt/passbolt-selenium-api@dev-cakephp5",
+                "cakephp/cakephp@5.2.6"
+              ],
+              [
+                "vierge-noire/cakephp-fixture-factories@v3.0.2",
+                "vierge-noire/cakephp-test-suite-light@v3.0",
+                "cakephp/cakephp@5.2.6"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -299,6 +423,16 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "cakephp/cakephp-codesniffer@5.1.4"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "cakephp/cakephp-codesniffer@5.1.4"
+              ]
+            ],
             "type": "phpcodesniffer-standard",
             "authors": [
               {
@@ -327,6 +461,67 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "bcrowe/cakephp-api-pagination@dev-cakephp5",
+              "cakedc/cakephp-phpstan@3.2.0",
+              "cakephp/bake@3.1.1",
+              "cakephp/cakephp@5.2.6",
+              "cakephp/debug_kit@5.0.6",
+              "cakephp/localized@5.0.2",
+              "lorenzo/cakephp-email-queue@dev-master",
+              "passbolt/passbolt-selenium-api@dev-cakephp5",
+              "vierge-noire/cakephp-fixture-factories@v3.0.2"
+            ],
+            "import_paths": [
+              [
+                "bcrowe/cakephp-api-pagination@dev-cakephp5",
+                "cakephp/cakephp@5.2.6",
+                "cakephp/chronos@3.2.0"
+              ],
+              [
+                "cakephp/cakephp@5.2.6",
+                "cakephp/chronos@3.2.0"
+              ],
+              [
+                "lorenzo/cakephp-email-queue@dev-master",
+                "cakephp/cakephp@5.2.6",
+                "cakephp/chronos@3.2.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "cakedc/cakephp-phpstan@3.2.0",
+                "cakephp/cakephp@5.2.6",
+                "cakephp/chronos@3.2.0"
+              ],
+              [
+                "cakephp/bake@3.1.1",
+                "cakephp/cakephp@5.2.6",
+                "cakephp/chronos@3.2.0"
+              ],
+              [
+                "cakephp/debug_kit@5.0.6",
+                "cakephp/cakephp@5.2.6",
+                "cakephp/chronos@3.2.0"
+              ],
+              [
+                "cakephp/localized@5.0.2",
+                "cakephp/cakephp@5.2.6",
+                "cakephp/chronos@3.2.0"
+              ],
+              [
+                "passbolt/passbolt-selenium-api@dev-cakephp5",
+                "cakephp/cakephp@5.2.6",
+                "cakephp/chronos@3.2.0"
+              ],
+              [
+                "vierge-noire/cakephp-fixture-factories@v3.0.2",
+                "vierge-noire/cakephp-test-suite-light@v3.0",
+                "cakephp/cakephp@5.2.6",
+                "cakephp/chronos@3.2.0"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -365,6 +560,16 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "cakephp/debug_kit@5.0.6"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "cakephp/debug_kit@5.0.6"
+              ]
+            ],
             "type": "cakephp-plugin",
             "authors": [
               {
@@ -397,6 +602,16 @@
             "transitive": false,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "cakephp/localized@5.0.2"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "cakephp/localized@5.0.2"
+              ]
             ],
             "type": "cakephp-plugin",
             "authors": [
@@ -431,6 +646,16 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "cakephp/migrations@4.6.1"
+            ],
+            "import_paths": [
+              [
+                "cakephp/migrations@4.6.1"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "cakephp-plugin",
             "authors": [
               {
@@ -460,6 +685,16 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "cakephp/plugin-installer@2.0.1"
+            ],
+            "import_paths": [
+              [
+                "cakephp/plugin-installer@2.0.1"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "composer-plugin",
             "authors": [
               {
@@ -493,6 +728,17 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cakephp/bake@3.1.1"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "cakephp/bake@3.1.1",
+                "cakephp/twig-view@2.0.3"
+              ]
+            ],
             "type": "cakephp-plugin",
             "authors": [
               {
@@ -523,6 +769,72 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "bcrowe/cakephp-api-pagination@dev-cakephp5",
+              "cakedc/cakephp-phpstan@3.2.0",
+              "cakephp/bake@3.1.1",
+              "cakephp/cakephp@5.2.6",
+              "cakephp/debug_kit@5.0.6",
+              "cakephp/localized@5.0.2",
+              "composer/composer@2.8.6",
+              "lorenzo/cakephp-email-queue@dev-master",
+              "passbolt/passbolt-selenium-api@dev-cakephp5",
+              "vierge-noire/cakephp-fixture-factories@v3.0.2"
+            ],
+            "import_paths": [
+              [
+                "bcrowe/cakephp-api-pagination@dev-cakephp5",
+                "cakephp/cakephp@5.2.6",
+                "composer/ca-bundle@1.5.7"
+              ],
+              [
+                "cakephp/cakephp@5.2.6",
+                "composer/ca-bundle@1.5.7"
+              ],
+              [
+                "composer/composer@2.8.6",
+                "composer/ca-bundle@1.5.7"
+              ],
+              [
+                "lorenzo/cakephp-email-queue@dev-master",
+                "cakephp/cakephp@5.2.6",
+                "composer/ca-bundle@1.5.7"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "cakedc/cakephp-phpstan@3.2.0",
+                "cakephp/cakephp@5.2.6",
+                "composer/ca-bundle@1.5.7"
+              ],
+              [
+                "cakephp/bake@3.1.1",
+                "cakephp/cakephp@5.2.6",
+                "composer/ca-bundle@1.5.7"
+              ],
+              [
+                "cakephp/debug_kit@5.0.6",
+                "cakephp/cakephp@5.2.6",
+                "composer/ca-bundle@1.5.7"
+              ],
+              [
+                "cakephp/localized@5.0.2",
+                "cakephp/cakephp@5.2.6",
+                "composer/ca-bundle@1.5.7"
+              ],
+              [
+                "passbolt/passbolt-selenium-api@dev-cakephp5",
+                "cakephp/cakephp@5.2.6",
+                "composer/ca-bundle@1.5.7"
+              ],
+              [
+                "vierge-noire/cakephp-fixture-factories@v3.0.2",
+                "vierge-noire/cakephp-test-suite-light@v3.0",
+                "cakephp/cakephp@5.2.6",
+                "composer/ca-bundle@1.5.7"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -555,6 +867,24 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cakephp/debug_kit@5.0.6",
+              "composer/composer@2.8.6"
+            ],
+            "import_paths": [
+              [
+                "composer/composer@2.8.6",
+                "composer/class-map-generator@1.6.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "cakephp/debug_kit@5.0.6",
+                "composer/composer@2.8.6",
+                "composer/class-map-generator@1.6.0"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -624,6 +954,22 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "cakephp/debug_kit@5.0.6",
+              "composer/composer@2.8.6"
+            ],
+            "import_paths": [
+              [
+                "composer/composer@2.8.6"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "cakephp/debug_kit@5.0.6",
+                "composer/composer@2.8.6"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -656,6 +1002,24 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cakephp/debug_kit@5.0.6",
+              "composer/composer@2.8.6"
+            ],
+            "import_paths": [
+              [
+                "composer/composer@2.8.6",
+                "composer/metadata-minifier@1.0.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "cakephp/debug_kit@5.0.6",
+                "composer/composer@2.8.6",
+                "composer/metadata-minifier@1.0.0"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -684,6 +1048,24 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cakephp/debug_kit@5.0.6",
+              "composer/composer@2.8.6"
+            ],
+            "import_paths": [
+              [
+                "composer/composer@2.8.6",
+                "composer/pcre@3.3.2"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "cakephp/debug_kit@5.0.6",
+                "composer/composer@2.8.6",
+                "composer/pcre@3.3.2"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -711,6 +1093,24 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cakephp/debug_kit@5.0.6",
+              "composer/composer@2.8.6"
+            ],
+            "import_paths": [
+              [
+                "composer/composer@2.8.6",
+                "composer/semver@3.4.3"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "cakephp/debug_kit@5.0.6",
+                "composer/composer@2.8.6",
+                "composer/semver@3.4.3"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -747,6 +1147,24 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cakephp/debug_kit@5.0.6",
+              "composer/composer@2.8.6"
+            ],
+            "import_paths": [
+              [
+                "composer/composer@2.8.6",
+                "composer/spdx-licenses@1.5.8"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "cakephp/debug_kit@5.0.6",
+                "composer/composer@2.8.6",
+                "composer/spdx-licenses@1.5.8"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -788,6 +1206,24 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cakephp/debug_kit@5.0.6",
+              "composer/composer@2.8.6"
+            ],
+            "import_paths": [
+              [
+                "composer/composer@2.8.6",
+                "composer/xdebug-handler@3.0.5"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "cakephp/debug_kit@5.0.6",
+                "composer/composer@2.8.6",
+                "composer/xdebug-handler@3.0.5"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -816,6 +1252,17 @@
             "licenses": [
               "BSD-2-Clause"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "bacon/bacon-qr-code@v3.0.1"
+            ],
+            "import_paths": [
+              [
+                "bacon/bacon-qr-code@v3.0.1",
+                "dasprid/enum@1.0.6"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -849,6 +1296,18 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cakephp/cakephp-codesniffer@5.1.4"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "cakephp/cakephp-codesniffer@5.1.4",
+                "slevomat/coding-standard@8.15.0",
+                "dealerdirect/phpcodesniffer-composer-installer@v1.0.0"
+              ]
+            ],
             "type": "composer-plugin",
             "authors": [
               {
@@ -881,6 +1340,17 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cakephp/debug_kit@5.0.6"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "cakephp/debug_kit@5.0.6",
+                "doctrine/sql-formatter@1.5.2"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -911,6 +1381,16 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "donatj/phpuseragentparser@v1.10.0"
+            ],
+            "import_paths": [
+              [
+                "donatj/phpuseragentparser@v1.10.0"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -946,6 +1426,16 @@
             "licenses": [
               "BSD-3-Clause"
             ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "duosecurity/duo_universal_php@1.1.0"
+            ],
+            "import_paths": [
+              [
+                "duosecurity/duo_universal_php@1.1.0"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "description": "A PHP implementation of the Duo Universal SDK."
           }
@@ -968,6 +1458,16 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "enygma/yubikey@3.9"
+            ],
+            "import_paths": [
+              [
+                "enygma/yubikey@3.9"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -997,6 +1497,16 @@
             "transitive": false,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "ergebnis/phpunit-slow-test-detector@2.19.0"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "ergebnis/phpunit-slow-test-detector@2.19.0"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -1030,6 +1540,17 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "vierge-noire/cakephp-fixture-factories@v3.0.2"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "vierge-noire/cakephp-fixture-factories@v3.0.2",
+                "fakerphp/faker@v1.24.1"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -1057,6 +1578,21 @@
             "licenses": [
               "BSD-3-Clause"
             ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "duosecurity/duo_universal_php@1.1.0",
+              "firebase/php-jwt@v6.11.0"
+            ],
+            "import_paths": [
+              [
+                "duosecurity/duo_universal_php@1.1.0",
+                "firebase/php-jwt@v6.11.0"
+              ],
+              [
+                "firebase/php-jwt@v6.11.0"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -1091,6 +1627,16 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "imagine/imagine@1.5.0"
+            ],
+            "import_paths": [
+              [
+                "imagine/imagine@1.5.0"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -1121,6 +1667,18 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cakephp/bake@3.1.1"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "cakephp/bake@3.1.1",
+                "cakephp/twig-view@2.0.3",
+                "jasny/twig-extensions@v1.3.1"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -1148,6 +1706,24 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cakephp/debug_kit@5.0.6",
+              "composer/composer@2.8.6"
+            ],
+            "import_paths": [
+              [
+                "composer/composer@2.8.6",
+                "justinrainbow/json-schema@5.3.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "cakephp/debug_kit@5.0.6",
+                "composer/composer@2.8.6",
+                "justinrainbow/json-schema@5.3.0"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -1193,6 +1769,72 @@
             "licenses": [
               "BSD-3-Clause"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "bcrowe/cakephp-api-pagination@dev-cakephp5",
+              "cakedc/cakephp-phpstan@3.2.0",
+              "cakephp/authentication@3.2.1",
+              "cakephp/bake@3.1.1",
+              "cakephp/cakephp@5.2.6",
+              "cakephp/debug_kit@5.0.6",
+              "cakephp/localized@5.0.2",
+              "lorenzo/cakephp-email-queue@dev-master",
+              "passbolt/passbolt-selenium-api@dev-cakephp5",
+              "vierge-noire/cakephp-fixture-factories@v3.0.2"
+            ],
+            "import_paths": [
+              [
+                "bcrowe/cakephp-api-pagination@dev-cakephp5",
+                "cakephp/cakephp@5.2.6",
+                "laminas/laminas-diactoros@3.6.0"
+              ],
+              [
+                "cakephp/authentication@3.2.1",
+                "laminas/laminas-diactoros@3.6.0"
+              ],
+              [
+                "cakephp/cakephp@5.2.6",
+                "laminas/laminas-diactoros@3.6.0"
+              ],
+              [
+                "lorenzo/cakephp-email-queue@dev-master",
+                "cakephp/cakephp@5.2.6",
+                "laminas/laminas-diactoros@3.6.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "cakedc/cakephp-phpstan@3.2.0",
+                "cakephp/cakephp@5.2.6",
+                "laminas/laminas-diactoros@3.6.0"
+              ],
+              [
+                "cakephp/bake@3.1.1",
+                "cakephp/cakephp@5.2.6",
+                "laminas/laminas-diactoros@3.6.0"
+              ],
+              [
+                "cakephp/debug_kit@5.0.6",
+                "cakephp/cakephp@5.2.6",
+                "laminas/laminas-diactoros@3.6.0"
+              ],
+              [
+                "cakephp/localized@5.0.2",
+                "cakephp/cakephp@5.2.6",
+                "laminas/laminas-diactoros@3.6.0"
+              ],
+              [
+                "passbolt/passbolt-selenium-api@dev-cakephp5",
+                "cakephp/cakephp@5.2.6",
+                "laminas/laminas-diactoros@3.6.0"
+              ],
+              [
+                "vierge-noire/cakephp-fixture-factories@v3.0.2",
+                "vierge-noire/cakephp-test-suite-light@v3.0",
+                "cakephp/cakephp@5.2.6",
+                "laminas/laminas-diactoros@3.6.0"
+              ]
+            ],
             "type": "library",
             "description": "PSR HTTP Message implementations"
           }
@@ -1221,6 +1863,67 @@
             "licenses": [
               "BSD-3-Clause"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "bcrowe/cakephp-api-pagination@dev-cakephp5",
+              "cakedc/cakephp-phpstan@3.2.0",
+              "cakephp/bake@3.1.1",
+              "cakephp/cakephp@5.2.6",
+              "cakephp/debug_kit@5.0.6",
+              "cakephp/localized@5.0.2",
+              "lorenzo/cakephp-email-queue@dev-master",
+              "passbolt/passbolt-selenium-api@dev-cakephp5",
+              "vierge-noire/cakephp-fixture-factories@v3.0.2"
+            ],
+            "import_paths": [
+              [
+                "bcrowe/cakephp-api-pagination@dev-cakephp5",
+                "cakephp/cakephp@5.2.6",
+                "laminas/laminas-httphandlerrunner@2.12.0"
+              ],
+              [
+                "cakephp/cakephp@5.2.6",
+                "laminas/laminas-httphandlerrunner@2.12.0"
+              ],
+              [
+                "lorenzo/cakephp-email-queue@dev-master",
+                "cakephp/cakephp@5.2.6",
+                "laminas/laminas-httphandlerrunner@2.12.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "cakedc/cakephp-phpstan@3.2.0",
+                "cakephp/cakephp@5.2.6",
+                "laminas/laminas-httphandlerrunner@2.12.0"
+              ],
+              [
+                "cakephp/bake@3.1.1",
+                "cakephp/cakephp@5.2.6",
+                "laminas/laminas-httphandlerrunner@2.12.0"
+              ],
+              [
+                "cakephp/debug_kit@5.0.6",
+                "cakephp/cakephp@5.2.6",
+                "laminas/laminas-httphandlerrunner@2.12.0"
+              ],
+              [
+                "cakephp/localized@5.0.2",
+                "cakephp/cakephp@5.2.6",
+                "laminas/laminas-httphandlerrunner@2.12.0"
+              ],
+              [
+                "passbolt/passbolt-selenium-api@dev-cakephp5",
+                "cakephp/cakephp@5.2.6",
+                "laminas/laminas-httphandlerrunner@2.12.0"
+              ],
+              [
+                "vierge-noire/cakephp-fixture-factories@v3.0.2",
+                "vierge-noire/cakephp-test-suite-light@v3.0",
+                "cakephp/cakephp@5.2.6",
+                "laminas/laminas-httphandlerrunner@2.12.0"
+              ]
+            ],
             "type": "library",
             "description": "Execute PSR-15 RequestHandlerInterface instances and emit responses they generate."
           }
@@ -1244,6 +1947,67 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "bcrowe/cakephp-api-pagination@dev-cakephp5",
+              "cakedc/cakephp-phpstan@3.2.0",
+              "cakephp/bake@3.1.1",
+              "cakephp/cakephp@5.2.6",
+              "cakephp/debug_kit@5.0.6",
+              "cakephp/localized@5.0.2",
+              "lorenzo/cakephp-email-queue@dev-master",
+              "passbolt/passbolt-selenium-api@dev-cakephp5",
+              "vierge-noire/cakephp-fixture-factories@v3.0.2"
+            ],
+            "import_paths": [
+              [
+                "bcrowe/cakephp-api-pagination@dev-cakephp5",
+                "cakephp/cakephp@5.2.6",
+                "league/container@4.2.5"
+              ],
+              [
+                "cakephp/cakephp@5.2.6",
+                "league/container@4.2.5"
+              ],
+              [
+                "lorenzo/cakephp-email-queue@dev-master",
+                "cakephp/cakephp@5.2.6",
+                "league/container@4.2.5"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "cakedc/cakephp-phpstan@3.2.0",
+                "cakephp/cakephp@5.2.6",
+                "league/container@4.2.5"
+              ],
+              [
+                "cakephp/bake@3.1.1",
+                "cakephp/cakephp@5.2.6",
+                "league/container@4.2.5"
+              ],
+              [
+                "cakephp/debug_kit@5.0.6",
+                "cakephp/cakephp@5.2.6",
+                "league/container@4.2.5"
+              ],
+              [
+                "cakephp/localized@5.0.2",
+                "cakephp/cakephp@5.2.6",
+                "league/container@4.2.5"
+              ],
+              [
+                "passbolt/passbolt-selenium-api@dev-cakephp5",
+                "cakephp/cakephp@5.2.6",
+                "league/container@4.2.5"
+              ],
+              [
+                "vierge-noire/cakephp-fixture-factories@v3.0.2",
+                "vierge-noire/cakephp-test-suite-light@v3.0",
+                "cakephp/cakephp@5.2.6",
+                "league/container@4.2.5"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -1278,6 +2042,16 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "league/flysystem@3.29.1"
+            ],
+            "import_paths": [
+              [
+                "league/flysystem@3.29.1"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -1312,6 +2086,17 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "league/flysystem@3.29.1"
+            ],
+            "import_paths": [
+              [
+                "league/flysystem@3.29.1",
+                "league/flysystem-local@3.29.0"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -1342,6 +2127,17 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "league/flysystem@3.29.1"
+            ],
+            "import_paths": [
+              [
+                "league/flysystem@3.29.1",
+                "league/mime-type-detection@1.16.0"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -1370,6 +2166,16 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "lorenzo/cakephp-email-queue@dev-master"
+            ],
+            "import_paths": [
+              [
+                "lorenzo/cakephp-email-queue@dev-master"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "cakephp-plugin",
             "authors": [
               {
@@ -1400,6 +2206,16 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "mobiledetect/mobiledetectlib@4.8.07"
+            ],
+            "import_paths": [
+              [
+                "mobiledetect/mobiledetectlib@4.8.07"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -1429,6 +2245,23 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "ergebnis/phpunit-slow-test-detector@2.19.0",
+              "phpunit/phpunit@10.5.45"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "ergebnis/phpunit-slow-test-detector@2.19.0",
+                "phpunit/phpunit@10.5.45",
+                "myclabs/deep-copy@1.13.0"
+              ],
+              [
+                "phpunit/phpunit@10.5.45",
+                "myclabs/deep-copy@1.13.0"
+              ]
+            ],
             "type": "library",
             "description": "Create deep copies (clones) of your objects"
           }
@@ -1452,6 +2285,35 @@
             "transitive": true,
             "licenses": [
               "BSD-3-Clause"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cakephp/bake@3.1.1",
+              "ergebnis/phpunit-slow-test-detector@2.19.0",
+              "phpunit/phpunit@10.5.45",
+              "psy/psysh@v0.12.7"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "cakephp/bake@3.1.1",
+                "nikic/php-parser@v4.19.4"
+              ],
+              [
+                "ergebnis/phpunit-slow-test-detector@2.19.0",
+                "phpunit/phpunit@10.5.45",
+                "phpunit/php-code-coverage@10.1.16",
+                "nikic/php-parser@v4.19.4"
+              ],
+              [
+                "phpunit/phpunit@10.5.45",
+                "phpunit/php-code-coverage@10.1.16",
+                "nikic/php-parser@v4.19.4"
+              ],
+              [
+                "psy/psysh@v0.12.7",
+                "nikic/php-parser@v4.19.4"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -1480,6 +2342,23 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "singpolyma/openpgp-php@0.7.0",
+              "spomky-labs/otphp@11.3.0"
+            ],
+            "import_paths": [
+              [
+                "singpolyma/openpgp-php@0.7.0",
+                "phpseclib/phpseclib@3.0.43",
+                "paragonie/constant_time_encoding@v2.7.0"
+              ],
+              [
+                "spomky-labs/otphp@11.3.0",
+                "paragonie/constant_time_encoding@v2.7.0"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -1514,6 +2393,18 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "singpolyma/openpgp-php@0.7.0"
+            ],
+            "import_paths": [
+              [
+                "singpolyma/openpgp-php@0.7.0",
+                "phpseclib/phpseclib@3.0.43",
+                "paragonie/random_compat@v9.99.100"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -1541,6 +2432,16 @@
             "transitive": false,
             "licenses": [
               "AGPL-3.0"
+            ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "passbolt/passbolt-selenium-api@dev-cakephp5"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "passbolt/passbolt-selenium-api@dev-cakephp5"
+              ]
             ],
             "type": "cakephp-plugin",
             "authors": [
@@ -1578,6 +2479,23 @@
             "transitive": true,
             "licenses": [
               "BSD-3-Clause"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "ergebnis/phpunit-slow-test-detector@2.19.0",
+              "phpunit/phpunit@10.5.45"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "ergebnis/phpunit-slow-test-detector@2.19.0",
+                "phpunit/phpunit@10.5.45",
+                "phar-io/manifest@2.0.4"
+              ],
+              [
+                "phpunit/phpunit@10.5.45",
+                "phar-io/manifest@2.0.4"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -1617,6 +2535,23 @@
             "transitive": true,
             "licenses": [
               "BSD-3-Clause"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "ergebnis/phpunit-slow-test-detector@2.19.0",
+              "phpunit/phpunit@10.5.45"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "ergebnis/phpunit-slow-test-detector@2.19.0",
+                "phpunit/phpunit@10.5.45",
+                "phar-io/version@3.2.1"
+              ],
+              [
+                "phpunit/phpunit@10.5.45",
+                "phar-io/version@3.2.1"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -1661,6 +2596,17 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "singpolyma/openpgp-php@0.7.0"
+            ],
+            "import_paths": [
+              [
+                "singpolyma/openpgp-php@0.7.0",
+                "phpseclib/phpseclib@3.0.43"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -1710,6 +2656,17 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cakephp/cakephp-codesniffer@5.1.4"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "cakephp/cakephp-codesniffer@5.1.4",
+                "phpstan/phpdoc-parser@1.33.0"
+              ]
+            ],
             "type": "library",
             "description": "PHPDoc parser with support for nullable, intersection and generic types"
           }
@@ -1731,6 +2688,21 @@
             "transitive": false,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "cakedc/cakephp-phpstan@3.2.0",
+              "phpstan/phpstan@1.12.21"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "cakedc/cakephp-phpstan@3.2.0",
+                "phpstan/phpstan@1.12.21"
+              ],
+              [
+                "phpstan/phpstan@1.12.21"
+              ]
             ],
             "type": "library",
             "description": "PHPStan - PHP Static Analysis Tool"
@@ -1778,6 +2750,23 @@
             "licenses": [
               "BSD-3-Clause"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "ergebnis/phpunit-slow-test-detector@2.19.0",
+              "phpunit/phpunit@10.5.45"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "ergebnis/phpunit-slow-test-detector@2.19.0",
+                "phpunit/phpunit@10.5.45",
+                "phpunit/php-code-coverage@10.1.16"
+              ],
+              [
+                "phpunit/phpunit@10.5.45",
+                "phpunit/php-code-coverage@10.1.16"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -1806,6 +2795,23 @@
             "transitive": true,
             "licenses": [
               "BSD-3-Clause"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "ergebnis/phpunit-slow-test-detector@2.19.0",
+              "phpunit/phpunit@10.5.45"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "ergebnis/phpunit-slow-test-detector@2.19.0",
+                "phpunit/phpunit@10.5.45",
+                "phpunit/php-file-iterator@4.1.0"
+              ],
+              [
+                "phpunit/phpunit@10.5.45",
+                "phpunit/php-file-iterator@4.1.0"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -1836,6 +2842,23 @@
             "licenses": [
               "BSD-3-Clause"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "ergebnis/phpunit-slow-test-detector@2.19.0",
+              "phpunit/phpunit@10.5.45"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "ergebnis/phpunit-slow-test-detector@2.19.0",
+                "phpunit/phpunit@10.5.45",
+                "phpunit/php-invoker@4.0.0"
+              ],
+              [
+                "phpunit/phpunit@10.5.45",
+                "phpunit/php-invoker@4.0.0"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -1865,6 +2888,23 @@
             "licenses": [
               "BSD-3-Clause"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "ergebnis/phpunit-slow-test-detector@2.19.0",
+              "phpunit/phpunit@10.5.45"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "ergebnis/phpunit-slow-test-detector@2.19.0",
+                "phpunit/phpunit@10.5.45",
+                "phpunit/php-text-template@3.0.1"
+              ],
+              [
+                "phpunit/phpunit@10.5.45",
+                "phpunit/php-text-template@3.0.1"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -1893,6 +2933,23 @@
             "transitive": true,
             "licenses": [
               "BSD-3-Clause"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "ergebnis/phpunit-slow-test-detector@2.19.0",
+              "phpunit/phpunit@10.5.45"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "ergebnis/phpunit-slow-test-detector@2.19.0",
+                "phpunit/phpunit@10.5.45",
+                "phpunit/php-timer@6.0.0"
+              ],
+              [
+                "phpunit/phpunit@10.5.45",
+                "phpunit/php-timer@6.0.0"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -1973,6 +3030,21 @@
             "licenses": [
               "BSD-3-Clause"
             ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "ergebnis/phpunit-slow-test-detector@2.19.0",
+              "phpunit/phpunit@10.5.45"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "ergebnis/phpunit-slow-test-detector@2.19.0",
+                "phpunit/phpunit@10.5.45"
+              ],
+              [
+                "phpunit/phpunit@10.5.45"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -2002,6 +3074,16 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "psalm/phar@6.10.0"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "psalm/phar@6.10.0"
+              ]
+            ],
             "type": "library",
             "description": "Composer-based Psalm Phar"
           }
@@ -2023,6 +3105,81 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "bcrowe/cakephp-api-pagination@dev-cakephp5",
+              "cakedc/cakephp-phpstan@3.2.0",
+              "cakephp/bake@3.1.1",
+              "cakephp/cakephp@5.2.6",
+              "cakephp/debug_kit@5.0.6",
+              "cakephp/localized@5.0.2",
+              "lorenzo/cakephp-email-queue@dev-master",
+              "passbolt/passbolt-selenium-api@dev-cakephp5",
+              "spomky-labs/otphp@11.3.0",
+              "vierge-noire/cakephp-fixture-factories@v3.0.2"
+            ],
+            "import_paths": [
+              [
+                "bcrowe/cakephp-api-pagination@dev-cakephp5",
+                "cakephp/cakephp@5.2.6",
+                "cakephp/chronos@3.2.0",
+                "psr/clock@1.0.0"
+              ],
+              [
+                "cakephp/cakephp@5.2.6",
+                "cakephp/chronos@3.2.0",
+                "psr/clock@1.0.0"
+              ],
+              [
+                "lorenzo/cakephp-email-queue@dev-master",
+                "cakephp/cakephp@5.2.6",
+                "cakephp/chronos@3.2.0",
+                "psr/clock@1.0.0"
+              ],
+              [
+                "spomky-labs/otphp@11.3.0",
+                "psr/clock@1.0.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "cakedc/cakephp-phpstan@3.2.0",
+                "cakephp/cakephp@5.2.6",
+                "cakephp/chronos@3.2.0",
+                "psr/clock@1.0.0"
+              ],
+              [
+                "cakephp/bake@3.1.1",
+                "cakephp/cakephp@5.2.6",
+                "cakephp/chronos@3.2.0",
+                "psr/clock@1.0.0"
+              ],
+              [
+                "cakephp/debug_kit@5.0.6",
+                "cakephp/cakephp@5.2.6",
+                "cakephp/chronos@3.2.0",
+                "psr/clock@1.0.0"
+              ],
+              [
+                "cakephp/localized@5.0.2",
+                "cakephp/cakephp@5.2.6",
+                "cakephp/chronos@3.2.0",
+                "psr/clock@1.0.0"
+              ],
+              [
+                "passbolt/passbolt-selenium-api@dev-cakephp5",
+                "cakephp/cakephp@5.2.6",
+                "cakephp/chronos@3.2.0",
+                "psr/clock@1.0.0"
+              ],
+              [
+                "vierge-noire/cakephp-fixture-factories@v3.0.2",
+                "vierge-noire/cakephp-test-suite-light@v3.0",
+                "cakephp/cakephp@5.2.6",
+                "cakephp/chronos@3.2.0",
+                "psr/clock@1.0.0"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -2050,6 +3207,86 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "bcrowe/cakephp-api-pagination@dev-cakephp5",
+              "cakedc/cakephp-phpstan@3.2.0",
+              "cakephp/bake@3.1.1",
+              "cakephp/cakephp@5.2.6",
+              "cakephp/debug_kit@5.0.6",
+              "cakephp/localized@5.0.2",
+              "cakephp/migrations@4.6.1",
+              "composer/composer@2.8.6",
+              "lorenzo/cakephp-email-queue@dev-master",
+              "passbolt/passbolt-selenium-api@dev-cakephp5",
+              "psy/psysh@v0.12.7",
+              "vierge-noire/cakephp-fixture-factories@v3.0.2"
+            ],
+            "import_paths": [
+              [
+                "bcrowe/cakephp-api-pagination@dev-cakephp5",
+                "cakephp/cakephp@5.2.6",
+                "psr/container@2.0.2"
+              ],
+              [
+                "cakephp/cakephp@5.2.6",
+                "psr/container@2.0.2"
+              ],
+              [
+                "cakephp/migrations@4.6.1",
+                "robmorgan/phinx@0.16.6",
+                "psr/container@2.0.2"
+              ],
+              [
+                "composer/composer@2.8.6",
+                "symfony/console@v7.2.1",
+                "symfony/service-contracts@v3.5.1",
+                "psr/container@2.0.2"
+              ],
+              [
+                "lorenzo/cakephp-email-queue@dev-master",
+                "cakephp/cakephp@5.2.6",
+                "psr/container@2.0.2"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "cakedc/cakephp-phpstan@3.2.0",
+                "cakephp/cakephp@5.2.6",
+                "psr/container@2.0.2"
+              ],
+              [
+                "cakephp/bake@3.1.1",
+                "cakephp/cakephp@5.2.6",
+                "psr/container@2.0.2"
+              ],
+              [
+                "cakephp/debug_kit@5.0.6",
+                "cakephp/cakephp@5.2.6",
+                "psr/container@2.0.2"
+              ],
+              [
+                "cakephp/localized@5.0.2",
+                "cakephp/cakephp@5.2.6",
+                "psr/container@2.0.2"
+              ],
+              [
+                "passbolt/passbolt-selenium-api@dev-cakephp5",
+                "cakephp/cakephp@5.2.6",
+                "psr/container@2.0.2"
+              ],
+              [
+                "psy/psysh@v0.12.7",
+                "symfony/console@v7.2.1",
+                "symfony/service-contracts@v3.5.1",
+                "psr/container@2.0.2"
+              ],
+              [
+                "vierge-noire/cakephp-fixture-factories@v3.0.2",
+                "fakerphp/faker@v1.24.1",
+                "psr/container@2.0.2"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -2080,6 +3317,72 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "bcrowe/cakephp-api-pagination@dev-cakephp5",
+              "cakedc/cakephp-phpstan@3.2.0",
+              "cakephp/authentication@3.2.1",
+              "cakephp/bake@3.1.1",
+              "cakephp/cakephp@5.2.6",
+              "cakephp/debug_kit@5.0.6",
+              "cakephp/localized@5.0.2",
+              "lorenzo/cakephp-email-queue@dev-master",
+              "passbolt/passbolt-selenium-api@dev-cakephp5",
+              "vierge-noire/cakephp-fixture-factories@v3.0.2"
+            ],
+            "import_paths": [
+              [
+                "bcrowe/cakephp-api-pagination@dev-cakephp5",
+                "cakephp/cakephp@5.2.6",
+                "psr/http-client@1.0.3"
+              ],
+              [
+                "cakephp/authentication@3.2.1",
+                "psr/http-client@1.0.3"
+              ],
+              [
+                "cakephp/cakephp@5.2.6",
+                "psr/http-client@1.0.3"
+              ],
+              [
+                "lorenzo/cakephp-email-queue@dev-master",
+                "cakephp/cakephp@5.2.6",
+                "psr/http-client@1.0.3"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "cakedc/cakephp-phpstan@3.2.0",
+                "cakephp/cakephp@5.2.6",
+                "psr/http-client@1.0.3"
+              ],
+              [
+                "cakephp/bake@3.1.1",
+                "cakephp/cakephp@5.2.6",
+                "psr/http-client@1.0.3"
+              ],
+              [
+                "cakephp/debug_kit@5.0.6",
+                "cakephp/cakephp@5.2.6",
+                "psr/http-client@1.0.3"
+              ],
+              [
+                "cakephp/localized@5.0.2",
+                "cakephp/cakephp@5.2.6",
+                "psr/http-client@1.0.3"
+              ],
+              [
+                "passbolt/passbolt-selenium-api@dev-cakephp5",
+                "cakephp/cakephp@5.2.6",
+                "psr/http-client@1.0.3"
+              ],
+              [
+                "vierge-noire/cakephp-fixture-factories@v3.0.2",
+                "vierge-noire/cakephp-test-suite-light@v3.0",
+                "cakephp/cakephp@5.2.6",
+                "psr/http-client@1.0.3"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -2109,6 +3412,73 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "bcrowe/cakephp-api-pagination@dev-cakephp5",
+              "cakedc/cakephp-phpstan@3.2.0",
+              "cakephp/authentication@3.2.1",
+              "cakephp/bake@3.1.1",
+              "cakephp/cakephp@5.2.6",
+              "cakephp/debug_kit@5.0.6",
+              "cakephp/localized@5.0.2",
+              "lorenzo/cakephp-email-queue@dev-master",
+              "passbolt/passbolt-selenium-api@dev-cakephp5",
+              "vierge-noire/cakephp-fixture-factories@v3.0.2"
+            ],
+            "import_paths": [
+              [
+                "bcrowe/cakephp-api-pagination@dev-cakephp5",
+                "cakephp/cakephp@5.2.6",
+                "psr/http-factory@1.1.0"
+              ],
+              [
+                "cakephp/authentication@3.2.1",
+                "laminas/laminas-diactoros@3.6.0",
+                "psr/http-factory@1.1.0"
+              ],
+              [
+                "cakephp/cakephp@5.2.6",
+                "psr/http-factory@1.1.0"
+              ],
+              [
+                "lorenzo/cakephp-email-queue@dev-master",
+                "cakephp/cakephp@5.2.6",
+                "psr/http-factory@1.1.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "cakedc/cakephp-phpstan@3.2.0",
+                "cakephp/cakephp@5.2.6",
+                "psr/http-factory@1.1.0"
+              ],
+              [
+                "cakephp/bake@3.1.1",
+                "cakephp/cakephp@5.2.6",
+                "psr/http-factory@1.1.0"
+              ],
+              [
+                "cakephp/debug_kit@5.0.6",
+                "cakephp/cakephp@5.2.6",
+                "psr/http-factory@1.1.0"
+              ],
+              [
+                "cakephp/localized@5.0.2",
+                "cakephp/cakephp@5.2.6",
+                "psr/http-factory@1.1.0"
+              ],
+              [
+                "passbolt/passbolt-selenium-api@dev-cakephp5",
+                "cakephp/cakephp@5.2.6",
+                "psr/http-factory@1.1.0"
+              ],
+              [
+                "vierge-noire/cakephp-fixture-factories@v3.0.2",
+                "vierge-noire/cakephp-test-suite-light@v3.0",
+                "cakephp/cakephp@5.2.6",
+                "psr/http-factory@1.1.0"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -2135,6 +3505,72 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "bcrowe/cakephp-api-pagination@dev-cakephp5",
+              "cakedc/cakephp-phpstan@3.2.0",
+              "cakephp/authentication@3.2.1",
+              "cakephp/bake@3.1.1",
+              "cakephp/cakephp@5.2.6",
+              "cakephp/debug_kit@5.0.6",
+              "cakephp/localized@5.0.2",
+              "lorenzo/cakephp-email-queue@dev-master",
+              "passbolt/passbolt-selenium-api@dev-cakephp5",
+              "vierge-noire/cakephp-fixture-factories@v3.0.2"
+            ],
+            "import_paths": [
+              [
+                "bcrowe/cakephp-api-pagination@dev-cakephp5",
+                "cakephp/cakephp@5.2.6",
+                "psr/http-message@2.0"
+              ],
+              [
+                "cakephp/authentication@3.2.1",
+                "psr/http-message@2.0"
+              ],
+              [
+                "cakephp/cakephp@5.2.6",
+                "psr/http-message@2.0"
+              ],
+              [
+                "lorenzo/cakephp-email-queue@dev-master",
+                "cakephp/cakephp@5.2.6",
+                "psr/http-message@2.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "cakedc/cakephp-phpstan@3.2.0",
+                "cakephp/cakephp@5.2.6",
+                "psr/http-message@2.0"
+              ],
+              [
+                "cakephp/bake@3.1.1",
+                "cakephp/cakephp@5.2.6",
+                "psr/http-message@2.0"
+              ],
+              [
+                "cakephp/debug_kit@5.0.6",
+                "cakephp/cakephp@5.2.6",
+                "psr/http-message@2.0"
+              ],
+              [
+                "cakephp/localized@5.0.2",
+                "cakephp/cakephp@5.2.6",
+                "psr/http-message@2.0"
+              ],
+              [
+                "passbolt/passbolt-selenium-api@dev-cakephp5",
+                "cakephp/cakephp@5.2.6",
+                "psr/http-message@2.0"
+              ],
+              [
+                "vierge-noire/cakephp-fixture-factories@v3.0.2",
+                "vierge-noire/cakephp-test-suite-light@v3.0",
+                "cakephp/cakephp@5.2.6",
+                "psr/http-message@2.0"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -2164,6 +3600,72 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "bcrowe/cakephp-api-pagination@dev-cakephp5",
+              "cakedc/cakephp-phpstan@3.2.0",
+              "cakephp/authentication@3.2.1",
+              "cakephp/bake@3.1.1",
+              "cakephp/cakephp@5.2.6",
+              "cakephp/debug_kit@5.0.6",
+              "cakephp/localized@5.0.2",
+              "lorenzo/cakephp-email-queue@dev-master",
+              "passbolt/passbolt-selenium-api@dev-cakephp5",
+              "vierge-noire/cakephp-fixture-factories@v3.0.2"
+            ],
+            "import_paths": [
+              [
+                "bcrowe/cakephp-api-pagination@dev-cakephp5",
+                "cakephp/cakephp@5.2.6",
+                "psr/http-server-handler@1.0.2"
+              ],
+              [
+                "cakephp/authentication@3.2.1",
+                "psr/http-server-handler@1.0.2"
+              ],
+              [
+                "cakephp/cakephp@5.2.6",
+                "psr/http-server-handler@1.0.2"
+              ],
+              [
+                "lorenzo/cakephp-email-queue@dev-master",
+                "cakephp/cakephp@5.2.6",
+                "psr/http-server-handler@1.0.2"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "cakedc/cakephp-phpstan@3.2.0",
+                "cakephp/cakephp@5.2.6",
+                "psr/http-server-handler@1.0.2"
+              ],
+              [
+                "cakephp/bake@3.1.1",
+                "cakephp/cakephp@5.2.6",
+                "psr/http-server-handler@1.0.2"
+              ],
+              [
+                "cakephp/debug_kit@5.0.6",
+                "cakephp/cakephp@5.2.6",
+                "psr/http-server-handler@1.0.2"
+              ],
+              [
+                "cakephp/localized@5.0.2",
+                "cakephp/cakephp@5.2.6",
+                "psr/http-server-handler@1.0.2"
+              ],
+              [
+                "passbolt/passbolt-selenium-api@dev-cakephp5",
+                "cakephp/cakephp@5.2.6",
+                "psr/http-server-handler@1.0.2"
+              ],
+              [
+                "vierge-noire/cakephp-fixture-factories@v3.0.2",
+                "vierge-noire/cakephp-test-suite-light@v3.0",
+                "cakephp/cakephp@5.2.6",
+                "psr/http-server-handler@1.0.2"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -2196,6 +3698,72 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "bcrowe/cakephp-api-pagination@dev-cakephp5",
+              "cakedc/cakephp-phpstan@3.2.0",
+              "cakephp/authentication@3.2.1",
+              "cakephp/bake@3.1.1",
+              "cakephp/cakephp@5.2.6",
+              "cakephp/debug_kit@5.0.6",
+              "cakephp/localized@5.0.2",
+              "lorenzo/cakephp-email-queue@dev-master",
+              "passbolt/passbolt-selenium-api@dev-cakephp5",
+              "vierge-noire/cakephp-fixture-factories@v3.0.2"
+            ],
+            "import_paths": [
+              [
+                "bcrowe/cakephp-api-pagination@dev-cakephp5",
+                "cakephp/cakephp@5.2.6",
+                "psr/http-server-middleware@1.0.2"
+              ],
+              [
+                "cakephp/authentication@3.2.1",
+                "psr/http-server-middleware@1.0.2"
+              ],
+              [
+                "cakephp/cakephp@5.2.6",
+                "psr/http-server-middleware@1.0.2"
+              ],
+              [
+                "lorenzo/cakephp-email-queue@dev-master",
+                "cakephp/cakephp@5.2.6",
+                "psr/http-server-middleware@1.0.2"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "cakedc/cakephp-phpstan@3.2.0",
+                "cakephp/cakephp@5.2.6",
+                "psr/http-server-middleware@1.0.2"
+              ],
+              [
+                "cakephp/bake@3.1.1",
+                "cakephp/cakephp@5.2.6",
+                "psr/http-server-middleware@1.0.2"
+              ],
+              [
+                "cakephp/debug_kit@5.0.6",
+                "cakephp/cakephp@5.2.6",
+                "psr/http-server-middleware@1.0.2"
+              ],
+              [
+                "cakephp/localized@5.0.2",
+                "cakephp/cakephp@5.2.6",
+                "psr/http-server-middleware@1.0.2"
+              ],
+              [
+                "passbolt/passbolt-selenium-api@dev-cakephp5",
+                "cakephp/cakephp@5.2.6",
+                "psr/http-server-middleware@1.0.2"
+              ],
+              [
+                "vierge-noire/cakephp-fixture-factories@v3.0.2",
+                "vierge-noire/cakephp-test-suite-light@v3.0",
+                "cakephp/cakephp@5.2.6",
+                "psr/http-server-middleware@1.0.2"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -2223,6 +3791,72 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "bcrowe/cakephp-api-pagination@dev-cakephp5",
+              "cakedc/cakephp-phpstan@3.2.0",
+              "cakephp/bake@3.1.1",
+              "cakephp/cakephp@5.2.6",
+              "cakephp/debug_kit@5.0.6",
+              "cakephp/localized@5.0.2",
+              "composer/composer@2.8.6",
+              "lorenzo/cakephp-email-queue@dev-master",
+              "passbolt/passbolt-selenium-api@dev-cakephp5",
+              "vierge-noire/cakephp-fixture-factories@v3.0.2"
+            ],
+            "import_paths": [
+              [
+                "bcrowe/cakephp-api-pagination@dev-cakephp5",
+                "cakephp/cakephp@5.2.6",
+                "psr/log@3.0.2"
+              ],
+              [
+                "cakephp/cakephp@5.2.6",
+                "psr/log@3.0.2"
+              ],
+              [
+                "composer/composer@2.8.6",
+                "psr/log@3.0.2"
+              ],
+              [
+                "lorenzo/cakephp-email-queue@dev-master",
+                "cakephp/cakephp@5.2.6",
+                "psr/log@3.0.2"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "cakedc/cakephp-phpstan@3.2.0",
+                "cakephp/cakephp@5.2.6",
+                "psr/log@3.0.2"
+              ],
+              [
+                "cakephp/bake@3.1.1",
+                "cakephp/cakephp@5.2.6",
+                "psr/log@3.0.2"
+              ],
+              [
+                "cakephp/debug_kit@5.0.6",
+                "cakephp/cakephp@5.2.6",
+                "psr/log@3.0.2"
+              ],
+              [
+                "cakephp/localized@5.0.2",
+                "cakephp/cakephp@5.2.6",
+                "psr/log@3.0.2"
+              ],
+              [
+                "passbolt/passbolt-selenium-api@dev-cakephp5",
+                "cakephp/cakephp@5.2.6",
+                "psr/log@3.0.2"
+              ],
+              [
+                "vierge-noire/cakephp-fixture-factories@v3.0.2",
+                "vierge-noire/cakephp-test-suite-light@v3.0",
+                "cakephp/cakephp@5.2.6",
+                "psr/log@3.0.2"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -2249,6 +3883,72 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "bcrowe/cakephp-api-pagination@dev-cakephp5",
+              "cakedc/cakephp-phpstan@3.2.0",
+              "cakephp/bake@3.1.1",
+              "cakephp/cakephp@5.2.6",
+              "cakephp/debug_kit@5.0.6",
+              "cakephp/localized@5.0.2",
+              "lorenzo/cakephp-email-queue@dev-master",
+              "mobiledetect/mobiledetectlib@4.8.07",
+              "passbolt/passbolt-selenium-api@dev-cakephp5",
+              "vierge-noire/cakephp-fixture-factories@v3.0.2"
+            ],
+            "import_paths": [
+              [
+                "bcrowe/cakephp-api-pagination@dev-cakephp5",
+                "cakephp/cakephp@5.2.6",
+                "psr/simple-cache@3.0.0"
+              ],
+              [
+                "cakephp/cakephp@5.2.6",
+                "psr/simple-cache@3.0.0"
+              ],
+              [
+                "lorenzo/cakephp-email-queue@dev-master",
+                "cakephp/cakephp@5.2.6",
+                "psr/simple-cache@3.0.0"
+              ],
+              [
+                "mobiledetect/mobiledetectlib@4.8.07",
+                "psr/simple-cache@3.0.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "cakedc/cakephp-phpstan@3.2.0",
+                "cakephp/cakephp@5.2.6",
+                "psr/simple-cache@3.0.0"
+              ],
+              [
+                "cakephp/bake@3.1.1",
+                "cakephp/cakephp@5.2.6",
+                "psr/simple-cache@3.0.0"
+              ],
+              [
+                "cakephp/debug_kit@5.0.6",
+                "cakephp/cakephp@5.2.6",
+                "psr/simple-cache@3.0.0"
+              ],
+              [
+                "cakephp/localized@5.0.2",
+                "cakephp/cakephp@5.2.6",
+                "psr/simple-cache@3.0.0"
+              ],
+              [
+                "passbolt/passbolt-selenium-api@dev-cakephp5",
+                "cakephp/cakephp@5.2.6",
+                "psr/simple-cache@3.0.0"
+              ],
+              [
+                "vierge-noire/cakephp-fixture-factories@v3.0.2",
+                "vierge-noire/cakephp-test-suite-light@v3.0",
+                "cakephp/cakephp@5.2.6",
+                "psr/simple-cache@3.0.0"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -2287,6 +3987,16 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "psy/psysh@v0.12.7"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "psy/psysh@v0.12.7"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -2315,6 +4025,17 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "ramsey/uuid@4.7.6"
+            ],
+            "import_paths": [
+              [
+                "ramsey/uuid@4.7.6",
+                "ramsey/collection@2.1.0"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -2349,6 +4070,16 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "ramsey/uuid@4.7.6"
+            ],
+            "import_paths": [
+              [
+                "ramsey/uuid@4.7.6"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "description": "A PHP library for generating and working with universally unique identifiers (UUIDs)."
           }
@@ -2370,6 +4101,24 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cakephp/debug_kit@5.0.6",
+              "composer/composer@2.8.6"
+            ],
+            "import_paths": [
+              [
+                "composer/composer@2.8.6",
+                "react/promise@v3.2.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "cakephp/debug_kit@5.0.6",
+                "composer/composer@2.8.6",
+                "react/promise@v3.2.0"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -2421,6 +4170,17 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cakephp/migrations@4.6.1"
+            ],
+            "import_paths": [
+              [
+                "cakephp/migrations@4.6.1",
+                "robmorgan/phinx@0.16.6"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -2464,6 +4224,23 @@
             "licenses": [
               "BSD-3-Clause"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "ergebnis/phpunit-slow-test-detector@2.19.0",
+              "phpunit/phpunit@10.5.45"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "ergebnis/phpunit-slow-test-detector@2.19.0",
+                "phpunit/phpunit@10.5.45",
+                "sebastian/cli-parser@2.0.1"
+              ],
+              [
+                "phpunit/phpunit@10.5.45",
+                "sebastian/cli-parser@2.0.1"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -2493,6 +4270,23 @@
             "licenses": [
               "BSD-3-Clause"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "ergebnis/phpunit-slow-test-detector@2.19.0",
+              "phpunit/phpunit@10.5.45"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "ergebnis/phpunit-slow-test-detector@2.19.0",
+                "phpunit/phpunit@10.5.45",
+                "sebastian/code-unit@2.0.0"
+              ],
+              [
+                "phpunit/phpunit@10.5.45",
+                "sebastian/code-unit@2.0.0"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -2521,6 +4315,25 @@
             "transitive": true,
             "licenses": [
               "BSD-3-Clause"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "ergebnis/phpunit-slow-test-detector@2.19.0",
+              "phpunit/phpunit@10.5.45"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "ergebnis/phpunit-slow-test-detector@2.19.0",
+                "phpunit/phpunit@10.5.45",
+                "phpunit/php-code-coverage@10.1.16",
+                "sebastian/code-unit-reverse-lookup@3.0.0"
+              ],
+              [
+                "phpunit/phpunit@10.5.45",
+                "phpunit/php-code-coverage@10.1.16",
+                "sebastian/code-unit-reverse-lookup@3.0.0"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -2557,6 +4370,23 @@
             "transitive": true,
             "licenses": [
               "BSD-3-Clause"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "ergebnis/phpunit-slow-test-detector@2.19.0",
+              "phpunit/phpunit@10.5.45"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "ergebnis/phpunit-slow-test-detector@2.19.0",
+                "phpunit/phpunit@10.5.45",
+                "sebastian/comparator@5.0.3"
+              ],
+              [
+                "phpunit/phpunit@10.5.45",
+                "sebastian/comparator@5.0.3"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -2600,6 +4430,25 @@
             "licenses": [
               "BSD-3-Clause"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "ergebnis/phpunit-slow-test-detector@2.19.0",
+              "phpunit/phpunit@10.5.45"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "ergebnis/phpunit-slow-test-detector@2.19.0",
+                "phpunit/phpunit@10.5.45",
+                "phpunit/php-code-coverage@10.1.16",
+                "sebastian/complexity@3.2.0"
+              ],
+              [
+                "phpunit/phpunit@10.5.45",
+                "phpunit/php-code-coverage@10.1.16",
+                "sebastian/complexity@3.2.0"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -2628,6 +4477,23 @@
             "transitive": true,
             "licenses": [
               "BSD-3-Clause"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "ergebnis/phpunit-slow-test-detector@2.19.0",
+              "phpunit/phpunit@10.5.45"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "ergebnis/phpunit-slow-test-detector@2.19.0",
+                "phpunit/phpunit@10.5.45",
+                "sebastian/diff@5.1.1"
+              ],
+              [
+                "phpunit/phpunit@10.5.45",
+                "sebastian/diff@5.1.1"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -2661,6 +4527,23 @@
             "licenses": [
               "BSD-3-Clause"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "ergebnis/phpunit-slow-test-detector@2.19.0",
+              "phpunit/phpunit@10.5.45"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "ergebnis/phpunit-slow-test-detector@2.19.0",
+                "phpunit/phpunit@10.5.45",
+                "sebastian/environment@6.1.0"
+              ],
+              [
+                "phpunit/phpunit@10.5.45",
+                "sebastian/environment@6.1.0"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -2692,6 +4575,23 @@
             "transitive": true,
             "licenses": [
               "BSD-3-Clause"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "ergebnis/phpunit-slow-test-detector@2.19.0",
+              "phpunit/phpunit@10.5.45"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "ergebnis/phpunit-slow-test-detector@2.19.0",
+                "phpunit/phpunit@10.5.45",
+                "sebastian/exporter@5.1.2"
+              ],
+              [
+                "phpunit/phpunit@10.5.45",
+                "sebastian/exporter@5.1.2"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -2741,6 +4641,23 @@
             "licenses": [
               "BSD-3-Clause"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "ergebnis/phpunit-slow-test-detector@2.19.0",
+              "phpunit/phpunit@10.5.45"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "ergebnis/phpunit-slow-test-detector@2.19.0",
+                "phpunit/phpunit@10.5.45",
+                "sebastian/global-state@6.0.2"
+              ],
+              [
+                "phpunit/phpunit@10.5.45",
+                "sebastian/global-state@6.0.2"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -2770,6 +4687,25 @@
             "transitive": true,
             "licenses": [
               "BSD-3-Clause"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "ergebnis/phpunit-slow-test-detector@2.19.0",
+              "phpunit/phpunit@10.5.45"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "ergebnis/phpunit-slow-test-detector@2.19.0",
+                "phpunit/phpunit@10.5.45",
+                "phpunit/php-code-coverage@10.1.16",
+                "sebastian/lines-of-code@2.0.2"
+              ],
+              [
+                "phpunit/phpunit@10.5.45",
+                "phpunit/php-code-coverage@10.1.16",
+                "sebastian/lines-of-code@2.0.2"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -2804,6 +4740,23 @@
             "licenses": [
               "BSD-3-Clause"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "ergebnis/phpunit-slow-test-detector@2.19.0",
+              "phpunit/phpunit@10.5.45"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "ergebnis/phpunit-slow-test-detector@2.19.0",
+                "phpunit/phpunit@10.5.45",
+                "sebastian/object-enumerator@5.0.0"
+              ],
+              [
+                "phpunit/phpunit@10.5.45",
+                "sebastian/object-enumerator@5.0.0"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -2832,6 +4785,25 @@
             "licenses": [
               "BSD-3-Clause"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "ergebnis/phpunit-slow-test-detector@2.19.0",
+              "phpunit/phpunit@10.5.45"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "ergebnis/phpunit-slow-test-detector@2.19.0",
+                "phpunit/phpunit@10.5.45",
+                "sebastian/global-state@6.0.2",
+                "sebastian/object-reflector@3.0.0"
+              ],
+              [
+                "phpunit/phpunit@10.5.45",
+                "sebastian/global-state@6.0.2",
+                "sebastian/object-reflector@3.0.0"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -2859,6 +4831,23 @@
             "transitive": true,
             "licenses": [
               "BSD-3-Clause"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "ergebnis/phpunit-slow-test-detector@2.19.0",
+              "phpunit/phpunit@10.5.45"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "ergebnis/phpunit-slow-test-detector@2.19.0",
+                "phpunit/phpunit@10.5.45",
+                "sebastian/recursion-context@5.0.0"
+              ],
+              [
+                "phpunit/phpunit@10.5.45",
+                "sebastian/recursion-context@5.0.0"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -2896,6 +4885,23 @@
             "licenses": [
               "BSD-3-Clause"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "ergebnis/phpunit-slow-test-detector@2.19.0",
+              "phpunit/phpunit@10.5.45"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "ergebnis/phpunit-slow-test-detector@2.19.0",
+                "phpunit/phpunit@10.5.45",
+                "sebastian/type@4.0.0"
+              ],
+              [
+                "phpunit/phpunit@10.5.45",
+                "sebastian/type@4.0.0"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -2924,6 +4930,23 @@
             "transitive": true,
             "licenses": [
               "BSD-3-Clause"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "ergebnis/phpunit-slow-test-detector@2.19.0",
+              "phpunit/phpunit@10.5.45"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "ergebnis/phpunit-slow-test-detector@2.19.0",
+                "phpunit/phpunit@10.5.45",
+                "sebastian/version@4.0.1"
+              ],
+              [
+                "phpunit/phpunit@10.5.45",
+                "sebastian/version@4.0.1"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -2954,6 +4977,24 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cakephp/debug_kit@5.0.6",
+              "composer/composer@2.8.6"
+            ],
+            "import_paths": [
+              [
+                "composer/composer@2.8.6",
+                "seld/jsonlint@1.11.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "cakephp/debug_kit@5.0.6",
+                "composer/composer@2.8.6",
+                "seld/jsonlint@1.11.0"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -2982,6 +5023,24 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cakephp/debug_kit@5.0.6",
+              "composer/composer@2.8.6"
+            ],
+            "import_paths": [
+              [
+                "composer/composer@2.8.6",
+                "seld/phar-utils@1.2.1"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "cakephp/debug_kit@5.0.6",
+                "composer/composer@2.8.6",
+                "seld/phar-utils@1.2.1"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -3009,6 +5068,24 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cakephp/debug_kit@5.0.6",
+              "composer/composer@2.8.6"
+            ],
+            "import_paths": [
+              [
+                "composer/composer@2.8.6",
+                "seld/signal-handler@2.0.2"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "cakephp/debug_kit@5.0.6",
+                "composer/composer@2.8.6",
+                "seld/signal-handler@2.0.2"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -3040,6 +5117,16 @@
             "licenses": [
               "Unlicense"
             ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "singpolyma/openpgp-php@0.7.0"
+            ],
+            "import_paths": [
+              [
+                "singpolyma/openpgp-php@0.7.0"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -3078,6 +5165,17 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cakephp/cakephp-codesniffer@5.1.4"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "cakephp/cakephp-codesniffer@5.1.4",
+                "slevomat/coding-standard@8.15.0"
+              ]
+            ],
             "type": "phpcodesniffer-standard",
             "description": "Slevomat Coding Standard for PHP_CodeSniffer complements Consistence Coding Standard by providing sniffs with additional checks."
           }
@@ -3108,6 +5206,16 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "spomky-labs/otphp@11.3.0"
+            ],
+            "import_paths": [
+              [
+                "spomky-labs/otphp@11.3.0"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -3143,6 +5251,17 @@
             "transitive": true,
             "licenses": [
               "BSD-3-Clause"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cakephp/cakephp-codesniffer@5.1.4"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "cakephp/cakephp-codesniffer@5.1.4",
+                "squizlabs/php_codesniffer@3.11.3"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -3185,6 +5304,18 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cakephp/migrations@4.6.1"
+            ],
+            "import_paths": [
+              [
+                "cakephp/migrations@4.6.1",
+                "robmorgan/phinx@0.16.6",
+                "symfony/config@v7.2.3"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -3222,6 +5353,35 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cakephp/debug_kit@5.0.6",
+              "cakephp/migrations@4.6.1",
+              "composer/composer@2.8.6",
+              "psy/psysh@v0.12.7"
+            ],
+            "import_paths": [
+              [
+                "cakephp/migrations@4.6.1",
+                "robmorgan/phinx@0.16.6",
+                "symfony/console@v7.2.1"
+              ],
+              [
+                "composer/composer@2.8.6",
+                "symfony/console@v7.2.1"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "cakephp/debug_kit@5.0.6",
+                "composer/composer@2.8.6",
+                "symfony/console@v7.2.1"
+              ],
+              [
+                "psy/psysh@v0.12.7",
+                "symfony/console@v7.2.1"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -3252,6 +5412,60 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cakephp/bake@3.1.1",
+              "cakephp/debug_kit@5.0.6",
+              "cakephp/migrations@4.6.1",
+              "composer/composer@2.8.6",
+              "psy/psysh@v0.12.7",
+              "spomky-labs/otphp@11.3.0",
+              "vierge-noire/cakephp-fixture-factories@v3.0.2"
+            ],
+            "import_paths": [
+              [
+                "cakephp/migrations@4.6.1",
+                "robmorgan/phinx@0.16.6",
+                "symfony/config@v7.2.3",
+                "symfony/deprecation-contracts@v3.5.1"
+              ],
+              [
+                "composer/composer@2.8.6",
+                "symfony/console@v7.2.1",
+                "symfony/service-contracts@v3.5.1",
+                "symfony/deprecation-contracts@v3.5.1"
+              ],
+              [
+                "spomky-labs/otphp@11.3.0",
+                "symfony/deprecation-contracts@v3.5.1"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "cakephp/bake@3.1.1",
+                "cakephp/twig-view@2.0.3",
+                "twig/markdown-extra@v3.20.0",
+                "symfony/deprecation-contracts@v3.5.1"
+              ],
+              [
+                "cakephp/debug_kit@5.0.6",
+                "composer/composer@2.8.6",
+                "symfony/console@v7.2.1",
+                "symfony/service-contracts@v3.5.1",
+                "symfony/deprecation-contracts@v3.5.1"
+              ],
+              [
+                "psy/psysh@v0.12.7",
+                "symfony/console@v7.2.1",
+                "symfony/service-contracts@v3.5.1",
+                "symfony/deprecation-contracts@v3.5.1"
+              ],
+              [
+                "vierge-noire/cakephp-fixture-factories@v3.0.2",
+                "fakerphp/faker@v1.24.1",
+                "symfony/deprecation-contracts@v3.5.1"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -3288,6 +5502,31 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cakephp/debug_kit@5.0.6",
+              "cakephp/migrations@4.6.1",
+              "composer/composer@2.8.6"
+            ],
+            "import_paths": [
+              [
+                "cakephp/migrations@4.6.1",
+                "robmorgan/phinx@0.16.6",
+                "symfony/config@v7.2.3",
+                "symfony/filesystem@v7.2.0"
+              ],
+              [
+                "composer/composer@2.8.6",
+                "symfony/filesystem@v7.2.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "cakephp/debug_kit@5.0.6",
+                "composer/composer@2.8.6",
+                "symfony/filesystem@v7.2.0"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -3318,6 +5557,24 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cakephp/debug_kit@5.0.6",
+              "composer/composer@2.8.6"
+            ],
+            "import_paths": [
+              [
+                "composer/composer@2.8.6",
+                "symfony/finder@v7.2.2"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "cakephp/debug_kit@5.0.6",
+                "composer/composer@2.8.6",
+                "symfony/finder@v7.2.2"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -3350,6 +5607,47 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cakephp/bake@3.1.1",
+              "cakephp/debug_kit@5.0.6",
+              "cakephp/migrations@4.6.1",
+              "composer/composer@2.8.6",
+              "psy/psysh@v0.12.7"
+            ],
+            "import_paths": [
+              [
+                "cakephp/migrations@4.6.1",
+                "robmorgan/phinx@0.16.6",
+                "symfony/config@v7.2.3",
+                "symfony/polyfill-ctype@v1.31.0"
+              ],
+              [
+                "composer/composer@2.8.6",
+                "symfony/filesystem@v7.2.0",
+                "symfony/polyfill-ctype@v1.31.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "cakephp/bake@3.1.1",
+                "cakephp/twig-view@2.0.3",
+                "twig/twig@v3.20.0",
+                "symfony/polyfill-ctype@v1.31.0"
+              ],
+              [
+                "cakephp/debug_kit@5.0.6",
+                "composer/composer@2.8.6",
+                "symfony/filesystem@v7.2.0",
+                "symfony/polyfill-ctype@v1.31.0"
+              ],
+              [
+                "psy/psysh@v0.12.7",
+                "symfony/console@v7.2.1",
+                "symfony/string@v7.2.0",
+                "symfony/polyfill-ctype@v1.31.0"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -3380,6 +5678,43 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cakephp/debug_kit@5.0.6",
+              "cakephp/migrations@4.6.1",
+              "composer/composer@2.8.6",
+              "psy/psysh@v0.12.7"
+            ],
+            "import_paths": [
+              [
+                "cakephp/migrations@4.6.1",
+                "robmorgan/phinx@0.16.6",
+                "symfony/console@v7.2.1",
+                "symfony/string@v7.2.0",
+                "symfony/polyfill-intl-grapheme@v1.31.0"
+              ],
+              [
+                "composer/composer@2.8.6",
+                "symfony/console@v7.2.1",
+                "symfony/string@v7.2.0",
+                "symfony/polyfill-intl-grapheme@v1.31.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "cakephp/debug_kit@5.0.6",
+                "composer/composer@2.8.6",
+                "symfony/console@v7.2.1",
+                "symfony/string@v7.2.0",
+                "symfony/polyfill-intl-grapheme@v1.31.0"
+              ],
+              [
+                "psy/psysh@v0.12.7",
+                "symfony/console@v7.2.1",
+                "symfony/string@v7.2.0",
+                "symfony/polyfill-intl-grapheme@v1.31.0"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -3412,6 +5747,43 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cakephp/debug_kit@5.0.6",
+              "cakephp/migrations@4.6.1",
+              "composer/composer@2.8.6",
+              "psy/psysh@v0.12.7"
+            ],
+            "import_paths": [
+              [
+                "cakephp/migrations@4.6.1",
+                "robmorgan/phinx@0.16.6",
+                "symfony/console@v7.2.1",
+                "symfony/string@v7.2.0",
+                "symfony/polyfill-intl-normalizer@v1.31.0"
+              ],
+              [
+                "composer/composer@2.8.6",
+                "symfony/console@v7.2.1",
+                "symfony/string@v7.2.0",
+                "symfony/polyfill-intl-normalizer@v1.31.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "cakephp/debug_kit@5.0.6",
+                "composer/composer@2.8.6",
+                "symfony/console@v7.2.1",
+                "symfony/string@v7.2.0",
+                "symfony/polyfill-intl-normalizer@v1.31.0"
+              ],
+              [
+                "psy/psysh@v0.12.7",
+                "symfony/console@v7.2.1",
+                "symfony/string@v7.2.0",
+                "symfony/polyfill-intl-normalizer@v1.31.0"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -3442,6 +5814,46 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cakephp/bake@3.1.1",
+              "cakephp/debug_kit@5.0.6",
+              "cakephp/migrations@4.6.1",
+              "composer/composer@2.8.6",
+              "psy/psysh@v0.12.7"
+            ],
+            "import_paths": [
+              [
+                "cakephp/migrations@4.6.1",
+                "robmorgan/phinx@0.16.6",
+                "symfony/console@v7.2.1",
+                "symfony/polyfill-mbstring@v1.31.0"
+              ],
+              [
+                "composer/composer@2.8.6",
+                "symfony/console@v7.2.1",
+                "symfony/polyfill-mbstring@v1.31.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "cakephp/bake@3.1.1",
+                "cakephp/twig-view@2.0.3",
+                "twig/twig@v3.20.0",
+                "symfony/polyfill-mbstring@v1.31.0"
+              ],
+              [
+                "cakephp/debug_kit@5.0.6",
+                "composer/composer@2.8.6",
+                "symfony/console@v7.2.1",
+                "symfony/polyfill-mbstring@v1.31.0"
+              ],
+              [
+                "psy/psysh@v0.12.7",
+                "symfony/console@v7.2.1",
+                "symfony/polyfill-mbstring@v1.31.0"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -3474,6 +5886,24 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cakephp/debug_kit@5.0.6",
+              "composer/composer@2.8.6"
+            ],
+            "import_paths": [
+              [
+                "composer/composer@2.8.6",
+                "symfony/polyfill-php73@v1.31.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "cakephp/debug_kit@5.0.6",
+                "composer/composer@2.8.6",
+                "symfony/polyfill-php73@v1.31.0"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -3504,6 +5934,24 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cakephp/debug_kit@5.0.6",
+              "composer/composer@2.8.6"
+            ],
+            "import_paths": [
+              [
+                "composer/composer@2.8.6",
+                "symfony/polyfill-php80@v1.31.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "cakephp/debug_kit@5.0.6",
+                "composer/composer@2.8.6",
+                "symfony/polyfill-php80@v1.31.0"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -3540,6 +5988,24 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cakephp/debug_kit@5.0.6",
+              "composer/composer@2.8.6"
+            ],
+            "import_paths": [
+              [
+                "composer/composer@2.8.6",
+                "symfony/polyfill-php81@v1.31.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "cakephp/debug_kit@5.0.6",
+                "composer/composer@2.8.6",
+                "symfony/polyfill-php81@v1.31.0"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -3570,6 +6036,24 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cakephp/debug_kit@5.0.6",
+              "composer/composer@2.8.6"
+            ],
+            "import_paths": [
+              [
+                "composer/composer@2.8.6",
+                "symfony/process@v7.2.4"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "cakephp/debug_kit@5.0.6",
+                "composer/composer@2.8.6",
+                "symfony/process@v7.2.4"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -3605,6 +6089,39 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cakephp/debug_kit@5.0.6",
+              "cakephp/migrations@4.6.1",
+              "composer/composer@2.8.6",
+              "psy/psysh@v0.12.7"
+            ],
+            "import_paths": [
+              [
+                "cakephp/migrations@4.6.1",
+                "robmorgan/phinx@0.16.6",
+                "symfony/console@v7.2.1",
+                "symfony/service-contracts@v3.5.1"
+              ],
+              [
+                "composer/composer@2.8.6",
+                "symfony/console@v7.2.1",
+                "symfony/service-contracts@v3.5.1"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "cakephp/debug_kit@5.0.6",
+                "composer/composer@2.8.6",
+                "symfony/console@v7.2.1",
+                "symfony/service-contracts@v3.5.1"
+              ],
+              [
+                "psy/psysh@v0.12.7",
+                "symfony/console@v7.2.1",
+                "symfony/service-contracts@v3.5.1"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -3645,6 +6162,39 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cakephp/debug_kit@5.0.6",
+              "cakephp/migrations@4.6.1",
+              "composer/composer@2.8.6",
+              "psy/psysh@v0.12.7"
+            ],
+            "import_paths": [
+              [
+                "cakephp/migrations@4.6.1",
+                "robmorgan/phinx@0.16.6",
+                "symfony/console@v7.2.1",
+                "symfony/string@v7.2.0"
+              ],
+              [
+                "composer/composer@2.8.6",
+                "symfony/console@v7.2.1",
+                "symfony/string@v7.2.0"
+              ]
+            ],
+            "dev_import_paths": [
+              [
+                "cakephp/debug_kit@5.0.6",
+                "composer/composer@2.8.6",
+                "symfony/console@v7.2.1",
+                "symfony/string@v7.2.0"
+              ],
+              [
+                "psy/psysh@v0.12.7",
+                "symfony/console@v7.2.1",
+                "symfony/string@v7.2.0"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -3677,6 +6227,17 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "psy/psysh@v0.12.7"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "psy/psysh@v0.12.7",
+                "symfony/var-dumper@v7.2.3"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -3715,6 +6276,25 @@
             "licenses": [
               "BSD-3-Clause"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "ergebnis/phpunit-slow-test-detector@2.19.0",
+              "phpunit/phpunit@10.5.45"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "ergebnis/phpunit-slow-test-detector@2.19.0",
+                "phpunit/phpunit@10.5.45",
+                "phpunit/php-code-coverage@10.1.16",
+                "theseer/tokenizer@1.2.3"
+              ],
+              [
+                "phpunit/phpunit@10.5.45",
+                "phpunit/php-code-coverage@10.1.16",
+                "theseer/tokenizer@1.2.3"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -3747,6 +6327,18 @@
             "transitive": true,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cakephp/bake@3.1.1"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "cakephp/bake@3.1.1",
+                "cakephp/twig-view@2.0.3",
+                "twig/markdown-extra@v3.20.0"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -3782,6 +6374,18 @@
             "transitive": true,
             "licenses": [
               "BSD-3-Clause"
+            ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "cakephp/bake@3.1.1"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "cakephp/bake@3.1.1",
+                "cakephp/twig-view@2.0.3",
+                "twig/twig@v3.20.0"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -3827,6 +6431,16 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "vierge-noire/cakephp-fixture-factories@v3.0.2"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "vierge-noire/cakephp-fixture-factories@v3.0.2"
+              ]
+            ],
             "type": "cakephp-plugin",
             "authors": [
               {
@@ -3863,6 +6477,17 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "vierge-noire/cakephp-fixture-factories@v3.0.2"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "vierge-noire/cakephp-fixture-factories@v3.0.2",
+                "vierge-noire/cakephp-test-suite-light@v3.0"
+              ]
+            ],
             "type": "cakephp-plugin",
             "authors": [
               {
@@ -3881,14 +6506,9 @@
       "start": {
         "dependencies": [
           {
-            "name": "bacon/bacon-qr-code",
-            "version": "v3.0.1",
-            "constraint": "^3.0.1"
-          },
-          {
-            "name": "ramsey/uuid",
-            "version": "4.7.6",
-            "constraint": "^4.2.3"
+            "name": "imagine/imagine",
+            "version": "1.5.0",
+            "constraint": "^1.3.2"
           },
           {
             "name": "league/flysystem",
@@ -3896,9 +6516,19 @@
             "constraint": "^3.29.1"
           },
           {
-            "name": "cakephp/authentication",
-            "version": "3.2.1",
-            "constraint": "^3.0"
+            "name": "bacon/bacon-qr-code",
+            "version": "v3.0.1",
+            "constraint": "^3.0.1"
+          },
+          {
+            "name": "donatj/phpuseragentparser",
+            "version": "v1.10.0",
+            "constraint": "^1.10.0"
+          },
+          {
+            "name": "enygma/yubikey",
+            "version": "3.9",
+            "constraint": "^3.8"
           },
           {
             "name": "duosecurity/duo_universal_php",
@@ -3906,24 +6536,14 @@
             "constraint": "^1.0.2"
           },
           {
-            "name": "cakephp/plugin-installer",
-            "version": "2.0.1",
-            "constraint": "^2.0"
-          },
-          {
             "name": "mobiledetect/mobiledetectlib",
             "version": "4.8.07",
             "constraint": "^4.8.03"
           },
           {
-            "name": "firebase/php-jwt",
-            "version": "v6.11.0",
-            "constraint": "^6.2.0"
-          },
-          {
-            "name": "enygma/yubikey",
-            "version": "3.9",
-            "constraint": "^3.8"
+            "name": "composer/composer",
+            "version": "2.8.6",
+            "constraint": "^2.8.1"
           },
           {
             "name": "cakephp/migrations",
@@ -3936,6 +6556,16 @@
             "constraint": "^0.7"
           },
           {
+            "name": "cakephp/authentication",
+            "version": "3.2.1",
+            "constraint": "^3.0"
+          },
+          {
+            "name": "cakephp/cakephp",
+            "version": "5.2.6",
+            "constraint": "^5.2.6"
+          },
+          {
             "name": "lorenzo/cakephp-email-queue",
             "version": "dev-master",
             "constraint": "dev-master#30c24a0dbebd5a91ce7db9ce3a67db1a0d4711e3"
@@ -3946,42 +6576,27 @@
             "constraint": "dev-cakephp5#b103542e1b02c2a000862d91a804ecde6d4669b0"
           },
           {
-            "name": "composer/composer",
-            "version": "2.8.6",
-            "constraint": "^2.8.1"
-          },
-          {
-            "name": "cakephp/cakephp",
-            "version": "5.2.6",
-            "constraint": "^5.2.6"
-          },
-          {
-            "name": "donatj/phpuseragentparser",
-            "version": "v1.10.0",
-            "constraint": "^1.10.0"
-          },
-          {
-            "name": "imagine/imagine",
-            "version": "1.5.0",
-            "constraint": "^1.3.2"
+            "name": "firebase/php-jwt",
+            "version": "v6.11.0",
+            "constraint": "^6.2.0"
           },
           {
             "name": "spomky-labs/otphp",
             "version": "11.3.0",
             "constraint": "^11.3.0"
+          },
+          {
+            "name": "cakephp/plugin-installer",
+            "version": "2.0.1",
+            "constraint": "^2.0"
+          },
+          {
+            "name": "ramsey/uuid",
+            "version": "4.7.6",
+            "constraint": "^4.2.3"
           }
         ],
         "dev_dependencies": [
-          {
-            "name": "psy/psysh",
-            "version": "v0.12.7",
-            "constraint": "@stable"
-          },
-          {
-            "name": "cakephp/debug_kit",
-            "version": "5.0.6",
-            "constraint": "^5.0.0"
-          },
           {
             "name": "phpunit/phpunit",
             "version": "10.5.45",
@@ -3993,14 +6608,14 @@
             "constraint": "^5.0"
           },
           {
+            "name": "passbolt/passbolt-selenium-api",
+            "version": "dev-cakephp5",
+            "constraint": "dev-cakephp5#861bc4fe19b5ed58e50dd9a9c52909c997f2934a"
+          },
+          {
             "name": "vierge-noire/cakephp-fixture-factories",
             "version": "v3.0.2",
             "constraint": "^v3.0"
-          },
-          {
-            "name": "cakephp/localized",
-            "version": "5.0.2",
-            "constraint": "^5.0"
           },
           {
             "name": "ergebnis/phpunit-slow-test-detector",
@@ -4018,14 +6633,24 @@
             "constraint": "^1.12.10"
           },
           {
+            "name": "psy/psysh",
+            "version": "v0.12.7",
+            "constraint": "@stable"
+          },
+          {
+            "name": "cakephp/debug_kit",
+            "version": "5.0.6",
+            "constraint": "^5.0.0"
+          },
+          {
             "name": "cakephp/bake",
             "version": "3.1.1",
             "constraint": "^3.0.0"
           },
           {
-            "name": "passbolt/passbolt-selenium-api",
-            "version": "dev-cakephp5",
-            "constraint": "dev-cakephp5#861bc4fe19b5ed58e50dd9a9c52909c997f2934a"
+            "name": "cakephp/localized",
+            "version": "5.0.2",
+            "constraint": "^5.0"
           },
           {
             "name": "cakedc/cakephp-phpstan",
@@ -4042,9 +6667,9 @@
     "working_directory": "test1",
     "package_manager": "composer",
     "time": {
-      "analysis_start_time": "2025-08-17T23:13:14+02:00",
-      "analysis_end_time": "2025-08-17T23:13:14+02:00",
-      "analysis_delta_time": 0.006504375
+      "analysis_start_time": "2026-11-22T19:09:35Z",
+      "analysis_end_time": "2026-11-22T19:09:35Z",
+      "analysis_delta_time": 0.006965167
     },
     "errors": [
       {
@@ -4055,6 +6680,16 @@
         "public_error": {
           "description": "Source directory not found",
           "key": "GenericException"
+        }
+      },
+      {
+        "private_error": {
+          "description": "Error finding PHP projects: no composer.json files found",
+          "key": "UnsupportedLanguageRequested"
+        },
+        "public_error": {
+          "description": "No PHP project found in the source directory",
+          "key": "UnsupportedLanguageRequested"
         }
       }
     ],
@@ -4108,7 +6743,7 @@
           "path": "test1/sample.phar",
           "name": "sample.phar",
           "size": 180,
-          "modified": "2025-08-13T21:52:06Z",
+          "modified": "2026-11-22T12:58:55Z",
           "signature": "",
           "metadata": {},
           "main_script": "",
@@ -4178,14 +6813,27 @@
         "loaded_extensions": [],
         "configured_extensions": [
           "mbstring",
-          "pdo",
-          "curl",
-          "json",
-          "intl",
           "gnupg",
+          "intl",
+          "pdo",
+          "json",
           "openssl",
+          "curl",
           "posix"
         ]
+      },
+      "private_repository_info": {
+        "performance_optimization": {
+          "average_http_latency": "0s",
+          "concurrent_tasks": 0,
+          "files_processed": 2,
+          "http_connection_reuse": 0,
+          "http_requests": 0,
+          "json_files_processed": 2,
+          "json_streaming_used": 0,
+          "object_pool_reuse": 118,
+          "packages_processed": 0
+        }
       }
     }
   }
