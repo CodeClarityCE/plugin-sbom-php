@@ -1,6 +1,7 @@
 package main
 
 import (
+	"os"
 	"path/filepath"
 	"strings"
 	"testing"
@@ -9,12 +10,11 @@ import (
 	codeclarity "github.com/CodeClarityCE/utility-types/codeclarity_db"
 	"github.com/google/uuid"
 	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 )
 
 // TestE2E_PHPExtensionDetection tests that PHP extensions are properly detected and included in SBOM
 func TestE2E_PHPExtensionDetection(t *testing.T) {
-	requireAMQP(t)
-
 	dir, _ := useFixture(t, "test1")
 	out := plugin.Start(dir, uuid.UUID{}, nil)
 
@@ -56,8 +56,6 @@ func TestE2E_PHPExtensionDetection(t *testing.T) {
 
 // TestE2E_VulnerablePackageDetection tests detection of packages with known vulnerabilities
 func TestE2E_VulnerablePackageDetection(t *testing.T) {
-	requireAMQP(t)
-
 	dir, src := useFixture(t, "test-vulnerable")
 	out := plugin.Start(dir, uuid.UUID{}, nil)
 
@@ -137,8 +135,6 @@ func TestE2E_VulnerablePackageDetection(t *testing.T) {
 
 // TestE2E_PHPFrameworkDetection tests framework detection across different PHP frameworks
 func TestE2E_PHPFrameworkDetection(t *testing.T) {
-	requireAMQP(t)
-
 	testCases := map[string]string{
 		"./test1":              "CakePHP",            // Passbolt uses CakePHP
 		"./test2-laravel":      "Laravel",            // Laravel project
@@ -178,8 +174,6 @@ func TestE2E_PHPFrameworkDetection(t *testing.T) {
 
 // TestE2E_SBOMStructureCompatibility tests that PHP SBOM structure is compatible with js-sbom
 func TestE2E_SBOMStructureCompatibility(t *testing.T) {
-	requireAMQP(t)
-
 	dir, _ := useFixture(t, "test1")
 	out := plugin.Start(dir, uuid.UUID{}, nil)
 
@@ -234,8 +228,6 @@ func TestE2E_SBOMStructureCompatibility(t *testing.T) {
 
 // TestE2E_ErrorHandlingAndEdgeCases tests error handling and edge cases
 func TestE2E_ErrorHandlingAndEdgeCases(t *testing.T) {
-	requireAMQP(t)
-
 	// Test with non-existent directory
 	t.Run("NonExistentDirectory", func(t *testing.T) {
 		out := plugin.Start("./nonexistent-directory", uuid.UUID{}, nil)
@@ -267,8 +259,8 @@ func TestE2E_ErrorHandlingAndEdgeCases(t *testing.T) {
 
 	// Test with composer.json but no composer.lock
 	t.Run("ComposerJSONOnly", func(t *testing.T) {
-		// Most test cases only have composer.json (no working composer.lock)
 		dir, _ := useFixture(t, "test2-laravel")
+		require.NoError(t, os.Remove(filepath.Join(dir, "composer.lock")))
 		out := plugin.Start(dir, uuid.UUID{}, nil)
 
 		assert.NotNil(t, out)
@@ -282,8 +274,6 @@ func TestE2E_ErrorHandlingAndEdgeCases(t *testing.T) {
 
 // TestE2E_PerformanceAndMemory tests performance characteristics of PHP SBOM generation
 func TestE2E_PerformanceAndMemory(t *testing.T) {
-	requireAMQP(t)
-
 	// Test with the largest project (test1 - Passbolt)
 	dir, _ := useFixture(t, "test1")
 	out := plugin.Start(dir, uuid.UUID{}, nil)
@@ -317,8 +307,6 @@ func TestE2E_PerformanceAndMemory(t *testing.T) {
 
 // TestE2E_PHPExtensionVulnerabilityRelevance tests that only relevant extensions are flagged for vulnerability tracking
 func TestE2E_PHPExtensionVulnerabilityRelevance(t *testing.T) {
-	requireAMQP(t)
-
 	dir, _ := useFixture(t, "test1")
 	out := plugin.Start(dir, uuid.UUID{}, nil)
 

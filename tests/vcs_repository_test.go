@@ -286,18 +286,13 @@ func TestGitResolverCleanup(t *testing.T) {
 	// Get temp directory location
 	tempBase := filepath.Join(os.TempDir(), "php-sbom-git-cache")
 
-	// Ensure directory is created
-	_, err := os.Stat(tempBase)
-	if os.IsNotExist(err) {
-		// Directory might not exist if no operations performed
-		t.Skip("Temp directory not created yet")
-	}
+	require.NoError(t, os.MkdirAll(tempBase, 0o755))
 
 	// Cleanup should remove the directory
 	gitResolver.Cleanup()
 
 	// Check directory is removed
-	_, err = os.Stat(tempBase)
+	_, err := os.Stat(tempBase)
 	assert.True(t, os.IsNotExist(err), "Temp directory should be removed after cleanup")
 }
 
