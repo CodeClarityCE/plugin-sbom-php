@@ -178,7 +178,7 @@ func (p *EnhancedComposerParser) ParseWithPrivateRepos() (*EnhancedSBOM, error) 
 
 // parseEnhancedComposerJSON parses composer.json with repository information
 func (p *EnhancedComposerParser) parseEnhancedComposerJSON(filePath string) (*EnhancedComposerJSON, error) {
-	data, err := os.ReadFile(filePath)
+	data, err := os.ReadFile(filePath) //nolint:gosec // G304: reads the project file its caller names
 	if err != nil {
 		return nil, fmt.Errorf("failed to read composer.json: %w", err)
 	}

@@ -245,9 +245,9 @@ func enrichExtensionInfo(info *PHPExtensionInfo) {
 
 // getExtensionVersion attempts to get version for a specific extension
 func getExtensionVersion(extensionName string) string {
-	// Try to get extension version using php -r
-	script := fmt.Sprintf("if (extension_loaded('%s')) { $info = new ReflectionExtension('%s'); echo $info->getVersion(); }", extensionName, extensionName)
-	cmd := exec.Command("php", "-r", script)
+	// Try to get extension version using php -r; the name is passed as an argument, never as code
+	const script = "if (extension_loaded($argv[1])) { $info = new ReflectionExtension($argv[1]); echo $info->getVersion(); }"
+	cmd := exec.Command("php", "-r", script, "--", extensionName) //nolint:gosec // G204: fixed binary and script, the name is only data
 	output, err := cmd.Output()
 	if err != nil {
 		return ""
@@ -291,7 +291,7 @@ func categorizeExtension(name string) string {
 
 // getExtensionDescription provides descriptions for common extensions
 func getExtensionDescription(name string) string {
-	descriptions := map[string]string{
+	descriptions := map[string]string{ //nolint:gosec // G101: extension descriptions, not credentials
 		"curl":      "Client URL Library for HTTP requests",
 		"gd":        "Graphics Draw library for image manipulation",
 		"json":      "JavaScript Object Notation support",

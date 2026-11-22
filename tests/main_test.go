@@ -59,7 +59,7 @@ func TestCreatePassbolt(t *testing.T) {
 	}
 	assert.True(t, foundLicenses, "Should detect licenses in dependencies")
 
-	writeJSON(out, filepath.Join(src, "sbom.json"))
+	writeJSON(t, out, filepath.Join(src, "sbom.json"))
 }
 
 func TestCreateTest1EdgeCases(t *testing.T) {
@@ -135,7 +135,7 @@ func TestCreateLaravel(t *testing.T) {
 
 	assert.NotEmpty(t, defaultWs.Dependencies, "Should parse dependencies from composer.lock")
 
-	writeJSON(out, filepath.Join(src, "sbom.json"))
+	writeJSON(t, out, filepath.Join(src, "sbom.json"))
 }
 
 func TestCreateSymfony(t *testing.T) {
@@ -160,7 +160,7 @@ func TestCreateSymfony(t *testing.T) {
 
 	assert.NotEmpty(t, defaultWs.Dependencies, "Should parse dependencies from composer.lock")
 
-	writeJSON(out, filepath.Join(src, "sbom.json"))
+	writeJSON(t, out, filepath.Join(src, "sbom.json"))
 }
 
 func TestCreateWordPress(t *testing.T) {
@@ -186,7 +186,7 @@ func TestCreateWordPress(t *testing.T) {
 
 	assert.NotEmpty(t, defaultWs.Dependencies, "Should parse dependencies from composer.lock")
 
-	writeJSON(out, filepath.Join(src, "sbom.json"))
+	writeJSON(t, out, filepath.Join(src, "sbom.json"))
 }
 
 func TestCreateCodeIgniter(t *testing.T) {
@@ -212,7 +212,7 @@ func TestCreateCodeIgniter(t *testing.T) {
 
 	assert.NotEmpty(t, defaultWs.Dependencies, "Should parse dependencies from composer.lock")
 
-	writeJSON(out, filepath.Join(src, "sbom.json"))
+	writeJSON(t, out, filepath.Join(src, "sbom.json"))
 }
 
 func TestCreatePurePHP(t *testing.T) {
@@ -238,7 +238,7 @@ func TestCreatePurePHP(t *testing.T) {
 
 	assert.NotEmpty(t, defaultWs.Dependencies, "Should parse dependencies from composer.lock")
 
-	writeJSON(out, filepath.Join(src, "sbom.json"))
+	writeJSON(t, out, filepath.Join(src, "sbom.json"))
 }
 
 func TestCreateSymfonyDemo(t *testing.T) {
@@ -264,7 +264,7 @@ func TestCreateSymfonyDemo(t *testing.T) {
 
 	assert.NotEmpty(t, defaultWs.Dependencies, "Should parse dependencies from composer.lock")
 
-	writeJSON(out, filepath.Join(src, "sbom.json"))
+	writeJSON(t, out, filepath.Join(src, "sbom.json"))
 }
 
 func TestCreateCachet(t *testing.T) {
@@ -309,5 +309,5 @@ func TestCreateCachet(t *testing.T) {
 	}
 
 	// Write output for inspection
-	writeJSON(out, filepath.Join(src, "sbom.json"))
+	writeJSON(t, out, filepath.Join(src, "sbom.json"))
 }

@@ -130,7 +130,7 @@ func TestE2E_VulnerablePackageDetection(t *testing.T) {
 		}
 	}
 
-	writeJSON(out, filepath.Join(src, "sbom.json"))
+	writeJSON(t, out, filepath.Join(src, "sbom.json"))
 }
 
 // TestE2E_PHPFrameworkDetection tests framework detection across different PHP frameworks

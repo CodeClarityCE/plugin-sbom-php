@@ -50,7 +50,7 @@ func TestIntegration_PrivateRepositorySupport(t *testing.T) {
 		}`
 
 		composerPath := filepath.Join(tempDir, "composer.json")
-		err := os.WriteFile(composerPath, []byte(composerJSON), 0644)
+		err := os.WriteFile(composerPath, []byte(composerJSON), 0o600)
 		require.NoError(t, err)
 
 		// Create composer.lock
@@ -83,7 +83,7 @@ func TestIntegration_PrivateRepositorySupport(t *testing.T) {
 		}`
 
 		lockPath := filepath.Join(tempDir, "composer.lock")
-		err = os.WriteFile(lockPath, []byte(composerLock), 0644)
+		err = os.WriteFile(lockPath, []byte(composerLock), 0o600)
 		require.NoError(t, err)
 
 		// Test enhanced parser
@@ -155,7 +155,7 @@ func TestIntegration_PrivateRepositorySupport(t *testing.T) {
 
 	t.Run("EnvironmentVariableAuth", func(t *testing.T) {
 		// Set environment variables
-		os.Setenv("COMPOSER_AUTH", `{
+		t.Setenv("COMPOSER_AUTH", `{
 			"http-basic": {
 				"env.example.com": {
 					"username": "env-user",
@@ -163,7 +163,6 @@ func TestIntegration_PrivateRepositorySupport(t *testing.T) {
 				}
 			}
 		}`)
-		defer os.Unsetenv("COMPOSER_AUTH")
 
 		authManager := auth.NewAuthManager()
 		err := authManager.LoadFromEnvironment()
@@ -238,7 +237,7 @@ func TestIntegration_BackwardCompatibility(t *testing.T) {
 	}`
 
 	composerPath := filepath.Join(tempDir, "composer.json")
-	err = os.WriteFile(composerPath, []byte(composerJSON), 0644)
+	err = os.WriteFile(composerPath, []byte(composerJSON), 0o600)
 	require.NoError(t, err)
 
 	composerLock := `{
@@ -257,7 +256,7 @@ func TestIntegration_BackwardCompatibility(t *testing.T) {
 	}`
 
 	lockPath := filepath.Join(tempDir, "composer.lock")
-	err = os.WriteFile(lockPath, []byte(composerLock), 0644)
+	err = os.WriteFile(lockPath, []byte(composerLock), 0o600)
 	require.NoError(t, err)
 
 	// Test standard parser still works
@@ -310,7 +309,7 @@ func createTestProject(t *testing.T, dir string) {
 	require.NoError(t, err)
 
 	composerPath := filepath.Join(dir, "composer.json")
-	err = os.WriteFile(composerPath, data, 0644)
+	err = os.WriteFile(composerPath, data, 0o600)
 	require.NoError(t, err)
 
 	// Create composer.lock
@@ -350,7 +349,7 @@ func createTestProject(t *testing.T, dir string) {
 	require.NoError(t, err)
 
 	lockPath := filepath.Join(dir, "composer.lock")
-	err = os.WriteFile(lockPath, lockData, 0644)
+	err = os.WriteFile(lockPath, lockData, 0o600)
 	require.NoError(t, err)
 }
 
@@ -365,6 +364,6 @@ func BenchmarkIntegration_CompleteFlow(b *testing.B) {
 	b.ResetTimer()
 	for b.Loop() {
 		parser, _ := parser.NewEnhancedComposerParser(tempDir)
-		parser.ParseWithPrivateRepos()
+		_, _ = parser.ParseWithPrivateRepos()
 	}
 }
