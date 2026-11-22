@@ -70,7 +70,7 @@ func (p *StreamingJSONParser) ParseComposerLockOptimized(filePath string) (*pars
 func (p *StreamingJSONParser) parseWithStreaming(filePath string) (*parser.ComposerLock, error) {
 	p.updateStats(func(s *JSONStats) { s.StreamingUsed++ })
 
-	file, err := os.Open(filePath)
+	file, err := os.Open(filePath) //nolint:gosec // G304: reads the project file its caller names
 	if err != nil {
 		return nil, fmt.Errorf("failed to open composer.lock: %w", err)
 	}
@@ -92,7 +92,7 @@ func (p *StreamingJSONParser) parseWithStreaming(filePath string) (*parser.Compo
 func (p *StreamingJSONParser) parseInMemory(filePath string) (*parser.ComposerLock, error) {
 	p.updateStats(func(s *JSONStats) { s.MemoryParsingUsed++ })
 
-	data, err := os.ReadFile(filePath)
+	data, err := os.ReadFile(filePath) //nolint:gosec // G304: reads the project file its caller names
 	if err != nil {
 		return nil, fmt.Errorf("failed to read composer.lock: %w", err)
 	}
@@ -113,7 +113,7 @@ func (p *StreamingJSONParser) ParseComposerJSONOptimized(filePath string) (*pars
 		s.MemoryParsingUsed++
 	})
 
-	data, err := os.ReadFile(filePath)
+	data, err := os.ReadFile(filePath) //nolint:gosec // G304: reads the project file its caller names
 	if err != nil {
 		return nil, fmt.Errorf("failed to read composer.json: %w", err)
 	}
@@ -156,7 +156,7 @@ func (p *StreamingJSONParser) ParsePackagesBatch(packages []parser.PackageInfo, 
 
 // ValidateJSON quickly validates JSON structure without full parsing
 func (p *StreamingJSONParser) ValidateJSON(filePath string) error {
-	file, err := os.Open(filePath)
+	file, err := os.Open(filePath) //nolint:gosec // G304: reads the project file its caller names
 	if err != nil {
 		return err
 	}

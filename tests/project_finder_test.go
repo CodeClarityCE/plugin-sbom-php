@@ -36,7 +36,7 @@ func TestFindPHPProjects(t *testing.T) {
 	}`
 
 	composerJSONPath := filepath.Join(tempDir, "composer.json")
-	err = os.WriteFile(composerJSONPath, []byte(composerJSON), 0644)
+	err = os.WriteFile(composerJSONPath, []byte(composerJSON), 0o600)
 	require.NoError(t, err)
 
 	// Create a test composer.lock
@@ -52,7 +52,7 @@ func TestFindPHPProjects(t *testing.T) {
 	}`
 
 	composerLockPath := filepath.Join(tempDir, "composer.lock")
-	err = os.WriteFile(composerLockPath, []byte(composerLock), 0644)
+	err = os.WriteFile(composerLockPath, []byte(composerLock), 0o600)
 	require.NoError(t, err)
 
 	// Test finding PHP projects
@@ -96,7 +96,7 @@ func TestFindPHPProjectsInvalidComposerJSON(t *testing.T) {
 	// Create invalid composer.json
 	invalidJSON := `{"name": "test", "invalid": json}`
 	composerJSONPath := filepath.Join(tempDir, "composer.json")
-	err = os.WriteFile(composerJSONPath, []byte(invalidJSON), 0644)
+	err = os.WriteFile(composerJSONPath, []byte(invalidJSON), 0o600)
 	require.NoError(t, err)
 
 	// Test finding PHP projects
@@ -118,12 +118,12 @@ func TestFindPHPProjectsMonorepo(t *testing.T) {
 		"type": "project",
 		"description": "Monorepo with multiple packages"
 	}`
-	err = os.WriteFile(filepath.Join(tempDir, "composer.json"), []byte(rootComposer), 0644)
+	err = os.WriteFile(filepath.Join(tempDir, "composer.json"), []byte(rootComposer), 0o600)
 	require.NoError(t, err)
 
 	// Create package1 directory and composer.json
 	package1Dir := filepath.Join(tempDir, "packages", "package1")
-	err = os.MkdirAll(package1Dir, 0755)
+	err = os.MkdirAll(package1Dir, 0o750)
 	require.NoError(t, err)
 
 	package1Composer := `{
@@ -134,12 +134,12 @@ func TestFindPHPProjectsMonorepo(t *testing.T) {
 			"php": ">=8.0"
 		}
 	}`
-	err = os.WriteFile(filepath.Join(package1Dir, "composer.json"), []byte(package1Composer), 0644)
+	err = os.WriteFile(filepath.Join(package1Dir, "composer.json"), []byte(package1Composer), 0o600)
 	require.NoError(t, err)
 
 	// Create package2 directory and composer.json
 	package2Dir := filepath.Join(tempDir, "packages", "package2")
-	err = os.MkdirAll(package2Dir, 0755)
+	err = os.MkdirAll(package2Dir, 0o750)
 	require.NoError(t, err)
 
 	package2Composer := `{
@@ -151,7 +151,7 @@ func TestFindPHPProjectsMonorepo(t *testing.T) {
 			"symfony/console": "^6.0"
 		}
 	}`
-	err = os.WriteFile(filepath.Join(package2Dir, "composer.json"), []byte(package2Composer), 0644)
+	err = os.WriteFile(filepath.Join(package2Dir, "composer.json"), []byte(package2Composer), 0o600)
 	require.NoError(t, err)
 
 	// Test finding PHP projects
@@ -174,9 +174,10 @@ func TestFindPHPProjectsMonorepo(t *testing.T) {
 	var package1, package2 *project_finder.WorkspaceInfo
 	for i := range projectInfo.Workspaces {
 		ws := &projectInfo.Workspaces[i]
-		if ws.ComposerJSON.Name == "company/package1" {
+		switch ws.ComposerJSON.Name {
+		case "company/package1":
 			package1 = ws
-		} else if ws.ComposerJSON.Name == "company/package2" {
+		case "company/package2":
 			package2 = ws
 		}
 	}
@@ -251,7 +252,7 @@ func TestFindPHPProjectsFrameworkDetection(t *testing.T) {
 
 			// Create composer.json
 			composerJSONPath := filepath.Join(tempDir, "composer.json")
-			err = os.WriteFile(composerJSONPath, []byte(test.composerJSON), 0644)
+			err = os.WriteFile(composerJSONPath, []byte(test.composerJSON), 0o600)
 			require.NoError(t, err)
 
 			// Test framework detection
@@ -273,7 +274,7 @@ func TestFindPHPProjectsVendorDetection(t *testing.T) {
 	// Create composer.json
 	composerJSON := `{"name": "test/project"}`
 	composerJSONPath := filepath.Join(tempDir, "composer.json")
-	err = os.WriteFile(composerJSONPath, []byte(composerJSON), 0644)
+	err = os.WriteFile(composerJSONPath, []byte(composerJSON), 0o600)
 	require.NoError(t, err)
 
 	// Test without vendor directory
@@ -283,7 +284,7 @@ func TestFindPHPProjectsVendorDetection(t *testing.T) {
 
 	// Create vendor directory
 	vendorDir := filepath.Join(tempDir, "vendor")
-	err = os.MkdirAll(vendorDir, 0755)
+	err = os.MkdirAll(vendorDir, 0o750)
 	require.NoError(t, err)
 
 	// Test with vendor directory

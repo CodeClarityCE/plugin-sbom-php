@@ -21,9 +21,9 @@ func requireAMQP(t *testing.T) {
 	if port == "" {
 		port = "5672"
 	}
-	conn, err := net.DialTimeout("tcp", net.JoinHostPort(host, port), 2*time.Second)
+	conn, err := net.DialTimeout("tcp", net.JoinHostPort(host, port), 2*time.Second) //nolint:gosec // G704: the broker address is the test run's own config
 	if err != nil {
 		t.Skipf("AMQP broker %s unreachable: %v", net.JoinHostPort(host, port), err)
 	}
-	conn.Close()
+	_ = conn.Close()
 }

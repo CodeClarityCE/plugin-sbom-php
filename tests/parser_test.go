@@ -200,7 +200,7 @@ func TestParseComposerJSON(t *testing.T) {
 
 	_, err = tempFile.WriteString(testComposerJSON)
 	require.NoError(t, err)
-	tempFile.Close()
+	require.NoError(t, tempFile.Close())
 
 	// Test parsing
 	result, err := parser.ParseComposerJSON(tempFile.Name())
@@ -245,7 +245,7 @@ func TestParseComposerJSONInvalidJSON(t *testing.T) {
 
 	_, err = tempFile.WriteString(`{"name": "test", "invalid": json}`)
 	require.NoError(t, err)
-	tempFile.Close()
+	require.NoError(t, tempFile.Close())
 
 	// Test parsing
 	_, err = parser.ParseComposerJSON(tempFile.Name())
@@ -261,7 +261,7 @@ func TestParseComposerLock(t *testing.T) {
 
 	_, err = tempFile.WriteString(testComposerLock)
 	require.NoError(t, err)
-	tempFile.Close()
+	require.NoError(t, tempFile.Close())
 
 	// Test parsing
 	result, err := parser.ParseComposerLock(tempFile.Name())
@@ -322,28 +322,28 @@ func TestFindComposerFiles(t *testing.T) {
 	composerJSONPath := filepath.Join(tempDir, "composer.json")
 	composerLockPath := filepath.Join(tempDir, "composer.lock")
 
-	err = os.WriteFile(composerJSONPath, []byte("{}"), 0644)
+	err = os.WriteFile(composerJSONPath, []byte("{}"), 0o600)
 	require.NoError(t, err)
 
-	err = os.WriteFile(composerLockPath, []byte("{}"), 0644)
+	err = os.WriteFile(composerLockPath, []byte("{}"), 0o600)
 	require.NoError(t, err)
 
 	// Create subdirectory with additional composer files
 	subDir := filepath.Join(tempDir, "packages", "sub-package")
-	err = os.MkdirAll(subDir, 0755)
+	err = os.MkdirAll(subDir, 0o750)
 	require.NoError(t, err)
 
 	subComposerJSON := filepath.Join(subDir, "composer.json")
-	err = os.WriteFile(subComposerJSON, []byte("{}"), 0644)
+	err = os.WriteFile(subComposerJSON, []byte("{}"), 0o600)
 	require.NoError(t, err)
 
 	// Create vendor directory (should be skipped)
 	vendorDir := filepath.Join(tempDir, "vendor")
-	err = os.MkdirAll(vendorDir, 0755)
+	err = os.MkdirAll(vendorDir, 0o750)
 	require.NoError(t, err)
 
 	vendorComposer := filepath.Join(vendorDir, "composer.json")
-	err = os.WriteFile(vendorComposer, []byte("{}"), 0644)
+	err = os.WriteFile(vendorComposer, []byte("{}"), 0o600)
 	require.NoError(t, err)
 
 	// Test finding composer files
@@ -374,22 +374,22 @@ func TestFindPHARFiles(t *testing.T) {
 	pharFile2 := filepath.Join(tempDir, "tool.PHAR") // Test case insensitive
 	regularFile := filepath.Join(tempDir, "script.php")
 
-	err = os.WriteFile(pharFile1, []byte("test phar content"), 0644)
+	err = os.WriteFile(pharFile1, []byte("test phar content"), 0o600)
 	require.NoError(t, err)
 
-	err = os.WriteFile(pharFile2, []byte("another phar"), 0644)
+	err = os.WriteFile(pharFile2, []byte("another phar"), 0o600)
 	require.NoError(t, err)
 
-	err = os.WriteFile(regularFile, []byte("<?php echo 'test';"), 0644)
+	err = os.WriteFile(regularFile, []byte("<?php echo 'test';"), 0o600)
 	require.NoError(t, err)
 
 	// Create vendor directory with PHAR (should be skipped)
 	vendorDir := filepath.Join(tempDir, "vendor")
-	err = os.MkdirAll(vendorDir, 0755)
+	err = os.MkdirAll(vendorDir, 0o750)
 	require.NoError(t, err)
 
 	vendorPhar := filepath.Join(vendorDir, "vendor.phar")
-	err = os.WriteFile(vendorPhar, []byte("vendor phar"), 0644)
+	err = os.WriteFile(vendorPhar, []byte("vendor phar"), 0o600)
 	require.NoError(t, err)
 
 	// Test finding PHAR files
@@ -479,7 +479,7 @@ func TestAnalyzePHARFile(t *testing.T) {
 	defer os.RemoveAll(tempDir)
 
 	pharFile := filepath.Join(tempDir, "test.phar")
-	err = os.WriteFile(pharFile, []byte("test phar content"), 0644)
+	err = os.WriteFile(pharFile, []byte("test phar content"), 0o600)
 	require.NoError(t, err)
 
 	// Test analyzing PHAR file

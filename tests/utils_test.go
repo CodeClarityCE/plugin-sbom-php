@@ -3,18 +3,16 @@ package main
 import (
 	"encoding/json"
 	"os"
+	"testing"
 )
 
-func writeJSON(data any, filepath string) error {
+func writeJSON(t *testing.T, data any, filepath string) {
+	t.Helper()
 	jsonData, err := json.MarshalIndent(data, "", "  ")
 	if err != nil {
-		return err
+		t.Fatal(err)
 	}
-
-	err = os.WriteFile(filepath, jsonData, 0644)
-	if err != nil {
-		return err
+	if err := os.WriteFile(filepath, jsonData, 0o600); err != nil {
+		t.Fatal(err)
 	}
-
-	return nil
 }

@@ -31,7 +31,7 @@ func TestComposerAuth_LoadFromComposerJSON(t *testing.T) {
 	}`
 
 	composerPath := filepath.Join(tempDir, "composer.json")
-	err := os.WriteFile(composerPath, []byte(composerJSON), 0644)
+	err := os.WriteFile(composerPath, []byte(composerJSON), 0o600)
 	if err != nil {
 		t.Fatalf("Failed to write test composer.json: %v", err)
 	}
@@ -86,7 +86,7 @@ func TestComposerAuth_LoadFromAuthJSON(t *testing.T) {
 	}`
 
 	authPath := filepath.Join(tempDir, "auth.json")
-	err := os.WriteFile(authPath, []byte(authJSON), 0644)
+	err := os.WriteFile(authPath, []byte(authJSON), 0o600)
 	if err != nil {
 		t.Fatalf("Failed to write test auth.json: %v", err)
 	}
@@ -143,14 +143,9 @@ func TestComposerAuth_LoadFromAuthJSON(t *testing.T) {
 
 func TestComposerAuth_LoadFromEnvironment(t *testing.T) {
 	// Set environment variables
-	os.Setenv("GITHUB_TOKEN", "github_test_token")
-	os.Setenv("GITLAB_TOKEN", "gitlab_test_token")
-	os.Setenv("GITLAB_HOST", "gitlab.example.com")
-	defer func() {
-		os.Unsetenv("GITHUB_TOKEN")
-		os.Unsetenv("GITLAB_TOKEN")
-		os.Unsetenv("GITLAB_HOST")
-	}()
+	t.Setenv("GITHUB_TOKEN", "github_test_token")
+	t.Setenv("GITLAB_TOKEN", "gitlab_test_token")
+	t.Setenv("GITLAB_HOST", "gitlab.example.com")
 
 	authManager := auth.NewAuthManager()
 	err := authManager.LoadFromEnvironment()
@@ -228,7 +223,7 @@ func TestEnhancedComposerParser_Creation(t *testing.T) {
 	}`
 
 	composerPath := filepath.Join(tempDir, "composer.json")
-	err := os.WriteFile(composerPath, []byte(composerJSON), 0644)
+	err := os.WriteFile(composerPath, []byte(composerJSON), 0o600)
 	if err != nil {
 		t.Fatalf("Failed to write test composer.json: %v", err)
 	}
@@ -297,12 +292,12 @@ func TestEnhancedComposerParser_ParseWithPrivateRepos(t *testing.T) {
 	composerJSONPath := filepath.Join(tempDir, "composer.json")
 	composerLockPath := filepath.Join(tempDir, "composer.lock")
 
-	err := os.WriteFile(composerJSONPath, []byte(composerJSON), 0644)
+	err := os.WriteFile(composerJSONPath, []byte(composerJSON), 0o600)
 	if err != nil {
 		t.Fatalf("Failed to write composer.json: %v", err)
 	}
 
-	err = os.WriteFile(composerLockPath, []byte(composerLock), 0644)
+	err = os.WriteFile(composerLockPath, []byte(composerLock), 0o600)
 	if err != nil {
 		t.Fatalf("Failed to write composer.lock: %v", err)
 	}
@@ -331,11 +326,11 @@ func TestEnhancedComposerParser_ParseWithPrivateRepos(t *testing.T) {
 
 	if len(sbom.Packages) > 0 {
 		pkg := sbom.Packages[0]
-		if pkg.PackageInfo.Name != "company/private-package" {
-			t.Errorf("Expected package name 'company/private-package', got %s", pkg.PackageInfo.Name)
+		if pkg.Name != "company/private-package" {
+			t.Errorf("Expected package name 'company/private-package', got %s", pkg.Name)
 		}
-		if pkg.PackageInfo.Version != "1.0.0" {
-			t.Errorf("Expected package version '1.0.0', got %s", pkg.PackageInfo.Version)
+		if pkg.Version != "1.0.0" {
+			t.Errorf("Expected package version '1.0.0', got %s", pkg.Version)
 		}
 	}
 

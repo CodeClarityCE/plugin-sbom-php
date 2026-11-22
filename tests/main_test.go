@@ -61,7 +61,7 @@ func TestCreatePassbolt(t *testing.T) {
 	}
 	assert.True(t, foundLicenses, "Should detect licenses in dependencies")
 
-	writeJSON(out, filepath.Join(src, "sbom.json"))
+	writeJSON(t, out, filepath.Join(src, "sbom.json"))
 }
 
 func TestCreateTest1EdgeCases(t *testing.T) {
@@ -143,7 +143,7 @@ func TestCreateLaravel(t *testing.T) {
 	// This test demonstrates the plugin behavior with composer.json detection
 	assert.Empty(t, defaultWs.Dependencies, "Dependencies should be empty until composer.lock detection is fixed")
 
-	writeJSON(out, filepath.Join(src, "sbom.json"))
+	writeJSON(t, out, filepath.Join(src, "sbom.json"))
 }
 
 func TestCreateSymfony(t *testing.T) {
@@ -172,7 +172,7 @@ func TestCreateSymfony(t *testing.T) {
 	// This test demonstrates the plugin behavior with composer.json detection
 	assert.Empty(t, defaultWs.Dependencies, "Dependencies should be empty until composer.lock detection is fixed")
 
-	writeJSON(out, filepath.Join(src, "sbom.json"))
+	writeJSON(t, out, filepath.Join(src, "sbom.json"))
 }
 
 func TestCreateWordPress(t *testing.T) {
@@ -202,7 +202,7 @@ func TestCreateWordPress(t *testing.T) {
 	// This test demonstrates the plugin behavior with composer.json detection
 	assert.Empty(t, defaultWs.Dependencies, "Dependencies should be empty until composer.lock detection is fixed")
 
-	writeJSON(out, filepath.Join(src, "sbom.json"))
+	writeJSON(t, out, filepath.Join(src, "sbom.json"))
 }
 
 func TestCreateCodeIgniter(t *testing.T) {
@@ -232,7 +232,7 @@ func TestCreateCodeIgniter(t *testing.T) {
 	// This test demonstrates the plugin behavior with composer.json only
 	assert.Empty(t, defaultWs.Dependencies, "Dependencies should be empty without composer.lock")
 
-	writeJSON(out, filepath.Join(src, "sbom.json"))
+	writeJSON(t, out, filepath.Join(src, "sbom.json"))
 }
 
 func TestCreatePurePHP(t *testing.T) {
@@ -262,7 +262,7 @@ func TestCreatePurePHP(t *testing.T) {
 	// This test demonstrates the plugin behavior with composer.json only
 	assert.Empty(t, defaultWs.Dependencies, "Dependencies should be empty without composer.lock")
 
-	writeJSON(out, filepath.Join(src, "sbom.json"))
+	writeJSON(t, out, filepath.Join(src, "sbom.json"))
 }
 
 func TestCreateSymfonyDemo(t *testing.T) {
@@ -293,7 +293,7 @@ func TestCreateSymfonyDemo(t *testing.T) {
 	// TODO: Fix composer.lock file detection in plugin
 	assert.Empty(t, defaultWs.Dependencies, "Dependencies should be empty until composer.lock detection is fixed")
 
-	writeJSON(out, filepath.Join(src, "sbom.json"))
+	writeJSON(t, out, filepath.Join(src, "sbom.json"))
 }
 
 func TestComposerJSONOnly(t *testing.T) {
@@ -346,5 +346,5 @@ func TestCreateCachet(t *testing.T) {
 	}
 
 	// Write output for inspection
-	writeJSON(out, filepath.Join(src, "sbom.json"))
+	writeJSON(t, out, filepath.Join(src, "sbom.json"))
 }

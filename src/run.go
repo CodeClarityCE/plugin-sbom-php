@@ -218,7 +218,9 @@ func StartWithPrivateRepos(sourceCodeDir string, analysisId uuid.UUID, knowledge
 	perfConfig := performance.DefaultPerformanceConfig()
 	perfManager := performance.NewPerformanceManager(perfConfig)
 	defer func() {
-		perfManager.Shutdown(5 * time.Second)
+		if err := perfManager.Shutdown(5 * time.Second); err != nil {
+			log.Printf("Warning: Performance manager shutdown: %v", err)
+		}
 	}()
 
 	// Check if directory exists
@@ -376,7 +378,9 @@ func StartWithPerformanceOptimizations(sourceCodeDir string, analysisId uuid.UUI
 	perfConfig := performance.DefaultPerformanceConfig()
 	perfManager := performance.NewPerformanceManager(perfConfig)
 	defer func() {
-		perfManager.Shutdown(5 * time.Second)
+		if err := perfManager.Shutdown(5 * time.Second); err != nil {
+			log.Printf("Warning: Performance manager shutdown: %v", err)
+		}
 	}()
 
 	// Check if directory exists
@@ -413,10 +417,7 @@ func StartWithPerformanceOptimizations(sourceCodeDir string, analysisId uuid.UUI
 	if err != nil {
 		log.Printf("Warning: Optimized parsing failed, falling back to standard parsing: %v", err)
 
-		// Fallback to standard parsing
-		if projectInfo.ComposerJSON != nil {
-			composerJSON = projectInfo.ComposerJSON
-		}
+		// Fallback to standard parsing; projectInfo already holds composer.json
 		if projectInfo.ComposerLock != nil {
 			composerLock = projectInfo.ComposerLock
 		}

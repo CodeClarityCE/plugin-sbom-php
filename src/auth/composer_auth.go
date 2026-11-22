@@ -78,7 +78,7 @@ func NewAuthManager() *AuthManager {
 
 // LoadFromComposerJSON loads repository configuration from composer.json
 func (am *AuthManager) LoadFromComposerJSON(composerJSONPath string) error {
-	data, err := os.ReadFile(composerJSONPath)
+	data, err := os.ReadFile(composerJSONPath) //nolint:gosec // G304: reads the project file its caller names
 	if err != nil {
 		return fmt.Errorf("failed to read composer.json: %w", err)
 	}
@@ -115,11 +115,11 @@ func (am *AuthManager) LoadFromAuthJSON(projectDir string) error {
 	}
 
 	for _, authPath := range authPaths {
-		if _, err := os.Stat(authPath); os.IsNotExist(err) {
+		if _, err := os.Stat(authPath); os.IsNotExist(err) { //nolint:gosec // G703: auth.json paths come from the operator's environment
 			continue
 		}
 
-		data, err := os.ReadFile(authPath)
+		data, err := os.ReadFile(authPath) //nolint:gosec // G304: auth.json paths come from the operator's environment
 		if err != nil {
 			continue // Try next path
 		}
