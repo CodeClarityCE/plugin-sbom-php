@@ -100,7 +100,7 @@ type Dist struct {
 
 // ParseComposerJSON parses a composer.json file
 func ParseComposerJSON(filePath string) (*ComposerJSON, error) {
-	data, err := os.ReadFile(filePath)
+	data, err := os.ReadFile(filePath) //nolint:gosec // G304: reads the project file its caller names
 	if err != nil {
 		return nil, fmt.Errorf("failed to read composer.json: %w", err)
 	}
@@ -115,7 +115,7 @@ func ParseComposerJSON(filePath string) (*ComposerJSON, error) {
 
 // ParseComposerLock parses a composer.lock file
 func ParseComposerLock(filePath string) (*ComposerLock, error) {
-	data, err := os.ReadFile(filePath)
+	data, err := os.ReadFile(filePath) //nolint:gosec // G304: reads the project file its caller names
 	if err != nil {
 		return nil, fmt.Errorf("failed to read composer.lock: %w", err)
 	}

@@ -56,7 +56,9 @@ type GitPackageInfo struct {
 // NewGitResolver creates a new Git repository resolver
 func NewGitResolver(authManager *auth.AuthManager) *GitResolver {
 	tempDir := filepath.Join(os.TempDir(), "php-sbom-git-cache")
-	os.MkdirAll(tempDir, 0755)
+	if err := os.MkdirAll(tempDir, 0o750); err != nil {
+		log.Printf("Warning: Failed to create Git cache %s: %v", tempDir, err)
+	}
 
 	return &GitResolver{
 		authManager: authManager,
@@ -290,7 +292,9 @@ func (gr *GitResolver) resolveViaGitLabAPI(gitInfo *GitRepositoryInfo, packageNa
 		// Try master branch as fallback
 		composerURL = strings.Replace(composerURL, "ref=main", "ref=master", 1)
 		req, _ = http.NewRequest("GET", composerURL, nil)
-		gr.addGitLabAuthentication(req, gitInfo.Host)
+		if err := gr.addGitLabAuthentication(req, gitInfo.Host); err != nil {
+			log.Printf("Warning: Failed to add GitLab authentication: %v", err)
+		}
 
 		resp, err = gr.httpClient.Do(req)
 		if err != nil || resp.StatusCode == 404 {
@@ -345,7 +349,9 @@ func (gr *GitResolver) resolveViaGitClone(gitInfo *GitRepositoryInfo, packageNam
 	repoDir := filepath.Join(gr.tempDir, sanitizeForFilename(gitInfo.Repository))
 
 	// Remove existing directory if it exists
-	os.RemoveAll(repoDir)
+	if err := os.RemoveAll(repoDir); err != nil {
+		return nil, fmt.Errorf("failed to clear clone directory: %w", err)
+	}
 
 	// Clone the repository
 	if err := gr.cloneRepository(gitInfo, repoDir); err != nil {
@@ -361,8 +367,8 @@ func (gr *GitResolver) resolveViaGitClone(gitInfo *GitRepositoryInfo, packageNam
 		return nil, fmt.Errorf("composer.json not found in repository")
 	}
 
-	// Read and parse composer.json
-	content, err := os.ReadFile(composerPath)
+	// Read and parse composer.json; a link out of the clone is refused
+	content, err := readInRepo(repoDir, "composer.json")
 	if err != nil {
 		return nil, fmt.Errorf("failed to read composer.json: %w", err)
 	}
@@ -443,8 +449,8 @@ func (gr *GitResolver) cloneRepository(gitInfo *GitRepositoryInfo, targetDir str
 		gitURL += ".git"
 	}
 
-	// Basic clone command
-	cmd := exec.Command("git", "clone", "--depth=1", gitURL, targetDir)
+	// Basic clone command; "--" keeps a URL starting with "-" from being read as an option
+	cmd := exec.Command("git", "clone", "--depth=1", "--", gitURL, targetDir) //nolint:gosec // G204: fixed binary, URL and dir are positional args
 
 	// Set up authentication if needed
 	if gitInfo.IsPrivate {
@@ -523,7 +529,9 @@ func (gr *GitResolver) getGitHubRepositoryInfo(gitInfo *GitRepositoryInfo) (map[
 		return nil, err
 	}
 
-	gr.addGitHubAuthentication(req, gitInfo.Host)
+	if err := gr.addGitHubAuthentication(req, gitInfo.Host); err != nil {
+		log.Printf("Warning: Failed to add GitHub authentication: %v", err)
+	}
 
 	resp, err := gr.httpClient.Do(req)
 	if err != nil {
@@ -624,8 +632,6 @@ func decodeBase64Content(content string) ([]byte, error) {
 
 func base64Decode(src, dst []byte) (int, error) {
 	// Simple base64 decoding implementation
-	const base64Chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
-
 	if len(src)%4 != 0 {
 		return 0, fmt.Errorf("invalid base64 length")
 	}
@@ -680,6 +686,18 @@ func sanitizeForFilename(name string) string {
 // Cleanup removes temporary directories created by the Git resolver
 func (gr *GitResolver) Cleanup() {
 	if gr.tempDir != "" {
-		os.RemoveAll(gr.tempDir)
+		if err := os.RemoveAll(gr.tempDir); err != nil {
+			log.Printf("Warning: Failed to remove Git cache %s: %v", gr.tempDir, err)
+		}
 	}
+}
+
+// readInRepo reads name inside dir without following links out of it.
+func readInRepo(dir, name string) ([]byte, error) {
+	root, err := os.OpenRoot(dir)
+	if err != nil {
+		return nil, err
+	}
+	defer root.Close()
+	return root.ReadFile(name)
 }
