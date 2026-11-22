@@ -11,8 +11,6 @@ import (
 )
 
 func TestCreatePassbolt(t *testing.T) {
-	requireAMQP(t)
-
 	dir, src := useFixture(t, "test1")
 	out := plugin.Start(dir, uuid.UUID{}, nil)
 
@@ -65,8 +63,6 @@ func TestCreatePassbolt(t *testing.T) {
 }
 
 func TestCreateTest1EdgeCases(t *testing.T) {
-	requireAMQP(t)
-
 	dir, _ := useFixture(t, "test1")
 	out := plugin.Start(dir, uuid.UUID{}, nil)
 
@@ -117,8 +113,6 @@ func TestErrorHandling(t *testing.T) {
 }
 
 func TestCreateLaravel(t *testing.T) {
-	requireAMQP(t)
-
 	dir, src := useFixture(t, "test2-laravel")
 	out := plugin.Start(dir, uuid.UUID{}, nil)
 
@@ -139,16 +133,12 @@ func TestCreateLaravel(t *testing.T) {
 	// Test framework detection should identify Laravel
 	assert.Contains(t, []string{"Laravel", "Generic PHP"}, out.AnalysisInfo.Extra.Framework)
 
-	// Note: Without proper composer.lock detection, dependencies won't be parsed
-	// This test demonstrates the plugin behavior with composer.json detection
-	assert.Empty(t, defaultWs.Dependencies, "Dependencies should be empty until composer.lock detection is fixed")
+	assert.NotEmpty(t, defaultWs.Dependencies, "Should parse dependencies from composer.lock")
 
 	writeJSON(out, filepath.Join(src, "sbom.json"))
 }
 
 func TestCreateSymfony(t *testing.T) {
-	requireAMQP(t)
-
 	dir, src := useFixture(t, "test3-symfony")
 	out := plugin.Start(dir, uuid.UUID{}, nil)
 
@@ -168,16 +158,12 @@ func TestCreateSymfony(t *testing.T) {
 	// Test framework detection should identify Symfony
 	assert.Equal(t, "Symfony", out.AnalysisInfo.Extra.Framework)
 
-	// Note: Without proper composer.lock detection, dependencies won't be parsed
-	// This test demonstrates the plugin behavior with composer.json detection
-	assert.Empty(t, defaultWs.Dependencies, "Dependencies should be empty until composer.lock detection is fixed")
+	assert.NotEmpty(t, defaultWs.Dependencies, "Should parse dependencies from composer.lock")
 
 	writeJSON(out, filepath.Join(src, "sbom.json"))
 }
 
 func TestCreateWordPress(t *testing.T) {
-	requireAMQP(t)
-
 	dir, src := useFixture(t, "test4-wordpress")
 	out := plugin.Start(dir, uuid.UUID{}, nil)
 
@@ -198,16 +184,12 @@ func TestCreateWordPress(t *testing.T) {
 	// Test framework detection should identify WordPress or Generic PHP
 	assert.Contains(t, []string{"WordPress", "Generic PHP"}, out.AnalysisInfo.Extra.Framework)
 
-	// Note: Without proper composer.lock detection, dependencies won't be parsed
-	// This test demonstrates the plugin behavior with composer.json detection
-	assert.Empty(t, defaultWs.Dependencies, "Dependencies should be empty until composer.lock detection is fixed")
+	assert.NotEmpty(t, defaultWs.Dependencies, "Should parse dependencies from composer.lock")
 
 	writeJSON(out, filepath.Join(src, "sbom.json"))
 }
 
 func TestCreateCodeIgniter(t *testing.T) {
-	requireAMQP(t)
-
 	dir, src := useFixture(t, "test5-codeigniter")
 	out := plugin.Start(dir, uuid.UUID{}, nil)
 
@@ -228,16 +210,12 @@ func TestCreateCodeIgniter(t *testing.T) {
 	// Test framework detection - actual output is "CodeIgniter 4"
 	assert.Equal(t, "CodeIgniter 4", out.AnalysisInfo.Extra.Framework)
 
-	// Note: Without composer.lock, dependencies won't be parsed
-	// This test demonstrates the plugin behavior with composer.json only
-	assert.Empty(t, defaultWs.Dependencies, "Dependencies should be empty without composer.lock")
+	assert.NotEmpty(t, defaultWs.Dependencies, "Should parse dependencies from composer.lock")
 
 	writeJSON(out, filepath.Join(src, "sbom.json"))
 }
 
 func TestCreatePurePHP(t *testing.T) {
-	requireAMQP(t)
-
 	dir, src := useFixture(t, "test6-pure-php")
 	out := plugin.Start(dir, uuid.UUID{}, nil)
 
@@ -258,16 +236,12 @@ func TestCreatePurePHP(t *testing.T) {
 	// Test framework detection - actual output is "Symfony Components" due to Symfony dependencies
 	assert.Equal(t, "Symfony Components", out.AnalysisInfo.Extra.Framework)
 
-	// Note: Without composer.lock, dependencies won't be parsed
-	// This test demonstrates the plugin behavior with composer.json only
-	assert.Empty(t, defaultWs.Dependencies, "Dependencies should be empty without composer.lock")
+	assert.NotEmpty(t, defaultWs.Dependencies, "Should parse dependencies from composer.lock")
 
 	writeJSON(out, filepath.Join(src, "sbom.json"))
 }
 
 func TestCreateSymfonyDemo(t *testing.T) {
-	requireAMQP(t)
-
 	dir, src := useFixture(t, "test7-symfony-demo")
 	out := plugin.Start(dir, uuid.UUID{}, nil)
 
@@ -288,23 +262,12 @@ func TestCreateSymfonyDemo(t *testing.T) {
 	// Test framework detection should identify Symfony
 	assert.Equal(t, "Symfony", out.AnalysisInfo.Extra.Framework)
 
-	// Note: Without proper composer.lock detection, dependencies won't be parsed
-	// This test demonstrates the plugin behavior with composer.json detection
-	// TODO: Fix composer.lock file detection in plugin
-	assert.Empty(t, defaultWs.Dependencies, "Dependencies should be empty until composer.lock detection is fixed")
+	assert.NotEmpty(t, defaultWs.Dependencies, "Should parse dependencies from composer.lock")
 
 	writeJSON(out, filepath.Join(src, "sbom.json"))
 }
 
-func TestComposerJSONOnly(t *testing.T) {
-	// This would test a project with only composer.json (no composer.lock)
-	// For now, we'll skip this test as we don't have that test case
-	t.Skip("Test case for composer.json-only project not available yet")
-}
-
 func TestCreateCachet(t *testing.T) {
-	requireAMQP(t)
-
 	dir, src := useFixture(t, "test8-cachet")
 	out := plugin.Start(dir, uuid.UUID{}, nil)
 
