@@ -58,7 +58,9 @@ type Author struct {
 // NewArtifactResolver creates a new artifact repository resolver
 func NewArtifactResolver(authManager *auth.AuthManager) *ArtifactResolver {
 	cacheDir := filepath.Join(os.TempDir(), "php-sbom-artifact-cache")
-	os.MkdirAll(cacheDir, 0755)
+	if err := os.MkdirAll(cacheDir, 0o750); err != nil {
+		log.Printf("Warning: Failed to create artifact cache %s: %v", cacheDir, err)
+	}
 
 	return &ArtifactResolver{
 		authManager: authManager,
@@ -325,8 +327,10 @@ func (ar *ArtifactResolver) downloadArtifact(_ auth.ComposerRepository, artifact
 	// Copy downloaded content; a partial file must not pass as cached later
 	_, err = io.Copy(outFile, resp.Body)
 	if err != nil {
-		outFile.Close()
-		os.Remove(artifact.LocalPath)
+		_ = outFile.Close()
+		if rmErr := os.Remove(artifact.LocalPath); rmErr != nil {
+			log.Printf("Warning: Failed to remove partial artifact %s: %v", artifact.LocalPath, rmErr)
+		}
 		return fmt.Errorf("failed to save artifact: %w", err)
 	}
 
@@ -361,7 +365,9 @@ func (ar *ArtifactResolver) extractPackageInfo(artifact *ArtifactInfo) (*types.P
 	artifact.ExtractedDir = extractDir
 
 	// Remove existing extraction directory
-	os.RemoveAll(extractDir)
+	if err := os.RemoveAll(extractDir); err != nil {
+		return nil, fmt.Errorf("failed to clear extraction directory: %w", err)
+	}
 
 	// Extract ZIP file
 	if err := ar.extractZipFile(artifact.LocalPath, extractDir); err != nil {
@@ -375,7 +381,7 @@ func (ar *ArtifactResolver) extractPackageInfo(artifact *ArtifactInfo) (*types.P
 	}
 
 	// Parse composer.json
-	composerData, err := ar.parseComposerJSON(composerPath)
+	composerData, err := ar.parseComposerJSON(extractDir, composerPath)
 	if err != nil {
 		return nil, fmt.Errorf("failed to parse composer.json: %w", err)
 	}
@@ -397,6 +403,9 @@ func (ar *ArtifactResolver) extractPackageInfo(artifact *ArtifactInfo) (*types.P
 	return packageInfo, nil
 }
 
+// maxExtractedBytes caps what one artifact may unpack to, against ZIP bombs.
+const maxExtractedBytes = 1 << 30
+
 // extractZipFile extracts a ZIP file to a directory
 func (ar *ArtifactResolver) extractZipFile(zipPath, destDir string) error {
 	reader, err := zip.OpenReader(zipPath)
@@ -405,47 +414,70 @@ func (ar *ArtifactResolver) extractZipFile(zipPath, destDir string) error {
 	}
 	defer reader.Close()
 
-	// Create destination directory
-	os.MkdirAll(destDir, 0755)
+	// Create destination directory; writes through root cannot leave it
+	if err := os.MkdirAll(destDir, 0o750); err != nil {
+		return err
+	}
+	root, err := os.OpenRoot(destDir)
+	if err != nil {
+		return err
+	}
+	defer root.Close()
 
 	// Extract files
+	remaining := int64(maxExtractedBytes)
 	for _, file := range reader.File {
-		path := filepath.Join(destDir, file.Name)
+		name := filepath.FromSlash(file.Name)
 
 		// Security check: prevent zip slip attacks
-		if !strings.HasPrefix(path, filepath.Clean(destDir)+string(os.PathSeparator)) {
+		if !filepath.IsLocal(name) {
 			return fmt.Errorf("invalid file path in ZIP: %s", file.Name)
 		}
 
 		if file.FileInfo().IsDir() {
-			os.MkdirAll(path, file.FileInfo().Mode())
+			if err := root.MkdirAll(name, 0o750); err != nil {
+				return err
+			}
 			continue
 		}
 
-		// Create file
-		fileReader, err := file.Open()
-		if err != nil {
-			return err
-		}
-		defer fileReader.Close()
-
 		// Create parent directory
-		os.MkdirAll(filepath.Dir(path), 0755)
+		if err := root.MkdirAll(filepath.Dir(name), 0o750); err != nil {
+			return err
+		}
 
-		// Create output file
-		outFile, err := os.OpenFile(path, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, file.FileInfo().Mode())
+		written, err := extractZipEntry(root, name, file, remaining)
 		if err != nil {
 			return err
 		}
-		defer outFile.Close()
-
-		_, err = io.Copy(outFile, fileReader)
-		if err != nil {
-			return err
-		}
+		remaining -= written
 	}
 
 	return nil
+}
+
+// extractZipEntry writes one ZIP entry to name under root, failing past limit bytes.
+func extractZipEntry(root *os.Root, name string, file *zip.File, limit int64) (int64, error) {
+	fileReader, err := file.Open()
+	if err != nil {
+		return 0, err
+	}
+	defer fileReader.Close()
+
+	outFile, err := root.OpenFile(name, os.O_WRONLY|os.O_CREATE|os.O_TRUNC, 0o600)
+	if err != nil {
+		return 0, err
+	}
+	defer outFile.Close()
+
+	written, err := io.CopyN(outFile, fileReader, limit+1)
+	if err != nil && err != io.EOF {
+		return written, err
+	}
+	if written > limit {
+		return written, fmt.Errorf("ZIP extracts to more than %d bytes", maxExtractedBytes)
+	}
+	return written, outFile.Close()
 }
 
 // findComposerJSON finds composer.json in extracted directory
@@ -476,9 +508,9 @@ func (ar *ArtifactResolver) findComposerJSON(baseDir string) (string, error) {
 	return composerPath, nil
 }
 
-// parseComposerJSON parses a composer.json file
-func (ar *ArtifactResolver) parseComposerJSON(filePath string) (*ComposerJSON, error) {
-	content, err := os.ReadFile(filePath)
+// parseComposerJSON parses the composer.json at filePath, which must be inside dir
+func (ar *ArtifactResolver) parseComposerJSON(dir, filePath string) (*ComposerJSON, error) {
+	content, err := readInside(dir, filePath)
 	if err != nil {
 		return nil, fmt.Errorf("failed to read composer.json: %w", err)
 	}
@@ -592,6 +624,22 @@ func sanitizeFilename(name string) string {
 // Cleanup removes temporary directories and files created by the artifact resolver
 func (ar *ArtifactResolver) Cleanup() {
 	if ar.cacheDir != "" {
-		os.RemoveAll(ar.cacheDir)
+		if err := os.RemoveAll(ar.cacheDir); err != nil {
+			log.Printf("Warning: Failed to remove artifact cache %s: %v", ar.cacheDir, err)
+		}
 	}
+}
+
+// readInside reads path without following links out of dir.
+func readInside(dir, path string) ([]byte, error) {
+	rel, err := filepath.Rel(dir, path)
+	if err != nil {
+		return nil, err
+	}
+	root, err := os.OpenRoot(dir)
+	if err != nil {
+		return nil, err
+	}
+	defer root.Close()
+	return root.ReadFile(rel)
 }

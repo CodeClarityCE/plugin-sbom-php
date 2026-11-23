@@ -45,7 +45,6 @@ func NewOptimizedHTTPClient(timeout time.Duration) *OptimizedHTTPClient {
 		DialContext: (&net.Dialer{
 			Timeout:   10 * time.Second, // Connection timeout
 			KeepAlive: 30 * time.Second, // TCP keep-alive
-			DualStack: true,             // Enable IPv4/IPv6 dual stack
 		}).DialContext,
 
 		// Performance optimizations

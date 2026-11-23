@@ -30,13 +30,13 @@ func useFixture(t *testing.T, name string) (startPath string, sourceDir string) 
 		}
 		target := filepath.Join(root, name, strings.TrimSuffix(rel, fixtureSuffix))
 		if d.IsDir() {
-			return os.MkdirAll(target, 0o755)
+			return os.MkdirAll(target, 0o750)
 		}
-		data, err := os.ReadFile(path)
+		data, err := fs.ReadFile(os.DirFS(sourceDir), filepath.ToSlash(rel))
 		if err != nil {
 			return err
 		}
-		if err := os.WriteFile(target, data, 0o644); err != nil {
+		if err := os.WriteFile(target, data, 0o600); err != nil {
 			return err
 		}
 		// Keep mtimes, which appear in the PHAR section of the SBOM.

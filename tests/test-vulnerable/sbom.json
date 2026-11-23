@@ -20,6 +20,16 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "doctrine/dbal@v2.5.0"
+            ],
+            "import_paths": [
+              [
+                "doctrine/dbal@v2.5.0"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -48,6 +58,16 @@
             "licenses": [
               "BSD-3-Clause"
             ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "firebase/php-jwt@v3.0.0"
+            ],
+            "import_paths": [
+              [
+                "firebase/php-jwt@v3.0.0"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -76,6 +96,16 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "guzzlehttp/guzzle@6.0.0"
+            ],
+            "import_paths": [
+              [
+                "guzzlehttp/guzzle@6.0.0"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -104,6 +134,16 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "league/flysystem@1.0.0"
+            ],
+            "import_paths": [
+              [
+                "league/flysystem@1.0.0"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -134,6 +174,16 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "monolog/monolog@1.17.0"
+            ],
+            "import_paths": [
+              [
+                "monolog/monolog@1.17.0"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -162,6 +212,16 @@
             "licenses": [
               "LGPL-2.1"
             ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "phpmailer/phpmailer@v5.2.14"
+            ],
+            "import_paths": [
+              [
+                "phpmailer/phpmailer@v5.2.14"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -189,6 +249,16 @@
             "transitive": false,
             "licenses": [
               "BSD-3-Clause"
+            ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "phpunit/phpunit@6.0.0"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "phpunit/phpunit@6.0.0"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -219,6 +289,17 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": false,
+            "importing_top_level_dependencies": [
+              "monolog/monolog@1.17.0"
+            ],
+            "import_paths": [
+              [
+                "monolog/monolog@1.17.0",
+                "psr/log@1.1.0"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -245,6 +326,16 @@
             "transitive": false,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "psy/psysh@v0.8.0"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "psy/psysh@v0.8.0"
+              ]
             ],
             "type": "library",
             "authors": [
@@ -274,6 +365,16 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "symfony/http-foundation@v4.0.0"
+            ],
+            "import_paths": [
+              [
+                "symfony/http-foundation@v4.0.0"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -302,6 +403,16 @@
             "licenses": [
               "BSD-3-Clause"
             ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "twig/twig@v1.35.0"
+            ],
+            "import_paths": [
+              [
+                "twig/twig@v1.35.0"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -317,9 +428,9 @@
       "start": {
         "dependencies": [
           {
-            "name": "firebase/php-jwt",
-            "version": "v3.0.0",
-            "constraint": "3.0.0"
+            "name": "doctrine/dbal",
+            "version": "v2.5.0",
+            "constraint": "2.5.0"
           },
           {
             "name": "monolog/monolog",
@@ -327,14 +438,9 @@
             "constraint": "1.17.0"
           },
           {
-            "name": "twig/twig",
-            "version": "v1.35.0",
-            "constraint": "1.35.0"
-          },
-          {
-            "name": "doctrine/dbal",
-            "version": "v2.5.0",
-            "constraint": "2.5.0"
+            "name": "symfony/http-foundation",
+            "version": "v4.0.0",
+            "constraint": "4.0.0"
           },
           {
             "name": "guzzlehttp/guzzle",
@@ -347,26 +453,31 @@
             "constraint": "1.0.0"
           },
           {
-            "name": "symfony/http-foundation",
-            "version": "v4.0.0",
-            "constraint": "4.0.0"
+            "name": "twig/twig",
+            "version": "v1.35.0",
+            "constraint": "1.35.0"
           },
           {
             "name": "phpmailer/phpmailer",
             "version": "v5.2.14",
             "constraint": "5.2.14"
+          },
+          {
+            "name": "firebase/php-jwt",
+            "version": "v3.0.0",
+            "constraint": "3.0.0"
           }
         ],
         "dev_dependencies": [
           {
-            "name": "psy/psysh",
-            "version": "v0.8.0",
-            "constraint": "0.8.0"
-          },
-          {
             "name": "phpunit/phpunit",
             "version": "6.0.0",
             "constraint": "6.0.0"
+          },
+          {
+            "name": "psy/psysh",
+            "version": "v0.8.0",
+            "constraint": "0.8.0"
           }
         ]
       }
@@ -378,9 +489,9 @@
     "working_directory": "test-vulnerable",
     "package_manager": "composer",
     "time": {
-      "analysis_start_time": "2025-08-17T23:13:14+02:00",
-      "analysis_end_time": "2025-08-17T23:13:14+02:00",
-      "analysis_delta_time": 0.012390625
+      "analysis_start_time": "2026-11-22T19:09:34Z",
+      "analysis_end_time": "2026-11-22T19:09:34Z",
+      "analysis_delta_time": 0.00045825
     },
     "errors": null,
     "paths": {
@@ -492,13 +603,26 @@
         "configured_extensions": [
           "openssl",
           "curl",
-          "xml",
-          "pdo",
           "mbstring",
+          "zip",
           "gd",
           "json",
-          "zip"
+          "pdo",
+          "xml"
         ]
+      },
+      "private_repository_info": {
+        "performance_optimization": {
+          "average_http_latency": "0s",
+          "concurrent_tasks": 0,
+          "files_processed": 2,
+          "http_connection_reuse": 0,
+          "http_requests": 0,
+          "json_files_processed": 2,
+          "json_streaming_used": 0,
+          "object_pool_reuse": 12,
+          "packages_processed": 0
+        }
       }
     }
   }

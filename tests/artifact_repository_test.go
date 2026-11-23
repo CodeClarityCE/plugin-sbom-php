@@ -106,7 +106,9 @@ func TestArtifactResolverWithMockServer(t *testing.T) {
 			// Artifact download
 			if r.URL.Path == "/packages/test-package-1.0.0.zip" {
 				w.Header().Set("Content-Type", "application/zip")
-				w.Write(zipContent)
+				if _, err := w.Write(zipContent); err != nil {
+					t.Error(err)
+				}
 			} else {
 				w.WriteHeader(http.StatusNotFound)
 			}
@@ -175,7 +177,9 @@ func TestArtifactResolverWithAuthentication(t *testing.T) {
 		case "GET":
 			zipContent := createTestZipFile(t)
 			w.Header().Set("Content-Type", "application/zip")
-			w.Write(zipContent)
+			if _, err := w.Write(zipContent); err != nil {
+				t.Error(err)
+			}
 		}
 	}))
 	defer server.Close()
@@ -214,7 +218,9 @@ func TestArtifactResolverCaching(t *testing.T) {
 			downloadCount++
 			zipContent := createTestZipFile(t)
 			w.Header().Set("Content-Type", "application/zip")
-			w.Write(zipContent)
+			if _, err := w.Write(zipContent); err != nil {
+				t.Error(err)
+			}
 		}
 	}))
 	defer server.Close()
@@ -256,7 +262,9 @@ func TestArtifactResolverZipSecurity(t *testing.T) {
 			w.WriteHeader(http.StatusOK)
 		case "GET":
 			w.Header().Set("Content-Type", "application/zip")
-			w.Write(maliciousZip)
+			if _, err := w.Write(maliciousZip); err != nil {
+				t.Error(err)
+			}
 		}
 	}))
 	defer server.Close()
@@ -303,7 +311,9 @@ func TestArtifactResolverErrorHandling(t *testing.T) {
 			if r.Method == "HEAD" {
 				w.WriteHeader(http.StatusOK)
 			} else {
-				w.Write([]byte("This is not a ZIP file"))
+				if _, err := w.Write([]byte("This is not a ZIP file")); err != nil {
+					t.Error(err)
+				}
 			}
 		}))
 		defer server.Close()
@@ -327,7 +337,9 @@ func TestArtifactResolverErrorHandling(t *testing.T) {
 				w.WriteHeader(http.StatusOK)
 			} else {
 				w.Header().Set("Content-Type", "application/zip")
-				w.Write(emptyZip)
+				if _, err := w.Write(emptyZip); err != nil {
+					t.Error(err)
+				}
 			}
 		}))
 		defer server.Close()
@@ -411,10 +423,11 @@ func createMaliciousZipFile(t *testing.T) []byte {
 	// This should be caught by security checks
 	maliciousWriter, err := zipWriter.Create("../../../etc/passwd")
 	if err == nil {
-		maliciousWriter.Write([]byte("malicious content"))
+		_, err = maliciousWriter.Write([]byte("malicious content"))
+		require.NoError(t, err)
 	}
 
-	zipWriter.Close()
+	require.NoError(t, zipWriter.Close())
 
 	content, err := os.ReadFile(tempFile.Name())
 	require.NoError(t, err)
@@ -436,7 +449,7 @@ func createEmptyZipFile(t *testing.T) []byte {
 	_, err = writer.Write([]byte("Empty package"))
 	require.NoError(t, err)
 
-	zipWriter.Close()
+	require.NoError(t, zipWriter.Close())
 
 	content, err := os.ReadFile(tempFile.Name())
 	require.NoError(t, err)
@@ -454,7 +467,9 @@ func BenchmarkArtifactResolution(b *testing.B) {
 			w.WriteHeader(http.StatusOK)
 		} else {
 			w.Header().Set("Content-Type", "application/zip")
-			w.Write(zipContent)
+			if _, err := w.Write(zipContent); err != nil {
+				b.Error(err)
+			}
 		}
 	}))
 	defer server.Close()
@@ -470,6 +485,6 @@ func BenchmarkArtifactResolution(b *testing.B) {
 
 	b.ResetTimer()
 	for b.Loop() {
-		artifactResolver.ResolveArtifactRepository(repo, "test/package", "*")
+		_, _ = artifactResolver.ResolveArtifactRepository(repo, "test/package", "*")
 	}
 }

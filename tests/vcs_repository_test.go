@@ -98,7 +98,7 @@ func TestGitResolver(t *testing.T) {
 
 				// Test that URL parsing doesn't panic
 				assert.NotPanics(t, func() {
-					gitResolver.ResolveGitRepository(repo, "test/package", "*")
+					_, _ = gitResolver.ResolveGitRepository(repo, "test/package", "*")
 				})
 			})
 		}
@@ -114,14 +114,18 @@ func TestGitResolver(t *testing.T) {
 					"content":  "ewogICJuYW1lIjogInRlc3QvcGFja2FnZSIsCiAgImRlc2NyaXB0aW9uIjogIlRlc3QgcGFja2FnZSIsCiAgInR5cGUiOiAibGlicmFyeSIsCiAgImxpY2Vuc2UiOiAiTUlUIgp9", // Base64 encoded composer.json
 					"encoding": "base64",
 				}
-				json.NewEncoder(w).Encode(response)
+				if err := json.NewEncoder(w).Encode(response); err != nil {
+					t.Error(err)
+				}
 			case "/repos/test/package":
 				// Mock repository info
 				response := map[string]any{
 					"default_branch": "main",
 					"updated_at":     "2024-01-01T00:00:00Z",
 				}
-				json.NewEncoder(w).Encode(response)
+				if err := json.NewEncoder(w).Encode(response); err != nil {
+					t.Error(err)
+				}
 			default:
 				w.WriteHeader(http.StatusNotFound)
 			}
@@ -211,15 +215,15 @@ func TestGitResolverWithMockRepository(t *testing.T) {
 	}`
 
 	composerPath := filepath.Join(tempDir, "composer.json")
-	err = os.WriteFile(composerPath, []byte(composerJSON), 0644)
+	err = os.WriteFile(composerPath, []byte(composerJSON), 0o600)
 	require.NoError(t, err)
 
 	// Initialize as Git repository
-	runCommand(t, tempDir, "git", "init")
-	runCommand(t, tempDir, "git", "config", "user.email", "test@example.com")
-	runCommand(t, tempDir, "git", "config", "user.name", "Test User")
-	runCommand(t, tempDir, "git", "add", ".")
-	runCommand(t, tempDir, "git", "commit", "-m", "Initial commit")
+	runGit(t, tempDir, "init")
+	runGit(t, tempDir, "config", "user.email", "test@example.com")
+	runGit(t, tempDir, "config", "user.name", "Test User")
+	runGit(t, tempDir, "add", ".")
+	runGit(t, tempDir, "commit", "-m", "Initial commit")
 
 	// Test resolver with local repository
 	authManager := auth.NewAuthManager()
@@ -286,28 +290,23 @@ func TestGitResolverCleanup(t *testing.T) {
 	// Get temp directory location
 	tempBase := filepath.Join(os.TempDir(), "php-sbom-git-cache")
 
-	// Ensure directory is created
-	_, err := os.Stat(tempBase)
-	if os.IsNotExist(err) {
-		// Directory might not exist if no operations performed
-		t.Skip("Temp directory not created yet")
-	}
+	require.NoError(t, os.MkdirAll(tempBase, 0o750))
 
 	// Cleanup should remove the directory
 	gitResolver.Cleanup()
 
 	// Check directory is removed
-	_, err = os.Stat(tempBase)
+	_, err := os.Stat(tempBase)
 	assert.True(t, os.IsNotExist(err), "Temp directory should be removed after cleanup")
 }
 
-// Helper function to run commands
-func runCommand(t *testing.T, dir string, name string, args ...string) {
-	cmd := exec.Command(name, args...)
+// runGit runs git with args in dir
+func runGit(t *testing.T, dir string, args ...string) {
+	cmd := exec.Command("git", args...) //nolint:gosec // G204: test helper, fixed binary with literal args
 	cmd.Dir = dir
 	output, err := cmd.CombinedOutput()
 	if err != nil {
-		t.Fatalf("Command failed: %s %v\nOutput: %s", name, args, output)
+		t.Fatalf("Command failed: git %v\nOutput: %s", args, output)
 	}
 }
 
@@ -356,6 +355,6 @@ func BenchmarkGitResolution(b *testing.B) {
 
 	b.ResetTimer()
 	for b.Loop() {
-		gitResolver.ResolveGitRepository(repo, "composer/composer", "*")
+		_, _ = gitResolver.ResolveGitRepository(repo, "composer/composer", "*")
 	}
 }

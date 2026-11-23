@@ -22,6 +22,16 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "league/csv@9.15.0"
+            ],
+            "import_paths": [
+              [
+                "league/csv@9.15.0"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -50,6 +60,16 @@
             "transitive": false,
             "licenses": [
               "MIT"
+            ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "phpstan/phpstan@1.10.57"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "phpstan/phpstan@1.10.57"
+              ]
             ],
             "type": "library",
             "description": "PHPStan - PHP Static Analysis Tool"
@@ -123,6 +143,16 @@
             "licenses": [
               "BSD-3-Clause"
             ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "phpunit/phpunit@10.5.5"
+            ],
+            "import_paths": [],
+            "dev_import_paths": [
+              [
+                "phpunit/phpunit@10.5.5"
+              ]
+            ],
             "type": "library",
             "authors": [
               {
@@ -152,6 +182,16 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "psr/log@3.0.0"
+            ],
+            "import_paths": [
+              [
+                "psr/log@3.0.0"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "authors": [
               {
@@ -185,6 +225,16 @@
             "licenses": [
               "MIT"
             ],
+            "is_top_level": true,
+            "importing_top_level_dependencies": [
+              "ramsey/uuid@4.7.5"
+            ],
+            "import_paths": [
+              [
+                "ramsey/uuid@4.7.5"
+              ]
+            ],
+            "dev_import_paths": [],
             "type": "library",
             "description": "A PHP library for generating and working with universally unique identifiers (UUIDs)."
           }
@@ -192,26 +242,6 @@
       },
       "start": {
         "dependencies": [
-          {
-            "name": "symfony/console",
-            "version": "",
-            "constraint": "^7.0"
-          },
-          {
-            "name": "nesbot/carbon",
-            "version": "",
-            "constraint": "^3.0"
-          },
-          {
-            "name": "symfony/validator",
-            "version": "",
-            "constraint": "^7.0"
-          },
-          {
-            "name": "psr/log",
-            "version": "3.0.0",
-            "constraint": "^3.0"
-          },
           {
             "name": "psr/http-client",
             "version": "",
@@ -228,14 +258,19 @@
             "constraint": "^2.6"
           },
           {
-            "name": "doctrine/collections",
-            "version": "",
-            "constraint": "^2.1"
-          },
-          {
             "name": "ramsey/uuid",
             "version": "4.7.5",
             "constraint": "^4.7"
+          },
+          {
+            "name": "symfony/console",
+            "version": "",
+            "constraint": "^7.0"
+          },
+          {
+            "name": "symfony/validator",
+            "version": "",
+            "constraint": "^7.0"
           },
           {
             "name": "league/csv",
@@ -243,9 +278,9 @@
             "constraint": "^9.15"
           },
           {
-            "name": "vlucas/phpdotenv",
-            "version": "",
-            "constraint": "^5.6"
+            "name": "psr/log",
+            "version": "3.0.0",
+            "constraint": "^3.0"
           },
           {
             "name": "psr/http-message",
@@ -256,6 +291,21 @@
             "name": "monolog/monolog",
             "version": "",
             "constraint": "^3.5"
+          },
+          {
+            "name": "doctrine/collections",
+            "version": "",
+            "constraint": "^2.1"
+          },
+          {
+            "name": "vlucas/phpdotenv",
+            "version": "",
+            "constraint": "^5.6"
+          },
+          {
+            "name": "nesbot/carbon",
+            "version": "",
+            "constraint": "^3.0"
           }
         ],
         "dev_dependencies": [
@@ -304,9 +354,9 @@
     "working_directory": "test6-pure-php",
     "package_manager": "composer",
     "time": {
-      "analysis_start_time": "2025-08-17T23:13:14+02:00",
-      "analysis_end_time": "2025-08-17T23:13:14+02:00",
-      "analysis_delta_time": 0.003326916
+      "analysis_start_time": "2026-11-22T19:09:35Z",
+      "analysis_end_time": "2026-11-22T19:09:35Z",
+      "analysis_delta_time": 0.0004555
     },
     "errors": [
       {
@@ -317,6 +367,16 @@
         "public_error": {
           "description": "Source directory not found",
           "key": "GenericException"
+        }
+      },
+      {
+        "private_error": {
+          "description": "Error finding PHP projects: no composer.json files found",
+          "key": "UnsupportedLanguageRequested"
+        },
+        "public_error": {
+          "description": "No PHP project found in the source directory",
+          "key": "UnsupportedLanguageRequested"
         }
       },
       {
@@ -394,6 +454,19 @@
           "json",
           "mbstring"
         ]
+      },
+      "private_repository_info": {
+        "performance_optimization": {
+          "average_http_latency": "0s",
+          "concurrent_tasks": 0,
+          "files_processed": 2,
+          "http_connection_reuse": 0,
+          "http_requests": 0,
+          "json_files_processed": 2,
+          "json_streaming_used": 0,
+          "object_pool_reuse": 6,
+          "packages_processed": 0
+        }
       }
     }
   }
